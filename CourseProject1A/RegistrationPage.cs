@@ -145,8 +145,8 @@ namespace CourseProject1A
                                "\n\n"+
 
                                //review Parent 1
-                               "Parent 1"+
-                               "\n\nFirst Name: "+ tb_parFname.Text +
+                               "PARENT 1 INFORMATION"+
+                               "\nFirst Name: "+ tb_parFname.Text +
                                "\nLast Name: "+ tb_parLname.Text +
                                "\nDate Of Birth: "+ Par_DOB.Value +
                                "\nAddress: "+ tb_parAddress.Text +
@@ -155,8 +155,8 @@ namespace CourseProject1A
                                "\n\n" +
                               
                                //Review Parent 2
-                               "Parent 2" +
-                               "\n\nFirst Name: " + tb_Par2Fname.Text +
+                               "PARENT 2 INFORMATION" +
+                               "\nFirst Name: " + tb_Par2Fname.Text +
                                "\nLast Name:" + tb_Par2Lname.Text +
                                "\nDate Of Birth: " + Par2_DOB.Value +
                                "\nAddress: " + tb_par2Address.Text +
