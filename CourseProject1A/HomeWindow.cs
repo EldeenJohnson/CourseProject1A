@@ -14,9 +14,9 @@ namespace CourseProject1A
     {
         public HomeWindow()
         {
-            InitializeComponent();
+            InitializeComponent();   
         }
-
+      
         RegistrationPage regPage = new RegistrationPage();
         private void newApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {

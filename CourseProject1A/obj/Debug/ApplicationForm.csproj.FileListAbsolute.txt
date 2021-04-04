@@ -9,3 +9,15 @@ C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseP
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.pdb
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\ApplicationForm.csprojAssemblyReference.cache
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.HomeWindow.resources
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\bin\Debug\CourseProject1A.exe.config
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\bin\Debug\CourseProject1A.exe
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\bin\Debug\CourseProject1A.pdb
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\ApplicationForm.csprojAssemblyReference.cache
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.HomeWindow.resources
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.RegistrationPage.resources
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.Properties.Resources.resources
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\ApplicationForm.csproj.GenerateResource.cache
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\ApplicationForm.csproj.CoreCompileInputs.cache
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.exe
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.pdb
+C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.LoginPage.resources
