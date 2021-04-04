@@ -16,7 +16,7 @@ namespace CourseProject1A
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RegistrationPage());
+            Application.Run(new HomeWindow());
         }
     }
 }
