@@ -21,3 +21,15 @@ C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\ApplicationFo
 C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.exe
 C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.pdb
 C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.LoginPage.resources
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\bin\Debug\CourseProject1A.exe.config
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\bin\Debug\CourseProject1A.exe
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\bin\Debug\CourseProject1A.pdb
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\ApplicationForm.csprojAssemblyReference.cache
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.LoginPage.resources
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.HomeWindow.resources
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.RegistrationPage.resources
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.Properties.Resources.resources
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\ApplicationForm.csproj.GenerateResource.cache
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\ApplicationForm.csproj.CoreCompileInputs.cache
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.exe
+C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.pdb

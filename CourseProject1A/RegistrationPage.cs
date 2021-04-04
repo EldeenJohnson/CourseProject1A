@@ -132,7 +132,33 @@ namespace CourseProject1A
                                "\nGender: " + cb_Gender.Text +
                                "\nHeight: " + cb_HeightFt.Text + "ft," + cb_HeightIn.Text + "in"+
                                "\nAddress: "+ tb_stuAddress.Text +
-                               "\nEmail: "+ tb_StuEmail.Text;
+                               "\nEmail: "+ tb_StuEmail.Text +
+                               "\nPhone Number: "+ tb_StuPhone.Text +
+                               "\nPrevious School: "+ tb_stuPreSch.Text +
+                               "\nBirth Entry Number: "+ tb_StuBEntry.Text +
+                               "\nID: "+ tb_StuID.Text +
+                               "\nGrade: "+ tb_StuGrade.Text +
+                               "\nClass: "+ tb_StuClass.Text +
+                               "\nHouse: "+ cb_StuHouse.Text +
+                               "\nPicture: "+ tb_StuUpload.Text +
+                               "\nAdditional Info: "+ rtb_stuAddInfo.Text +
+                               "\n\n"+
+                               "Parent 1"+
+                               "\n\nFirst Name: "+ tb_parFname.Text +
+                               "\nLast Name: "+ tb_parLname.Text +
+                               "\nDate Of Birth: "+ Par_DOB.Value +
+                               "\nAddress: "+ tb_parAddress.Text +
+                               "\nEmail: "+ tb_ParEmail.Text +
+                               "\nPhone Number: "+ tb_Parphone.Text +
+                               "\n\n" +
+                               "Parent 2" +
+                               "\n\nFirst Name: " + tb_Par2Fname.Text +
+                               "\nLast Name:" + tb_Par2Lname.Text +
+                               "\nDate Of Birth: " + Par2_DOB.Value +
+                               "\nAddress: " + tb_par2Address.Text +
+                               "\nEmail: " + tb_Par2Email.Text +
+                               "\nPhone Number: " + tb_Parphone.Text;
+
         }
 
         private void btn_RevPre_Click(object sender, EventArgs e)//review tab previous button
