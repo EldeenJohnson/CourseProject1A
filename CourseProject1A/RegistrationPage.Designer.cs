@@ -31,6 +31,21 @@ namespace CourseProject1A
         {
             this.tabRegistration = new System.Windows.Forms.TabControl();
             this.tab_StuInfo = new System.Windows.Forms.TabPage();
+            this.cb_HeightIn = new System.Windows.Forms.ComboBox();
+            this.cb_HeightFt = new System.Windows.Forms.ComboBox();
+            this.lbl_Height = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tb_StuClass = new System.Windows.Forms.TextBox();
+            this.lbl_Grade = new System.Windows.Forms.Label();
+            this.tb_StuGrade = new System.Windows.Forms.TextBox();
+            this.lbl_bEntry = new System.Windows.Forms.Label();
+            this.tb_StuBEntry = new System.Windows.Forms.TextBox();
+            this.lbl_PreSchool = new System.Windows.Forms.Label();
+            this.tb_stuPreSch = new System.Windows.Forms.TextBox();
+            this.tb_stuMname = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tb_stuAddress = new System.Windows.Forms.TextBox();
+            this.cb_Gender = new System.Windows.Forms.ComboBox();
             this.btn_StuCancel = new System.Windows.Forms.Button();
             this.btn_StuNext = new System.Windows.Forms.Button();
             this.cb_StuHouse = new System.Windows.Forms.ComboBox();
@@ -83,24 +98,10 @@ namespace CourseProject1A
             this.tb_parLname = new System.Windows.Forms.TextBox();
             this.tab_Review = new System.Windows.Forms.TabPage();
             this.btn_RevPre = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
-            this.cb_Gender = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tb_stuAddress = new System.Windows.Forms.TextBox();
-            this.tb_stuMname = new System.Windows.Forms.TextBox();
-            this.lbl_PreSchool = new System.Windows.Forms.Label();
-            this.tb_stuPreSch = new System.Windows.Forms.TextBox();
-            this.lbl_bEntry = new System.Windows.Forms.Label();
-            this.tb_StuBEntry = new System.Windows.Forms.TextBox();
-            this.lbl_Grade = new System.Windows.Forms.Label();
-            this.tb_StuGrade = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tb_StuClass = new System.Windows.Forms.TextBox();
-            this.cb_HeightFt = new System.Windows.Forms.ComboBox();
-            this.lbl_Height = new System.Windows.Forms.Label();
-            this.cb_HeightIn = new System.Windows.Forms.ComboBox();
+            this.lbl_RevMessage = new System.Windows.Forms.Label();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -116,7 +117,7 @@ namespace CourseProject1A
             this.tabRegistration.Name = "tabRegistration";
             this.tabRegistration.SelectedIndex = 0;
             this.tabRegistration.Size = new System.Drawing.Size(782, 882);
-            this.tabRegistration.TabIndex = 1;
+            this.tabRegistration.TabIndex = 0;
             // 
             // tab_StuInfo
             // 
@@ -166,23 +167,176 @@ namespace CourseProject1A
             this.tab_StuInfo.TabIndex = 0;
             this.tab_StuInfo.Text = "Student Information";
             // 
+            // cb_HeightIn
+            // 
+            this.cb_HeightIn.FormattingEnabled = true;
+            this.cb_HeightIn.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11"});
+            this.cb_HeightIn.Location = new System.Drawing.Point(404, 183);
+            this.cb_HeightIn.Name = "cb_HeightIn";
+            this.cb_HeightIn.Size = new System.Drawing.Size(78, 21);
+            this.cb_HeightIn.TabIndex = 7;
+            this.cb_HeightIn.Text = "in";
+            // 
+            // cb_HeightFt
+            // 
+            this.cb_HeightFt.FormattingEnabled = true;
+            this.cb_HeightFt.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.cb_HeightFt.Location = new System.Drawing.Point(312, 183);
+            this.cb_HeightFt.Name = "cb_HeightFt";
+            this.cb_HeightFt.Size = new System.Drawing.Size(78, 21);
+            this.cb_HeightFt.TabIndex = 6;
+            this.cb_HeightFt.Text = "ft";
+            // 
+            // lbl_Height
+            // 
+            this.lbl_Height.AutoSize = true;
+            this.lbl_Height.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Height.Location = new System.Drawing.Point(210, 184);
+            this.lbl_Height.Name = "lbl_Height";
+            this.lbl_Height.Size = new System.Drawing.Size(62, 20);
+            this.lbl_Height.TabIndex = 45;
+            this.lbl_Height.Text = "Height";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(219, 542);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(53, 20);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "Class";
+            // 
+            // tb_StuClass
+            // 
+            this.tb_StuClass.Location = new System.Drawing.Point(312, 544);
+            this.tb_StuClass.Name = "tb_StuClass";
+            this.tb_StuClass.Size = new System.Drawing.Size(170, 20);
+            this.tb_StuClass.TabIndex = 15;
+            // 
+            // lbl_Grade
+            // 
+            this.lbl_Grade.AutoSize = true;
+            this.lbl_Grade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Grade.Location = new System.Drawing.Point(213, 499);
+            this.lbl_Grade.Name = "lbl_Grade";
+            this.lbl_Grade.Size = new System.Drawing.Size(59, 20);
+            this.lbl_Grade.TabIndex = 42;
+            this.lbl_Grade.Text = "Grade";
+            // 
+            // tb_StuGrade
+            // 
+            this.tb_StuGrade.Location = new System.Drawing.Point(312, 501);
+            this.tb_StuGrade.Name = "tb_StuGrade";
+            this.tb_StuGrade.Size = new System.Drawing.Size(170, 20);
+            this.tb_StuGrade.TabIndex = 14;
+            // 
+            // lbl_bEntry
+            // 
+            this.lbl_bEntry.AutoSize = true;
+            this.lbl_bEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_bEntry.Location = new System.Drawing.Point(163, 411);
+            this.lbl_bEntry.Name = "lbl_bEntry";
+            this.lbl_bEntry.Size = new System.Drawing.Size(109, 20);
+            this.lbl_bEntry.TabIndex = 40;
+            this.lbl_bEntry.Text = "Birth Entry #";
+            // 
+            // tb_StuBEntry
+            // 
+            this.tb_StuBEntry.Location = new System.Drawing.Point(311, 411);
+            this.tb_StuBEntry.Name = "tb_StuBEntry";
+            this.tb_StuBEntry.Size = new System.Drawing.Size(377, 20);
+            this.tb_StuBEntry.TabIndex = 12;
+            // 
+            // lbl_PreSchool
+            // 
+            this.lbl_PreSchool.AutoSize = true;
+            this.lbl_PreSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PreSchool.Location = new System.Drawing.Point(135, 367);
+            this.lbl_PreSchool.Name = "lbl_PreSchool";
+            this.lbl_PreSchool.Size = new System.Drawing.Size(137, 20);
+            this.lbl_PreSchool.TabIndex = 38;
+            this.lbl_PreSchool.Text = "Previous School";
+            // 
+            // tb_stuPreSch
+            // 
+            this.tb_stuPreSch.Location = new System.Drawing.Point(311, 367);
+            this.tb_stuPreSch.Name = "tb_stuPreSch";
+            this.tb_stuPreSch.Size = new System.Drawing.Size(377, 20);
+            this.tb_stuPreSch.TabIndex = 11;
+            // 
+            // tb_stuMname
+            // 
+            this.tb_stuMname.Location = new System.Drawing.Point(441, 48);
+            this.tb_stuMname.Name = "tb_stuMname";
+            this.tb_stuMname.Size = new System.Drawing.Size(114, 20);
+            this.tb_stuMname.TabIndex = 2;
+            this.tb_stuMname.Text = "Middle Name";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(197, 228);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Address";
+            // 
+            // tb_stuAddress
+            // 
+            this.tb_stuAddress.Location = new System.Drawing.Point(312, 228);
+            this.tb_stuAddress.Name = "tb_stuAddress";
+            this.tb_stuAddress.Size = new System.Drawing.Size(377, 20);
+            this.tb_stuAddress.TabIndex = 8;
+            // 
+            // cb_Gender
+            // 
+            this.cb_Gender.FormattingEnabled = true;
+            this.cb_Gender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cb_Gender.Location = new System.Drawing.Point(312, 138);
+            this.cb_Gender.Name = "cb_Gender";
+            this.cb_Gender.Size = new System.Drawing.Size(170, 21);
+            this.cb_Gender.TabIndex = 5;
+            // 
             // btn_StuCancel
             // 
             this.btn_StuCancel.Location = new System.Drawing.Point(517, 795);
             this.btn_StuCancel.Name = "btn_StuCancel";
             this.btn_StuCancel.Size = new System.Drawing.Size(71, 21);
-            this.btn_StuCancel.TabIndex = 32;
+            this.btn_StuCancel.TabIndex = 19;
             this.btn_StuCancel.Text = "Cancel";
             this.btn_StuCancel.UseVisualStyleBackColor = true;
+            this.btn_StuCancel.Click += new System.EventHandler(this.btn_StuCancel_Click);
             // 
             // btn_StuNext
             // 
             this.btn_StuNext.Location = new System.Drawing.Point(617, 795);
             this.btn_StuNext.Name = "btn_StuNext";
             this.btn_StuNext.Size = new System.Drawing.Size(71, 21);
-            this.btn_StuNext.TabIndex = 31;
+            this.btn_StuNext.TabIndex = 20;
             this.btn_StuNext.Text = "Next";
             this.btn_StuNext.UseVisualStyleBackColor = true;
+            this.btn_StuNext.Click += new System.EventHandler(this.btn_StuNext_Click);
             // 
             // cb_StuHouse
             // 
@@ -195,7 +349,7 @@ namespace CourseProject1A
             this.cb_StuHouse.Location = new System.Drawing.Point(312, 590);
             this.cb_StuHouse.Name = "cb_StuHouse";
             this.cb_StuHouse.Size = new System.Drawing.Size(170, 21);
-            this.cb_StuHouse.TabIndex = 30;
+            this.cb_StuHouse.TabIndex = 16;
             // 
             // label8
             // 
@@ -292,7 +446,7 @@ namespace CourseProject1A
             this.btn_StuUpload.Location = new System.Drawing.Point(488, 635);
             this.btn_StuUpload.Name = "btn_StuUpload";
             this.btn_StuUpload.Size = new System.Drawing.Size(109, 21);
-            this.btn_StuUpload.TabIndex = 20;
+            this.btn_StuUpload.TabIndex = 17;
             this.btn_StuUpload.Text = "Upload";
             this.btn_StuUpload.UseVisualStyleBackColor = true;
             // 
@@ -301,7 +455,7 @@ namespace CourseProject1A
             this.rtb_stuAddInfo.Location = new System.Drawing.Point(312, 681);
             this.rtb_stuAddInfo.Name = "rtb_stuAddInfo";
             this.rtb_stuAddInfo.Size = new System.Drawing.Size(377, 90);
-            this.rtb_stuAddInfo.TabIndex = 19;
+            this.rtb_stuAddInfo.TabIndex = 18;
             this.rtb_stuAddInfo.Text = "";
             // 
             // stu_DOB
@@ -309,7 +463,7 @@ namespace CourseProject1A
             this.stu_DOB.Location = new System.Drawing.Point(312, 93);
             this.stu_DOB.Name = "stu_DOB";
             this.stu_DOB.Size = new System.Drawing.Size(170, 20);
-            this.stu_DOB.TabIndex = 18;
+            this.stu_DOB.TabIndex = 4;
             // 
             // tb_StuUpload
             // 
@@ -331,29 +485,29 @@ namespace CourseProject1A
             this.tb_StuID.Location = new System.Drawing.Point(312, 458);
             this.tb_StuID.Name = "tb_StuID";
             this.tb_StuID.Size = new System.Drawing.Size(170, 20);
-            this.tb_StuID.TabIndex = 14;
+            this.tb_StuID.TabIndex = 13;
             // 
             // tb_StuEmail
             // 
             this.tb_StuEmail.Location = new System.Drawing.Point(312, 275);
             this.tb_StuEmail.Name = "tb_StuEmail";
             this.tb_StuEmail.Size = new System.Drawing.Size(377, 20);
-            this.tb_StuEmail.TabIndex = 13;
+            this.tb_StuEmail.TabIndex = 9;
             // 
             // tb_StuPhone
             // 
             this.tb_StuPhone.Location = new System.Drawing.Point(311, 321);
             this.tb_StuPhone.Name = "tb_StuPhone";
             this.tb_StuPhone.Size = new System.Drawing.Size(170, 20);
-            this.tb_StuPhone.TabIndex = 12;
+            this.tb_StuPhone.TabIndex = 10;
             // 
             // tb_stufname
             // 
-            this.tb_stufname.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_stufname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_stufname.Location = new System.Drawing.Point(312, 48);
             this.tb_stufname.Name = "tb_stufname";
             this.tb_stufname.Size = new System.Drawing.Size(113, 20);
-            this.tb_stufname.TabIndex = 10;
+            this.tb_stufname.TabIndex = 1;
             this.tb_stufname.Text = "First Name";
             // 
             // tb_stulname
@@ -361,7 +515,7 @@ namespace CourseProject1A
             this.tb_stulname.Location = new System.Drawing.Point(575, 48);
             this.tb_stulname.Name = "tb_stulname";
             this.tb_stulname.Size = new System.Drawing.Size(114, 20);
-            this.tb_stulname.TabIndex = 17;
+            this.tb_stulname.TabIndex = 3;
             this.tb_stulname.Text = "Last Name";
             // 
             // tab_ParInfo
@@ -398,7 +552,7 @@ namespace CourseProject1A
             this.tab_ParInfo.Location = new System.Drawing.Point(4, 22);
             this.tab_ParInfo.Name = "tab_ParInfo";
             this.tab_ParInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_ParInfo.Size = new System.Drawing.Size(774, 849);
+            this.tab_ParInfo.Size = new System.Drawing.Size(774, 856);
             this.tab_ParInfo.TabIndex = 1;
             this.tab_ParInfo.Text = "Parent Information";
             // 
@@ -407,27 +561,30 @@ namespace CourseProject1A
             this.btn_ParPrev.Location = new System.Drawing.Point(267, 636);
             this.btn_ParPrev.Name = "btn_ParPrev";
             this.btn_ParPrev.Size = new System.Drawing.Size(71, 21);
-            this.btn_ParPrev.TabIndex = 55;
+            this.btn_ParPrev.TabIndex = 12;
             this.btn_ParPrev.Text = "Previous";
             this.btn_ParPrev.UseVisualStyleBackColor = true;
+            this.btn_ParPrev.Click += new System.EventHandler(this.btn_ParPrev_Click);
             // 
             // btn_ParCancel
             // 
             this.btn_ParCancel.Location = new System.Drawing.Point(573, 636);
             this.btn_ParCancel.Name = "btn_ParCancel";
             this.btn_ParCancel.Size = new System.Drawing.Size(71, 21);
-            this.btn_ParCancel.TabIndex = 54;
+            this.btn_ParCancel.TabIndex = 14;
             this.btn_ParCancel.Text = "Cancel";
             this.btn_ParCancel.UseVisualStyleBackColor = true;
+            this.btn_ParCancel.Click += new System.EventHandler(this.btn_ParCancel_Click);
             // 
             // btn_ParNext
             // 
             this.btn_ParNext.Location = new System.Drawing.Point(423, 636);
             this.btn_ParNext.Name = "btn_ParNext";
             this.btn_ParNext.Size = new System.Drawing.Size(71, 21);
-            this.btn_ParNext.TabIndex = 53;
+            this.btn_ParNext.TabIndex = 13;
             this.btn_ParNext.Text = "Next";
             this.btn_ParNext.UseVisualStyleBackColor = true;
+            this.btn_ParNext.Click += new System.EventHandler(this.btn_ParNext_Click);
             // 
             // lbl_Parent2
             // 
@@ -506,36 +663,36 @@ namespace CourseProject1A
             this.Par2_DOB.Location = new System.Drawing.Point(267, 388);
             this.Par2_DOB.Name = "Par2_DOB";
             this.Par2_DOB.Size = new System.Drawing.Size(178, 20);
-            this.Par2_DOB.TabIndex = 46;
+            this.Par2_DOB.TabIndex = 8;
             // 
             // tb_Par2Email
             // 
             this.tb_Par2Email.Location = new System.Drawing.Point(267, 529);
             this.tb_Par2Email.Name = "tb_Par2Email";
             this.tb_Par2Email.Size = new System.Drawing.Size(377, 20);
-            this.tb_Par2Email.TabIndex = 44;
+            this.tb_Par2Email.TabIndex = 11;
             // 
             // tb_Par2Phone
             // 
             this.tb_Par2Phone.Location = new System.Drawing.Point(267, 482);
             this.tb_Par2Phone.Name = "tb_Par2Phone";
             this.tb_Par2Phone.Size = new System.Drawing.Size(377, 20);
-            this.tb_Par2Phone.TabIndex = 43;
+            this.tb_Par2Phone.TabIndex = 10;
             // 
             // tb_par2Address
             // 
             this.tb_par2Address.Location = new System.Drawing.Point(267, 437);
             this.tb_par2Address.Name = "tb_par2Address";
             this.tb_par2Address.Size = new System.Drawing.Size(377, 20);
-            this.tb_par2Address.TabIndex = 42;
+            this.tb_par2Address.TabIndex = 9;
             // 
             // tb_Par2Fname
             // 
-            this.tb_Par2Fname.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_Par2Fname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_Par2Fname.Location = new System.Drawing.Point(267, 343);
             this.tb_Par2Fname.Name = "tb_Par2Fname";
             this.tb_Par2Fname.Size = new System.Drawing.Size(178, 20);
-            this.tb_Par2Fname.TabIndex = 41;
+            this.tb_Par2Fname.TabIndex = 7;
             this.tb_Par2Fname.Text = "First Name";
             // 
             // tb_Par2Lname
@@ -543,7 +700,7 @@ namespace CourseProject1A
             this.tb_Par2Lname.Location = new System.Drawing.Point(474, 343);
             this.tb_Par2Lname.Name = "tb_Par2Lname";
             this.tb_Par2Lname.Size = new System.Drawing.Size(170, 20);
-            this.tb_Par2Lname.TabIndex = 45;
+            this.tb_Par2Lname.TabIndex = 8;
             this.tb_Par2Lname.Text = "Last Name";
             // 
             // label1
@@ -601,36 +758,36 @@ namespace CourseProject1A
             this.Par_DOB.Location = new System.Drawing.Point(267, 100);
             this.Par_DOB.Name = "Par_DOB";
             this.Par_DOB.Size = new System.Drawing.Size(178, 20);
-            this.Par_DOB.TabIndex = 35;
+            this.Par_DOB.TabIndex = 3;
             // 
             // tb_ParEmail
             // 
             this.tb_ParEmail.Location = new System.Drawing.Point(267, 241);
             this.tb_ParEmail.Name = "tb_ParEmail";
             this.tb_ParEmail.Size = new System.Drawing.Size(377, 20);
-            this.tb_ParEmail.TabIndex = 33;
+            this.tb_ParEmail.TabIndex = 6;
             // 
             // tb_Parphone
             // 
             this.tb_Parphone.Location = new System.Drawing.Point(267, 194);
             this.tb_Parphone.Name = "tb_Parphone";
             this.tb_Parphone.Size = new System.Drawing.Size(377, 20);
-            this.tb_Parphone.TabIndex = 32;
+            this.tb_Parphone.TabIndex = 5;
             // 
             // tb_parAddress
             // 
             this.tb_parAddress.Location = new System.Drawing.Point(267, 149);
             this.tb_parAddress.Name = "tb_parAddress";
             this.tb_parAddress.Size = new System.Drawing.Size(377, 20);
-            this.tb_parAddress.TabIndex = 31;
+            this.tb_parAddress.TabIndex = 4;
             // 
             // tb_parFname
             // 
-            this.tb_parFname.Cursor = System.Windows.Forms.Cursors.No;
+            this.tb_parFname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tb_parFname.Location = new System.Drawing.Point(267, 55);
             this.tb_parFname.Name = "tb_parFname";
             this.tb_parFname.Size = new System.Drawing.Size(178, 20);
-            this.tb_parFname.TabIndex = 30;
+            this.tb_parFname.TabIndex = 1;
             this.tb_parFname.Text = "First Name";
             // 
             // tb_parLname
@@ -638,18 +795,19 @@ namespace CourseProject1A
             this.tb_parLname.Location = new System.Drawing.Point(474, 55);
             this.tb_parLname.Name = "tb_parLname";
             this.tb_parLname.Size = new System.Drawing.Size(170, 20);
-            this.tb_parLname.TabIndex = 34;
+            this.tb_parLname.TabIndex = 2;
             this.tb_parLname.Text = "Last Name";
             // 
             // tab_Review
             // 
             this.tab_Review.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.tab_Review.Controls.Add(this.lbl_RevMessage);
             this.tab_Review.Controls.Add(this.btn_RevPre);
-            this.tab_Review.Controls.Add(this.button2);
+            this.tab_Review.Controls.Add(this.btn_RevCancel);
             this.tab_Review.Controls.Add(this.btn_Submit);
             this.tab_Review.Location = new System.Drawing.Point(4, 22);
             this.tab_Review.Name = "tab_Review";
-            this.tab_Review.Size = new System.Drawing.Size(774, 849);
+            this.tab_Review.Size = new System.Drawing.Size(774, 856);
             this.tab_Review.TabIndex = 2;
             this.tab_Review.Text = "Review";
             // 
@@ -658,18 +816,20 @@ namespace CourseProject1A
             this.btn_RevPre.Location = new System.Drawing.Point(197, 573);
             this.btn_RevPre.Name = "btn_RevPre";
             this.btn_RevPre.Size = new System.Drawing.Size(71, 21);
-            this.btn_RevPre.TabIndex = 58;
+            this.btn_RevPre.TabIndex = 1;
             this.btn_RevPre.Text = "Previous";
             this.btn_RevPre.UseVisualStyleBackColor = true;
+            this.btn_RevPre.Click += new System.EventHandler(this.btn_RevPre_Click);
             // 
-            // button2
+            // btn_RevCancel
             // 
-            this.button2.Location = new System.Drawing.Point(503, 573);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 21);
-            this.button2.TabIndex = 57;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_RevCancel.Location = new System.Drawing.Point(503, 573);
+            this.btn_RevCancel.Name = "btn_RevCancel";
+            this.btn_RevCancel.Size = new System.Drawing.Size(71, 21);
+            this.btn_RevCancel.TabIndex = 3;
+            this.btn_RevCancel.Text = "Cancel";
+            this.btn_RevCancel.UseVisualStyleBackColor = true;
+            this.btn_RevCancel.Click += new System.EventHandler(this.btn_RevCancel_Click);
             // 
             // btn_Submit
             // 
@@ -678,7 +838,7 @@ namespace CourseProject1A
             this.btn_Submit.Location = new System.Drawing.Point(344, 573);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(71, 21);
-            this.btn_Submit.TabIndex = 56;
+            this.btn_Submit.TabIndex = 2;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = false;
             this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
@@ -694,156 +854,15 @@ namespace CourseProject1A
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
-            // cb_Gender
+            // lbl_RevMessage
             // 
-            this.cb_Gender.FormattingEnabled = true;
-            this.cb_Gender.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.cb_Gender.Location = new System.Drawing.Point(312, 138);
-            this.cb_Gender.Name = "cb_Gender";
-            this.cb_Gender.Size = new System.Drawing.Size(170, 21);
-            this.cb_Gender.TabIndex = 33;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(197, 228);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Address";
-            // 
-            // tb_stuAddress
-            // 
-            this.tb_stuAddress.Location = new System.Drawing.Point(312, 228);
-            this.tb_stuAddress.Name = "tb_stuAddress";
-            this.tb_stuAddress.Size = new System.Drawing.Size(377, 20);
-            this.tb_stuAddress.TabIndex = 34;
-            // 
-            // tb_stuMname
-            // 
-            this.tb_stuMname.Location = new System.Drawing.Point(441, 48);
-            this.tb_stuMname.Name = "tb_stuMname";
-            this.tb_stuMname.Size = new System.Drawing.Size(114, 20);
-            this.tb_stuMname.TabIndex = 36;
-            this.tb_stuMname.Text = "Middle Name";
-            // 
-            // lbl_PreSchool
-            // 
-            this.lbl_PreSchool.AutoSize = true;
-            this.lbl_PreSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PreSchool.Location = new System.Drawing.Point(135, 367);
-            this.lbl_PreSchool.Name = "lbl_PreSchool";
-            this.lbl_PreSchool.Size = new System.Drawing.Size(137, 20);
-            this.lbl_PreSchool.TabIndex = 38;
-            this.lbl_PreSchool.Text = "Previous School";
-            // 
-            // tb_stuPreSch
-            // 
-            this.tb_stuPreSch.Location = new System.Drawing.Point(311, 367);
-            this.tb_stuPreSch.Name = "tb_stuPreSch";
-            this.tb_stuPreSch.Size = new System.Drawing.Size(377, 20);
-            this.tb_stuPreSch.TabIndex = 37;
-            // 
-            // lbl_bEntry
-            // 
-            this.lbl_bEntry.AutoSize = true;
-            this.lbl_bEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_bEntry.Location = new System.Drawing.Point(163, 411);
-            this.lbl_bEntry.Name = "lbl_bEntry";
-            this.lbl_bEntry.Size = new System.Drawing.Size(109, 20);
-            this.lbl_bEntry.TabIndex = 40;
-            this.lbl_bEntry.Text = "Birth Entry #";
-            // 
-            // tb_StuBEntry
-            // 
-            this.tb_StuBEntry.Location = new System.Drawing.Point(311, 411);
-            this.tb_StuBEntry.Name = "tb_StuBEntry";
-            this.tb_StuBEntry.Size = new System.Drawing.Size(377, 20);
-            this.tb_StuBEntry.TabIndex = 39;
-            // 
-            // lbl_Grade
-            // 
-            this.lbl_Grade.AutoSize = true;
-            this.lbl_Grade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Grade.Location = new System.Drawing.Point(213, 499);
-            this.lbl_Grade.Name = "lbl_Grade";
-            this.lbl_Grade.Size = new System.Drawing.Size(59, 20);
-            this.lbl_Grade.TabIndex = 42;
-            this.lbl_Grade.Text = "Grade";
-            // 
-            // tb_StuGrade
-            // 
-            this.tb_StuGrade.Location = new System.Drawing.Point(312, 501);
-            this.tb_StuGrade.Name = "tb_StuGrade";
-            this.tb_StuGrade.Size = new System.Drawing.Size(170, 20);
-            this.tb_StuGrade.TabIndex = 41;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(219, 542);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 20);
-            this.label13.TabIndex = 44;
-            this.label13.Text = "Class";
-            // 
-            // tb_StuClass
-            // 
-            this.tb_StuClass.Location = new System.Drawing.Point(312, 544);
-            this.tb_StuClass.Name = "tb_StuClass";
-            this.tb_StuClass.Size = new System.Drawing.Size(170, 20);
-            this.tb_StuClass.TabIndex = 43;
-            // 
-            // cb_HeightFt
-            // 
-            this.cb_HeightFt.FormattingEnabled = true;
-            this.cb_HeightFt.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.cb_HeightFt.Location = new System.Drawing.Point(312, 183);
-            this.cb_HeightFt.Name = "cb_HeightFt";
-            this.cb_HeightFt.Size = new System.Drawing.Size(78, 21);
-            this.cb_HeightFt.TabIndex = 46;
-            this.cb_HeightFt.Text = "ft";
-            // 
-            // lbl_Height
-            // 
-            this.lbl_Height.AutoSize = true;
-            this.lbl_Height.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Height.Location = new System.Drawing.Point(210, 184);
-            this.lbl_Height.Name = "lbl_Height";
-            this.lbl_Height.Size = new System.Drawing.Size(62, 20);
-            this.lbl_Height.TabIndex = 45;
-            this.lbl_Height.Text = "Height";
-            // 
-            // cb_HeightIn
-            // 
-            this.cb_HeightIn.FormattingEnabled = true;
-            this.cb_HeightIn.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11"});
-            this.cb_HeightIn.Location = new System.Drawing.Point(404, 183);
-            this.cb_HeightIn.Name = "cb_HeightIn";
-            this.cb_HeightIn.Size = new System.Drawing.Size(78, 21);
-            this.cb_HeightIn.TabIndex = 47;
-            this.cb_HeightIn.Text = "in";
+            this.lbl_RevMessage.AutoSize = true;
+            this.lbl_RevMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RevMessage.Location = new System.Drawing.Point(38, 34);
+            this.lbl_RevMessage.Name = "lbl_RevMessage";
+            this.lbl_RevMessage.Size = new System.Drawing.Size(458, 15);
+            this.lbl_RevMessage.TabIndex = 59;
+            this.lbl_RevMessage.Text = "Please review the data you have entered and press submit if is correct.";
             // 
             // RegistrationPage
             // 
@@ -860,6 +879,7 @@ namespace CourseProject1A
             this.tab_ParInfo.ResumeLayout(false);
             this.tab_ParInfo.PerformLayout();
             this.tab_Review.ResumeLayout(false);
+            this.tab_Review.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -922,7 +942,7 @@ namespace CourseProject1A
         private System.Windows.Forms.Button btn_ParNext;
         private System.Windows.Forms.TabPage tab_Review;
         private System.Windows.Forms.Button btn_RevPre;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_RevCancel;
         private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.ComboBox cb_Gender;
         private System.Windows.Forms.TextBox tb_stuMname;
@@ -939,6 +959,7 @@ namespace CourseProject1A
         private System.Windows.Forms.ComboBox cb_HeightFt;
         private System.Windows.Forms.Label lbl_Height;
         private System.Windows.Forms.ComboBox cb_HeightIn;
+        private System.Windows.Forms.Label lbl_RevMessage;
     }
 }
 

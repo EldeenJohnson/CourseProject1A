@@ -93,6 +93,51 @@ namespace CourseProject1A
             }
 
         }
+
+        //Cancel Buttons
+        private void btn_StuCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_ParCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_RevCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //Previous & Next Buttons
+        private void btn_StuNext_Click(object sender, EventArgs e) //Student information tab next button
+        {
+            tabRegistration.SelectTab(1);
+        }
+
+        private void btn_ParPrev_Click(object sender, EventArgs e)//Parents Tab previous button
+        {
+            tabRegistration.SelectTab(0);
+        }
+
+        private void btn_ParNext_Click(object sender, EventArgs e)//parents Tab Next button
+        {
+            tabRegistration.SelectTab(2);
+
+            //Below code will display entered data for review
+            MessageBox.Show($"First Name: {tb_stufname.Text} Middle Name: {tb_stuMname.Text} Last Name: {tb_stulname.Text}\n" +
+                        $"\nDOB: {stu_DOB.Value.Date}\n" +
+                        $"\nGender:{cb_Gender.Text}\n"+
+                        $"\nHeight: {cb_HeightFt.Text}ft, {cb_HeightIn.Text}in\n"+
+                        $"\nAddress: {tb_stuAddress.Text}\n"+
+                        $"\nEmail: {tb_StuEmail.Text}") ;
+        }
+
+        private void btn_RevPre_Click(object sender, EventArgs e)
+        {
+            tabRegistration.SelectTab(1);
+        }
     }
     
 }

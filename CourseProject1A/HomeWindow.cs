@@ -17,11 +17,20 @@ namespace CourseProject1A
             InitializeComponent();
         }
 
+        RegistrationPage regPage = new RegistrationPage();
         private void newApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var RegistrationPage = new RegistrationPage();
+            /*var RegistrationPage = new RegistrationPage();
             RegistrationPage.MdiParent = this;
-            RegistrationPage.Show();
+            RegistrationPage.Show();*/
+
+            regPage.MdiParent = this;
+            regPage.Show();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
