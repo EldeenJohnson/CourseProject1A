@@ -60,7 +60,6 @@ namespace CourseProject1A
             this.lblName = new System.Windows.Forms.Label();
             this.btn_StuUpload = new System.Windows.Forms.Button();
             this.rtb_stuAddInfo = new System.Windows.Forms.RichTextBox();
-            this.stu_DOB = new System.Windows.Forms.DateTimePicker();
             this.tb_StuUpload = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.tb_StuID = new System.Windows.Forms.TextBox();
@@ -97,11 +96,13 @@ namespace CourseProject1A
             this.tb_parFname = new System.Windows.Forms.TextBox();
             this.tb_parLname = new System.Windows.Forms.TextBox();
             this.tab_Review = new System.Windows.Forms.TabPage();
+            this.rtb_Review = new System.Windows.Forms.RichTextBox();
+            this.lbl_RevMessage = new System.Windows.Forms.Label();
             this.btn_RevPre = new System.Windows.Forms.Button();
             this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
-            this.lbl_RevMessage = new System.Windows.Forms.Label();
+            this.stu_DOB = new System.Windows.Forms.DateTimePicker();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -123,6 +124,7 @@ namespace CourseProject1A
             // 
             this.tab_StuInfo.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tab_StuInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tab_StuInfo.Controls.Add(this.stu_DOB);
             this.tab_StuInfo.Controls.Add(this.cb_HeightIn);
             this.tab_StuInfo.Controls.Add(this.cb_HeightFt);
             this.tab_StuInfo.Controls.Add(this.lbl_Height);
@@ -152,7 +154,6 @@ namespace CourseProject1A
             this.tab_StuInfo.Controls.Add(this.lblName);
             this.tab_StuInfo.Controls.Add(this.btn_StuUpload);
             this.tab_StuInfo.Controls.Add(this.rtb_stuAddInfo);
-            this.tab_StuInfo.Controls.Add(this.stu_DOB);
             this.tab_StuInfo.Controls.Add(this.tb_StuUpload);
             this.tab_StuInfo.Controls.Add(this.textBox9);
             this.tab_StuInfo.Controls.Add(this.tb_StuID);
@@ -457,13 +458,6 @@ namespace CourseProject1A
             this.rtb_stuAddInfo.Size = new System.Drawing.Size(377, 90);
             this.rtb_stuAddInfo.TabIndex = 18;
             this.rtb_stuAddInfo.Text = "";
-            // 
-            // stu_DOB
-            // 
-            this.stu_DOB.Location = new System.Drawing.Point(312, 93);
-            this.stu_DOB.Name = "stu_DOB";
-            this.stu_DOB.Size = new System.Drawing.Size(170, 20);
-            this.stu_DOB.TabIndex = 4;
             // 
             // tb_StuUpload
             // 
@@ -801,6 +795,7 @@ namespace CourseProject1A
             // tab_Review
             // 
             this.tab_Review.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.tab_Review.Controls.Add(this.rtb_Review);
             this.tab_Review.Controls.Add(this.lbl_RevMessage);
             this.tab_Review.Controls.Add(this.btn_RevPre);
             this.tab_Review.Controls.Add(this.btn_RevCancel);
@@ -811,9 +806,29 @@ namespace CourseProject1A
             this.tab_Review.TabIndex = 2;
             this.tab_Review.Text = "Review";
             // 
+            // rtb_Review
+            // 
+            this.rtb_Review.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_Review.Location = new System.Drawing.Point(41, 73);
+            this.rtb_Review.Name = "rtb_Review";
+            this.rtb_Review.ReadOnly = true;
+            this.rtb_Review.Size = new System.Drawing.Size(533, 644);
+            this.rtb_Review.TabIndex = 60;
+            this.rtb_Review.Text = "";
+            // 
+            // lbl_RevMessage
+            // 
+            this.lbl_RevMessage.AutoSize = true;
+            this.lbl_RevMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RevMessage.Location = new System.Drawing.Point(38, 34);
+            this.lbl_RevMessage.Name = "lbl_RevMessage";
+            this.lbl_RevMessage.Size = new System.Drawing.Size(458, 15);
+            this.lbl_RevMessage.TabIndex = 59;
+            this.lbl_RevMessage.Text = "Please review the data you have entered and press submit if is correct.";
+            // 
             // btn_RevPre
             // 
-            this.btn_RevPre.Location = new System.Drawing.Point(197, 573);
+            this.btn_RevPre.Location = new System.Drawing.Point(197, 761);
             this.btn_RevPre.Name = "btn_RevPre";
             this.btn_RevPre.Size = new System.Drawing.Size(71, 21);
             this.btn_RevPre.TabIndex = 1;
@@ -823,7 +838,7 @@ namespace CourseProject1A
             // 
             // btn_RevCancel
             // 
-            this.btn_RevCancel.Location = new System.Drawing.Point(503, 573);
+            this.btn_RevCancel.Location = new System.Drawing.Point(503, 761);
             this.btn_RevCancel.Name = "btn_RevCancel";
             this.btn_RevCancel.Size = new System.Drawing.Size(71, 21);
             this.btn_RevCancel.TabIndex = 3;
@@ -835,7 +850,7 @@ namespace CourseProject1A
             // 
             this.btn_Submit.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_Submit.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_Submit.Location = new System.Drawing.Point(344, 573);
+            this.btn_Submit.Location = new System.Drawing.Point(344, 761);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(71, 21);
             this.btn_Submit.TabIndex = 2;
@@ -854,15 +869,12 @@ namespace CourseProject1A
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
-            // lbl_RevMessage
+            // stu_DOB
             // 
-            this.lbl_RevMessage.AutoSize = true;
-            this.lbl_RevMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RevMessage.Location = new System.Drawing.Point(38, 34);
-            this.lbl_RevMessage.Name = "lbl_RevMessage";
-            this.lbl_RevMessage.Size = new System.Drawing.Size(458, 15);
-            this.lbl_RevMessage.TabIndex = 59;
-            this.lbl_RevMessage.Text = "Please review the data you have entered and press submit if is correct.";
+            this.stu_DOB.Location = new System.Drawing.Point(312, 94);
+            this.stu_DOB.Name = "stu_DOB";
+            this.stu_DOB.Size = new System.Drawing.Size(200, 20);
+            this.stu_DOB.TabIndex = 4;
             // 
             // RegistrationPage
             // 
@@ -903,7 +915,6 @@ namespace CourseProject1A
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btn_StuUpload;
         private System.Windows.Forms.RichTextBox rtb_stuAddInfo;
-        private System.Windows.Forms.DateTimePicker stu_DOB;
         private System.Windows.Forms.TextBox tb_StuUpload;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox tb_StuID;
@@ -960,6 +971,8 @@ namespace CourseProject1A
         private System.Windows.Forms.Label lbl_Height;
         private System.Windows.Forms.ComboBox cb_HeightIn;
         private System.Windows.Forms.Label lbl_RevMessage;
+        private System.Windows.Forms.RichTextBox rtb_Review;
+        private System.Windows.Forms.DateTimePicker stu_DOB;
     }
 }
 

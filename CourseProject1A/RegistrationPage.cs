@@ -126,15 +126,16 @@ namespace CourseProject1A
             tabRegistration.SelectTab(2);
 
             //Below code will display entered data for review
-            MessageBox.Show($"First Name: {tb_stufname.Text} Middle Name: {tb_stuMname.Text} Last Name: {tb_stulname.Text}\n" +
-                        $"\nDOB: {stu_DOB.Value.Date}\n" +
-                        $"\nGender:{cb_Gender.Text}\n"+
-                        $"\nHeight: {cb_HeightFt.Text}ft, {cb_HeightIn.Text}in\n"+
-                        $"\nAddress: {tb_stuAddress.Text}\n"+
-                        $"\nEmail: {tb_StuEmail.Text}") ;
+            rtb_Review.Text = "STUDENT INFORMATION"+
+                               "\n\nName: " + tb_stufname.Text + " " + tb_stuMname.Text + " " + tb_stulname.Text +
+                               "\nDOB: " + stu_DOB.Value.ToShortDateString() +
+                               "\nGender: " + cb_Gender.Text +
+                               "\nHeight: " + cb_HeightFt.Text + "ft," + cb_HeightIn.Text + "in"+
+                               "\nAddress: "+ tb_stuAddress.Text +
+                               "\nEmail: "+ tb_StuEmail.Text;
         }
 
-        private void btn_RevPre_Click(object sender, EventArgs e)
+        private void btn_RevPre_Click(object sender, EventArgs e)//review tab previous button
         {
             tabRegistration.SelectTab(1);
         }
