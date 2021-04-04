@@ -139,6 +139,8 @@ namespace CourseProject1A
         {
             tabRegistration.SelectTab(1);
         }
+
+        
     }
     
 }

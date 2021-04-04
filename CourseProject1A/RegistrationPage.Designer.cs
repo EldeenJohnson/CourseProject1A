@@ -31,6 +31,7 @@ namespace CourseProject1A
         {
             this.tabRegistration = new System.Windows.Forms.TabControl();
             this.tab_StuInfo = new System.Windows.Forms.TabPage();
+            this.stu_DOB = new System.Windows.Forms.DateTimePicker();
             this.cb_HeightIn = new System.Windows.Forms.ComboBox();
             this.cb_HeightFt = new System.Windows.Forms.ComboBox();
             this.lbl_Height = new System.Windows.Forms.Label();
@@ -102,7 +103,6 @@ namespace CourseProject1A
             this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
-            this.stu_DOB = new System.Windows.Forms.DateTimePicker();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -161,12 +161,20 @@ namespace CourseProject1A
             this.tab_StuInfo.Controls.Add(this.tb_StuPhone);
             this.tab_StuInfo.Controls.Add(this.tb_stufname);
             this.tab_StuInfo.Controls.Add(this.tb_stulname);
+            this.tab_StuInfo.Cursor = System.Windows.Forms.Cursors.Default;
             this.tab_StuInfo.Location = new System.Drawing.Point(4, 22);
             this.tab_StuInfo.Name = "tab_StuInfo";
             this.tab_StuInfo.Padding = new System.Windows.Forms.Padding(3);
             this.tab_StuInfo.Size = new System.Drawing.Size(774, 856);
             this.tab_StuInfo.TabIndex = 0;
             this.tab_StuInfo.Text = "Student Information";
+            // 
+            // stu_DOB
+            // 
+            this.stu_DOB.Location = new System.Drawing.Point(312, 94);
+            this.stu_DOB.Name = "stu_DOB";
+            this.stu_DOB.Size = new System.Drawing.Size(200, 20);
+            this.stu_DOB.TabIndex = 4;
             // 
             // cb_HeightIn
             // 
@@ -795,6 +803,7 @@ namespace CourseProject1A
             // tab_Review
             // 
             this.tab_Review.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.tab_Review.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tab_Review.Controls.Add(this.rtb_Review);
             this.tab_Review.Controls.Add(this.lbl_RevMessage);
             this.tab_Review.Controls.Add(this.btn_RevPre);
@@ -868,13 +877,6 @@ namespace CourseProject1A
             this.lbl_RegForm.Size = new System.Drawing.Size(445, 42);
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
-            // 
-            // stu_DOB
-            // 
-            this.stu_DOB.Location = new System.Drawing.Point(312, 94);
-            this.stu_DOB.Name = "stu_DOB";
-            this.stu_DOB.Size = new System.Drawing.Size(200, 20);
-            this.stu_DOB.TabIndex = 4;
             // 
             // RegistrationPage
             // 
