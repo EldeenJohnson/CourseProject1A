@@ -22,26 +22,53 @@ namespace CourseProject1A
             try
             {
                 DateTime TodaysDate = DateTime.Now;
+                bool isValid = true;
+                var errorMessage = "\tError!\n\r";
+
+                //Student Information
                 string stuFName = tb_stufname.Text;
                 string stuLName = tb_stulname.Text;
                 string stuMname = tb_stuMname.Text;
                 DateTime stuDOB = stu_DOB.Value;
-                string Height = tbHeight.Text.ToString();                
-                
-                var Address = tbAddress.Text.ToString();
-                string School = cbSchool.Text;
-                bool isValid = true;
-                var errorMessage = "\tError!\n\r";
+                var Height_ft = cb_HeightFt.Text;
+                var Height_in = cb_HeightIn.Text;
+                string StuAddress = tb_stuAddress.Text;
+                string stuEmail = tb_StuEmail.Text;
+                string stuPhone = tb_StuPhone.Text;
+                string PrevSchool = tb_stuPreSch.Text;
+                var BirthEntryNum = tb_StuBEntry.Text;
+                var stuID = tb_StuID.Text;
+                var stuGrade = tb_StuGrade.Text;
+                var stuClass = tb_StuClass.Text;
+                string stuHouse = cb_StuHouse.Text;
+                var stuUpload = tb_StuUpload.Text;
+                string StuAddInfo = rtb_stuAddInfo.Text;
 
-                if (DOB > DateTime.Today)
+                //Parent1 Info
+                string par1fName = tb_parFname.Text;
+                string par1lName = tb_parLname.Text;
+                DateTime par1DOB = Par_DOB.Value;
+                string par1Address = tb_parAddress.Text;
+                string par1Email = tb_ParEmail.Text;
+                string parPhone = tb_Parphone.Text;
+
+                //Parent2 Info
+                string par2fName = tb_Par2Fname.Text;
+                string par2lName = tb_Par2Lname.Text;
+                DateTime par2DOB = Par2_DOB.Value;
+                string par2Address = tb_par2Address.Text;
+                string par2Email = tb_Par2Email.Text;
+                string par2Phone = tb_Parphone.Text;                           
+
+                if (stuDOB >= DateTime.Today || par1DOB >= DateTime.Today || par2DOB >= DateTime.Today)
                 {
-                    isValid = false;
+                    //isValid = false;
                     errorMessage += "Invalid date Selected.\n\r";
                 }
-
-                if (string.IsNullOrWhiteSpace(FName) || String.IsNullOrWhiteSpace(LName)
-                    || string.IsNullOrWhiteSpace(Height) || string.IsNullOrWhiteSpace(Address)
-                    || string.IsNullOrWhiteSpace(School))
+                //Data Validation
+                if (string.IsNullOrWhiteSpace(stuFName) || String.IsNullOrWhiteSpace(stuLName)
+                    || string.IsNullOrWhiteSpace(Height_ft) || string.IsNullOrWhiteSpace(Height_in)
+                    || string.IsNullOrWhiteSpace(StuAddress)|| string.IsNullOrWhiteSpace(stuEmail))
                 {
                     isValid = false;
                     errorMessage += "Please enter missing data.\n\r";
@@ -49,7 +76,7 @@ namespace CourseProject1A
 
                 if (isValid)
                 {
-                    MessageBox.Show($"\tThank you {FName} {LName}.\n\r" +
+                    MessageBox.Show($"\tThank you {stuFName} {stuLName}.\n\r" +
                         $"Your Application was submitted successfully!\n\r" +
                         $"\n\t{TodaysDate}");
                 }
@@ -67,5 +94,5 @@ namespace CourseProject1A
 
         }
     }
-    }
+    
 }
