@@ -34,3 +34,15 @@ C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debu
 C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.exe
 C:\Users\Jermaine Russell\source\repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.pdb
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.LoginPage.resources
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\bin\Debug\CourseProject1A.exe.config
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\bin\Debug\CourseProject1A.exe
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\bin\Debug\CourseProject1A.pdb
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\ApplicationForm.csprojAssemblyReference.cache
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.LoginPage.resources
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.HomeWindow.resources
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.RegistrationPage.resources
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.Properties.Resources.resources
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\ApplicationForm.csproj.GenerateResource.cache
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\ApplicationForm.csproj.CoreCompileInputs.cache
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.exe
+C:\Users\micha\Source\Repos\EldeenJohnson\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.pdb
