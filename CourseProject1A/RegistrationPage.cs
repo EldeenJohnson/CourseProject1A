@@ -51,6 +51,7 @@ namespace CourseProject1A
                 string par1Address = tb_parAddress.Text;
                 string par1Email = tb_ParEmail.Text;
                 string parPhone = tb_Parphone.Text;
+                string parRelationship = tb_ParRelationship.Text;
 
                 //Parent2 Info
                 string par2fName = tb_Par2Fname.Text;
@@ -58,7 +59,8 @@ namespace CourseProject1A
                 DateTime par2DOB = Par2_DOB.Value;
                 string par2Address = tb_par2Address.Text;
                 string par2Email = tb_Par2Email.Text;
-                string par2Phone = tb_Parphone.Text;                           
+                string par2Phone = tb_Parphone.Text;
+                string par2Relationship = tb_Par2Relationship.Text;
 
                 if (stuDOB >= DateTime.Today || par1DOB >= DateTime.Today || par2DOB >= DateTime.Today)
                 {
@@ -67,11 +69,16 @@ namespace CourseProject1A
                 }
                 //Data Validation
                 if (string.IsNullOrWhiteSpace(stuFName) || String.IsNullOrWhiteSpace(stuLName)
+                    || string.IsNullOrWhiteSpace(stuEmail) || string.IsNullOrWhiteSpace(StuAddress)
+                    || string.IsNullOrWhiteSpace(stuGrade) || string.IsNullOrWhiteSpace(BirthEntryNum)
+                    || string.IsNullOrWhiteSpace(stuPhone) || string.IsNullOrWhiteSpace(stuUpload)
                     || string.IsNullOrWhiteSpace(Height_ft) || string.IsNullOrWhiteSpace(Height_in)
                     || string.IsNullOrWhiteSpace(StuAddress)|| string.IsNullOrWhiteSpace(stuEmail)
                     || string.IsNullOrWhiteSpace(par1fName) || string.IsNullOrWhiteSpace(par1lName)
                     || string.IsNullOrWhiteSpace(parPhone) || string.IsNullOrWhiteSpace(par1Address)
-                    || string.IsNullOrWhiteSpace(par1Email)) 
+                    || string.IsNullOrWhiteSpace(parRelationship) || string.IsNullOrWhiteSpace(par1Email)
+                    || string.IsNullOrWhiteSpace(par2fName) || string.IsNullOrWhiteSpace(par2lName) 
+                    || string.IsNullOrWhiteSpace(par2Relationship) || string.IsNullOrWhiteSpace(par2Email)) 
                 {
                     isValid = false;
                     errorMessage += "Please enter missing data.\n\r";
@@ -155,6 +162,7 @@ namespace CourseProject1A
                                "\nAddress: "+ tb_parAddress.Text +
                                "\nEmail: "+ tb_ParEmail.Text +
                                "\nPhone Number: "+ tb_Parphone.Text +
+                               "\nRelationship: "+ tb_ParRelationship +
                                "\n\n" +
                               
                                //Review Parent 2
@@ -164,7 +172,8 @@ namespace CourseProject1A
                                "\nDate Of Birth: " + Par2_DOB.Value +
                                "\nAddress: " + tb_par2Address.Text +
                                "\nEmail: " + tb_Par2Email.Text +
-                               "\nPhone Number: " + tb_Parphone.Text;
+                               "\nPhone Number: " + tb_Parphone.Text +
+                               "\nRelationship: " + tb_ParRelationship;
 
         }
 

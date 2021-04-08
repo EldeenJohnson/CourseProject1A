@@ -103,6 +103,10 @@ namespace CourseProject1A
             this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tb_ParRelationship = new System.Windows.Forms.TextBox();
+            this.tb_Par2Relationship = new System.Windows.Forms.TextBox();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -524,6 +528,10 @@ namespace CourseProject1A
             // 
             this.tab_ParInfo.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tab_ParInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tab_ParInfo.Controls.Add(this.tb_Par2Relationship);
+            this.tab_ParInfo.Controls.Add(this.tb_ParRelationship);
+            this.tab_ParInfo.Controls.Add(this.label12);
+            this.tab_ParInfo.Controls.Add(this.label14);
             this.tab_ParInfo.Controls.Add(this.btn_ParPrev);
             this.tab_ParInfo.Controls.Add(this.btn_ParCancel);
             this.tab_ParInfo.Controls.Add(this.btn_ParNext);
@@ -593,7 +601,7 @@ namespace CourseProject1A
             this.lbl_Parent2.AutoSize = true;
             this.lbl_Parent2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Parent2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lbl_Parent2.Location = new System.Drawing.Point(263, 309);
+            this.lbl_Parent2.Location = new System.Drawing.Point(263, 336);
             this.lbl_Parent2.Name = "lbl_Parent2";
             this.lbl_Parent2.Size = new System.Drawing.Size(69, 20);
             this.lbl_Parent2.TabIndex = 52;
@@ -614,7 +622,7 @@ namespace CourseProject1A
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(174, 527);
+            this.label6.Location = new System.Drawing.Point(174, 554);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 20);
             this.label6.TabIndex = 50;
@@ -624,7 +632,7 @@ namespace CourseProject1A
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(167, 482);
+            this.label7.Location = new System.Drawing.Point(167, 509);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 20);
             this.label7.TabIndex = 49;
@@ -634,7 +642,7 @@ namespace CourseProject1A
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(152, 437);
+            this.label9.Location = new System.Drawing.Point(152, 464);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 20);
             this.label9.TabIndex = 48;
@@ -644,7 +652,7 @@ namespace CourseProject1A
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(180, 389);
+            this.label10.Location = new System.Drawing.Point(180, 416);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 20);
             this.label10.TabIndex = 51;
@@ -654,7 +662,7 @@ namespace CourseProject1A
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(172, 343);
+            this.label11.Location = new System.Drawing.Point(172, 370);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 20);
             this.label11.TabIndex = 47;
@@ -662,28 +670,28 @@ namespace CourseProject1A
             // 
             // Par2_DOB
             // 
-            this.Par2_DOB.Location = new System.Drawing.Point(267, 388);
+            this.Par2_DOB.Location = new System.Drawing.Point(267, 415);
             this.Par2_DOB.Name = "Par2_DOB";
             this.Par2_DOB.Size = new System.Drawing.Size(178, 20);
             this.Par2_DOB.TabIndex = 8;
             // 
             // tb_Par2Email
             // 
-            this.tb_Par2Email.Location = new System.Drawing.Point(267, 529);
+            this.tb_Par2Email.Location = new System.Drawing.Point(267, 556);
             this.tb_Par2Email.Name = "tb_Par2Email";
             this.tb_Par2Email.Size = new System.Drawing.Size(377, 20);
             this.tb_Par2Email.TabIndex = 11;
             // 
             // tb_Par2Phone
             // 
-            this.tb_Par2Phone.Location = new System.Drawing.Point(267, 482);
+            this.tb_Par2Phone.Location = new System.Drawing.Point(267, 509);
             this.tb_Par2Phone.Name = "tb_Par2Phone";
             this.tb_Par2Phone.Size = new System.Drawing.Size(377, 20);
             this.tb_Par2Phone.TabIndex = 10;
             // 
             // tb_par2Address
             // 
-            this.tb_par2Address.Location = new System.Drawing.Point(267, 437);
+            this.tb_par2Address.Location = new System.Drawing.Point(267, 464);
             this.tb_par2Address.Name = "tb_par2Address";
             this.tb_par2Address.Size = new System.Drawing.Size(377, 20);
             this.tb_par2Address.TabIndex = 9;
@@ -691,7 +699,7 @@ namespace CourseProject1A
             // tb_Par2Fname
             // 
             this.tb_Par2Fname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_Par2Fname.Location = new System.Drawing.Point(267, 343);
+            this.tb_Par2Fname.Location = new System.Drawing.Point(267, 370);
             this.tb_Par2Fname.Name = "tb_Par2Fname";
             this.tb_Par2Fname.Size = new System.Drawing.Size(178, 20);
             this.tb_Par2Fname.TabIndex = 7;
@@ -699,7 +707,7 @@ namespace CourseProject1A
             // 
             // tb_Par2Lname
             // 
-            this.tb_Par2Lname.Location = new System.Drawing.Point(474, 343);
+            this.tb_Par2Lname.Location = new System.Drawing.Point(474, 370);
             this.tb_Par2Lname.Name = "tb_Par2Lname";
             this.tb_Par2Lname.Size = new System.Drawing.Size(170, 20);
             this.tb_Par2Lname.TabIndex = 8;
@@ -878,11 +886,45 @@ namespace CourseProject1A
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(152, 286);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(109, 20);
+            this.label14.TabIndex = 54;
+            this.label14.Text = "Relationship";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(152, 597);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(109, 20);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "Relationship";
+            // 
+            // tb_ParRelationship
+            // 
+            this.tb_ParRelationship.Location = new System.Drawing.Point(267, 286);
+            this.tb_ParRelationship.Name = "tb_ParRelationship";
+            this.tb_ParRelationship.Size = new System.Drawing.Size(377, 20);
+            this.tb_ParRelationship.TabIndex = 56;
+            // 
+            // tb_Par2Relationship
+            // 
+            this.tb_Par2Relationship.Location = new System.Drawing.Point(267, 597);
+            this.tb_Par2Relationship.Name = "tb_Par2Relationship";
+            this.tb_Par2Relationship.Size = new System.Drawing.Size(377, 20);
+            this.tb_Par2Relationship.TabIndex = 57;
+            // 
             // RegistrationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 947);
+            this.ClientSize = new System.Drawing.Size(800, 749);
             this.Controls.Add(this.tabRegistration);
             this.Controls.Add(this.lbl_RegForm);
             this.Name = "RegistrationPage";
@@ -975,6 +1017,10 @@ namespace CourseProject1A
         private System.Windows.Forms.Label lbl_RevMessage;
         private System.Windows.Forms.RichTextBox rtb_Review;
         private System.Windows.Forms.DateTimePicker stu_DOB;
+        private System.Windows.Forms.TextBox tb_Par2Relationship;
+        private System.Windows.Forms.TextBox tb_ParRelationship;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
     }
 }
 
