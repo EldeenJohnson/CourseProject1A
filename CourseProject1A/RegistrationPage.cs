@@ -12,9 +12,11 @@ namespace CourseProject1A
 {
     public partial class RegistrationPage : Form
     {
+        private readonly Choice_Christian_AcademyEntities choice_Christian_AcademyEntities;
         public RegistrationPage()
         {
             InitializeComponent();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
@@ -50,7 +52,7 @@ namespace CourseProject1A
                 DateTime par1DOB = Par_DOB.Value;
                 string par1Address = tb_parAddress.Text;
                 string par1Email = tb_ParEmail.Text;
-                string parPhone = tb_Parphone.Text;
+                var parPhone = tb_Parphone.Text;
                 string parRelationship = tb_ParRelationship.Text;
 
                 //Parent2 Info
@@ -68,7 +70,8 @@ namespace CourseProject1A
                     errorMessage += "Invalid date Selected.\n\r";
                 }
                 //Data Validation
-                if (string.IsNullOrWhiteSpace(stuFName) || String.IsNullOrWhiteSpace(stuLName)
+                if 
+                    (string.IsNullOrWhiteSpace(stuFName) || String.IsNullOrWhiteSpace(stuLName)
                     || string.IsNullOrWhiteSpace(stuEmail) || string.IsNullOrWhiteSpace(StuAddress)
                     || string.IsNullOrWhiteSpace(stuGrade) || string.IsNullOrWhiteSpace(BirthEntryNum)
                     || string.IsNullOrWhiteSpace(stuPhone) || string.IsNullOrWhiteSpace(stuUpload)
@@ -86,6 +89,23 @@ namespace CourseProject1A
 
                 if (isValid)
                 {
+                    var studentrecord = new Student();
+                    studentrecord.First_Name = stuFName;
+                    studentrecord.Mid_Name = stuMname;
+                    studentrecord.Last_Name = stuLName;
+                    studentrecord.Address = StuAddress;
+                    studentrecord.Birth_Entry_Number = BirthEntryNum;
+                    studentrecord.Class = stuClass;
+                    studentrecord.Grade = stuGrade;
+
+                    var parentrecord = new Parent();
+                    parentrecord.First_Name = par1fName;
+                    parentrecord.Last_Name = par1lName;
+                    parentrecord.Address = par1Address;
+                   // parentrecord.Contact_Number = parPhone;
+                    parentrecord.Email = par1Email;
+                    parentrecord.Relationship = parRelationship;
+
                     MessageBox.Show($"\tThank you {stuFName} {stuLName}.\n\r" +
                         $"Your Application was submitted successfully!\n\r" +
                         $"\n\t{TodaysDate}");
@@ -182,7 +202,14 @@ namespace CourseProject1A
             tabRegistration.SelectTab(1);
         }
 
+        private void RegistrationPage_Load(object sender, EventArgs e)
+        {
+            var house = choice_Christian_AcademyEntities.Houses.ToList();
+            cb_StuHouse.DisplayMember = "Colour";
+            cb_StuHouse.ValueMember = "id";
+            cb_StuHouse.DataSource = house;
         
+        }
     }
     
 }

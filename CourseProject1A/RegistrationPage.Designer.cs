@@ -69,6 +69,10 @@ namespace CourseProject1A
             this.tb_stufname = new System.Windows.Forms.TextBox();
             this.tb_stulname = new System.Windows.Forms.TextBox();
             this.tab_ParInfo = new System.Windows.Forms.TabPage();
+            this.tb_Par2Relationship = new System.Windows.Forms.TextBox();
+            this.tb_ParRelationship = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.btn_ParPrev = new System.Windows.Forms.Button();
             this.btn_ParCancel = new System.Windows.Forms.Button();
             this.btn_ParNext = new System.Windows.Forms.Button();
@@ -103,10 +107,6 @@ namespace CourseProject1A
             this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tb_ParRelationship = new System.Windows.Forms.TextBox();
-            this.tb_Par2Relationship = new System.Windows.Forms.TextBox();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -354,11 +354,6 @@ namespace CourseProject1A
             // cb_StuHouse
             // 
             this.cb_StuHouse.FormattingEnabled = true;
-            this.cb_StuHouse.Items.AddRange(new object[] {
-            "Red",
-            "Yellow",
-            "Blue",
-            "Green"});
             this.cb_StuHouse.Location = new System.Drawing.Point(312, 590);
             this.cb_StuHouse.Name = "cb_StuHouse";
             this.cb_StuHouse.Size = new System.Drawing.Size(170, 21);
@@ -565,6 +560,40 @@ namespace CourseProject1A
             this.tab_ParInfo.Size = new System.Drawing.Size(774, 856);
             this.tab_ParInfo.TabIndex = 1;
             this.tab_ParInfo.Text = "Parent Information";
+            // 
+            // tb_Par2Relationship
+            // 
+            this.tb_Par2Relationship.Location = new System.Drawing.Point(267, 597);
+            this.tb_Par2Relationship.Name = "tb_Par2Relationship";
+            this.tb_Par2Relationship.Size = new System.Drawing.Size(377, 20);
+            this.tb_Par2Relationship.TabIndex = 57;
+            // 
+            // tb_ParRelationship
+            // 
+            this.tb_ParRelationship.Location = new System.Drawing.Point(267, 286);
+            this.tb_ParRelationship.Name = "tb_ParRelationship";
+            this.tb_ParRelationship.Size = new System.Drawing.Size(377, 20);
+            this.tb_ParRelationship.TabIndex = 56;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(152, 597);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(109, 20);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "Relationship";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(152, 286);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(109, 20);
+            this.label14.TabIndex = 54;
+            this.label14.Text = "Relationship";
             // 
             // btn_ParPrev
             // 
@@ -886,40 +915,6 @@ namespace CourseProject1A
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(152, 286);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(109, 20);
-            this.label14.TabIndex = 54;
-            this.label14.Text = "Relationship";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(152, 597);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 20);
-            this.label12.TabIndex = 55;
-            this.label12.Text = "Relationship";
-            // 
-            // tb_ParRelationship
-            // 
-            this.tb_ParRelationship.Location = new System.Drawing.Point(267, 286);
-            this.tb_ParRelationship.Name = "tb_ParRelationship";
-            this.tb_ParRelationship.Size = new System.Drawing.Size(377, 20);
-            this.tb_ParRelationship.TabIndex = 56;
-            // 
-            // tb_Par2Relationship
-            // 
-            this.tb_Par2Relationship.Location = new System.Drawing.Point(267, 597);
-            this.tb_Par2Relationship.Name = "tb_Par2Relationship";
-            this.tb_Par2Relationship.Size = new System.Drawing.Size(377, 20);
-            this.tb_Par2Relationship.TabIndex = 57;
-            // 
             // RegistrationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -929,6 +924,7 @@ namespace CourseProject1A
             this.Controls.Add(this.lbl_RegForm);
             this.Name = "RegistrationPage";
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.RegistrationPage_Load);
             this.tabRegistration.ResumeLayout(false);
             this.tab_StuInfo.ResumeLayout(false);
             this.tab_StuInfo.PerformLayout();
