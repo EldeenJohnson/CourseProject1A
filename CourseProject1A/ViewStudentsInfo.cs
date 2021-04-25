@@ -21,7 +21,7 @@ namespace CourseProject1A
 
         private void ViewStudentsInfo_Load(object sender, EventArgs e)
         {
-            var studentdata = choice_Christian_AcademyEntities.Student_Detail.ToList();
+            var studentdata = choice_Christian_AcademyEntities.Students.ToList();
             gvstudentlist.DataSource = studentdata;
         }
     }
