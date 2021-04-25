@@ -106,6 +106,15 @@ namespace CourseProject1A
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
 
+                    var parent2record = new Parent();
+                    parent2record.First_Name = par2fName;
+                    parent2record.Last_Name = par2lName;
+                    parent2record.Address = par2Address;
+                    // parentrecord.Contact_Number = parPhone;
+                    parent2record.Email = par2Email;
+                    parent2record.Relationship = par2Relationship;
+
+
                     MessageBox.Show($"\tThank you {stuFName} {stuLName}.\n\r" +
                         $"Your Application was submitted successfully!\n\r" +
                         $"\n\t{TodaysDate}");
@@ -208,8 +217,8 @@ namespace CourseProject1A
             cb_StuHouse.DisplayMember = "Colour";
             cb_StuHouse.ValueMember = "id";
             cb_StuHouse.DataSource = house;
-        
         }
+
     }
     
 }

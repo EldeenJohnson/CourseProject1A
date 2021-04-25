@@ -64,20 +64,21 @@ namespace CourseProject1A
             // newApplicationToolStripMenuItem
             // 
             this.newApplicationToolStripMenuItem.Name = "newApplicationToolStripMenuItem";
-            this.newApplicationToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.newApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newApplicationToolStripMenuItem.Text = "New ";
             this.newApplicationToolStripMenuItem.Click += new System.EventHandler(this.newApplicationToolStripMenuItem_Click);
             // 
             // editApplicationToolStripMenuItem
             // 
             this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
-            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.editApplicationToolStripMenuItem.Text = "Edit ";
+            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editApplicationToolStripMenuItem.Text = "View and Edit";
+            this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             // 
             // searchToolStripMenuItem
@@ -97,7 +98,7 @@ namespace CourseProject1A
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 800);
+            this.ClientSize = new System.Drawing.Size(830, 749);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

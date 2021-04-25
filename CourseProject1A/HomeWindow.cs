@@ -32,5 +32,12 @@ namespace CourseProject1A
         {
             this.Close();
         }
+
+        private void editApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var studentdata = new ViewStudentsInfo();
+            studentdata.MdiParent = this;
+            studentdata.Show();
+        }
     }
 }

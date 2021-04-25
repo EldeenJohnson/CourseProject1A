@@ -63,3 +63,4 @@ C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\Applicati
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\ApplicationForm.csproj.CopyComplete
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.exe
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.pdb
+C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.ViewStudentsInfo.resources
