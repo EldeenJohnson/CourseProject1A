@@ -30,7 +30,7 @@
         {
             this.lbl_RegForm = new System.Windows.Forms.Label();
             this.gvstudentlist = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Editstudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvstudentlist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,21 +53,22 @@
             this.gvstudentlist.Size = new System.Drawing.Size(711, 295);
             this.gvstudentlist.TabIndex = 11;
             // 
-            // button1
+            // Editstudent
             // 
-            this.button1.Location = new System.Drawing.Point(325, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 36);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Editstudent.Location = new System.Drawing.Point(325, 402);
+            this.Editstudent.Name = "Editstudent";
+            this.Editstudent.Size = new System.Drawing.Size(118, 36);
+            this.Editstudent.TabIndex = 12;
+            this.Editstudent.Text = "Edit";
+            this.Editstudent.UseVisualStyleBackColor = true;
+            this.Editstudent.Click += new System.EventHandler(this.Editstudent_Click);
             // 
             // ViewStudentsInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Editstudent);
             this.Controls.Add(this.gvstudentlist);
             this.Controls.Add(this.lbl_RegForm);
             this.Name = "ViewStudentsInfo";
@@ -83,6 +84,6 @@
 
         private System.Windows.Forms.Label lbl_RegForm;
         private System.Windows.Forms.DataGridView gvstudentlist;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Editstudent;
     }
 }
