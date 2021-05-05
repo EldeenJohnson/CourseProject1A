@@ -21,20 +21,29 @@ namespace CourseProject1A
 
         private void ViewStudentsInfo_Load(object sender, EventArgs e)
         {
-            var studentdata = choice_Christian_AcademyEntities.Students.Select(q=> new{
-                ID =q.ID, First_Name =q.First_Name, Middle_Name = q.Mid_Name,
-                Last_Name =q.Last_Name, Address =q.Address, Date_of_Birth =q.Date_of_Birth}).ToList();
+            var studentdata = choice_Christian_AcademyEntities.Students
+                .Select(q=> new{First_Name =q.First_Name, Middle_Name = q.Mid_Name,
+                Last_Name =q.Last_Name, Address =q.Address, Date_of_Birth =q.Date_of_Birth, q.ID}).ToList();
             gvstudentlist.DataSource = studentdata;
-            gvstudentlist.Columns[0].HeaderText = "ID";
-            gvstudentlist.Columns[1].HeaderText = "First Name";
-            gvstudentlist.Columns[2].HeaderText = "Middle Name";
-            gvstudentlist.Columns[3].HeaderText = "Last Name";
+            gvstudentlist.Columns[0].HeaderText = "First Name";
+            gvstudentlist.Columns[1].HeaderText = "Middle Initial";
+            gvstudentlist.Columns[2].HeaderText = "Last Name";
+            gvstudentlist.Columns[3].HeaderText = "Address";
             gvstudentlist.Columns[4].HeaderText = "Date of Birth";
-            gvstudentlist.Columns[5].HeaderText = "Address";
+            gvstudentlist.Columns[5].Visible = false;
+        }
+
+        private void EditStudent_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AddStudent_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void Editstudent_Click(object sender, EventArgs e)
+        private void DeleteStudent_Click(object sender, EventArgs e)
         {
 
         }

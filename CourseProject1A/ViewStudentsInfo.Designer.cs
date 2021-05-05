@@ -30,7 +30,9 @@
         {
             this.lbl_RegForm = new System.Windows.Forms.Label();
             this.gvstudentlist = new System.Windows.Forms.DataGridView();
-            this.Editstudent = new System.Windows.Forms.Button();
+            this.EditStudent = new System.Windows.Forms.Button();
+            this.AddStudent = new System.Windows.Forms.Button();
+            this.DeleteStudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvstudentlist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,22 +55,44 @@
             this.gvstudentlist.Size = new System.Drawing.Size(711, 295);
             this.gvstudentlist.TabIndex = 11;
             // 
-            // Editstudent
+            // EditStudent
             // 
-            this.Editstudent.Location = new System.Drawing.Point(325, 402);
-            this.Editstudent.Name = "Editstudent";
-            this.Editstudent.Size = new System.Drawing.Size(118, 36);
-            this.Editstudent.TabIndex = 12;
-            this.Editstudent.Text = "Edit";
-            this.Editstudent.UseVisualStyleBackColor = true;
-            this.Editstudent.Click += new System.EventHandler(this.Editstudent_Click);
+            this.EditStudent.Location = new System.Drawing.Point(87, 392);
+            this.EditStudent.Name = "EditStudent";
+            this.EditStudent.Size = new System.Drawing.Size(118, 36);
+            this.EditStudent.TabIndex = 12;
+            this.EditStudent.Text = "Edit";
+            this.EditStudent.UseVisualStyleBackColor = true;
+            this.EditStudent.Click += new System.EventHandler(this.Editstudent_Click);
+            // 
+            // AddStudent
+            // 
+            this.AddStudent.Location = new System.Drawing.Point(354, 392);
+            this.AddStudent.Name = "AddStudent";
+            this.AddStudent.Size = new System.Drawing.Size(118, 36);
+            this.AddStudent.TabIndex = 13;
+            this.AddStudent.Text = "Add";
+            this.AddStudent.UseVisualStyleBackColor = true;
+            this.AddStudent.Click += new System.EventHandler(this.AddStudent_Click);
+            // 
+            // DeleteStudent
+            // 
+            this.DeleteStudent.Location = new System.Drawing.Point(599, 392);
+            this.DeleteStudent.Name = "DeleteStudent";
+            this.DeleteStudent.Size = new System.Drawing.Size(118, 36);
+            this.DeleteStudent.TabIndex = 14;
+            this.DeleteStudent.Text = "Delete";
+            this.DeleteStudent.UseVisualStyleBackColor = true;
+            this.DeleteStudent.Click += new System.EventHandler(this.DeleteStudent_Click);
             // 
             // ViewStudentsInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Editstudent);
+            this.Controls.Add(this.DeleteStudent);
+            this.Controls.Add(this.AddStudent);
+            this.Controls.Add(this.EditStudent);
             this.Controls.Add(this.gvstudentlist);
             this.Controls.Add(this.lbl_RegForm);
             this.Name = "ViewStudentsInfo";
@@ -84,6 +108,8 @@
 
         private System.Windows.Forms.Label lbl_RegForm;
         private System.Windows.Forms.DataGridView gvstudentlist;
-        private System.Windows.Forms.Button Editstudent;
+        private System.Windows.Forms.Button EditStudent;
+        private System.Windows.Forms.Button AddStudent;
+        private System.Windows.Forms.Button DeleteStudent;
     }
 }
