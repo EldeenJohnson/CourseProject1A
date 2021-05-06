@@ -39,9 +39,6 @@ namespace CourseProject1A
                 string stuPhone = tb_StuPhone.Text;
                 string PrevSchool = tb_stuPreSch.Text;
                 var BirthEntryNum = tb_StuBEntry.Text;
-                var stuID = tb_StuID.Text;
-                var stuGrade = tb_StuGrade.Text;
-                var stuClass = tb_StuClass.Text;
                 string stuHouse = cb_StuHouse.Text;
                 var stuUpload = tb_StuUpload.Text;
                 string StuAddInfo = rtb_stuAddInfo.Text;
@@ -71,9 +68,9 @@ namespace CourseProject1A
                 }
                 //Data Validation
                 if 
-                    (string.IsNullOrWhiteSpace(stuFName) || String.IsNullOrWhiteSpace(stuLName)
+                    (string.IsNullOrWhiteSpace(stuFName) || string.IsNullOrWhiteSpace(stuLName)
                     || string.IsNullOrWhiteSpace(stuEmail) || string.IsNullOrWhiteSpace(StuAddress)
-                    || string.IsNullOrWhiteSpace(stuGrade) || string.IsNullOrWhiteSpace(BirthEntryNum)
+                    || string.IsNullOrWhiteSpace(BirthEntryNum)
                     || string.IsNullOrWhiteSpace(stuPhone) || string.IsNullOrWhiteSpace(stuUpload)
                     || string.IsNullOrWhiteSpace(Height_ft) || string.IsNullOrWhiteSpace(Height_in)
                     || string.IsNullOrWhiteSpace(StuAddress)|| string.IsNullOrWhiteSpace(stuEmail)
@@ -95,8 +92,6 @@ namespace CourseProject1A
                     studentrecord.Last_Name = stuLName;
                     studentrecord.Address = StuAddress;
                     studentrecord.Birth_Entry_Number = BirthEntryNum;
-                    studentrecord.Class = stuClass;
-                    studentrecord.Grade = stuGrade;
 
                     var parentrecord = new Parent();
                     parentrecord.First_Name = par1fName;
@@ -175,9 +170,6 @@ namespace CourseProject1A
                                "\nPhone Number: "+ tb_StuPhone.Text +
                                "\nPrevious School: "+ tb_stuPreSch.Text +
                                "\nBirth Entry Number: "+ tb_StuBEntry.Text +
-                               "\nID: "+ tb_StuID.Text +
-                               "\nGrade: "+ tb_StuGrade.Text +
-                               "\nClass: "+ tb_StuClass.Text +
                                "\nHouse: "+ cb_StuHouse.Text +
                                "\nPicture: "+ tb_StuUpload.Text +
                                "\nAdditional Info: "+ rtb_stuAddInfo.Text +
@@ -219,6 +211,38 @@ namespace CourseProject1A
             cb_StuHouse.DataSource = house;
         }
 
+        private void Submitbutton_Click(object sender, EventArgs e)
+        {
+            var newstudent = new Student
+            {
+                First_Name = tb_stufname.Text,
+                Last_Name = tb_stulname.Text,
+                Mid_Name = tb_stuMname.Text,
+                Gender = cb_Gender.Text,
+                Address = tb_stuAddress.Text,
+                Date_of_Birth = stu_DOB.Value
+            };
+            var newparent = new Parent
+            {
+                First_Name = tb_parLname.Text,
+                Last_Name = tb_parLname.Text,
+                Address = tb_parAddress.Text,
+               // Contact_Number = tb_Parphone.Text,
+                Relationship = tb_ParRelationship.Text,
+                Email = tb_ParEmail.Text,
+                
+
+            };
+            var secondparent = new Parent
+            {
+                First_Name = tb_Par2Fname.Text,
+                Last_Name = tb_Par2Lname.Text,
+                Address = tb_par2Address.Text,
+               // Contact_Number = tb_Par2Phone.Text,
+                Relationship = tb_Par2Relationship.Text,
+                Email = tb_Par2Email.Text,
+            };
+        }
     }
-    
-}
+}    
+
