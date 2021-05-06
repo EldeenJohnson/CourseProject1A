@@ -55,11 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddEditStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditStaff.Designer.cs">
+      <DependentUpon>AddEditStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddEditStudent.Designer.cs">
       <DependentUpon>AddEditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditTeacher.Designer.cs">
+      <DependentUpon>AddEditTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Emergency_contact.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
@@ -126,14 +138,32 @@
     <Compile Include="Test_Result.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStaff.Designer.cs">
+      <DependentUpon>ViewStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewStudentsInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewStudentsInfo.Designer.cs">
       <DependentUpon>ViewStudentsInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewTeachers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTeachers.Designer.cs">
+      <DependentUpon>ViewTeachers.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddEditStaff.resx">
+      <DependentUpon>AddEditStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditStudent.resx">
       <DependentUpon>AddEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddEditTeacher.resx">
+      <DependentUpon>AddEditTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
@@ -153,8 +183,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewStaff.resx">
+      <DependentUpon>ViewStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewStudentsInfo.resx">
       <DependentUpon>ViewStudentsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTeachers.resx">
+      <DependentUpon>ViewTeachers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

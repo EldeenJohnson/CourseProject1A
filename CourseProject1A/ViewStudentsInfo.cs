@@ -74,6 +74,7 @@ namespace CourseProject1A
             RegistrationPage registrationPage = new RegistrationPage();
             registrationPage.MdiParent = this.MdiParent;
             registrationPage.Show();
+            this.Close();
         }
 
         private void Refreshbutton_Click(object sender, EventArgs e)

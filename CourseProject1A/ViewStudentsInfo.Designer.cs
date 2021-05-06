@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewStudentsInfo));
             this.gvstudentdata = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.Editbotton = new System.Windows.Forms.Button();
@@ -49,9 +50,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(270, 25);
+            this.label1.Location = new System.Drawing.Point(279, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 37);
             this.label1.TabIndex = 1;
@@ -109,6 +111,7 @@
             // 
             // ViewStudentsInfo
             // 
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(797, 500);
             this.Controls.Add(this.Refreshbutton);
             this.Controls.Add(this.Addbutton);

@@ -29,8 +29,11 @@ namespace CourseProject1A
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationPage));
             this.tabRegistration = new System.Windows.Forms.TabControl();
             this.tab_StuInfo = new System.Windows.Forms.TabPage();
+            this.StudentID = new System.Windows.Forms.Label();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.stu_DOB = new System.Windows.Forms.DateTimePicker();
             this.cb_HeightIn = new System.Windows.Forms.ComboBox();
             this.cb_HeightFt = new System.Windows.Forms.ComboBox();
@@ -101,8 +104,6 @@ namespace CourseProject1A
             this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.StudentID = new System.Windows.Forms.Label();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -163,6 +164,22 @@ namespace CourseProject1A
             this.tab_StuInfo.Size = new System.Drawing.Size(774, 856);
             this.tab_StuInfo.TabIndex = 0;
             this.tab_StuInfo.Text = "Student Information";
+            // 
+            // StudentID
+            // 
+            this.StudentID.AutoSize = true;
+            this.StudentID.Location = new System.Drawing.Point(384, 13);
+            this.StudentID.Name = "StudentID";
+            this.StudentID.Size = new System.Drawing.Size(0, 13);
+            this.StudentID.TabIndex = 47;
+            this.StudentID.Visible = false;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(755, -2);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 675);
+            this.vScrollBar1.TabIndex = 46;
             // 
             // stu_DOB
             // 
@@ -852,6 +869,7 @@ namespace CourseProject1A
             // lbl_RegForm
             // 
             this.lbl_RegForm.AutoSize = true;
+            this.lbl_RegForm.BackColor = System.Drawing.Color.Transparent;
             this.lbl_RegForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RegForm.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lbl_RegForm.Location = new System.Drawing.Point(172, 8);
@@ -860,26 +878,11 @@ namespace CourseProject1A
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(755, -2);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 675);
-            this.vScrollBar1.TabIndex = 46;
-            // 
-            // StudentID
-            // 
-            this.StudentID.AutoSize = true;
-            this.StudentID.Location = new System.Drawing.Point(384, 13);
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Size = new System.Drawing.Size(0, 13);
-            this.StudentID.TabIndex = 47;
-            this.StudentID.Visible = false;
-            // 
             // RegistrationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 749);
             this.Controls.Add(this.tabRegistration);
             this.Controls.Add(this.lbl_RegForm);

@@ -39,5 +39,33 @@ namespace CourseProject1A
             studentdata.MdiParent = this;
             studentdata.Show();
         }
+
+        private void manageStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var StaffData = new ViewStaff();
+            StaffData.MdiParent = this;
+            StaffData.Show();
+        }
+
+        private void newStaffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var AddEditStaff = new AddEditStaff();
+            AddEditStaff.MdiParent = this.MdiParent;
+            AddEditStaff.Show();
+        }
+
+        private void manageTeachersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var TeacherData = new ViewTeachers();
+            TeacherData.MdiParent = this;
+            TeacherData.Show();
+        }
+
+        private void newTeacherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var AddEditTeacher = new AddEditTeacher();
+            AddEditTeacher.MdiParent = this.MdiParent;
+            AddEditTeacher.Show();
+        }
     }
 }

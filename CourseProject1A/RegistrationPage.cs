@@ -242,6 +242,8 @@ namespace CourseProject1A
                 Relationship = tb_Par2Relationship.Text,
                 Email = tb_Par2Email.Text,
             };
+            choice_Christian_AcademyEntities.SaveChanges();
+            this.Close();
         }
     }
 }    

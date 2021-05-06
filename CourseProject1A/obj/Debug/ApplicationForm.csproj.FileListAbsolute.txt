@@ -65,3 +65,7 @@ C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CoursePro
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.pdb
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.ViewStudentsInfo.resources
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.AddEditStudent.resources
+C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.AddEditStaff.resources
+C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.ViewStaff.resources
+C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.AddEditTeacher.resources
+C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.ViewTeachers.resources
