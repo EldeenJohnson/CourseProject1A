@@ -12,9 +12,11 @@ namespace CourseProject1A
 {
     public partial class RegistrationPage : Form
     {
+        private readonly Choice_Christian_AcademyEntities choice_Christian_AcademyEntities;
         public RegistrationPage()
         {
             InitializeComponent();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
@@ -37,9 +39,6 @@ namespace CourseProject1A
                 string stuPhone = tb_StuPhone.Text;
                 string PrevSchool = tb_stuPreSch.Text;
                 var BirthEntryNum = tb_StuBEntry.Text;
-                var stuID = tb_StuID.Text;
-                var stuGrade = tb_StuGrade.Text;
-                var stuClass = tb_StuClass.Text;
                 string stuHouse = cb_StuHouse.Text;
                 var stuUpload = tb_StuUpload.Text;
                 string StuAddInfo = rtb_stuAddInfo.Text;
@@ -50,7 +49,8 @@ namespace CourseProject1A
                 DateTime par1DOB = Par_DOB.Value;
                 string par1Address = tb_parAddress.Text;
                 string par1Email = tb_ParEmail.Text;
-                string parPhone = tb_Parphone.Text;
+                var parPhone = tb_Parphone.Text;
+                string parRelationship = tb_ParRelationship.Text;
 
                 //Parent2 Info
                 string par2fName = tb_Par2Fname.Text;
@@ -58,7 +58,8 @@ namespace CourseProject1A
                 DateTime par2DOB = Par2_DOB.Value;
                 string par2Address = tb_par2Address.Text;
                 string par2Email = tb_Par2Email.Text;
-                string par2Phone = tb_Parphone.Text;                           
+                string par2Phone = tb_Parphone.Text;
+                string par2Relationship = tb_Par2Relationship.Text;
 
                 if (stuDOB >= DateTime.Today || par1DOB >= DateTime.Today || par2DOB >= DateTime.Today)
                 {
@@ -66,9 +67,18 @@ namespace CourseProject1A
                     errorMessage += "Invalid date Selected.\n\r";
                 }
                 //Data Validation
-                if (string.IsNullOrWhiteSpace(stuFName) || String.IsNullOrWhiteSpace(stuLName)
+                if 
+                    (string.IsNullOrWhiteSpace(stuFName) || string.IsNullOrWhiteSpace(stuLName)
+                    || string.IsNullOrWhiteSpace(stuEmail) || string.IsNullOrWhiteSpace(StuAddress)
+                    || string.IsNullOrWhiteSpace(BirthEntryNum)
+                    || string.IsNullOrWhiteSpace(stuPhone) || string.IsNullOrWhiteSpace(stuUpload)
                     || string.IsNullOrWhiteSpace(Height_ft) || string.IsNullOrWhiteSpace(Height_in)
-                    || string.IsNullOrWhiteSpace(StuAddress)|| string.IsNullOrWhiteSpace(stuEmail))
+                    || string.IsNullOrWhiteSpace(StuAddress)|| string.IsNullOrWhiteSpace(stuEmail)
+                    || string.IsNullOrWhiteSpace(par1fName) || string.IsNullOrWhiteSpace(par1lName)
+                    || string.IsNullOrWhiteSpace(parPhone) || string.IsNullOrWhiteSpace(par1Address)
+                    || string.IsNullOrWhiteSpace(parRelationship) || string.IsNullOrWhiteSpace(par1Email)
+                    || string.IsNullOrWhiteSpace(par2fName) || string.IsNullOrWhiteSpace(par2lName) 
+                    || string.IsNullOrWhiteSpace(par2Relationship) || string.IsNullOrWhiteSpace(par2Email)) 
                 {
                     isValid = false;
                     errorMessage += "Please enter missing data.\n\r";
@@ -76,6 +86,30 @@ namespace CourseProject1A
 
                 if (isValid)
                 {
+                    var studentrecord = new Student();
+                    studentrecord.First_Name = stuFName;
+                    studentrecord.Mid_Name = stuMname;
+                    studentrecord.Last_Name = stuLName;
+                    studentrecord.Address = StuAddress;
+                    studentrecord.Birth_Entry_Number = BirthEntryNum;
+
+                    var parentrecord = new Parent();
+                    parentrecord.First_Name = par1fName;
+                    parentrecord.Last_Name = par1lName;
+                    parentrecord.Address = par1Address;
+                   // parentrecord.Contact_Number = parPhone;
+                    parentrecord.Email = par1Email;
+                    parentrecord.Relationship = parRelationship;
+
+                    var parent2record = new Parent();
+                    parent2record.First_Name = par2fName;
+                    parent2record.Last_Name = par2lName;
+                    parent2record.Address = par2Address;
+                    // parentrecord.Contact_Number = parPhone;
+                    parent2record.Email = par2Email;
+                    parent2record.Relationship = par2Relationship;
+
+
                     MessageBox.Show($"\tThank you {stuFName} {stuLName}.\n\r" +
                         $"Your Application was submitted successfully!\n\r" +
                         $"\n\t{TodaysDate}");
@@ -136,9 +170,6 @@ namespace CourseProject1A
                                "\nPhone Number: "+ tb_StuPhone.Text +
                                "\nPrevious School: "+ tb_stuPreSch.Text +
                                "\nBirth Entry Number: "+ tb_StuBEntry.Text +
-                               "\nID: "+ tb_StuID.Text +
-                               "\nGrade: "+ tb_StuGrade.Text +
-                               "\nClass: "+ tb_StuClass.Text +
                                "\nHouse: "+ cb_StuHouse.Text +
                                "\nPicture: "+ tb_StuUpload.Text +
                                "\nAdditional Info: "+ rtb_stuAddInfo.Text +
@@ -152,6 +183,7 @@ namespace CourseProject1A
                                "\nAddress: "+ tb_parAddress.Text +
                                "\nEmail: "+ tb_ParEmail.Text +
                                "\nPhone Number: "+ tb_Parphone.Text +
+                               "\nRelationship: "+ tb_ParRelationship +
                                "\n\n" +
                               
                                //Review Parent 2
@@ -161,7 +193,8 @@ namespace CourseProject1A
                                "\nDate Of Birth: " + Par2_DOB.Value +
                                "\nAddress: " + tb_par2Address.Text +
                                "\nEmail: " + tb_Par2Email.Text +
-                               "\nPhone Number: " + tb_Parphone.Text;
+                               "\nPhone Number: " + tb_Parphone.Text +
+                               "\nRelationship: " + tb_ParRelationship;
 
         }
 
@@ -170,7 +203,48 @@ namespace CourseProject1A
             tabRegistration.SelectTab(1);
         }
 
-        
+        private void RegistrationPage_Load(object sender, EventArgs e)
+        {
+            var house = choice_Christian_AcademyEntities.Houses.ToList();
+            cb_StuHouse.DisplayMember = "Colour";
+            cb_StuHouse.ValueMember = "id";
+            cb_StuHouse.DataSource = house;
+        }
+
+        private void Submitbutton_Click(object sender, EventArgs e)
+        {
+            var newstudent = new Student
+            {
+                First_Name = tb_stufname.Text,
+                Last_Name = tb_stulname.Text,
+                Mid_Name = tb_stuMname.Text,
+                Gender = cb_Gender.Text,
+                Address = tb_stuAddress.Text,
+                Date_of_Birth = stu_DOB.Value
+            };
+            var newparent = new Parent
+            {
+                First_Name = tb_parLname.Text,
+                Last_Name = tb_parLname.Text,
+                Address = tb_parAddress.Text,
+               // Contact_Number = tb_Parphone.Text,
+                Relationship = tb_ParRelationship.Text,
+                Email = tb_ParEmail.Text,
+                
+
+            };
+            var secondparent = new Parent
+            {
+                First_Name = tb_Par2Fname.Text,
+                Last_Name = tb_Par2Lname.Text,
+                Address = tb_par2Address.Text,
+               // Contact_Number = tb_Par2Phone.Text,
+                Relationship = tb_Par2Relationship.Text,
+                Email = tb_Par2Email.Text,
+            };
+            choice_Christian_AcademyEntities.SaveChanges();
+            this.Close();
+        }
     }
-    
-}
+}    
+
