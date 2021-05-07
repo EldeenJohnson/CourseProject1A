@@ -144,7 +144,7 @@ namespace CourseProject1A
                                "\nAdditional Info: "+ rtb_stuAddInfo.Text +
                                "\n\n"+
 
-                               //review Parent 1
+                               //Review Parent 1
                                "PARENT 1 INFORMATION"+
                                "\nFirst Name: "+ tb_parFname.Text +
                                "\nLast Name: "+ tb_parLname.Text +
