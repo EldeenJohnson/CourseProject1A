@@ -63,6 +63,7 @@ namespace CourseProject1A
             this.studentApplicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newApplicationToolStripMenuItem,
             this.editApplicationToolStripMenuItem});
+            this.studentApplicationToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.studentApplicationToolStripMenuItem.Name = "studentApplicationToolStripMenuItem";
             this.studentApplicationToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
             this.studentApplicationToolStripMenuItem.Text = "Student Application";
@@ -86,6 +87,7 @@ namespace CourseProject1A
             this.staffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newStaffToolStripMenuItem,
             this.manageStaffToolStripMenuItem});
+            this.staffToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
             this.staffToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.staffToolStripMenuItem.Text = "Staff";
@@ -93,14 +95,14 @@ namespace CourseProject1A
             // newStaffToolStripMenuItem
             // 
             this.newStaffToolStripMenuItem.Name = "newStaffToolStripMenuItem";
-            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newStaffToolStripMenuItem.Text = "New Staff";
             this.newStaffToolStripMenuItem.Click += new System.EventHandler(this.newStaffToolStripMenuItem_Click);
             // 
             // manageStaffToolStripMenuItem
             // 
             this.manageStaffToolStripMenuItem.Name = "manageStaffToolStripMenuItem";
-            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageStaffToolStripMenuItem.Text = "Manage Staff";
             this.manageStaffToolStripMenuItem.Click += new System.EventHandler(this.manageStaffToolStripMenuItem_Click);
             // 
@@ -109,6 +111,7 @@ namespace CourseProject1A
             this.teacherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newTeacherToolStripMenuItem,
             this.manageTeachersToolStripMenuItem});
+            this.teacherToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.teacherToolStripMenuItem.Name = "teacherToolStripMenuItem";
             this.teacherToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.teacherToolStripMenuItem.Text = "Teacher";
@@ -116,19 +119,20 @@ namespace CourseProject1A
             // newTeacherToolStripMenuItem
             // 
             this.newTeacherToolStripMenuItem.Name = "newTeacherToolStripMenuItem";
-            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newTeacherToolStripMenuItem.Text = "New Teacher";
             this.newTeacherToolStripMenuItem.Click += new System.EventHandler(this.newTeacherToolStripMenuItem_Click);
             // 
             // manageTeachersToolStripMenuItem
             // 
             this.manageTeachersToolStripMenuItem.Name = "manageTeachersToolStripMenuItem";
-            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manageTeachersToolStripMenuItem.Text = "Manage Teachers";
             this.manageTeachersToolStripMenuItem.Click += new System.EventHandler(this.manageTeachersToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.exitToolStripMenuItem.Text = "Exit";
