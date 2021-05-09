@@ -32,15 +32,15 @@ namespace CourseProject1A
                 string stuLName = tb_stulname.Text;
                 string stuMname = tb_stuMname.Text;
                 DateTime stuDOB = stu_DOB.Value;
-                string stuGender = cb_Gender.Text;
-                var Height_ft = cb_HeightFt.Text;
-                var Height_in = cb_HeightIn.Text;
+                string stuGender = cb_Gender.Text.ToString();
+                var Height_ft = cb_HeightFt.Text.ToString();
+                var Height_in = cb_HeightIn.Text.ToString();
                 string StuAddress = tb_stuAddress.Text;
                 string stuEmail = tb_StuEmail.Text;
                 string stuPhone = tb_StuPhone.Text;
                 string PrevSchool = tb_stuPreSch.Text;
                 var BirthEntryNum = tb_StuBEntry.Text;
-                string stuHouse = cb_StuHouse.Text;
+                string stuHouse = cb_StuHouse.Text.ToString();
                 var stuUpload = tb_StuUpload.Text;
                 string StuAddInfo = rtb_stuAddInfo.Text;
 
