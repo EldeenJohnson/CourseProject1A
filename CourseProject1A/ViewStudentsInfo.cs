@@ -53,6 +53,7 @@ namespace CourseProject1A
 
         private void Deletebutton_Click(object sender, EventArgs e)
         {
+            try { 
             //Get ID for selected row
             var id = (int)gvstudentdata.SelectedRows[0].Cells["ID"].Value;
             //Query database
@@ -60,8 +61,13 @@ namespace CourseProject1A
             //Delete data and save
             choice_Christian_AcademyEntities.Students.Remove(student);
             choice_Christian_AcademyEntities.SaveChanges();
-
+            MessageBox.Show("Information Deleted");
             gvstudentdata.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void Closebutton_Click(object sender, EventArgs e)

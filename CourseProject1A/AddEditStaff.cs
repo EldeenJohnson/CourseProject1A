@@ -21,6 +21,7 @@ namespace CourseProject1A
             InitializeComponent();
             lbl_Title.Text = "Add New Staff";
             isEditMode = false;
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
         }
         public AddEditStaff(Staff editstaffData)
         {
@@ -38,7 +39,7 @@ namespace CourseProject1A
             tbLName.Text = StaffData.Last_Name;
             tbAddress.Text = StaffData.Address;
             tbQualification.Text = StaffData.Qualification;
-            tbDOE.Value = StaffData.Date_of_Employment;
+            tbDOE.Value = (DateTime)StaffData.Date_of_Employment;
             tbJob_Title.Text = StaffData.Job_Title;
         }
 
@@ -46,34 +47,45 @@ namespace CourseProject1A
         {
             if (isEditMode)
             {
-            var id = int.Parse(lblID.Text);
-            var StaffData = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
-            StaffData.First_Name = tbFName.Text;
-            StaffData.Last_Name = tbLName.Text;
-            StaffData.Address = tbAddress.Text;
-            StaffData.Qualification = tbQualification.Text;
-            StaffData.Date_of_Employment = tbDOE.Value;
-            StaffData.Job_Title = tbJob_Title.Text;
-
-
-            //Save Changes
-            choice_Christian_AcademyEntities.SaveChanges();
-
-            this.Close();
+                try { 
+                            var id = int.Parse(lblID.Text);
+                            var StaffData = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
+                            StaffData.First_Name = tbFName.Text;
+                            StaffData.Last_Name = tbLName.Text;
+                            StaffData.Address = tbAddress.Text;
+                            StaffData.Qualification = tbQualification.Text;
+                            StaffData.Date_of_Employment = tbDOE.Value;
+                            StaffData.Job_Title = tbJob_Title.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+                //Save Changes
+                choice_Christian_AcademyEntities.SaveChanges();
+                            MessageBox.Show("Information Edited");
+                            this.Close();
             }
             else
             {
-                var newStaff = new Staff
+                try { 
+                           var StaffData = new Staff
+                        {
+                            First_Name = tbFName.Text,
+                            Last_Name = tbLName.Text,
+                            Address = tbAddress.Text,
+                            Qualification = tbQualification.Text,
+                            Date_of_Employment = tbDOE.Value,
+                            Job_Title = tbJob_Title.Text
+                        };
+                    choice_Christian_AcademyEntities.Staffs.Add(StaffData);
+                }
+                catch (Exception ex)
                 {
-                    First_Name = tbFName.Text,
-                    Last_Name = tbLName.Text,
-                    Address = tbAddress.Text,
-                    Qualification = tbQualification.Text,
-                    Date_of_Employment = tbDOE.Value,
-                    Job_Title = tbJob_Title.Text
-                };
-                choice_Christian_AcademyEntities.Staffs.Add(newStaff);
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
                 choice_Christian_AcademyEntities.SaveChanges();
+                MessageBox.Show("Information Submitted");
                 this.Close();
             }
         }

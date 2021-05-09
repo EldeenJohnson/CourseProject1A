@@ -14,12 +14,6 @@ namespace CourseProject1A
     
     public partial class Parent
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Parent()
-        {
-            this.Student_Detail = new HashSet<Student_Detail>();
-        }
-    
         public int ID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
@@ -31,7 +25,5 @@ namespace CourseProject1A
         public Nullable<System.DateTime> Date_of_Birth { get; set; }
     
         public virtual Student Student { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Student_Detail> Student_Detail { get; set; }
     }
 }

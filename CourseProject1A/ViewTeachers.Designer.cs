@@ -47,6 +47,7 @@
             this.Refreshbutton.TabIndex = 13;
             this.Refreshbutton.Text = "Refresh";
             this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
             // 
             // Addbutton
             // 

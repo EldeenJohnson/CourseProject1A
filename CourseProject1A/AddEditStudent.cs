@@ -33,19 +33,25 @@ namespace CourseProject1A
 
         private void SaveChanges_Click(object sender, EventArgs e)
         {
-            var id = int.Parse(lblId.Text);
-            var studentdata = choice_Christian_AcademyEntities.Students.FirstOrDefault(q => q.ID == id);
-            studentdata.First_Name = tbFName.Text;
-            studentdata.Mid_Name = tbMInitial.Text;
-            studentdata.Last_Name = tbLName.Text;
-            studentdata.Gender = tbGender.Text;
-            studentdata.Date_of_Birth = tbDOM.Value;
-            studentdata.Address = tbAddress.Text;
-
+            try { 
+                    var id = int.Parse(lblId.Text);
+                    var studentdata = choice_Christian_AcademyEntities.Students.FirstOrDefault(q => q.ID == id);
+                    studentdata.First_Name = tbFName.Text;
+                    studentdata.Mid_Name = tbMInitial.Text;
+                    studentdata.Last_Name = tbLName.Text;
+                    studentdata.Gender = tbGender.Text;
+                    studentdata.Date_of_Birth = tbDOM.Value;
+                    studentdata.Address = tbAddress.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
             //Save Changes
             choice_Christian_AcademyEntities.SaveChanges();
-
+            MessageBox.Show("Information Edited");
             this.Close();
+           
         }
         private void Cancel_Click(object sender, EventArgs e)
         {

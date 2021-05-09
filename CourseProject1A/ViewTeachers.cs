@@ -58,21 +58,34 @@ namespace CourseProject1A
 
         private void Deletebutton_Click(object sender, EventArgs e)
         {
-            //Get ID for selected row
-            var id = (int)gvteacherdata.SelectedRows[0].Cells["ID"].Value;
-            //Query database
-            var teacher = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
+            try
+            {
+                //Get ID for selected row
+                var id = (int)gvteacherdata.SelectedRows[0].Cells["ID"].Value;
+                //Query database
+                var teacher = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
 
-            choice_Christian_AcademyEntities.Teachers.Remove(teacher);
-            choice_Christian_AcademyEntities.SaveChanges();
-
-            gvteacherdata.Refresh();
+                choice_Christian_AcademyEntities.Teachers.Remove(teacher);
+                choice_Christian_AcademyEntities.SaveChanges();
+                MessageBox.Show("Information Deleted");
+                gvteacherdata.Refresh();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
 
         }
 
         private void Closebutton_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void Refreshbutton_Click(object sender, EventArgs e)
+        {
+            gvteacherdata.Refresh();
+           
         }
     }
 }

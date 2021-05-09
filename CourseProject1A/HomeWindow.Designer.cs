@@ -37,15 +37,16 @@ namespace CourseProject1A
             this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.teacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageTeachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menuStrip1.BackgroundImage")));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.studentApplicationToolStripMenuItem,
             this.staffToolStripMenuItem,
@@ -53,7 +54,7 @@ namespace CourseProject1A
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(830, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(683, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -92,23 +93,16 @@ namespace CourseProject1A
             // newStaffToolStripMenuItem
             // 
             this.newStaffToolStripMenuItem.Name = "newStaffToolStripMenuItem";
-            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.newStaffToolStripMenuItem.Text = "New Staff";
             this.newStaffToolStripMenuItem.Click += new System.EventHandler(this.newStaffToolStripMenuItem_Click);
             // 
             // manageStaffToolStripMenuItem
             // 
             this.manageStaffToolStripMenuItem.Name = "manageStaffToolStripMenuItem";
-            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.manageStaffToolStripMenuItem.Text = "Manage Staff";
             this.manageStaffToolStripMenuItem.Click += new System.EventHandler(this.manageStaffToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // teacherToolStripMenuItem
             // 
@@ -122,24 +116,31 @@ namespace CourseProject1A
             // newTeacherToolStripMenuItem
             // 
             this.newTeacherToolStripMenuItem.Name = "newTeacherToolStripMenuItem";
-            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.newTeacherToolStripMenuItem.Text = "New Teacher";
             this.newTeacherToolStripMenuItem.Click += new System.EventHandler(this.newTeacherToolStripMenuItem_Click);
             // 
             // manageTeachersToolStripMenuItem
             // 
             this.manageTeachersToolStripMenuItem.Name = "manageTeachersToolStripMenuItem";
-            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.manageTeachersToolStripMenuItem.Text = "Manage Teachers";
             this.manageTeachersToolStripMenuItem.Click += new System.EventHandler(this.manageTeachersToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(830, 749);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(683, 749);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;

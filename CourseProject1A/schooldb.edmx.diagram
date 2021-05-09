@@ -4,27 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="82aa89099ad64339be4673c4231d4e47" Name="Diagram1" ZoomLevel="47">
+      <Diagram DiagramId="82aa89099ad64339be4673c4231d4e47" Name="Diagram1" ZoomLevel="81">
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Emergency_contact" Width="1.5" PointX="1.5" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.House" Width="1.5" PointX="7.625" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Parent" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Parent" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Registration" Width="1.5" PointX="9.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Staff" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Staff" Width="1.5" PointX="4.625" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Student" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Student_Detail" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Subject_Table" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Teacher" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Test_Result" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Staff_Emergency_contact" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Teacher_Emergency_contact" ManuallyRouted="false" />
-        <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Student_Detail_House" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Parent_Student" ManuallyRouted="false" />
-        <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Student_Detail_Parent" ManuallyRouted="false" />
-        <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Student_Detail_Student" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Test_Result_Student" ManuallyRouted="false" />
-        <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Student_Detail_Teacher" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.AMOUNT" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.CLASS" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.GENDER" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.GRADE" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.PTA" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Staff_Qual" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

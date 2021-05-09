@@ -12,18 +12,13 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class Student_Detail
+    public partial class CLASS
     {
         public int ID { get; set; }
-        public int Student_ID { get; set; }
-        public int Teacher_ID { get; set; }
-        public int House_ID { get; set; }
-        public int Parent_ID { get; set; }
-        public Nullable<int> Test_Result_ID { get; set; }
-    
-        public virtual House House { get; set; }
-        public virtual Parent Parent { get; set; }
-        public virtual Student Student { get; set; }
-        public virtual Teacher Teacher { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
+        public string Qualification { get; set; }
+        public string Grade { get; set; }
+        public Nullable<int> Emergency_ID { get; set; }
     }
 }

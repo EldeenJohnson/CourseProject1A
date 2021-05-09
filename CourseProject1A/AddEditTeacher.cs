@@ -19,6 +19,7 @@ namespace CourseProject1A
             InitializeComponent();
             lbl_Title.Text = "Add New Teacher";
             isEditMode = false;
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
         }
         public AddEditTeacher(Teacher editTeacherData)
         {
@@ -42,20 +43,28 @@ namespace CourseProject1A
         {
             if (isEditMode)
             {
-                var id = int.Parse(lblID.Text);
-                var TeacherData = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
-                TeacherData.First_Name = tbFName.Text;
-                TeacherData.Last_Name = tbLName.Text;
-                TeacherData.Qualification = tbQualification.Text;
-                TeacherData.Grade = tbGrade.Text;
-
+                try
+                {
+                    var id = int.Parse(lblID.Text);
+                    var TeacherData = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
+                    TeacherData.First_Name = tbFName.Text;
+                    TeacherData.Last_Name = tbLName.Text;
+                    TeacherData.Qualification = tbQualification.Text;
+                    TeacherData.Grade = tbGrade.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
                 //Save Changes
                 choice_Christian_AcademyEntities.SaveChanges();
-
+                MessageBox.Show("Information Edited");
                 this.Close();
+                
             }
             else
             {
+                try { 
                 var newTeacher = new Teacher
                 {
                     First_Name = tbFName.Text,
@@ -64,7 +73,13 @@ namespace CourseProject1A
                     Qualification = tbQualification.Text
                 };
                 choice_Christian_AcademyEntities.Teachers.Add(newTeacher);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
                 choice_Christian_AcademyEntities.SaveChanges();
+                MessageBox.Show("Information Submitted");
                 this.Close();
             }
         }

@@ -12,9 +12,12 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class House
+    public partial class GRADE
     {
         public int ID { get; set; }
-        public string Colour { get; set; }
+        public int Student_ID { get; set; }
+        public int Subject_ID { get; set; }
+        public int Teacher_ID { get; set; }
+        public double Score { get; set; }
     }
 }

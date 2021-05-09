@@ -12,9 +12,14 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class House
+    public partial class PTA
     {
         public int ID { get; set; }
-        public string Colour { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
+        public string Address { get; set; }
+        public string Email { get; set; }
+        public int Contact_Number { get; set; }
+        public Nullable<int> Student_ID { get; set; }
     }
 }

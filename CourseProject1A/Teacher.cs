@@ -17,7 +17,6 @@ namespace CourseProject1A
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Teacher()
         {
-            this.Student_Detail = new HashSet<Student_Detail>();
             this.Test_Result = new HashSet<Test_Result>();
         }
     
@@ -29,8 +28,6 @@ namespace CourseProject1A
         public Nullable<int> Emergency_ID { get; set; }
     
         public virtual Emergency_contact Emergency_contact { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Student_Detail> Student_Detail { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Test_Result> Test_Result { get; set; }
     }

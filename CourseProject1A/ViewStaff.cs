@@ -23,22 +23,22 @@ namespace CourseProject1A
         {
             var staffdata = choice_Christian_AcademyEntities.Staffs
                .Select(q => new {
+                   ID = q.ID,
                    First_Name = q.First_Name,
                    Last_Name = q.Last_Name,
                    Address = q.Address,
                    Date_of_Employment = q.Date_of_Employment,
                    Qualification = q.Qualification,
-                   Job_Title = q.Job_Title,
-                   q.ID
+                   Job_Title = q.Job_Title
                }).ToList();
             gvstaffdata.DataSource = staffdata;
-            gvstaffdata.Columns[0].HeaderText = "First Name";
-            gvstaffdata.Columns[1].HeaderText = "Last Name";
-            gvstaffdata.Columns[2].HeaderText = "Address";
-            gvstaffdata.Columns[3].HeaderText = "Date of Employment";
-            gvstaffdata.Columns[4].HeaderText = "Qualification";
-            gvstaffdata.Columns[5].HeaderText = "Job Title";
-            gvstaffdata.Columns[6].Visible = false;
+            gvstaffdata.Columns[0].Visible = false;
+            gvstaffdata.Columns[1].HeaderText = "First Name";
+            gvstaffdata.Columns[2].HeaderText = "Last Name";
+            gvstaffdata.Columns[3].HeaderText = "Address";
+            gvstaffdata.Columns[4].HeaderText = "Date of Employment";
+            gvstaffdata.Columns[5].HeaderText = "Qualification";
+            gvstaffdata.Columns[6].HeaderText = "Job Title";
         }
 
         private void Editbotton_Click(object sender, EventArgs e)
@@ -55,6 +55,7 @@ namespace CourseProject1A
 
         private void Deletebutton_Click(object sender, EventArgs e)
         {
+            try { 
             //Get ID for selected row
             var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
             //Query database
@@ -63,8 +64,13 @@ namespace CourseProject1A
             //Delete data and save
             choice_Christian_AcademyEntities.Staffs.Remove(Staff);
             choice_Christian_AcademyEntities.SaveChanges();
-
+            MessageBox.Show("Information Deleted");
             gvstaffdata.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void Closebutton_Click(object sender, EventArgs e)

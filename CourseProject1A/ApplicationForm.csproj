@@ -73,7 +73,31 @@
     <Compile Include="AddEditTeacher.Designer.cs">
       <DependentUpon>AddEditTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="All_Student_Result.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="All_Teacher_Result.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AMOUNT.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="birth_range_Result.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CLASS.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Emergency_contact.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employment_Range_Result.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GENDER.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRADE.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
     <Compile Include="House.cs">
@@ -92,6 +116,9 @@
       <DependentUpon>HomeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Parent.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PTA.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
     <Compile Include="Registration.cs">
@@ -123,10 +150,10 @@
     <Compile Include="Staff.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Student.cs">
+    <Compile Include="Staff_Qual.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Student_Detail.cs">
+    <Compile Include="Student.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
     <Compile Include="Subject_Table.cs">

@@ -48,8 +48,8 @@ namespace CourseProject1A
                 string par1lName = tb_parLname.Text;
                 DateTime par1DOB = Par_DOB.Value;
                 string par1Address = tb_parAddress.Text;
-                string par1Email = tb_ParEmail.Text;
-                var parPhone = tb_Parphone.Text;
+                var par1Email = tb_ParEmail.Text;
+                string parPhone = tb_Parphone.Text;
                 string parRelationship = tb_ParRelationship.Text;
 
                 //Parent2 Info
@@ -58,7 +58,7 @@ namespace CourseProject1A
                 DateTime par2DOB = Par2_DOB.Value;
                 string par2Address = tb_par2Address.Text;
                 string par2Email = tb_Par2Email.Text;
-                string par2Phone = tb_Parphone.Text;
+                var par2Phone = tb_Parphone.Text;
                 string par2Relationship = tb_Par2Relationship.Text;
 
                 if (stuDOB >= DateTime.Today || par1DOB >= DateTime.Today || par2DOB >= DateTime.Today)
@@ -97,7 +97,7 @@ namespace CourseProject1A
                     parentrecord.First_Name = par1fName;
                     parentrecord.Last_Name = par1lName;
                     parentrecord.Address = par1Address;
-                   // parentrecord.Contact_Number = parPhone;
+                    parentrecord.Contact_Number = int.Parse(parPhone);
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
 
@@ -105,7 +105,7 @@ namespace CourseProject1A
                     parent2record.First_Name = par2fName;
                     parent2record.Last_Name = par2lName;
                     parent2record.Address = par2Address;
-                    // parentrecord.Contact_Number = parPhone;
+                    parentrecord.Contact_Number = int.Parse(par2Phone);
                     parent2record.Email = par2Email;
                     parent2record.Relationship = par2Relationship;
 
@@ -145,7 +145,7 @@ namespace CourseProject1A
         }
 
         //Previous & Next Buttons
-        private void btn_StuNext_Click(object sender, EventArgs e) //Student information tab next button
+        private void studentnext_Click_1(object sender, EventArgs e)
         {
             tabRegistration.SelectTab(1);
         }
@@ -213,38 +213,52 @@ namespace CourseProject1A
 
         private void Submitbutton_Click(object sender, EventArgs e)
         {
-            var newstudent = new Student
-            {
-                First_Name = tb_stufname.Text,
-                Last_Name = tb_stulname.Text,
-                Mid_Name = tb_stuMname.Text,
-                Gender = cb_Gender.Text,
-                Address = tb_stuAddress.Text,
-                Date_of_Birth = stu_DOB.Value
-            };
-            var newparent = new Parent
-            {
-                First_Name = tb_parLname.Text,
-                Last_Name = tb_parLname.Text,
-                Address = tb_parAddress.Text,
-               // Contact_Number = tb_Parphone.Text,
-                Relationship = tb_ParRelationship.Text,
-                Email = tb_ParEmail.Text,
-                
+          //  try
+            //{
+                var newstudent = new Student
+                {
+                    First_Name = tb_stufname.Text,
+                    Last_Name = tb_stulname.Text,
+                    Mid_Name = tb_stuMname.Text,
+                    Gender = cb_Gender.Text,
+                    Address = tb_stuAddress.Text,
+                    Date_of_Birth = stu_DOB.Value,
+                    Previous_School = tb_stuPreSch.Text,
+                    Birth_Entry_Number = tb_StuBEntry.Text
+                };
+                var newparent = new Parent
+                {
+                    First_Name = tb_parLname.Text,
+                    Last_Name = tb_parLname.Text,
+                    Address = tb_parAddress.Text,
+                    Contact_Number = int.Parse(tb_Parphone.Text),
+                    Relationship = tb_ParRelationship.Text,
+                    Email = tb_ParEmail.Text,
 
-            };
-            var secondparent = new Parent
-            {
-                First_Name = tb_Par2Fname.Text,
-                Last_Name = tb_Par2Lname.Text,
-                Address = tb_par2Address.Text,
-               // Contact_Number = tb_Par2Phone.Text,
-                Relationship = tb_Par2Relationship.Text,
-                Email = tb_Par2Email.Text,
-            };
+                };
+                var secondparent = new Parent
+                {
+                    First_Name = tb_Par2Fname.Text,
+                    Last_Name = tb_Par2Lname.Text,
+                    Address = tb_par2Address.Text,
+                    Contact_Number = int.Parse(tb_Par2Phone.Text),
+                    Relationship = tb_Par2Relationship.Text,
+                    Email = tb_Par2Email.Text
+                };
+                choice_Christian_AcademyEntities.Students.Add(newstudent);
+                choice_Christian_AcademyEntities.Parents.Add(newparent);
+                choice_Christian_AcademyEntities.Parents.Add(secondparent);
             choice_Christian_AcademyEntities.SaveChanges();
-            this.Close();
+                MessageBox.Show("Information Submitted");
+                this.Close();
+          /*  }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            } */
         }
+
+       
     }
 }    
 

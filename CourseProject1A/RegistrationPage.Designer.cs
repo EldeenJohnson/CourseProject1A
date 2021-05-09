@@ -32,8 +32,8 @@ namespace CourseProject1A
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationPage));
             this.tabRegistration = new System.Windows.Forms.TabControl();
             this.tab_StuInfo = new System.Windows.Forms.TabPage();
+            this.studentnext = new System.Windows.Forms.Button();
             this.StudentID = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.stu_DOB = new System.Windows.Forms.DateTimePicker();
             this.cb_HeightIn = new System.Windows.Forms.ComboBox();
             this.cb_HeightFt = new System.Windows.Forms.ComboBox();
@@ -125,8 +125,8 @@ namespace CourseProject1A
             // 
             this.tab_StuInfo.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tab_StuInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tab_StuInfo.Controls.Add(this.studentnext);
             this.tab_StuInfo.Controls.Add(this.StudentID);
-            this.tab_StuInfo.Controls.Add(this.vScrollBar1);
             this.tab_StuInfo.Controls.Add(this.stu_DOB);
             this.tab_StuInfo.Controls.Add(this.cb_HeightIn);
             this.tab_StuInfo.Controls.Add(this.cb_HeightFt);
@@ -165,6 +165,16 @@ namespace CourseProject1A
             this.tab_StuInfo.TabIndex = 0;
             this.tab_StuInfo.Text = "Student Information";
             // 
+            // studentnext
+            // 
+            this.studentnext.Location = new System.Drawing.Point(354, 573);
+            this.studentnext.Name = "studentnext";
+            this.studentnext.Size = new System.Drawing.Size(71, 21);
+            this.studentnext.TabIndex = 48;
+            this.studentnext.Text = "Next";
+            this.studentnext.UseVisualStyleBackColor = true;
+            this.studentnext.Click += new System.EventHandler(this.studentnext_Click_1);
+            // 
             // StudentID
             // 
             this.StudentID.AutoSize = true;
@@ -173,13 +183,6 @@ namespace CourseProject1A
             this.StudentID.Size = new System.Drawing.Size(0, 13);
             this.StudentID.TabIndex = 47;
             this.StudentID.Visible = false;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(755, -2);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 675);
-            this.vScrollBar1.TabIndex = 46;
             // 
             // stu_DOB
             // 
@@ -323,7 +326,6 @@ namespace CourseProject1A
             this.btn_StuNext.TabIndex = 20;
             this.btn_StuNext.Text = "Next";
             this.btn_StuNext.UseVisualStyleBackColor = true;
-            this.btn_StuNext.Click += new System.EventHandler(this.btn_StuNext_Click);
             // 
             // cb_StuHouse
             // 
@@ -975,8 +977,8 @@ namespace CourseProject1A
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button Submitbutton;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Label StudentID;
+        private System.Windows.Forms.Button studentnext;
     }
 }
 

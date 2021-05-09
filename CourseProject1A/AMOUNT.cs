@@ -12,9 +12,12 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class House
+    public partial class AMOUNT
     {
         public int ID { get; set; }
-        public string Colour { get; set; }
+        public int Student_ID { get; set; }
+        public int Tuition { get; set; }
+        public int Amount_Paid { get; set; }
+        public System.DateTime Date_of_Enrollment { get; set; }
     }
 }
