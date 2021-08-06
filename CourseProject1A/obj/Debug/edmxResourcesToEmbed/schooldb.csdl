@@ -1,222 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Choice_Christian_AcademyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Emergency_contact">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Contact_Number" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Staffs" Relationship="Self.FK_Staff_Emergency_contact" FromRole="Emergency_contact" ToRole="Staff" />
-    <NavigationProperty Name="Teachers" Relationship="Self.FK_Teacher_Emergency_contact" FromRole="Emergency_contact" ToRole="Teacher" />
-  </EntityType>
-  <EntityType Name="House">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Colour" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Parent">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Contact_Number" Type="Int32" Nullable="false" />
-    <Property Name="Student_ID" Type="Int32" />
-    <Property Name="Relationship" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-    <Property Name="Date_of_Birth" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_Parent_Student" FromRole="Parent" ToRole="Student" />
-  </EntityType>
-  <EntityType Name="Registration">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Student_ID" Type="Int32" Nullable="false" />
-    <Property Name="Tuition" Type="Int32" Nullable="false" />
-    <Property Name="Amount_Paid" Type="Int32" Nullable="false" />
-    <Property Name="Date_of_Enrollment" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="Staff">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Job_Title" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Qualification" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Date_of_Employment" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Emergency_ID" Type="Int32" />
-    <NavigationProperty Name="Emergency_contact" Relationship="Self.FK_Staff_Emergency_contact" FromRole="Staff" ToRole="Emergency_contact" />
-  </EntityType>
-  <EntityType Name="Student">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Mid_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Date_of_Birth" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Previous_School" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Birth_Entry_Number" Type="String" MaxLength="6" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Grade" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="Class" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Parents" Relationship="Self.FK_Parent_Student" FromRole="Student" ToRole="Parent" />
-    <NavigationProperty Name="Test_Result" Relationship="Self.FK_Test_Result_Student" FromRole="Student" ToRole="Test_Result" />
-  </EntityType>
-  <EntityType Name="Subject_Table">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Subject_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Test_Result" Relationship="Self.FK_Test_Result_Subject_Table" FromRole="Subject_Table" ToRole="Test_Result" />
-  </EntityType>
-  <EntityType Name="Teacher">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Qualification" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Grade" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-    <Property Name="Emergency_ID" Type="Int32" />
-    <NavigationProperty Name="Emergency_contact" Relationship="Self.FK_Teacher_Emergency_contact" FromRole="Teacher" ToRole="Emergency_contact" />
-    <NavigationProperty Name="Test_Result" Relationship="Self.FK_Test_Result_Teacher" FromRole="Teacher" ToRole="Test_Result" />
-  </EntityType>
-  <EntityType Name="Test_Result">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Student_ID" Type="Int32" Nullable="false" />
-    <Property Name="Subject_ID" Type="Int32" Nullable="false" />
-    <Property Name="Teacher_ID" Type="Int32" Nullable="false" />
-    <Property Name="Score" Type="Double" Nullable="false" />
-    <NavigationProperty Name="Student" Relationship="Self.FK_Test_Result_Student" FromRole="Test_Result" ToRole="Student" />
-    <NavigationProperty Name="Subject_Table" Relationship="Self.FK_Test_Result_Subject_Table" FromRole="Test_Result" ToRole="Subject_Table" />
-    <NavigationProperty Name="Teacher" Relationship="Self.FK_Test_Result_Teacher" FromRole="Test_Result" ToRole="Teacher" />
-  </EntityType>
-  <Association Name="FK_Staff_Emergency_contact">
-    <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="0..1" />
-    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Emergency_contact">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Staff">
-        <PropertyRef Name="Emergency_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Teacher_Emergency_contact">
-    <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="0..1" />
-    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Emergency_contact">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Teacher">
-        <PropertyRef Name="Emergency_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Parent_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
-    <End Role="Parent" Type="Self.Parent" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Student">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Parent">
-        <PropertyRef Name="Student_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Test_Result_Student">
-    <End Role="Student" Type="Self.Student" Multiplicity="1" />
-    <End Role="Test_Result" Type="Self.Test_Result" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Student">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Test_Result">
-        <PropertyRef Name="Student_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Test_Result_Subject_Table">
-    <End Role="Subject_Table" Type="Self.Subject_Table" Multiplicity="1" />
-    <End Role="Test_Result" Type="Self.Test_Result" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Subject_Table">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Test_Result">
-        <PropertyRef Name="Subject_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Test_Result_Teacher">
-    <End Role="Teacher" Type="Self.Teacher" Multiplicity="1" />
-    <End Role="Test_Result" Type="Self.Test_Result" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Teacher">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Test_Result">
-        <PropertyRef Name="Teacher_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="Choice_Christian_AcademyEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Emergency_contact" EntityType="Self.Emergency_contact" />
-    <EntitySet Name="Houses" EntityType="Self.House" />
-    <EntitySet Name="Parents" EntityType="Self.Parent" />
-    <EntitySet Name="Registrations" EntityType="Self.Registration" />
-    <EntitySet Name="Staffs" EntityType="Self.Staff" />
-    <EntitySet Name="Students" EntityType="Self.Student" />
-    <EntitySet Name="Subject_Table" EntityType="Self.Subject_Table" />
-    <EntitySet Name="Teachers" EntityType="Self.Teacher" />
-    <EntitySet Name="Test_Result" EntityType="Self.Test_Result" />
-    <AssociationSet Name="FK_Staff_Emergency_contact" Association="Self.FK_Staff_Emergency_contact">
-      <End Role="Emergency_contact" EntitySet="Emergency_contact" />
-      <End Role="Staff" EntitySet="Staffs" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Teacher_Emergency_contact" Association="Self.FK_Teacher_Emergency_contact">
-      <End Role="Emergency_contact" EntitySet="Emergency_contact" />
-      <End Role="Teacher" EntitySet="Teachers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Parent_Student" Association="Self.FK_Parent_Student">
-      <End Role="Student" EntitySet="Students" />
-      <End Role="Parent" EntitySet="Parents" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Test_Result_Student" Association="Self.FK_Test_Result_Student">
-      <End Role="Student" EntitySet="Students" />
-      <End Role="Test_Result" EntitySet="Test_Result" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Test_Result_Subject_Table" Association="Self.FK_Test_Result_Subject_Table">
-      <End Role="Subject_Table" EntitySet="Subject_Table" />
-      <End Role="Test_Result" EntitySet="Test_Result" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Test_Result_Teacher" Association="Self.FK_Test_Result_Teacher">
-      <End Role="Teacher" EntitySet="Teachers" />
-      <End Role="Test_Result" EntitySet="Test_Result" />
-    </AssociationSet>
     <FunctionImport Name="All_Student" IsComposable="true" ReturnType="Collection(Choice_Christian_AcademyModel.All_Student_Result)" />
     <FunctionImport Name="All_Teacher" IsComposable="true" ReturnType="Collection(Choice_Christian_AcademyModel.All_Teacher_Result)" />
     <FunctionImport Name="birth_range" IsComposable="true" ReturnType="Collection(Choice_Christian_AcademyModel.birth_range_Result)">
@@ -239,12 +23,39 @@
       <Parameter Name="Grade" Mode="In" Type="String" />
       <Parameter Name="Class" Mode="In" Type="String" />
     </FunctionImport>
-    <EntitySet Name="AMOUNTs" EntityType="Choice_Christian_AcademyModel.AMOUNT" />
-    <EntitySet Name="CLASSes" EntityType="Choice_Christian_AcademyModel.CLASS" />
-    <EntitySet Name="GENDERs" EntityType="Choice_Christian_AcademyModel.GENDER" />
-    <EntitySet Name="GRADEs" EntityType="Choice_Christian_AcademyModel.GRADE" />
-    <EntitySet Name="PTAs" EntityType="Choice_Christian_AcademyModel.PTA" />
-    <EntitySet Name="Staff_Qual" EntityType="Choice_Christian_AcademyModel.Staff_Qual" />
+    <EntitySet Name="Emergency_contact" EntityType="Choice_Christian_AcademyModel.Emergency_contact" />
+    <EntitySet Name="Houses" EntityType="Choice_Christian_AcademyModel.House" />
+    <EntitySet Name="Parents" EntityType="Choice_Christian_AcademyModel.Parent" />
+    <EntitySet Name="Registrations" EntityType="Choice_Christian_AcademyModel.Registration" />
+    <EntitySet Name="Staffs" EntityType="Choice_Christian_AcademyModel.Staff" />
+    <EntitySet Name="Students" EntityType="Choice_Christian_AcademyModel.Student" />
+    <EntitySet Name="Subject_Table" EntityType="Choice_Christian_AcademyModel.Subject_Table" />
+    <EntitySet Name="Teachers" EntityType="Choice_Christian_AcademyModel.Teacher" />
+    <EntitySet Name="Test_Result" EntityType="Choice_Christian_AcademyModel.Test_Result" />
+    <AssociationSet Name="FK_Staff_Emergency_contact" Association="Choice_Christian_AcademyModel.FK_Staff_Emergency_contact">
+      <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+      <End Role="Staff" EntitySet="Staffs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Emergency_contact" Association="Choice_Christian_AcademyModel.FK_Teacher_Emergency_contact">
+      <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+      <End Role="Teacher" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Parent_Student" Association="Choice_Christian_AcademyModel.FK_Parent_Student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Parent" EntitySet="Parents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Result_Student" Association="Choice_Christian_AcademyModel.FK_Test_Result_Student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Test_Result" EntitySet="Test_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Result_Subject_Table" Association="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table">
+      <End Role="Subject_Table" EntitySet="Subject_Table" />
+      <End Role="Test_Result" EntitySet="Test_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Result_Teacher" Association="Choice_Christian_AcademyModel.FK_Test_Result_Teacher">
+      <End Role="Teacher" EntitySet="Teachers" />
+      <End Role="Test_Result" EntitySet="Test_Result" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="All_Student_Result">
     <Property Type="String" Name="First_Name" Nullable="true" MaxLength="60" />
@@ -267,80 +78,29 @@
     <Property Type="String" Name="Last_Name" Nullable="false" MaxLength="50" />
     <Property Type="DateTime" Name="Date_of_Employment" Nullable="false" Precision="23" />
   </ComplexType>
-  <EntityType Name="AMOUNT">
+  <EntityType Name="Emergency_contact">
     <Key>
       <PropertyRef Name="ID" />
-      <PropertyRef Name="Student_ID" />
-      <PropertyRef Name="Tuition" />
-      <PropertyRef Name="Amount_Paid" />
-      <PropertyRef Name="Date_of_Enrollment" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Student_ID" Type="Int32" Nullable="false" />
-    <Property Name="Tuition" Type="Int32" Nullable="false" />
-    <Property Name="Amount_Paid" Type="Int32" Nullable="false" />
-    <Property Name="Date_of_Enrollment" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
-  <EntityType Name="CLASS">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="First_Name" />
-      <PropertyRef Name="Last_Name" />
-      <PropertyRef Name="Qualification" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Qualification" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-    <Property Name="Grade" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-    <Property Name="Emergency_ID" Type="Int32" />
-  </EntityType>
-  <EntityType Name="GENDER">
-    <Key>
-      <PropertyRef Name="ID" />
-      <PropertyRef Name="First_Name" />
-      <PropertyRef Name="Mid_Name" />
-      <PropertyRef Name="Last_Name" />
-      <PropertyRef Name="Date_of_Birth" />
-      <PropertyRef Name="Gender1" />
-      <PropertyRef Name="Address" />
-      <PropertyRef Name="Previous_School" />
-      <PropertyRef Name="Birth_Entry_Number" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Mid_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Date_of_Birth" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Gender1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Previous_School" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
-    <Property Name="Birth_Entry_Number" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
-    <Property Name="Grade" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="Class" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Contact_Number" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Staffs" Relationship="Choice_Christian_AcademyModel.FK_Staff_Emergency_contact" FromRole="Emergency_contact" ToRole="Staff" />
+    <NavigationProperty Name="Teachers" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Emergency_contact" FromRole="Emergency_contact" ToRole="Teacher" />
   </EntityType>
-  <EntityType Name="GRADE">
+  <EntityType Name="House">
     <Key>
       <PropertyRef Name="ID" />
-      <PropertyRef Name="Student_ID" />
-      <PropertyRef Name="Subject_ID" />
-      <PropertyRef Name="Teacher_ID" />
-      <PropertyRef Name="Score" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Student_ID" Type="Int32" Nullable="false" />
-    <Property Name="Subject_ID" Type="Int32" Nullable="false" />
-    <Property Name="Teacher_ID" Type="Int32" Nullable="false" />
-    <Property Name="Score" Type="Double" Nullable="false" />
+    <Property Name="Colour" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="PTA">
+  <EntityType Name="Parent">
     <Key>
       <PropertyRef Name="ID" />
-      <PropertyRef Name="First_Name" />
-      <PropertyRef Name="Last_Name" />
-      <PropertyRef Name="Address" />
-      <PropertyRef Name="Email" />
-      <PropertyRef Name="Contact_Number" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -349,15 +109,156 @@
     <Property Name="Email" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
     <Property Name="Contact_Number" Type="Int32" Nullable="false" />
     <Property Name="Student_ID" Type="Int32" />
+    <Property Name="Relationship" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Date_of_Birth" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Student" Relationship="Choice_Christian_AcademyModel.FK_Parent_Student" FromRole="Parent" ToRole="Student" />
   </EntityType>
-  <EntityType Name="Staff_Qual">
+  <EntityType Name="Registration">
     <Key>
-      <PropertyRef Name="First_Name" />
-      <PropertyRef Name="Last_Name" />
-      <PropertyRef Name="Job_Title" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Student_ID" Type="Int32" Nullable="false" />
+    <Property Name="Tuition" Type="Int32" Nullable="false" />
+    <Property Name="Amount_Paid" Type="Int32" Nullable="false" />
+    <Property Name="Date_of_Enrollment" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="Job_Title" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Qualification" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Date_of_Employment" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Emergency_ID" Type="Int32" />
+    <NavigationProperty Name="Emergency_contact" Relationship="Choice_Christian_AcademyModel.FK_Staff_Emergency_contact" FromRole="Staff" ToRole="Emergency_contact" />
   </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mid_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_of_Birth" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Previous_School" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Birth_Entry_Number" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Class" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Parents" Relationship="Choice_Christian_AcademyModel.FK_Parent_Student" FromRole="Student" ToRole="Parent" />
+    <NavigationProperty Name="Test_Result" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student" FromRole="Student" ToRole="Test_Result" />
+  </EntityType>
+  <EntityType Name="Subject_Table">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subject_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Test_Result" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" FromRole="Subject_Table" ToRole="Test_Result" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Qualification" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Emergency_ID" Type="Int32" />
+    <NavigationProperty Name="Emergency_contact" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Emergency_contact" FromRole="Teacher" ToRole="Emergency_contact" />
+    <NavigationProperty Name="Test_Result" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Teacher" ToRole="Test_Result" />
+  </EntityType>
+  <EntityType Name="Test_Result">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Student_ID" Type="Int32" Nullable="false" />
+    <Property Name="Subject_ID" Type="Int32" Nullable="false" />
+    <Property Name="Teacher_ID" Type="Int32" Nullable="false" />
+    <Property Name="Score" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Student" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student" FromRole="Test_Result" ToRole="Student" />
+    <NavigationProperty Name="Subject_Table" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" FromRole="Test_Result" ToRole="Subject_Table" />
+    <NavigationProperty Name="Teacher" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Test_Result" ToRole="Teacher" />
+  </EntityType>
+  <Association Name="FK_Staff_Emergency_contact">
+    <End Type="Choice_Christian_AcademyModel.Emergency_contact" Role="Emergency_contact" Multiplicity="0..1" />
+    <End Type="Choice_Christian_AcademyModel.Staff" Role="Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emergency_contact">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="Emergency_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_Emergency_contact">
+    <End Type="Choice_Christian_AcademyModel.Emergency_contact" Role="Emergency_contact" Multiplicity="0..1" />
+    <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Emergency_contact">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="Emergency_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Parent_Student">
+    <End Type="Choice_Christian_AcademyModel.Student" Role="Student" Multiplicity="0..1" />
+    <End Type="Choice_Christian_AcademyModel.Parent" Role="Parent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Parent">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Result_Student">
+    <End Type="Choice_Christian_AcademyModel.Student" Role="Student" Multiplicity="1" />
+    <End Type="Choice_Christian_AcademyModel.Test_Result" Role="Test_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Test_Result">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Result_Subject_Table">
+    <End Type="Choice_Christian_AcademyModel.Subject_Table" Role="Subject_Table" Multiplicity="1" />
+    <End Type="Choice_Christian_AcademyModel.Test_Result" Role="Test_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject_Table">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Test_Result">
+        <PropertyRef Name="Subject_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Result_Teacher">
+    <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="1" />
+    <End Type="Choice_Christian_AcademyModel.Test_Result" Role="Test_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Test_Result">
+        <PropertyRef Name="Teacher_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

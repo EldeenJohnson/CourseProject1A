@@ -71,14 +71,14 @@ namespace CourseProject1A
             // newApplicationToolStripMenuItem
             // 
             this.newApplicationToolStripMenuItem.Name = "newApplicationToolStripMenuItem";
-            this.newApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newApplicationToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.newApplicationToolStripMenuItem.Text = "New Student";
             this.newApplicationToolStripMenuItem.Click += new System.EventHandler(this.newApplicationToolStripMenuItem_Click);
             // 
             // editApplicationToolStripMenuItem
             // 
             this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
-            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.editApplicationToolStripMenuItem.Text = "Manage Student";
             this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
             // 
@@ -95,14 +95,14 @@ namespace CourseProject1A
             // newStaffToolStripMenuItem
             // 
             this.newStaffToolStripMenuItem.Name = "newStaffToolStripMenuItem";
-            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.newStaffToolStripMenuItem.Text = "New Staff";
             this.newStaffToolStripMenuItem.Click += new System.EventHandler(this.newStaffToolStripMenuItem_Click);
             // 
             // manageStaffToolStripMenuItem
             // 
             this.manageStaffToolStripMenuItem.Name = "manageStaffToolStripMenuItem";
-            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.manageStaffToolStripMenuItem.Text = "Manage Staff";
             this.manageStaffToolStripMenuItem.Click += new System.EventHandler(this.manageStaffToolStripMenuItem_Click);
             // 
@@ -119,14 +119,14 @@ namespace CourseProject1A
             // newTeacherToolStripMenuItem
             // 
             this.newTeacherToolStripMenuItem.Name = "newTeacherToolStripMenuItem";
-            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.newTeacherToolStripMenuItem.Text = "New Teacher";
             this.newTeacherToolStripMenuItem.Click += new System.EventHandler(this.newTeacherToolStripMenuItem_Click);
             // 
             // manageTeachersToolStripMenuItem
             // 
             this.manageTeachersToolStripMenuItem.Name = "manageTeachersToolStripMenuItem";
-            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.manageTeachersToolStripMenuItem.Text = "Manage Teachers";
             this.manageTeachersToolStripMenuItem.Click += new System.EventHandler(this.manageTeachersToolStripMenuItem_Click);
             // 
@@ -143,7 +143,7 @@ namespace CourseProject1A
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(683, 749);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;

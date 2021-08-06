@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace CourseProject1A
 {
@@ -83,6 +84,11 @@ namespace CourseProject1A
             var AddEditStaff = new AddEditStaff();
             AddEditStaff.MdiParent = this.MdiParent;
             AddEditStaff.Show();
+        }
+
+        private void refreshbttn_Click(object sender, EventArgs e)
+        {
+            gvstaffdata.Refresh();
         }
     }
 }

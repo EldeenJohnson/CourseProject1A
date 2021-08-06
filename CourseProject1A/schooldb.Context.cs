@@ -36,12 +36,6 @@ namespace CourseProject1A
         public virtual DbSet<Subject_Table> Subject_Table { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Test_Result> Test_Result { get; set; }
-        public virtual DbSet<AMOUNT> AMOUNTs { get; set; }
-        public virtual DbSet<CLASS> CLASSes { get; set; }
-        public virtual DbSet<GENDER> GENDERs { get; set; }
-        public virtual DbSet<GRADE> GRADEs { get; set; }
-        public virtual DbSet<PTA> PTAs { get; set; }
-        public virtual DbSet<Staff_Qual> Staff_Qual { get; set; }
     
         [DbFunction("Choice_Christian_AcademyEntities", "All_Student")]
         public virtual IQueryable<All_Student_Result> All_Student()
