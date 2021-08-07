@@ -59,7 +59,6 @@ namespace CourseProject1A
             this.lblName = new System.Windows.Forms.Label();
             this.btn_StuUpload = new System.Windows.Forms.Button();
             this.rtb_stuAddInfo = new System.Windows.Forms.RichTextBox();
-            this.tb_StuUpload = new System.Windows.Forms.TextBox();
             this.tb_StuEmail = new System.Windows.Forms.TextBox();
             this.tb_StuPhone = new System.Windows.Forms.TextBox();
             this.tb_stufname = new System.Windows.Forms.TextBox();
@@ -152,7 +151,6 @@ namespace CourseProject1A
             this.tab_StuInfo.Controls.Add(this.lblName);
             this.tab_StuInfo.Controls.Add(this.btn_StuUpload);
             this.tab_StuInfo.Controls.Add(this.rtb_stuAddInfo);
-            this.tab_StuInfo.Controls.Add(this.tb_StuUpload);
             this.tab_StuInfo.Controls.Add(this.tb_StuEmail);
             this.tab_StuInfo.Controls.Add(this.tb_StuPhone);
             this.tab_StuInfo.Controls.Add(this.tb_stufname);
@@ -417,12 +415,13 @@ namespace CourseProject1A
             // 
             // btn_StuUpload
             // 
-            this.btn_StuUpload.Location = new System.Drawing.Point(510, 512);
+            this.btn_StuUpload.Location = new System.Drawing.Point(316, 513);
             this.btn_StuUpload.Name = "btn_StuUpload";
             this.btn_StuUpload.Size = new System.Drawing.Size(109, 21);
             this.btn_StuUpload.TabIndex = 17;
-            this.btn_StuUpload.Text = "Upload";
+            this.btn_StuUpload.Text = "Upload Picture";
             this.btn_StuUpload.UseVisualStyleBackColor = true;
+            this.btn_StuUpload.Click += new System.EventHandler(this.btn_StuUpload_Click);
             // 
             // rtb_stuAddInfo
             // 
@@ -431,14 +430,6 @@ namespace CourseProject1A
             this.rtb_stuAddInfo.Size = new System.Drawing.Size(377, 90);
             this.rtb_stuAddInfo.TabIndex = 18;
             this.rtb_stuAddInfo.Text = "";
-            // 
-            // tb_StuUpload
-            // 
-            this.tb_StuUpload.Location = new System.Drawing.Point(312, 512);
-            this.tb_StuUpload.Name = "tb_StuUpload";
-            this.tb_StuUpload.Size = new System.Drawing.Size(170, 20);
-            this.tb_StuUpload.TabIndex = 16;
-            this.tb_StuUpload.Text = "Click upload button...";
             // 
             // tb_StuEmail
             // 
@@ -920,7 +911,6 @@ namespace CourseProject1A
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btn_StuUpload;
         private System.Windows.Forms.RichTextBox rtb_stuAddInfo;
-        private System.Windows.Forms.TextBox tb_StuUpload;
         private System.Windows.Forms.TextBox tb_StuEmail;
         private System.Windows.Forms.TextBox tb_StuPhone;
         private System.Windows.Forms.TextBox tb_stufname;

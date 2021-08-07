@@ -35,6 +35,7 @@
             this.Closebutton = new System.Windows.Forms.Button();
             this.Deletebutton = new System.Windows.Forms.Button();
             this.Editbotton = new System.Windows.Forms.Button();
+            this.refreshbttn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvstaffdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,12 +99,23 @@
             this.Editbotton.UseVisualStyleBackColor = true;
             this.Editbotton.Click += new System.EventHandler(this.Editbotton_Click);
             // 
+            // refreshbttn
+            // 
+            this.refreshbttn.Location = new System.Drawing.Point(357, 330);
+            this.refreshbttn.Name = "refreshbttn";
+            this.refreshbttn.Size = new System.Drawing.Size(75, 23);
+            this.refreshbttn.TabIndex = 10;
+            this.refreshbttn.Text = "Refresh";
+            this.refreshbttn.UseVisualStyleBackColor = true;
+            this.refreshbttn.Click += new System.EventHandler(this.refreshbttn_Click);
+            // 
             // ViewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.refreshbttn);
             this.Controls.Add(this.Addbutton);
             this.Controls.Add(this.Closebutton);
             this.Controls.Add(this.Deletebutton);
@@ -127,5 +139,6 @@
         private System.Windows.Forms.Button Closebutton;
         private System.Windows.Forms.Button Deletebutton;
         private System.Windows.Forms.Button Editbotton;
+        private System.Windows.Forms.Button refreshbttn;
     }
 }

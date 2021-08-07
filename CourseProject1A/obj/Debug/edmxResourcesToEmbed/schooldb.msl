@@ -1,114 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="Choice_Christian_AcademyModelStoreContainer" CdmEntityContainer="Choice_Christian_AcademyEntities">
-    <EntitySetMapping Name="Emergency_contact">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Emergency_contact">
-        <MappingFragment StoreEntitySet="Emergency_contact">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Houses">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.House">
-        <MappingFragment StoreEntitySet="House">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Colour" ColumnName="Colour" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Parents">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Parent">
-        <MappingFragment StoreEntitySet="Parent">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
-          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
-          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
-          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Registrations">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Registration">
-        <MappingFragment StoreEntitySet="Registration">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
-          <ScalarProperty Name="Tuition" ColumnName="Tuition" />
-          <ScalarProperty Name="Amount_Paid" ColumnName="Amount_Paid" />
-          <ScalarProperty Name="Date_of_Enrollment" ColumnName="Date_of_Enrollment" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Staffs">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Staff">
-        <MappingFragment StoreEntitySet="Staff">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
-          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-          <ScalarProperty Name="Date_of_Employment" ColumnName="Date_of_Employment" />
-          <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Students">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Student">
-        <MappingFragment StoreEntitySet="Student">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-          <ScalarProperty Name="Mid_Name" ColumnName="Mid_Name" />
-          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
-          <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Previous_School" ColumnName="Previous_School" />
-          <ScalarProperty Name="Birth_Entry_Number" ColumnName="Birth_Entry_Number" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
-          <ScalarProperty Name="Class" ColumnName="Class" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Subject_Table">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Subject_Table">
-        <MappingFragment StoreEntitySet="Subject_Table">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Subject_Name" ColumnName="Subject_Name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Teachers">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Teacher">
-        <MappingFragment StoreEntitySet="Teacher">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
-          <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Test_Result">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Test_Result">
-        <MappingFragment StoreEntitySet="Test_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
-          <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
-          <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
-          <ScalarProperty Name="Score" ColumnName="Score" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="All_Student" FunctionName="Choice_Christian_AcademyModel.Store.All_Student">
       <ResultMapping>
         <ComplexTypeMapping TypeName="Choice_Christian_AcademyModel.All_Student_Result">
@@ -147,60 +39,31 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="insert_Student" FunctionName="Choice_Christian_AcademyModel.Store.insert_Student" />
-    <EntitySetMapping Name="AMOUNTs">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.AMOUNT">
-        <MappingFragment StoreEntitySet="AMOUNT">
-          <ScalarProperty Name="Date_of_Enrollment" ColumnName="Date_of_Enrollment" />
-          <ScalarProperty Name="Amount_Paid" ColumnName="Amount_Paid" />
-          <ScalarProperty Name="Tuition" ColumnName="Tuition" />
-          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CLASSes">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.CLASS">
-        <MappingFragment StoreEntitySet="CLASS">
-          <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
-          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="GENDERs">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.GENDER">
-        <MappingFragment StoreEntitySet="GENDER">
-          <ScalarProperty Name="Class" ColumnName="Class" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
-          <ScalarProperty Name="Birth_Entry_Number" ColumnName="Birth_Entry_Number" />
-          <ScalarProperty Name="Previous_School" ColumnName="Previous_School" />
+    <EntitySetMapping Name="Emergency_contact">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Emergency_contact">
+        <MappingFragment StoreEntitySet="Emergency_contact">
+          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Address" ColumnName="Address" />
-          <ScalarProperty Name="Gender1" ColumnName="Gender" />
-          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-          <ScalarProperty Name="Mid_Name" ColumnName="Mid_Name" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="GRADEs">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.GRADE">
-        <MappingFragment StoreEntitySet="GRADE">
-          <ScalarProperty Name="Score" ColumnName="Score" />
-          <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
-          <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
-          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+    <EntitySetMapping Name="Houses">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.House">
+        <MappingFragment StoreEntitySet="House">
+          <ScalarProperty Name="Colour" ColumnName="Colour" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PTAs">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.PTA">
-        <MappingFragment StoreEntitySet="PTA">
+    <EntitySetMapping Name="Parents">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Parent">
+        <MappingFragment StoreEntitySet="Parent">
+          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
           <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
           <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -211,12 +74,76 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Staff_Qual">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Staff_Qual">
-        <MappingFragment StoreEntitySet="Staff_Qual">
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="Date_of_Enrollment" ColumnName="Date_of_Enrollment" />
+          <ScalarProperty Name="Amount_Paid" ColumnName="Amount_Paid" />
+          <ScalarProperty Name="Tuition" ColumnName="Tuition" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
+          <ScalarProperty Name="Date_of_Employment" ColumnName="Date_of_Employment" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
           <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Birth_Entry_Number" ColumnName="Birth_Entry_Number" />
+          <ScalarProperty Name="Previous_School" ColumnName="Previous_School" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Date_of_Birth" ColumnName="Date_of_Birth" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Mid_Name" ColumnName="Mid_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subject_Table">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Subject_Table">
+        <MappingFragment StoreEntitySet="Subject_Table">
+          <ScalarProperty Name="Subject_Name" ColumnName="Subject_Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Test_Result">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Test_Result">
+        <MappingFragment StoreEntitySet="Test_Result">
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+          <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

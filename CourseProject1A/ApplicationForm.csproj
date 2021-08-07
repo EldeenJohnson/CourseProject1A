@@ -79,25 +79,23 @@
     <Compile Include="All_Teacher_Result.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
-    <Compile Include="AMOUNT.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
     <Compile Include="birth_range_Result.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
-    <Compile Include="CLASS.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+    <Compile Include="Choice_Christian_AcademyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Choice_Christian_AcademyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Choice_Christian_AcademyDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Choice_Christian_AcademyDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Emergency_contact.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
     <Compile Include="Employment_Range_Result.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GENDER.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="GRADE.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
     <Compile Include="House.cs">
@@ -116,9 +114,6 @@
       <DependentUpon>HomeWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Parent.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PTA.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
     <Compile Include="Registration.cs">
@@ -148,9 +143,6 @@
       <DependentUpon>schooldb.edmx</DependentUpon>
     </Compile>
     <Compile Include="Staff.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Staff_Qual.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
     <Compile Include="Student.cs">
@@ -209,6 +201,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ViewStaff.resx">
       <DependentUpon>ViewStaff.cs</DependentUpon>
@@ -219,6 +212,28 @@
     <EmbeddedResource Include="ViewTeachers.resx">
       <DependentUpon>ViewTeachers.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Choice_Christian_AcademyDataSet.xsc">
+      <DependentUpon>Choice_Christian_AcademyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Choice_Christian_AcademyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Choice_Christian_AcademyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Choice_Christian_AcademyDataSet.xss">
+      <DependentUpon>Choice_Christian_AcademyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Choice_Christian_AcademyDataSet1.xsc">
+      <DependentUpon>Choice_Christian_AcademyDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Choice_Christian_AcademyDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Choice_Christian_AcademyDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Choice_Christian_AcademyDataSet1.xss">
+      <DependentUpon>Choice_Christian_AcademyDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

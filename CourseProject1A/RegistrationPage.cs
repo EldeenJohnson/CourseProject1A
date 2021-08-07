@@ -41,7 +41,7 @@ namespace CourseProject1A
                 string PrevSchool = tb_stuPreSch.Text;
                 var BirthEntryNum = tb_StuBEntry.Text;
                 string stuHouse = cb_StuHouse.Text.ToString();
-                var stuUpload = tb_StuUpload.Text;
+             //   var stuUpload = tb_StuUpload.Text;
                 string StuAddInfo = rtb_stuAddInfo.Text;
 
                 //Parent1 Info
@@ -50,7 +50,7 @@ namespace CourseProject1A
                 DateTime par1DOB = Par_DOB.Value;
                 string par1Address = tb_parAddress.Text;
                 string par1Email = tb_ParEmail.Text;
-                var parPhone = tb_Parphone.Text.ToString();
+                string parPhone = tb_Parphone.Text;
                 string parRelationship = tb_ParRelationship.Text;
 
                 //Parent2 Info
@@ -59,7 +59,7 @@ namespace CourseProject1A
                 DateTime par2DOB = Par2_DOB.Value;
                 string par2Address = tb_par2Address.Text;
                 string par2Email = tb_Par2Email.Text;
-                var par2Phone = tb_Parphone.Text.ToString();
+                string par2Phone = tb_Par2Phone.Text;
                 string par2Relationship = tb_Par2Relationship.Text;
 
                 if (stuDOB >= DateTime.Today || par1DOB >= DateTime.Today || par2DOB >= DateTime.Today)
@@ -71,8 +71,7 @@ namespace CourseProject1A
                 if 
                     (string.IsNullOrWhiteSpace(stuFName) || string.IsNullOrWhiteSpace(stuLName)
                     || string.IsNullOrWhiteSpace(stuEmail) || string.IsNullOrWhiteSpace(StuAddress)
-                    || string.IsNullOrWhiteSpace(BirthEntryNum)
-                    || string.IsNullOrWhiteSpace(stuPhone) || string.IsNullOrWhiteSpace(stuUpload)
+                    || string.IsNullOrWhiteSpace(BirthEntryNum) || string.IsNullOrWhiteSpace(stuPhone) 
                     || string.IsNullOrWhiteSpace(Height_ft) || string.IsNullOrWhiteSpace(Height_in)
                     || string.IsNullOrWhiteSpace(StuAddress)|| string.IsNullOrWhiteSpace(stuEmail)
                     || string.IsNullOrWhiteSpace(par1fName) || string.IsNullOrWhiteSpace(par1lName)
@@ -101,7 +100,7 @@ namespace CourseProject1A
                     parentrecord.First_Name = par1fName;
                     parentrecord.Last_Name = par1lName;
                     parentrecord.Address = par1Address;
-                 //   parentrecord.Contact_Number = parPhone;
+                    parentrecord.Contact_Number = parPhone;
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
 
@@ -109,7 +108,7 @@ namespace CourseProject1A
                     parent2record.First_Name = par2fName;
                     parent2record.Last_Name = par2lName;
                     parent2record.Address = par2Address;
-                 //   parentrecord.Contact_Number = par2Phone;
+                    parentrecord.Contact_Number = par2Phone;
                     parent2record.Email = par2Email;
                     parent2record.Relationship = par2Relationship;
 
@@ -175,7 +174,7 @@ namespace CourseProject1A
                                "\nPrevious School: "+ tb_stuPreSch.Text +
                                "\nBirth Entry Number: "+ tb_StuBEntry.Text +
                                "\nHouse: "+ cb_StuHouse.Text +
-                               "\nPicture: "+ tb_StuUpload.Text +
+                            //   "\nPicture: "+ tb_StuUpload.Text +
                                "\nAdditional Info: "+ rtb_stuAddInfo.Text +
                                "\n\n"+
 
@@ -187,7 +186,7 @@ namespace CourseProject1A
                                "\nAddress: "+ tb_parAddress.Text +
                                "\nEmail: "+ tb_ParEmail.Text +
                                "\nPhone Number: "+ tb_Parphone.Text +
-                               "\nRelationship: "+ tb_ParRelationship +
+                               "\nRelationship: "+ tb_ParRelationship.Text +
                                "\n\n" +
                               
                                //Review Parent 2
@@ -198,7 +197,7 @@ namespace CourseProject1A
                                "\nAddress: " + tb_par2Address.Text +
                                "\nEmail: " + tb_Par2Email.Text +
                                "\nPhone Number: " + tb_Parphone.Text +
-                               "\nRelationship: " + tb_ParRelationship;
+                               "\nRelationship: " + tb_ParRelationship.Text;
 
         }
 
@@ -217,8 +216,8 @@ namespace CourseProject1A
 
         private void Submitbutton_Click(object sender, EventArgs e)
         {
-            //  try
-            //{
+             try
+            {
             var newstudent = new Student
             {
                 First_Name = tb_stufname.Text,
@@ -231,36 +230,44 @@ namespace CourseProject1A
                 Birth_Entry_Number = tb_StuBEntry.Text
             };
             choice_Christian_AcademyEntities.Students.Add(newstudent);
-            choice_Christian_AcademyEntities.SaveChanges();
+            ////choice_Christian_AcademyEntities.SaveChanges();
             var newparent = new Parent
             {
                 First_Name = tb_parLname.Text,
                 Last_Name = tb_parLname.Text,
                 Address = tb_parAddress.Text,
-                Contact_Number = int.Parse(tb_Parphone.Text),
+                Contact_Number = tb_Parphone.Text,
                 Relationship = tb_ParRelationship.Text,
                 Email = tb_ParEmail.Text
             };
             choice_Christian_AcademyEntities.Parents.Add(newparent);
-            choice_Christian_AcademyEntities.SaveChanges();
+            ////choice_Christian_AcademyEntities.SaveChanges();
             var secondparent = new Parent
             {
                 First_Name = tb_Par2Fname.Text,
                 Last_Name = tb_Par2Lname.Text,
                 Address = tb_par2Address.Text,
-                Contact_Number = int.Parse(tb_Par2Phone.Text),
+                Contact_Number = tb_Par2Phone.Text,
                 Relationship = tb_Par2Relationship.Text,
                 Email = tb_Par2Email.Text
             }; 
             choice_Christian_AcademyEntities.Parents.Add(secondparent);
+
             choice_Christian_AcademyEntities.SaveChanges();
             MessageBox.Show("Information Submitted");
             this.Close();
-            /*  }
+            }
               catch (Exception ex)
               {
                   MessageBox.Show($"Error: {ex.Message}");
-              } */
+              } 
+        }
+
+        private void btn_StuUpload_Click(object sender, EventArgs e)
+        {
+            ////var image = new Image();
+            ////image.MdiParent = this.MdiParent;
+            ////image.Show();
         }
     }
 }    
