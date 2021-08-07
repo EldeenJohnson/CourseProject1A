@@ -19,7 +19,7 @@ namespace CourseProject1A
         public string Last_Name { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
-        public int Contact_Number { get; set; }
+        public String Contact_Number { get; set; }
         public Nullable<int> Student_ID { get; set; }
         public string Relationship { get; set; }
         public Nullable<System.DateTime> Date_of_Birth { get; set; }
