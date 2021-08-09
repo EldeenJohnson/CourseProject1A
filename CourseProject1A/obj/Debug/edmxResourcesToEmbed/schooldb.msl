@@ -59,6 +59,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="Image1" ColumnName="Image" />
+          <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Parents">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Parent">
         <MappingFragment StoreEntitySet="Parent">

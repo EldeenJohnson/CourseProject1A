@@ -116,6 +116,9 @@
     <Compile Include="House.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>

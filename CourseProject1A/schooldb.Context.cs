@@ -29,6 +29,7 @@ namespace CourseProject1A
     
         public virtual DbSet<Emergency_contact> Emergency_contact { get; set; }
         public virtual DbSet<House> Houses { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Parent> Parents { get; set; }
         public virtual DbSet<Registration> Registrations { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }

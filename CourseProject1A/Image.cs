@@ -12,17 +12,11 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class Parent
+    public partial class Image
     {
         public int ID { get; set; }
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-        public string Contact_Number { get; set; }
         public Nullable<int> Student_ID { get; set; }
-        public string Relationship { get; set; }
-        public Nullable<System.DateTime> Date_of_Birth { get; set; }
+        public byte[] Image1 { get; set; }
     
         public virtual Student Student { get; set; }
     }

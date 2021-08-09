@@ -18,6 +18,14 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Colour" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Student_ID" Type="int" />
+    <Property Name="Image" Type="image" />
+  </EntityType>
   <EntityType Name="Parent">
     <Key>
       <PropertyRef Name="ID" />
@@ -27,7 +35,7 @@
     <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="60" Nullable="false" />
-    <Property Name="Contact_Number" Type="int" Nullable="false" />
+    <Property Name="Contact_Number" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Student_ID" Type="int" />
     <Property Name="Relationship" Type="nchar" MaxLength="10" />
     <Property Name="Date_of_Birth" Type="datetime" />
@@ -99,6 +107,18 @@
     <Property Name="Teacher_ID" Type="int" Nullable="false" />
     <Property Name="Score" Type="float" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Image_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
+    <End Role="Image" Type="Self.Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Parent_Student">
     <End Role="Student" Type="Self.Student" Multiplicity="0..1" />
     <End Role="Parent" Type="Self.Parent" Multiplicity="*" />
@@ -237,6 +257,7 @@
   <EntityContainer Name="Choice_Christian_AcademyModelStoreContainer">
     <EntitySet Name="Emergency_contact" EntityType="Self.Emergency_contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Parent" EntityType="Self.Parent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
@@ -244,6 +265,10 @@
     <EntitySet Name="Subject_Table" EntityType="Self.Subject_Table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Test_Result" EntityType="Self.Test_Result" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Image_Student" Association="Self.FK_Image_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="Image" EntitySet="Image" />
+    </AssociationSet>
     <AssociationSet Name="FK_Parent_Student" Association="Self.FK_Parent_Student">
       <End Role="Student" EntitySet="Student" />
       <End Role="Parent" EntitySet="Parent" />

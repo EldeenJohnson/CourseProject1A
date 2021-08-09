@@ -7,7 +7,6 @@ C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\Applica
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\ApplicationForm.csproj.CoreCompileInputs.cache
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.exe
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.pdb
-C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\ApplicationForm.csprojAssemblyReference.cache
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.HomeWindow.resources
 C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\bin\Debug\CourseProject1A.exe.config
 C:\Users\Briee\Documents\CourseProject1A\CourseProject1A\bin\Debug\CourseProject1A.exe
@@ -69,3 +68,15 @@ C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\Applicati
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.exe
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\CourseProject1A.pdb
 C:\Users\micha\Source\Repos\CourseProject1A2\CourseProject1A\obj\Debug\ApplicationForm.csprojAssemblyReference.cache
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\bin\Debug\EntityFramework.dll
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\bin\Debug\EntityFramework.xml
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\ApplicationForm.csproj.AssemblyReference.cache
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.AddEditStaff.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.AddEditStudent.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.AddEditTeacher.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.ViewStaff.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.ViewStudentsInfo.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.ViewTeachers.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\ApplicationForm.csproj.CopyComplete
