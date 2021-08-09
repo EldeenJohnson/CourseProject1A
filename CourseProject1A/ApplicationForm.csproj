@@ -102,11 +102,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Choice_Christian_AcademyDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Choice_Christian_AcademyDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Choice_Christian_AcademyDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Emergency_contact.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
@@ -240,17 +235,6 @@
     </None>
     <None Include="Choice_Christian_AcademyDataSet.xss">
       <DependentUpon>Choice_Christian_AcademyDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Choice_Christian_AcademyDataSet1.xsc">
-      <DependentUpon>Choice_Christian_AcademyDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Choice_Christian_AcademyDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Choice_Christian_AcademyDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Choice_Christian_AcademyDataSet1.xss">
-      <DependentUpon>Choice_Christian_AcademyDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
