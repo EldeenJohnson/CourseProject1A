@@ -41,6 +41,9 @@ namespace CourseProject1A
             this.newTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageTeachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.privacyPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +54,7 @@ namespace CourseProject1A
             this.studentApplicationToolStripMenuItem,
             this.staffToolStripMenuItem,
             this.teacherToolStripMenuItem,
+            this.helpToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -138,6 +142,28 @@ namespace CourseProject1A
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.privacyPolicyToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.Silver;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // privacyPolicyToolStripMenuItem
+            // 
+            this.privacyPolicyToolStripMenuItem.Name = "privacyPolicyToolStripMenuItem";
+            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.privacyPolicyToolStripMenuItem.Text = "Privacy Policy";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,10 +172,11 @@ namespace CourseProject1A
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(683, 749);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HomeWindow";
-            this.Text = "Home Window";
+            this.Text = "Choice Christian Academy SMS";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -170,5 +197,8 @@ namespace CourseProject1A
         private System.Windows.Forms.ToolStripMenuItem teacherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newTeacherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageTeachersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem privacyPolicyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
