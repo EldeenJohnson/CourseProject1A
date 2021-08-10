@@ -14,18 +14,23 @@ namespace CourseProject1A
     {
         public HomeWindow()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
-      
-        RegistrationPage regPage = new RegistrationPage();
+
+        private void OptionsForm_Load(object sender, EventArgs e)
+        {
+            OptionsForm newMDIChild = new OptionsForm();
+            newMDIChild.MdiParent = this;
+            newMDIChild.Show();
+        }
+
+        
         private void newApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*var RegistrationPage = new RegistrationPage();
+            var RegistrationPage = new RegistrationPage();
             RegistrationPage.MdiParent = this;
-            RegistrationPage.Show();*/
-
-            regPage.MdiParent = this;
-            regPage.Show();
+            RegistrationPage.Show();
+            
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,5 +72,6 @@ namespace CourseProject1A
             AddEditTeacher.MdiParent = this.MdiParent;
             AddEditTeacher.Show();
         }
+        
     }
 }

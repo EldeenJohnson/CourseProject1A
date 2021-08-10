@@ -52,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
             this.label1.Location = new System.Drawing.Point(279, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 37);
@@ -111,7 +111,8 @@
             // 
             // ViewStudentsInfo
             // 
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(797, 500);
             this.Controls.Add(this.Refreshbutton);
             this.Controls.Add(this.Addbutton);
@@ -120,7 +121,9 @@
             this.Controls.Add(this.Editbotton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvstudentdata);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewStudentsInfo";
+            this.Text = "Student Management";
             this.Load += new System.EventHandler(this.ViewStudentsInfo_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.gvstudentdata)).EndInit();
             this.ResumeLayout(false);

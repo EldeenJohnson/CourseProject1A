@@ -108,6 +108,12 @@
     <Compile Include="Employment_Range_Result.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="House.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
@@ -197,6 +203,9 @@
     <EmbeddedResource Include="AddEditTeacher.resx">
       <DependentUpon>AddEditTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +267,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\wall-wallpaper-concrete-colored-painted-textured-concept.jpg" />
+    <None Include="Resources\Choice logo.png" />
+    <None Include="Resources\small bg.jpg" />
+    <None Include="Resources\Choice logo1.png" />
+    <None Include="Resources\Choice logo2.png" />
     <Content Include="schooldb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>schooldb.Context.cs</LastGenOutput>

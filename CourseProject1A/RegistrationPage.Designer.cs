@@ -47,7 +47,6 @@ namespace CourseProject1A
             this.tb_stuAddress = new System.Windows.Forms.TextBox();
             this.cb_Gender = new System.Windows.Forms.ComboBox();
             this.btn_StuCancel = new System.Windows.Forms.Button();
-            this.btn_StuNext = new System.Windows.Forms.Button();
             this.cb_StuHouse = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lblPhoto = new System.Windows.Forms.Label();
@@ -139,7 +138,6 @@ namespace CourseProject1A
             this.tab_StuInfo.Controls.Add(this.tb_stuAddress);
             this.tab_StuInfo.Controls.Add(this.cb_Gender);
             this.tab_StuInfo.Controls.Add(this.btn_StuCancel);
-            this.tab_StuInfo.Controls.Add(this.btn_StuNext);
             this.tab_StuInfo.Controls.Add(this.cb_StuHouse);
             this.tab_StuInfo.Controls.Add(this.label8);
             this.tab_StuInfo.Controls.Add(this.lblPhoto);
@@ -156,6 +154,7 @@ namespace CourseProject1A
             this.tab_StuInfo.Controls.Add(this.tb_stufname);
             this.tab_StuInfo.Controls.Add(this.tb_stulname);
             this.tab_StuInfo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tab_StuInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tab_StuInfo.Location = new System.Drawing.Point(4, 22);
             this.tab_StuInfo.Name = "tab_StuInfo";
             this.tab_StuInfo.Padding = new System.Windows.Forms.Padding(3);
@@ -165,12 +164,14 @@ namespace CourseProject1A
             // 
             // studentnext
             // 
-            this.studentnext.Location = new System.Drawing.Point(354, 573);
+            this.studentnext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.studentnext.ForeColor = System.Drawing.Color.White;
+            this.studentnext.Location = new System.Drawing.Point(617, 683);
             this.studentnext.Name = "studentnext";
             this.studentnext.Size = new System.Drawing.Size(71, 21);
             this.studentnext.TabIndex = 48;
             this.studentnext.Text = "Next";
-            this.studentnext.UseVisualStyleBackColor = true;
+            this.studentnext.UseVisualStyleBackColor = false;
             this.studentnext.Click += new System.EventHandler(this.studentnext_Click_1);
             // 
             // StudentID
@@ -308,22 +309,14 @@ namespace CourseProject1A
             // 
             // btn_StuCancel
             // 
-            this.btn_StuCancel.Location = new System.Drawing.Point(517, 795);
+            this.btn_StuCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_StuCancel.Location = new System.Drawing.Point(517, 683);
             this.btn_StuCancel.Name = "btn_StuCancel";
             this.btn_StuCancel.Size = new System.Drawing.Size(71, 21);
             this.btn_StuCancel.TabIndex = 19;
             this.btn_StuCancel.Text = "Cancel";
-            this.btn_StuCancel.UseVisualStyleBackColor = true;
+            this.btn_StuCancel.UseVisualStyleBackColor = false;
             this.btn_StuCancel.Click += new System.EventHandler(this.btn_StuCancel_Click);
-            // 
-            // btn_StuNext
-            // 
-            this.btn_StuNext.Location = new System.Drawing.Point(617, 795);
-            this.btn_StuNext.Name = "btn_StuNext";
-            this.btn_StuNext.Size = new System.Drawing.Size(71, 21);
-            this.btn_StuNext.TabIndex = 20;
-            this.btn_StuNext.Text = "Next";
-            this.btn_StuNext.UseVisualStyleBackColor = true;
             // 
             // cb_StuHouse
             // 
@@ -337,7 +330,7 @@ namespace CourseProject1A
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(86, 679);
+            this.label8.Location = new System.Drawing.Point(86, 567);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(186, 20);
             this.label8.TabIndex = 28;
@@ -407,25 +400,27 @@ namespace CourseProject1A
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(217, 48);
+            this.lblName.Location = new System.Drawing.Point(147, 46);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(55, 20);
+            this.lblName.Size = new System.Drawing.Size(124, 20);
             this.lblName.TabIndex = 21;
-            this.lblName.Text = "Name";
+            this.lblName.Text = "Student Name";
             // 
             // btn_StuUpload
             // 
-            this.btn_StuUpload.Location = new System.Drawing.Point(316, 513);
+            this.btn_StuUpload.BackColor = System.Drawing.Color.Green;
+            this.btn_StuUpload.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btn_StuUpload.Location = new System.Drawing.Point(314, 513);
             this.btn_StuUpload.Name = "btn_StuUpload";
             this.btn_StuUpload.Size = new System.Drawing.Size(109, 21);
             this.btn_StuUpload.TabIndex = 17;
             this.btn_StuUpload.Text = "Upload Picture";
-            this.btn_StuUpload.UseVisualStyleBackColor = true;
+            this.btn_StuUpload.UseVisualStyleBackColor = false;
             this.btn_StuUpload.Click += new System.EventHandler(this.btn_StuUpload_Click);
             // 
             // rtb_stuAddInfo
             // 
-            this.rtb_stuAddInfo.Location = new System.Drawing.Point(312, 681);
+            this.rtb_stuAddInfo.Location = new System.Drawing.Point(312, 569);
             this.rtb_stuAddInfo.Name = "rtb_stuAddInfo";
             this.rtb_stuAddInfo.Size = new System.Drawing.Size(377, 90);
             this.rtb_stuAddInfo.TabIndex = 18;
@@ -497,6 +492,7 @@ namespace CourseProject1A
             this.tab_ParInfo.Controls.Add(this.tb_parAddress);
             this.tab_ParInfo.Controls.Add(this.tb_parFname);
             this.tab_ParInfo.Controls.Add(this.tb_parLname);
+            this.tab_ParInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tab_ParInfo.Location = new System.Drawing.Point(4, 22);
             this.tab_ParInfo.Name = "tab_ParInfo";
             this.tab_ParInfo.Padding = new System.Windows.Forms.Padding(3);
@@ -540,39 +536,44 @@ namespace CourseProject1A
             // 
             // btn_ParPrev
             // 
+            this.btn_ParPrev.BackColor = System.Drawing.Color.Olive;
+            this.btn_ParPrev.ForeColor = System.Drawing.Color.AliceBlue;
             this.btn_ParPrev.Location = new System.Drawing.Point(267, 636);
             this.btn_ParPrev.Name = "btn_ParPrev";
             this.btn_ParPrev.Size = new System.Drawing.Size(71, 21);
             this.btn_ParPrev.TabIndex = 12;
             this.btn_ParPrev.Text = "Previous";
-            this.btn_ParPrev.UseVisualStyleBackColor = true;
+            this.btn_ParPrev.UseVisualStyleBackColor = false;
             this.btn_ParPrev.Click += new System.EventHandler(this.btn_ParPrev_Click);
             // 
             // btn_ParCancel
             // 
+            this.btn_ParCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn_ParCancel.Location = new System.Drawing.Point(573, 636);
             this.btn_ParCancel.Name = "btn_ParCancel";
             this.btn_ParCancel.Size = new System.Drawing.Size(71, 21);
             this.btn_ParCancel.TabIndex = 14;
             this.btn_ParCancel.Text = "Cancel";
-            this.btn_ParCancel.UseVisualStyleBackColor = true;
+            this.btn_ParCancel.UseVisualStyleBackColor = false;
             this.btn_ParCancel.Click += new System.EventHandler(this.btn_ParCancel_Click);
             // 
             // btn_ParNext
             // 
+            this.btn_ParNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btn_ParNext.ForeColor = System.Drawing.Color.AliceBlue;
             this.btn_ParNext.Location = new System.Drawing.Point(423, 636);
             this.btn_ParNext.Name = "btn_ParNext";
             this.btn_ParNext.Size = new System.Drawing.Size(71, 21);
             this.btn_ParNext.TabIndex = 13;
             this.btn_ParNext.Text = "Next";
-            this.btn_ParNext.UseVisualStyleBackColor = true;
+            this.btn_ParNext.UseVisualStyleBackColor = false;
             this.btn_ParNext.Click += new System.EventHandler(this.btn_ParNext_Click);
             // 
             // lbl_Parent2
             // 
             this.lbl_Parent2.AutoSize = true;
             this.lbl_Parent2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Parent2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbl_Parent2.ForeColor = System.Drawing.Color.Black;
             this.lbl_Parent2.Location = new System.Drawing.Point(263, 336);
             this.lbl_Parent2.Name = "lbl_Parent2";
             this.lbl_Parent2.Size = new System.Drawing.Size(69, 20);
@@ -583,7 +584,7 @@ namespace CourseProject1A
             // 
             this.lbl_Parent1.AutoSize = true;
             this.lbl_Parent1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Parent1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lbl_Parent1.ForeColor = System.Drawing.Color.Black;
             this.lbl_Parent1.Location = new System.Drawing.Point(263, 25);
             this.lbl_Parent1.Name = "lbl_Parent1";
             this.lbl_Parent1.Size = new System.Drawing.Size(69, 20);
@@ -821,6 +822,7 @@ namespace CourseProject1A
             // 
             this.lbl_RevMessage.AutoSize = true;
             this.lbl_RevMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RevMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbl_RevMessage.Location = new System.Drawing.Point(38, 34);
             this.lbl_RevMessage.Name = "lbl_RevMessage";
             this.lbl_RevMessage.Size = new System.Drawing.Size(458, 15);
@@ -864,7 +866,7 @@ namespace CourseProject1A
             this.lbl_RegForm.AutoSize = true;
             this.lbl_RegForm.BackColor = System.Drawing.Color.Transparent;
             this.lbl_RegForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RegForm.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_RegForm.ForeColor = System.Drawing.Color.White;
             this.lbl_RegForm.Location = new System.Drawing.Point(172, 8);
             this.lbl_RegForm.Name = "lbl_RegForm";
             this.lbl_RegForm.Size = new System.Drawing.Size(445, 42);
@@ -875,12 +877,18 @@ namespace CourseProject1A
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.AutoScroll = true;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 749);
             this.Controls.Add(this.tabRegistration);
             this.Controls.Add(this.lbl_RegForm);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RegistrationPage";
-            this.Text = "Registration";
+            this.Text = "Student Registration";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.RegistrationPage_Load);
             this.tabRegistration.ResumeLayout(false);
             this.tab_StuInfo.ResumeLayout(false);
@@ -899,7 +907,6 @@ namespace CourseProject1A
         private System.Windows.Forms.TabControl tabRegistration;
         private System.Windows.Forms.TabPage tab_StuInfo;
         private System.Windows.Forms.Button btn_StuCancel;
-        private System.Windows.Forms.Button btn_StuNext;
         private System.Windows.Forms.ComboBox cb_StuHouse;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblPhoto;
