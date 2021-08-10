@@ -23,5 +23,19 @@ namespace CourseProject1A
             RegistrationPage.MdiParent = this.MdiParent;
             RegistrationPage.Show();
         }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+            var AddEditStaff = new AddEditStaff();
+            AddEditStaff.MdiParent = this.MdiParent;
+            AddEditStaff.Show();
+        }
+
+        private void btn_Teach_Click(object sender, EventArgs e)
+        {
+            var AddEditTeacher = new AddEditTeacher();
+            AddEditTeacher.MdiParent = this.MdiParent;
+            AddEditTeacher.Show();
+        }
     }
 }

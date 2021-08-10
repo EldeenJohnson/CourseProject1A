@@ -51,62 +51,77 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.AliceBlue;
             this.label1.Location = new System.Drawing.Point(279, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 37);
+            this.label1.Size = new System.Drawing.Size(249, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Student Detail";
             // 
             // Editbotton
             // 
+            this.Editbotton.BackColor = System.Drawing.Color.Teal;
+            this.Editbotton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Editbotton.ForeColor = System.Drawing.Color.White;
             this.Editbotton.Location = new System.Drawing.Point(58, 416);
             this.Editbotton.Name = "Editbotton";
             this.Editbotton.Size = new System.Drawing.Size(94, 38);
             this.Editbotton.TabIndex = 2;
             this.Editbotton.Text = "Edit";
-            this.Editbotton.UseVisualStyleBackColor = true;
+            this.Editbotton.UseVisualStyleBackColor = false;
             this.Editbotton.Click += new System.EventHandler(this.Editbotton_Click);
             // 
             // Deletebutton
             // 
+            this.Deletebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Deletebutton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Deletebutton.ForeColor = System.Drawing.Color.White;
             this.Deletebutton.Location = new System.Drawing.Point(442, 416);
             this.Deletebutton.Name = "Deletebutton";
             this.Deletebutton.Size = new System.Drawing.Size(94, 38);
             this.Deletebutton.TabIndex = 3;
             this.Deletebutton.Text = "Delete";
-            this.Deletebutton.UseVisualStyleBackColor = true;
+            this.Deletebutton.UseVisualStyleBackColor = false;
             this.Deletebutton.Click += new System.EventHandler(this.Deletebutton_Click);
             // 
             // Closebutton
             // 
+            this.Closebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Closebutton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Closebutton.ForeColor = System.Drawing.Color.White;
             this.Closebutton.Location = new System.Drawing.Point(641, 416);
             this.Closebutton.Name = "Closebutton";
             this.Closebutton.Size = new System.Drawing.Size(94, 38);
             this.Closebutton.TabIndex = 4;
             this.Closebutton.Text = "Close";
-            this.Closebutton.UseVisualStyleBackColor = true;
+            this.Closebutton.UseVisualStyleBackColor = false;
             this.Closebutton.Click += new System.EventHandler(this.Closebutton_Click);
             // 
             // Addbutton
             // 
+            this.Addbutton.BackColor = System.Drawing.Color.Green;
+            this.Addbutton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Addbutton.ForeColor = System.Drawing.Color.White;
             this.Addbutton.Location = new System.Drawing.Point(240, 416);
             this.Addbutton.Name = "Addbutton";
             this.Addbutton.Size = new System.Drawing.Size(94, 38);
             this.Addbutton.TabIndex = 5;
             this.Addbutton.Text = "Add";
-            this.Addbutton.UseVisualStyleBackColor = true;
+            this.Addbutton.UseVisualStyleBackColor = false;
             this.Addbutton.Click += new System.EventHandler(this.Addbutton_Click);
             // 
             // Refreshbutton
             // 
+            this.Refreshbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Refreshbutton.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Refreshbutton.ForeColor = System.Drawing.Color.White;
             this.Refreshbutton.Location = new System.Drawing.Point(359, 362);
             this.Refreshbutton.Name = "Refreshbutton";
             this.Refreshbutton.Size = new System.Drawing.Size(59, 24);
             this.Refreshbutton.TabIndex = 6;
             this.Refreshbutton.Text = "Refresh";
-            this.Refreshbutton.UseVisualStyleBackColor = true;
+            this.Refreshbutton.UseVisualStyleBackColor = false;
             this.Refreshbutton.Click += new System.EventHandler(this.Refreshbutton_Click);
             // 
             // ViewStudentsInfo
@@ -121,6 +136,7 @@
             this.Controls.Add(this.Editbotton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvstudentdata);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewStudentsInfo";
             this.Text = "Student Management";

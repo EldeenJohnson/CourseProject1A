@@ -44,7 +44,7 @@ namespace CourseProject1A
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label1.Location = new System.Drawing.Point(280, 160);
+            this.label1.Location = new System.Drawing.Point(278, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(313, 66);
             this.label1.TabIndex = 12;
@@ -65,6 +65,7 @@ namespace CourseProject1A
             this.btn_Teach.Text = "Teacher Management";
             this.btn_Teach.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Teach.UseVisualStyleBackColor = false;
+            this.btn_Teach.Click += new System.EventHandler(this.btn_Teach_Click);
             // 
             // btn_Staff
             // 
@@ -74,13 +75,14 @@ namespace CourseProject1A
             this.btn_Staff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Staff.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Staff.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btn_Staff.Location = new System.Drawing.Point(344, 261);
+            this.btn_Staff.Location = new System.Drawing.Point(341, 261);
             this.btn_Staff.Name = "btn_Staff";
             this.btn_Staff.Size = new System.Drawing.Size(184, 123);
             this.btn_Staff.TabIndex = 10;
             this.btn_Staff.Text = "Aux\r\nStaff \r\nOn-Boarding";
             this.btn_Staff.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Staff.UseVisualStyleBackColor = false;
+            this.btn_Staff.Click += new System.EventHandler(this.btn_Staff_Click);
             // 
             // btn_stuApp
             // 

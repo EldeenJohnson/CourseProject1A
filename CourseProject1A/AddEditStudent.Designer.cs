@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditStudent));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.tbLName = new System.Windows.Forms.TextBox();
@@ -67,7 +66,7 @@
             this.tableLayoutPanel1.Controls.Add(this.tbFName, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tbGender, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.tbDOM, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(221, 60);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(129, 64);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
@@ -104,6 +103,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(3, 230);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 13);
@@ -113,6 +113,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(3, 184);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 13);
@@ -122,6 +123,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(3, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(45, 13);
@@ -131,6 +133,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(3, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
@@ -140,6 +143,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
@@ -149,6 +153,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
@@ -178,33 +183,35 @@
             // 
             // SaveChanges
             // 
-            this.SaveChanges.Location = new System.Drawing.Point(180, 358);
+            this.SaveChanges.BackColor = System.Drawing.Color.Green;
+            this.SaveChanges.Location = new System.Drawing.Point(228, 358);
             this.SaveChanges.Name = "SaveChanges";
             this.SaveChanges.Size = new System.Drawing.Size(109, 48);
             this.SaveChanges.TabIndex = 0;
             this.SaveChanges.Text = "Save Changes";
-            this.SaveChanges.UseVisualStyleBackColor = true;
+            this.SaveChanges.UseVisualStyleBackColor = false;
             this.SaveChanges.Click += new System.EventHandler(this.SaveChanges_Click);
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(493, 358);
+            this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Cancel.Location = new System.Drawing.Point(587, 358);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(109, 48);
             this.Cancel.TabIndex = 1;
             this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // lbl_RegForm
             // 
             this.lbl_RegForm.AutoSize = true;
             this.lbl_RegForm.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RegForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RegForm.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lbl_RegForm.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RegForm.ForeColor = System.Drawing.Color.White;
             this.lbl_RegForm.Location = new System.Drawing.Point(220, 9);
             this.lbl_RegForm.Name = "lbl_RegForm";
-            this.lbl_RegForm.Size = new System.Drawing.Size(335, 42);
+            this.lbl_RegForm.Size = new System.Drawing.Size(342, 45);
             this.lbl_RegForm.TabIndex = 11;
             this.lbl_RegForm.Text = "Edit Student Details";
             // 
@@ -221,13 +228,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lbl_RegForm);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.SaveChanges);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "AddEditStudent";
             this.Text = "AddEditStudent";
             this.tableLayoutPanel1.ResumeLayout(false);

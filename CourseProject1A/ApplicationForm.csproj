@@ -272,6 +272,8 @@
     <None Include="Resources\small bg.jpg" />
     <None Include="Resources\Choice logo1.png" />
     <None Include="Resources\Choice logo2.png" />
+    <None Include="Resources\Choice logo3.png" />
+    <None Include="Resources\deletered.ico" />
     <Content Include="schooldb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>schooldb.Context.cs</LastGenOutput>

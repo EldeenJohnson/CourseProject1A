@@ -31,19 +31,14 @@ namespace CourseProject1A
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.studentApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.TS_Edit = new System.Windows.Forms.ToolStripMenuItem();
             this.editApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.staffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.teacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newTeacherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageTeachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.privacyPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageTeachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,9 +46,7 @@ namespace CourseProject1A
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.studentApplicationToolStripMenuItem,
-            this.staffToolStripMenuItem,
-            this.teacherToolStripMenuItem,
+            this.TS_Edit,
             this.helpToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -62,77 +55,23 @@ namespace CourseProject1A
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // studentApplicationToolStripMenuItem
+            // TS_Edit
             // 
-            this.studentApplicationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newApplicationToolStripMenuItem,
-            this.editApplicationToolStripMenuItem});
-            this.studentApplicationToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.studentApplicationToolStripMenuItem.Name = "studentApplicationToolStripMenuItem";
-            this.studentApplicationToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
-            this.studentApplicationToolStripMenuItem.Text = "Student Application";
-            // 
-            // newApplicationToolStripMenuItem
-            // 
-            this.newApplicationToolStripMenuItem.Name = "newApplicationToolStripMenuItem";
-            this.newApplicationToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.newApplicationToolStripMenuItem.Text = "New Student";
-            this.newApplicationToolStripMenuItem.Click += new System.EventHandler(this.newApplicationToolStripMenuItem_Click);
+            this.TS_Edit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editApplicationToolStripMenuItem,
+            this.manageStaffToolStripMenuItem,
+            this.manageTeachersToolStripMenuItem});
+            this.TS_Edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TS_Edit.Name = "TS_Edit";
+            this.TS_Edit.Size = new System.Drawing.Size(39, 20);
+            this.TS_Edit.Text = "Edit";
             // 
             // editApplicationToolStripMenuItem
             // 
             this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
-            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editApplicationToolStripMenuItem.Text = "Manage Student";
             this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
-            // 
-            // staffToolStripMenuItem
-            // 
-            this.staffToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newStaffToolStripMenuItem,
-            this.manageStaffToolStripMenuItem});
-            this.staffToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.staffToolStripMenuItem.Name = "staffToolStripMenuItem";
-            this.staffToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.staffToolStripMenuItem.Text = "Staff";
-            // 
-            // newStaffToolStripMenuItem
-            // 
-            this.newStaffToolStripMenuItem.Name = "newStaffToolStripMenuItem";
-            this.newStaffToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.newStaffToolStripMenuItem.Text = "New Staff";
-            this.newStaffToolStripMenuItem.Click += new System.EventHandler(this.newStaffToolStripMenuItem_Click);
-            // 
-            // manageStaffToolStripMenuItem
-            // 
-            this.manageStaffToolStripMenuItem.Name = "manageStaffToolStripMenuItem";
-            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.manageStaffToolStripMenuItem.Text = "Manage Staff";
-            this.manageStaffToolStripMenuItem.Click += new System.EventHandler(this.manageStaffToolStripMenuItem_Click);
-            // 
-            // teacherToolStripMenuItem
-            // 
-            this.teacherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newTeacherToolStripMenuItem,
-            this.manageTeachersToolStripMenuItem});
-            this.teacherToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.teacherToolStripMenuItem.Name = "teacherToolStripMenuItem";
-            this.teacherToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.teacherToolStripMenuItem.Text = "Teacher";
-            // 
-            // newTeacherToolStripMenuItem
-            // 
-            this.newTeacherToolStripMenuItem.Name = "newTeacherToolStripMenuItem";
-            this.newTeacherToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.newTeacherToolStripMenuItem.Text = "New Teacher";
-            this.newTeacherToolStripMenuItem.Click += new System.EventHandler(this.newTeacherToolStripMenuItem_Click);
-            // 
-            // manageTeachersToolStripMenuItem
-            // 
-            this.manageTeachersToolStripMenuItem.Name = "manageTeachersToolStripMenuItem";
-            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.manageTeachersToolStripMenuItem.Text = "Manage Teachers";
-            this.manageTeachersToolStripMenuItem.Click += new System.EventHandler(this.manageTeachersToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -147,13 +86,13 @@ namespace CourseProject1A
             // privacyPolicyToolStripMenuItem
             // 
             this.privacyPolicyToolStripMenuItem.Name = "privacyPolicyToolStripMenuItem";
-            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.privacyPolicyToolStripMenuItem.Text = "Privacy Policy";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // exitToolStripMenuItem
@@ -163,6 +102,20 @@ namespace CourseProject1A
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // manageStaffToolStripMenuItem
+            // 
+            this.manageStaffToolStripMenuItem.Name = "manageStaffToolStripMenuItem";
+            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageStaffToolStripMenuItem.Text = "Manage Staff";
+            this.manageStaffToolStripMenuItem.Click += new System.EventHandler(this.manageStaffToolStripMenuItem_Click_1);
+            // 
+            // manageTeachersToolStripMenuItem
+            // 
+            this.manageTeachersToolStripMenuItem.Name = "manageTeachersToolStripMenuItem";
+            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageTeachersToolStripMenuItem.Text = "Manage Teachers";
+            this.manageTeachersToolStripMenuItem.Click += new System.EventHandler(this.manageTeachersToolStripMenuItem_Click);
             // 
             // HomeWindow
             // 
@@ -189,18 +142,13 @@ namespace CourseProject1A
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem studentApplicationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newApplicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem TS_Edit;
         private System.Windows.Forms.ToolStripMenuItem editApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem staffToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newStaffToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageStaffToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem teacherToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newTeacherToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageTeachersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem privacyPolicyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageStaffToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageTeachersToolStripMenuItem;
     }
 }

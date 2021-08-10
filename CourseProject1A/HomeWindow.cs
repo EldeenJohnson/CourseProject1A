@@ -45,20 +45,6 @@ namespace CourseProject1A
             studentdata.Show();
         }
 
-        private void manageStaffToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var StaffData = new ViewStaff();
-            StaffData.MdiParent = this;
-            StaffData.Show();
-        }
-
-        private void newStaffToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var AddEditStaff = new AddEditStaff();
-            AddEditStaff.MdiParent = this.MdiParent;
-            AddEditStaff.Show();
-        }
-
         private void manageTeachersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var TeacherData = new ViewTeachers();
@@ -66,12 +52,13 @@ namespace CourseProject1A
             TeacherData.Show();
         }
 
-        private void newTeacherToolStripMenuItem_Click(object sender, EventArgs e)
+        private void manageStaffToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            var AddEditTeacher = new AddEditTeacher();
-            AddEditTeacher.MdiParent = this.MdiParent;
-            AddEditTeacher.Show();
+            var StaffData = new ViewStaff();
+            StaffData.MdiParent = this;
+            StaffData.Show();
         }
-        
+
     }
+    
 }

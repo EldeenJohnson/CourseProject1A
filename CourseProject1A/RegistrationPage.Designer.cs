@@ -799,13 +799,15 @@ namespace CourseProject1A
             // 
             // Submitbutton
             // 
-            this.Submitbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Submitbutton.Location = new System.Drawing.Point(617, 600);
+            this.Submitbutton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Submitbutton.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Submitbutton.ForeColor = System.Drawing.Color.White;
+            this.Submitbutton.Location = new System.Drawing.Point(589, 672);
             this.Submitbutton.Name = "Submitbutton";
             this.Submitbutton.Size = new System.Drawing.Size(111, 45);
             this.Submitbutton.TabIndex = 61;
             this.Submitbutton.Text = "Submit";
-            this.Submitbutton.UseVisualStyleBackColor = true;
+            this.Submitbutton.UseVisualStyleBackColor = false;
             this.Submitbutton.Click += new System.EventHandler(this.Submitbutton_Click);
             // 
             // rtb_Review
@@ -831,27 +833,34 @@ namespace CourseProject1A
             // 
             // btn_RevPre
             // 
+            this.btn_RevPre.BackColor = System.Drawing.Color.Olive;
+            this.btn_RevPre.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RevPre.ForeColor = System.Drawing.Color.White;
             this.btn_RevPre.Location = new System.Drawing.Point(197, 761);
             this.btn_RevPre.Name = "btn_RevPre";
             this.btn_RevPre.Size = new System.Drawing.Size(71, 21);
             this.btn_RevPre.TabIndex = 1;
             this.btn_RevPre.Text = "Previous";
-            this.btn_RevPre.UseVisualStyleBackColor = true;
+            this.btn_RevPre.UseVisualStyleBackColor = false;
             this.btn_RevPre.Click += new System.EventHandler(this.btn_RevPre_Click);
             // 
             // btn_RevCancel
             // 
+            this.btn_RevCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_RevCancel.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RevCancel.ForeColor = System.Drawing.Color.White;
             this.btn_RevCancel.Location = new System.Drawing.Point(503, 761);
             this.btn_RevCancel.Name = "btn_RevCancel";
             this.btn_RevCancel.Size = new System.Drawing.Size(71, 21);
             this.btn_RevCancel.TabIndex = 3;
             this.btn_RevCancel.Text = "Cancel";
-            this.btn_RevCancel.UseVisualStyleBackColor = true;
+            this.btn_RevCancel.UseVisualStyleBackColor = false;
             this.btn_RevCancel.Click += new System.EventHandler(this.btn_RevCancel_Click);
             // 
             // btn_Submit
             // 
             this.btn_Submit.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Submit.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Submit.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_Submit.Location = new System.Drawing.Point(344, 761);
             this.btn_Submit.Name = "btn_Submit";
@@ -865,11 +874,11 @@ namespace CourseProject1A
             // 
             this.lbl_RegForm.AutoSize = true;
             this.lbl_RegForm.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_RegForm.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RegForm.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_RegForm.ForeColor = System.Drawing.Color.White;
             this.lbl_RegForm.Location = new System.Drawing.Point(172, 8);
             this.lbl_RegForm.Name = "lbl_RegForm";
-            this.lbl_RegForm.Size = new System.Drawing.Size(445, 42);
+            this.lbl_RegForm.Size = new System.Drawing.Size(433, 45);
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
