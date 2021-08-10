@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewTeachers));
             this.Refreshbutton = new System.Windows.Forms.Button();
             this.Addbutton = new System.Windows.Forms.Button();
             this.Closebutton = new System.Windows.Forms.Button();
@@ -132,8 +133,9 @@
             this.Controls.Add(this.Editbotton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvteacherdata);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewTeachers";
-            this.Text = "ViewTeachers";
+            this.Text = "Teacher Management";
             this.Load += new System.EventHandler(this.ViewTeachers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvteacherdata)).EndInit();
             this.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditStudent));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tbAddress = new System.Windows.Forms.TextBox();
             this.tbLName = new System.Windows.Forms.TextBox();
@@ -237,8 +238,9 @@
             this.Controls.Add(this.SaveChanges);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEditStudent";
-            this.Text = "AddEditStudent";
+            this.Text = "Edit Students";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

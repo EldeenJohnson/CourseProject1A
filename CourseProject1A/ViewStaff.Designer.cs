@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewStaff));
             this.gvstaffdata = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.Addbutton = new System.Windows.Forms.Button();
@@ -137,8 +138,9 @@
             this.Controls.Add(this.Editbotton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvstaffdata);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewStaff";
-            this.Text = "ViewStaff";
+            this.Text = "Staff Managment";
             this.Load += new System.EventHandler(this.ViewStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvstaffdata)).EndInit();
             this.ResumeLayout(false);
