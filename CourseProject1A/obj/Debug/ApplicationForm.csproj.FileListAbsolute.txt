@@ -81,3 +81,4 @@ C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseP
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.ViewTeachers.resources
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\ApplicationForm.csproj.CopyComplete
 C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.OptionsForm.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.PrivacyPolicy.resources

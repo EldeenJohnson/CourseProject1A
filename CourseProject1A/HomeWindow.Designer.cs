@@ -88,6 +88,7 @@ namespace CourseProject1A
             this.privacyPolicyToolStripMenuItem.Name = "privacyPolicyToolStripMenuItem";
             this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.privacyPolicyToolStripMenuItem.Text = "Privacy Policy";
+            this.privacyPolicyToolStripMenuItem.Click += new System.EventHandler(this.privacyPolicyToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -131,6 +132,7 @@ namespace CourseProject1A
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "HomeWindow";
             this.Text = "Choice Christian Academy SMS";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.OptionsForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

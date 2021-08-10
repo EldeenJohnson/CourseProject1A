@@ -141,6 +141,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewStaff";
             this.Text = "Staff Managment";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ViewStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvstaffdata)).EndInit();
             this.ResumeLayout(false);

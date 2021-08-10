@@ -29,12 +29,17 @@ namespace CourseProject1A
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Teach = new System.Windows.Forms.Button();
             this.btn_Staff = new System.Windows.Forms.Button();
             this.btn_stuApp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Time = new System.Windows.Forms.Label();
+            this.lbl_Date = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,7 +48,7 @@ namespace CourseProject1A
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(278, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(313, 66);
@@ -113,6 +118,47 @@ namespace CourseProject1A
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label2.Location = new System.Drawing.Point(644, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 26);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Welcome Admin";
+            // 
+            // lbl_Time
+            // 
+            this.lbl_Time.AutoSize = true;
+            this.lbl_Time.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Time.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Time.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbl_Time.Location = new System.Drawing.Point(678, 64);
+            this.lbl_Time.Name = "lbl_Time";
+            this.lbl_Time.Size = new System.Drawing.Size(82, 18);
+            this.lbl_Time.TabIndex = 15;
+            this.lbl_Time.Text = "12:00:00 am";
+            // 
+            // lbl_Date
+            // 
+            this.lbl_Date.AutoSize = true;
+            this.lbl_Date.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Date.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Date.ForeColor = System.Drawing.Color.DarkGray;
+            this.lbl_Date.Location = new System.Drawing.Point(639, 87);
+            this.lbl_Date.Name = "lbl_Date";
+            this.lbl_Date.Size = new System.Drawing.Size(160, 18);
+            this.lbl_Date.TabIndex = 15;
+            this.lbl_Date.Text = "Tuesday, 10 August 2021";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,16 +166,20 @@ namespace CourseProject1A
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 521);
+            this.Controls.Add(this.lbl_Date);
+            this.Controls.Add(this.lbl_Time);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Teach);
             this.Controls.Add(this.btn_Staff);
             this.Controls.Add(this.btn_stuApp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "OptionsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Main Menu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.OptionsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -143,5 +193,9 @@ namespace CourseProject1A
         private System.Windows.Forms.Button btn_Staff;
         private System.Windows.Forms.Button btn_stuApp;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Time;
+        private System.Windows.Forms.Label lbl_Date;
+        private System.Windows.Forms.Timer timer1;
     }
 }

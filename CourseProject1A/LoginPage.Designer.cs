@@ -146,8 +146,9 @@ namespace CourseProject1A
             this.Controls.Add(this.tb_username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginPage";
-            this.Text = "Login Form";
+            this.Text = "SMS Login ";
             this.Load += new System.EventHandler(this.LoginPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

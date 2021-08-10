@@ -59,6 +59,13 @@ namespace CourseProject1A
             StaffData.Show();
         }
 
+        private void privacyPolicyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var PrivacyPolicy = new PrivacyPolicy();
+            PrivacyPolicy.MdiParent = this;
+            PrivacyPolicy.Show();
+
+        }
     }
     
 }
