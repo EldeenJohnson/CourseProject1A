@@ -22,24 +22,16 @@ namespace CourseProject1A
 
         private void ViewStaff_Load(object sender, EventArgs e)
         {
-            var staffdata = choice_Christian_AcademyEntities.Staffs
-               .Select(q => new {
-                   ID = q.ID,
-                   First_Name = q.First_Name,
-                   Last_Name = q.Last_Name,
-                   Address = q.Address,
-                   Date_of_Employment = q.Date_of_Employment,
-                   Qualification = q.Qualification,
-                   Job_Title = q.Job_Title
-               }).ToList();
-            gvstaffdata.DataSource = staffdata;
-            gvstaffdata.Columns[0].Visible = false;
-            gvstaffdata.Columns[1].HeaderText = "First Name";
-            gvstaffdata.Columns[2].HeaderText = "Last Name";
-            gvstaffdata.Columns[3].HeaderText = "Address";
-            gvstaffdata.Columns[4].HeaderText = "Date of Employment";
-            gvstaffdata.Columns[5].HeaderText = "Qualification";
-            gvstaffdata.Columns[6].HeaderText = "Job Title";
+            // TODO: This line of code loads data into the 'choice_Christian_AcademyDataSet.Staff' table. You can move, or remove it, as needed.
+            this.staffTableAdapter.Fill(this.choice_Christian_AcademyDataSet.Staff);
+            PopulateGrid();
+        }
+
+        //New Function to PopulateGrid. Can be called anytime we need a grid refresh
+        
+        private void refreshbttn_Click(object sender, EventArgs e)
+        {
+            PopulateGrid();
         }
 
         private void Editbotton_Click(object sender, EventArgs e)
@@ -86,9 +78,26 @@ namespace CourseProject1A
             AddEditStaff.Show();
         }
 
-        private void refreshbttn_Click(object sender, EventArgs e)
+        public void PopulateGrid()
         {
-            gvstaffdata.Refresh();
+            var staffdata = choice_Christian_AcademyEntities.Staffs
+               .Select(q => new {
+                   ID = q.ID,
+                   First_Name = q.First_Name,
+                   Last_Name = q.Last_Name,
+                   Address = q.Address,
+                   Date_of_Employment = q.Date_of_Employment,
+                   Qualification = q.Qualification,
+                   Job_Title = q.Job_Title
+               }).ToList();
+            gvstaffdata.DataSource = staffdata;
+            gvstaffdata.Columns[0].Visible = false;
+            gvstaffdata.Columns[1].HeaderText = "First Name";
+            gvstaffdata.Columns[2].HeaderText = "Last Name";
+            gvstaffdata.Columns[3].HeaderText = "Address";
+            gvstaffdata.Columns[4].HeaderText = "Date of Employment";
+            gvstaffdata.Columns[5].HeaderText = "Qualification";
+            gvstaffdata.Columns[6].HeaderText = "Job Title";
         }
     }
 }

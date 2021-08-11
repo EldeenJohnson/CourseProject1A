@@ -21,22 +21,7 @@ namespace CourseProject1A
 
         private void ViewStudentsInfo_Load_1(object sender, EventArgs e)
         {
-            var studentdata = choice_Christian_AcademyEntities.Students
-               .Select(q => new {
-                   First_Name = q.First_Name,
-                   Middle_Name = q.Mid_Name,
-                   Last_Name = q.Last_Name,
-                   Address = q.Address,
-                   Date_of_Birth = q.Date_of_Birth,
-                   q.ID
-               }).ToList();
-            gvstudentdata.DataSource = studentdata;
-            gvstudentdata.Columns[0].HeaderText = "First Name";
-            gvstudentdata.Columns[1].HeaderText = "Middle Initial";
-            gvstudentdata.Columns[2].HeaderText = "Last Name";
-            gvstudentdata.Columns[3].HeaderText = "Address";
-            gvstudentdata.Columns[4].HeaderText = "Date of Birth";
-            gvstudentdata.Columns[5].Visible = false;
+            PopulateGrid();
         }
 
         private void Editbotton_Click(object sender, EventArgs e)
@@ -85,7 +70,27 @@ namespace CourseProject1A
 
         private void Refreshbutton_Click(object sender, EventArgs e)
         {
-            gvstudentdata.Refresh();
+            PopulateGrid();
+        }
+
+        public void PopulateGrid()
+        {
+            var studentdata = choice_Christian_AcademyEntities.Students
+               .Select(q => new {
+                   First_Name = q.First_Name,
+                   Middle_Name = q.Mid_Name,
+                   Last_Name = q.Last_Name,
+                   Address = q.Address,
+                   Date_of_Birth = q.Date_of_Birth,
+                   q.ID
+               }).ToList();
+            gvstudentdata.DataSource = studentdata;
+            gvstudentdata.Columns[0].HeaderText = "First Name";
+            gvstudentdata.Columns[1].HeaderText = "Middle Initial";
+            gvstudentdata.Columns[2].HeaderText = "Last Name";
+            gvstudentdata.Columns[3].HeaderText = "Address";
+            gvstudentdata.Columns[4].HeaderText = "Date of Birth";
+            gvstudentdata.Columns[5].Visible = false;
         }
     }
 }

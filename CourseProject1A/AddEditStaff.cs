@@ -84,7 +84,7 @@ namespace CourseProject1A
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                 }
-                choice_Christian_AcademyEntities.SaveChanges();
+                choice_Christian_AcademyEntities.SaveChanges();              
                 MessageBox.Show("Information Submitted");
                 this.Close();
             }

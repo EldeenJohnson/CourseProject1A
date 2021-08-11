@@ -21,20 +21,7 @@ namespace CourseProject1A
 
         private void ViewTeachers_Load(object sender, EventArgs e)
         {
-            var teacherdata = choice_Christian_AcademyEntities.Teachers
-              .Select(q => new {
-                  First_Name = q.First_Name,
-                  Last_Name = q.Last_Name,
-                  Grade = q.Grade,
-                  Qualification = q.Qualification,
-                  q.ID
-              }).ToList();
-            gvteacherdata.DataSource = teacherdata;
-            gvteacherdata.Columns[0].HeaderText = "First Name";
-            gvteacherdata.Columns[1].HeaderText = "Last Name";
-            gvteacherdata.Columns[2].HeaderText = "Grade";
-            gvteacherdata.Columns[3].HeaderText = "Qualification";
-            gvteacherdata.Columns[4].Visible = false;
+            PopulateGrid();
         }
 
         private void Editbotton_Click(object sender, EventArgs e)
@@ -84,8 +71,25 @@ namespace CourseProject1A
 
         private void Refreshbutton_Click(object sender, EventArgs e)
         {
-            gvteacherdata.Refresh();
-           
+            PopulateGrid();           
+        }
+
+        public void PopulateGrid()
+        {
+            var teacherdata = choice_Christian_AcademyEntities.Teachers
+              .Select(q => new {
+                  First_Name = q.First_Name,
+                  Last_Name = q.Last_Name,
+                  Grade = q.Grade,
+                  Qualification = q.Qualification,
+                  q.ID
+              }).ToList();
+            gvteacherdata.DataSource = teacherdata;
+            gvteacherdata.Columns[0].HeaderText = "First Name";
+            gvteacherdata.Columns[1].HeaderText = "Last Name";
+            gvteacherdata.Columns[2].HeaderText = "Grade";
+            gvteacherdata.Columns[3].HeaderText = "Qualification";
+            gvteacherdata.Columns[4].Visible = false;
         }
     }
 }
