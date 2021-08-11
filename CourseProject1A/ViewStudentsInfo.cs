@@ -31,6 +31,7 @@ namespace CourseProject1A
             //Query database
             var student = choice_Christian_AcademyEntities.Students.FirstOrDefault(q => q.ID ==id);
 
+            //var addEditStudent = new RegistrationPage();
             var addEditStudent = new AddEditStudent(student);
             addEditStudent.MdiParent = this.MdiParent;
             addEditStudent.Show();
