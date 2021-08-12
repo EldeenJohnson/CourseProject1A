@@ -41,7 +41,7 @@ namespace CourseProject1A
                 string PrevSchool = tb_stuPreSch.Text;
                 var BirthEntryNum = tb_StuBEntry.Text;
                 string stuHouse = cb_StuHouse.Text.ToString();
-             //   var stuUpload = tb_StuUpload.Text;
+                //   var stuUpload = tb_StuUpload.Text;
                 string StuAddInfo = rtb_stuAddInfo.Text;
 
                 //Parent1 Info
@@ -54,36 +54,58 @@ namespace CourseProject1A
                 string parRelationship = tb_ParRelationship.Text;
 
                 //Parent2 Info
-                string par2fName = tb_Par2Fname.Text;
-                string par2lName = tb_Par2Lname.Text;
-                DateTime par2DOB = Par2_DOB.Value;
-                string par2Address = tb_par2Address.Text;
-                string par2Email = tb_Par2Email.Text;
-                string par2Phone = tb_Par2Phone.Text;
-                string par2Relationship = tb_Par2Relationship.Text;
+                if (Par2_IsChecked != false)
+                {
+                    string par2fName = tb_Par2Fname.Text;
+                    string par2lName = tb_Par2Lname.Text;
+                    DateTime par2DOB = Par2_DOB.Value;
+                    if (par2DOB >= DateTime.Today)
+                    {
+                        errorMessage += "Invalid date Selected.\n\r";
+                    }
+                    string par2Address = tb_par2Address.Text;
+                    string par2Email = tb_Par2Email.Text;
+                    string par2Phone = tb_Par2Phone.Text;
+                    string par2Relationship = tb_Par2Relationship.Text;
 
-                if (stuDOB >= DateTime.Today || par1DOB >= DateTime.Today || par2DOB >= DateTime.Today)
+                    if (string.IsNullOrWhiteSpace(par2fName) || string.IsNullOrWhiteSpace(par2lName)
+                        || string.IsNullOrWhiteSpace(par2Relationship) || string.IsNullOrWhiteSpace(par2Email))
+                    {
+                        isValid = false;
+                        errorMessage += "Please enter missing data.\n\r";
+                    }
+
+                    var parent2record = new Parent();
+                    parent2record.First_Name = par2fName;
+                    parent2record.Last_Name = par2lName;
+                    parent2record.Address = par2Address;
+                    parent2record.Contact_Number = par2Phone;
+                    parent2record.Email = par2Email;
+                    parent2record.Relationship = par2Relationship;
+
+
+                }
+
+                if (stuDOB >= DateTime.Today || par1DOB >= DateTime.Today)
                 {
                     //isValid = false;
                     errorMessage += "Invalid date Selected.\n\r";
                 }
                 //Data Validation
-                if 
+                if
                     (string.IsNullOrWhiteSpace(stuFName) || string.IsNullOrWhiteSpace(stuLName)
                     || string.IsNullOrWhiteSpace(stuEmail) || string.IsNullOrWhiteSpace(StuAddress)
-                    || string.IsNullOrWhiteSpace(BirthEntryNum) || string.IsNullOrWhiteSpace(stuPhone) 
+                    || string.IsNullOrWhiteSpace(BirthEntryNum) || string.IsNullOrWhiteSpace(stuPhone)
                     || string.IsNullOrWhiteSpace(Height_ft) || string.IsNullOrWhiteSpace(Height_in)
-                    || string.IsNullOrWhiteSpace(StuAddress)|| string.IsNullOrWhiteSpace(stuEmail)
+                    || string.IsNullOrWhiteSpace(StuAddress) || string.IsNullOrWhiteSpace(stuEmail)
                     || string.IsNullOrWhiteSpace(par1fName) || string.IsNullOrWhiteSpace(par1lName)
                     || string.IsNullOrWhiteSpace(parPhone) || string.IsNullOrWhiteSpace(par1Address)
-                    || string.IsNullOrWhiteSpace(parRelationship) || string.IsNullOrWhiteSpace(par1Email)
-                    || string.IsNullOrWhiteSpace(par2fName) || string.IsNullOrWhiteSpace(par2lName) 
-                    || string.IsNullOrWhiteSpace(par2Relationship) || string.IsNullOrWhiteSpace(par2Email)) 
+                    || string.IsNullOrWhiteSpace(parRelationship) || string.IsNullOrWhiteSpace(par1Email)) 
                 {
                     isValid = false;
                     errorMessage += "Please enter missing data.\n\r";
                 }
-
+                
                 if (isValid)
                 {
                     var studentrecord = new Student();
@@ -103,15 +125,6 @@ namespace CourseProject1A
                     parentrecord.Contact_Number = parPhone;
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
-
-                    var parent2record = new Parent();
-                    parent2record.First_Name = par2fName;
-                    parent2record.Last_Name = par2lName;
-                    parent2record.Address = par2Address;
-                    parentrecord.Contact_Number = par2Phone;
-                    parent2record.Email = par2Email;
-                    parent2record.Relationship = par2Relationship;
-
 
                     MessageBox.Show($"\tThank you {stuFName} {stuLName}.\n\r" +
                         $"Your Application was submitted successfully!\n\r" +
@@ -163,41 +176,45 @@ namespace CourseProject1A
             tabRegistration.SelectTab(2);
 
             //Below code will display entered data for review
-            rtb_Review.Text = "STUDENT INFORMATION"+
+            rtb_Review.Text = "STUDENT INFORMATION" +
                                "\n\nName: " + tb_stufname.Text + " " + tb_stuMname.Text + " " + tb_stulname.Text +
                                "\nDOB: " + stu_DOB.Value.ToShortDateString() +
                                "\nGender: " + cb_Gender.Text +
-                               "\nHeight: " + cb_HeightFt.Text + "ft," + cb_HeightIn.Text + "in"+
-                               "\nAddress: "+ tb_stuAddress.Text +
-                               "\nEmail: "+ tb_StuEmail.Text +
-                               "\nPhone Number: "+ tb_StuPhone.Text +
-                               "\nPrevious School: "+ tb_stuPreSch.Text +
-                               "\nBirth Entry Number: "+ tb_StuBEntry.Text +
-                               "\nHouse: "+ cb_StuHouse.Text +
-                            //   "\nPicture: "+ tb_StuUpload.Text +
-                               "\nAdditional Info: "+ rtb_stuAddInfo.Text +
-                               "\n\n"+
+                               "\nHeight: " + cb_HeightFt.Text + "ft," + cb_HeightIn.Text + "in" +
+                               "\nAddress: " + tb_stuAddress.Text +
+                               "\nEmail: " + tb_StuEmail.Text +
+                               "\nPhone Number: " + tb_StuPhone.Text +
+                               "\nPrevious School: " + tb_stuPreSch.Text +
+                               "\nBirth Entry Number: " + tb_StuBEntry.Text +
+                               "\nHouse: " + cb_StuHouse.Text +
+                               //   "\nPicture: "+ tb_StuUpload.Text +
+                               "\nAdditional Info: " + rtb_stuAddInfo.Text +
+                               "\n\n" +
 
                                //Review Parent 1
-                               "PARENT 1 INFORMATION"+
-                               "\nFirst Name: "+ tb_parFname.Text +
-                               "\nLast Name: "+ tb_parLname.Text +
-                               "\nDate Of Birth: "+ Par_DOB.Value +
-                               "\nAddress: "+ tb_parAddress.Text +
-                               "\nEmail: "+ tb_ParEmail.Text +
-                               "\nPhone Number: "+ tb_Parphone.Text +
-                               "\nRelationship: "+ tb_ParRelationship.Text +
-                               "\n\n" +
-                              
-                               //Review Parent 2
-                               "PARENT 2 INFORMATION" +
-                               "\nFirst Name: " + tb_Par2Fname.Text +
-                               "\nLast Name:" + tb_Par2Lname.Text +
-                               "\nDate Of Birth: " + Par2_DOB.Value +
-                               "\nAddress: " + tb_par2Address.Text +
-                               "\nEmail: " + tb_Par2Email.Text +
-                               "\nPhone Number: " + tb_Par2Phone.Text +
-                               "\nRelationship: " + tb_Par2Relationship.Text;
+                               "PARENT 1 INFORMATION" +
+                               "\nFirst Name: " + tb_parFname.Text +
+                               "\nLast Name: " + tb_parLname.Text +
+                               "\nDate Of Birth: " + Par_DOB.Value +
+                               "\nAddress: " + tb_parAddress.Text +
+                               "\nEmail: " + tb_ParEmail.Text +
+                               "\nPhone Number: " + tb_Parphone.Text +
+                               "\nRelationship: " + tb_ParRelationship.Text +
+                               "\n\n";
+
+                            //Review Parent 2
+                            if (Par2_IsChecked != false)
+                            {
+                                rtb_Review.Text +=
+                                "PARENT 2 INFORMATION" +
+                                "\nFirst Name: " + tb_Par2Fname.Text +
+                                "\nLast Name:" + tb_Par2Lname.Text +
+                                "\nDate Of Birth: " + Par2_DOB.Value +
+                                "\nAddress: " + tb_par2Address.Text +
+                                "\nEmail: " + tb_Par2Email.Text +
+                                "\nPhone Number: " + tb_Par2Phone.Text +
+                                "\nRelationship: " + tb_Par2Relationship.Text;
+                            }
 
         }
 
@@ -271,143 +288,172 @@ namespace CourseProject1A
             ////image.Show();
         }
 
-        private void tb_stufname_Click(object sender, EventArgs e)
+          private void tb_stufname_Click(object sender, EventArgs e)
+          {
+              if(tb_stufname.Text == "First Name")
+              {
+                  tb_stufname.Text = "";
+
+
+              }
+          }
+
+
+          private void tb_stufname_Leave_1(object sender, EventArgs e)
+          {
+              if (tb_stufname.Text == "")
+              {
+                  tb_stufname.Text = "First Name";
+                  tb_stufname.ForeColor = Color.Black;
+
+              }
+          }
+
+          private void tb_stuMname_Click(object sender, EventArgs e)
+          {
+              if (tb_stuMname.Text == "Middle Name")
+              {
+                  tb_stuMname.Text = "";
+
+
+              }
+          }
+
+          private void tb_stuMname_Leave(object sender, EventArgs e)
+          {
+              if (tb_stuMname.Text == "")
+              {
+                  tb_stuMname.Text = "Middle Name";
+                  tb_stuMname.ForeColor = Color.Black;
+
+              }
+          }
+
+          private void tb_stulname_Click(object sender, EventArgs e)
+          {
+              if (tb_stulname.Text == "Last Name")
+              {
+                  tb_stulname.Text = "";
+
+
+              }
+          }
+
+          private void tb_stulname_Leave(object sender, EventArgs e)
+          {
+              if (tb_stulname.Text == "")
+              {
+                  tb_stulname.Text = "Last Name";
+
+                  tb_stulname.ForeColor = Color.Black;
+              }
+          }
+
+          private void tb_parFname_Click(object sender, EventArgs e)
+          {
+              if (tb_parFname.Text == "First Name")
+              {
+                  tb_parFname.Text = "";
+
+              }
+          }
+
+          private void tb_parFname_Leave(object sender, EventArgs e)
+          {
+              if (tb_parFname.Text == "")
+              {
+                  tb_parFname.Text = "First Name";
+                  tb_parFname.ForeColor = Color.Black;
+              }
+          }
+
+          private void tb_parLname_Click(object sender, EventArgs e)
+          {
+              if (tb_parLname.Text == "Last Name")
+              {
+                  tb_parLname.Text = "";
+
+              }
+          }
+
+          private void tb_parLname_Leave(object sender, EventArgs e)
+          {
+              if (tb_parLname.Text == "")
+              {
+                  tb_parLname.Text = "Last Name";
+                  tb_parLname.ForeColor = Color.Black;
+              }
+          }
+
+          private void tb_Par2Fname_TextChanged(object sender, EventArgs e)
+          {
+
+          }
+
+          private void tb_Par2Fname_Click(object sender, EventArgs e)
+          {
+              if (tb_Par2Fname.Text == "First Name")
+              {
+                  tb_Par2Fname.Text = "";
+
+              }
+          }
+
+          private void tb_Par2Fname_Leave(object sender, EventArgs e)
+          {
+              if (tb_Par2Fname.Text == "")
+              {
+                  tb_Par2Fname.Text = "First Name";
+                  tb_Par2Fname.ForeColor = Color.Black;
+              }
+          }
+
+          private void tb_Par2Lname_Click(object sender, EventArgs e)
+          {
+              if (tb_Par2Lname.Text == "Last Name")
+              {
+                  tb_Par2Lname.Text = "";
+
+              }
+          }
+
+          private void tb_Par2Lname_Leave(object sender, EventArgs e)
+          {
+              if (tb_Par2Lname.Text == "")
+              {
+                  tb_Par2Lname.Text = "Last Name";
+                  tb_Par2Lname.ForeColor = Color.Black;
+              }
+          }
+
+        bool Par2_IsChecked = false;
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if(tb_stufname.Text == "First Name")
+            if (checkBox1.Checked)
             {
-                tb_stufname.Text = "";
-
-
+                Par2_IsChecked = true;
+                tb_Par2Fname.Enabled = true;
+                tb_Par2Lname.Enabled = true;
+                Par2_DOB.Enabled = true;
+                tb_par2Address.Enabled = true;
+                tb_Par2Email.Enabled = true;
+                tb_Par2Phone.Enabled = true;
+                tb_Par2Relationship.Enabled = true;
             }
-        }
-
-        
-        private void tb_stufname_Leave_1(object sender, EventArgs e)
-        {
-            if (tb_stufname.Text == "")
+            else
             {
-                tb_stufname.Text = "First Name";
-                tb_stufname.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void tb_stuMname_Click(object sender, EventArgs e)
-        {
-            if (tb_stuMname.Text == "Middle Name")
-            {
-                tb_stuMname.Text = "";
-              
-
-            }
-        }
-
-        private void tb_stuMname_Leave(object sender, EventArgs e)
-        {
-            if (tb_stuMname.Text == "")
-            {
-                tb_stuMname.Text = "Middle Name";
-                tb_stuMname.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void tb_stulname_Click(object sender, EventArgs e)
-        {
-            if (tb_stulname.Text == "Last Name")
-            {
-                tb_stulname.Text = "";
-               
-
-            }
-        }
-
-        private void tb_stulname_Leave(object sender, EventArgs e)
-        {
-            if (tb_stulname.Text == "")
-            {
-                tb_stulname.Text = "Last Name";
-
-                tb_stulname.ForeColor = Color.Black;
-            }
-        }
-
-        private void tb_parFname_Click(object sender, EventArgs e)
-        {
-            if (tb_parFname.Text == "First Name")
-            {
-                tb_parFname.Text = "";
-
-            }
-        }
-
-        private void tb_parFname_Leave(object sender, EventArgs e)
-        {
-            if (tb_parFname.Text == "")
-            {
-                tb_parFname.Text = "First Name";
-                tb_parFname.ForeColor = Color.Black;
-            }
-        }
-
-        private void tb_parLname_Click(object sender, EventArgs e)
-        {
-            if (tb_parLname.Text == "Last Name")
-            {
-                tb_parLname.Text = "";
-                
-            }
-        }
-
-        private void tb_parLname_Leave(object sender, EventArgs e)
-        {
-            if (tb_parLname.Text == "")
-            {
-                tb_parLname.Text = "Last Name";
-                tb_parLname.ForeColor = Color.Black;
-            }
-        }
-
-        private void tb_Par2Fname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_Par2Fname_Click(object sender, EventArgs e)
-        {
-            if (tb_Par2Fname.Text == "First Name")
-            {
-                tb_Par2Fname.Text = "";
-
-            }
-        }
-
-        private void tb_Par2Fname_Leave(object sender, EventArgs e)
-        {
-            if (tb_Par2Fname.Text == "")
-            {
-                tb_Par2Fname.Text = "First Name";
-                tb_Par2Fname.ForeColor = Color.Black;
-            }
-        }
-
-        private void tb_Par2Lname_Click(object sender, EventArgs e)
-        {
-            if (tb_Par2Lname.Text == "Last Name")
-            {
-                tb_Par2Lname.Text = "";
-
-            }
-        }
-
-        private void tb_Par2Lname_Leave(object sender, EventArgs e)
-        {
-            if (tb_Par2Lname.Text == "")
-            {
-                tb_Par2Lname.Text = "Last Name";
-                tb_Par2Lname.ForeColor = Color.Black;
+                Par2_IsChecked = false;
+                tb_Par2Fname.Enabled = false;
+                tb_Par2Lname.Enabled = false;
+                Par2_DOB.Enabled = false;
+                tb_par2Address.Enabled = false;
+                tb_Par2Email.Enabled = false;
+                tb_Par2Phone.Enabled = false;
+                tb_Par2Relationship.Enabled = false;
             }
         }
     }
+        
+        
 }    
 
