@@ -196,8 +196,8 @@ namespace CourseProject1A
                                "\nDate Of Birth: " + Par2_DOB.Value +
                                "\nAddress: " + tb_par2Address.Text +
                                "\nEmail: " + tb_Par2Email.Text +
-                               "\nPhone Number: " + tb_Parphone.Text +
-                               "\nRelationship: " + tb_ParRelationship.Text;
+                               "\nPhone Number: " + tb_Par2Phone.Text +
+                               "\nRelationship: " + tb_Par2Relationship.Text;
 
         }
 
@@ -241,6 +241,7 @@ namespace CourseProject1A
                 Email = tb_ParEmail.Text
             };
             choice_Christian_AcademyEntities.Parents.Add(newparent);
+
             ////choice_Christian_AcademyEntities.SaveChanges();
             var secondparent = new Parent
             {
