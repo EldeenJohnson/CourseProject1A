@@ -278,6 +278,8 @@ namespace CourseProject1A
             this.tb_stuMname.Size = new System.Drawing.Size(114, 20);
             this.tb_stuMname.TabIndex = 2;
             this.tb_stuMname.Text = "Middle Name";
+            this.tb_stuMname.Click += new System.EventHandler(this.tb_stuMname_Click);
+            this.tb_stuMname.Leave += new System.EventHandler(this.tb_stuMname_Leave);
             // 
             // label5
             // 
@@ -448,6 +450,8 @@ namespace CourseProject1A
             this.tb_stufname.Size = new System.Drawing.Size(113, 20);
             this.tb_stufname.TabIndex = 1;
             this.tb_stufname.Text = "First Name";
+            this.tb_stufname.Click += new System.EventHandler(this.tb_stufname_Click);
+            this.tb_stufname.Leave += new System.EventHandler(this.tb_stufname_Leave_1);
             // 
             // tb_stulname
             // 
@@ -456,6 +460,8 @@ namespace CourseProject1A
             this.tb_stulname.Size = new System.Drawing.Size(114, 20);
             this.tb_stulname.TabIndex = 3;
             this.tb_stulname.Text = "Last Name";
+            this.tb_stulname.Click += new System.EventHandler(this.tb_stulname_Click);
+            this.tb_stulname.Leave += new System.EventHandler(this.tb_stulname_Leave);
             // 
             // tab_ParInfo
             // 
@@ -677,6 +683,9 @@ namespace CourseProject1A
             this.tb_Par2Fname.Size = new System.Drawing.Size(178, 20);
             this.tb_Par2Fname.TabIndex = 7;
             this.tb_Par2Fname.Text = "First Name";
+            this.tb_Par2Fname.Click += new System.EventHandler(this.tb_Par2Fname_Click);
+            this.tb_Par2Fname.TextChanged += new System.EventHandler(this.tb_Par2Fname_TextChanged);
+            this.tb_Par2Fname.Leave += new System.EventHandler(this.tb_Par2Fname_Leave);
             // 
             // tb_Par2Lname
             // 
@@ -685,6 +694,8 @@ namespace CourseProject1A
             this.tb_Par2Lname.Size = new System.Drawing.Size(170, 20);
             this.tb_Par2Lname.TabIndex = 8;
             this.tb_Par2Lname.Text = "Last Name";
+            this.tb_Par2Lname.Click += new System.EventHandler(this.tb_Par2Lname_Click);
+            this.tb_Par2Lname.Leave += new System.EventHandler(this.tb_Par2Lname_Leave);
             // 
             // label1
             // 
@@ -772,6 +783,8 @@ namespace CourseProject1A
             this.tb_parFname.Size = new System.Drawing.Size(178, 20);
             this.tb_parFname.TabIndex = 1;
             this.tb_parFname.Text = "First Name";
+            this.tb_parFname.Click += new System.EventHandler(this.tb_parFname_Click);
+            this.tb_parFname.Leave += new System.EventHandler(this.tb_parFname_Leave);
             // 
             // tb_parLname
             // 
@@ -780,6 +793,8 @@ namespace CourseProject1A
             this.tb_parLname.Size = new System.Drawing.Size(170, 20);
             this.tb_parLname.TabIndex = 2;
             this.tb_parLname.Text = "Last Name";
+            this.tb_parLname.Click += new System.EventHandler(this.tb_parLname_Click);
+            this.tb_parLname.Leave += new System.EventHandler(this.tb_parLname_Leave);
             // 
             // tab_Review
             // 

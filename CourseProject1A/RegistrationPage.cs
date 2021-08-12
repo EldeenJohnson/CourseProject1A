@@ -270,6 +270,144 @@ namespace CourseProject1A
             ////image.MdiParent = this.MdiParent;
             ////image.Show();
         }
+
+        private void tb_stufname_Click(object sender, EventArgs e)
+        {
+            if(tb_stufname.Text == "First Name")
+            {
+                tb_stufname.Text = "";
+
+
+            }
+        }
+
+        
+        private void tb_stufname_Leave_1(object sender, EventArgs e)
+        {
+            if (tb_stufname.Text == "")
+            {
+                tb_stufname.Text = "First Name";
+                tb_stufname.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void tb_stuMname_Click(object sender, EventArgs e)
+        {
+            if (tb_stuMname.Text == "Middle Name")
+            {
+                tb_stuMname.Text = "";
+              
+
+            }
+        }
+
+        private void tb_stuMname_Leave(object sender, EventArgs e)
+        {
+            if (tb_stuMname.Text == "")
+            {
+                tb_stuMname.Text = "Middle Name";
+                tb_stuMname.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void tb_stulname_Click(object sender, EventArgs e)
+        {
+            if (tb_stulname.Text == "Last Name")
+            {
+                tb_stulname.Text = "";
+               
+
+            }
+        }
+
+        private void tb_stulname_Leave(object sender, EventArgs e)
+        {
+            if (tb_stulname.Text == "")
+            {
+                tb_stulname.Text = "Last Name";
+
+                tb_stulname.ForeColor = Color.Black;
+            }
+        }
+
+        private void tb_parFname_Click(object sender, EventArgs e)
+        {
+            if (tb_parFname.Text == "First Name")
+            {
+                tb_parFname.Text = "";
+
+            }
+        }
+
+        private void tb_parFname_Leave(object sender, EventArgs e)
+        {
+            if (tb_parFname.Text == "")
+            {
+                tb_parFname.Text = "First Name";
+                tb_parFname.ForeColor = Color.Black;
+            }
+        }
+
+        private void tb_parLname_Click(object sender, EventArgs e)
+        {
+            if (tb_parLname.Text == "Last Name")
+            {
+                tb_parLname.Text = "";
+                
+            }
+        }
+
+        private void tb_parLname_Leave(object sender, EventArgs e)
+        {
+            if (tb_parLname.Text == "")
+            {
+                tb_parLname.Text = "Last Name";
+                tb_parLname.ForeColor = Color.Black;
+            }
+        }
+
+        private void tb_Par2Fname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_Par2Fname_Click(object sender, EventArgs e)
+        {
+            if (tb_Par2Fname.Text == "First Name")
+            {
+                tb_Par2Fname.Text = "";
+
+            }
+        }
+
+        private void tb_Par2Fname_Leave(object sender, EventArgs e)
+        {
+            if (tb_Par2Fname.Text == "")
+            {
+                tb_Par2Fname.Text = "First Name";
+                tb_Par2Fname.ForeColor = Color.Black;
+            }
+        }
+
+        private void tb_Par2Lname_Click(object sender, EventArgs e)
+        {
+            if (tb_Par2Lname.Text == "Last Name")
+            {
+                tb_Par2Lname.Text = "";
+
+            }
+        }
+
+        private void tb_Par2Lname_Leave(object sender, EventArgs e)
+        {
+            if (tb_Par2Lname.Text == "")
+            {
+                tb_Par2Lname.Text = "Last Name";
+                tb_Par2Lname.ForeColor = Color.Black;
+            }
+        }
     }
 }    
 
