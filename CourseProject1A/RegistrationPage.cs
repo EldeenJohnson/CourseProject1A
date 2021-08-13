@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CourseProject1A
@@ -74,21 +69,11 @@ namespace CourseProject1A
                         isValid = false;
                         errorMessage += "Please enter missing data.\n\r";
                     }
-
-                    var parent2record = new Parent();
-                    parent2record.First_Name = par2fName;
-                    parent2record.Last_Name = par2lName;
-                    parent2record.Address = par2Address;
-                    parent2record.Contact_Number = par2Phone;
-                    parent2record.Email = par2Email;
-                    parent2record.Relationship = par2Relationship;
-
-
                 }
 
                 if (stuDOB >= DateTime.Today || par1DOB >= DateTime.Today)
                 {
-                    //isValid = false;
+                    isValid = false;
                     errorMessage += "Invalid date Selected.\n\r";
                 }
                 //Data Validation
@@ -100,23 +85,24 @@ namespace CourseProject1A
                     || string.IsNullOrWhiteSpace(StuAddress) || string.IsNullOrWhiteSpace(stuEmail)
                     || string.IsNullOrWhiteSpace(par1fName) || string.IsNullOrWhiteSpace(par1lName)
                     || string.IsNullOrWhiteSpace(parPhone) || string.IsNullOrWhiteSpace(par1Address)
-                    || string.IsNullOrWhiteSpace(parRelationship) || string.IsNullOrWhiteSpace(par1Email)) 
+                    || string.IsNullOrWhiteSpace(parRelationship) || string.IsNullOrWhiteSpace(par1Email))
                 {
                     isValid = false;
                     errorMessage += "Please enter missing data.\n\r";
                 }
-                
+
                 if (isValid)
                 {
                     var studentrecord = new Student();
-                    studentrecord.First_Name = tb_stufname.Text;
-                    studentrecord.Mid_Name = tb_stuMname.Text;
-                    studentrecord.Last_Name = tb_stulname.Text;
-                    studentrecord.Gender = cb_Gender.Text;
-                    studentrecord.Address = tb_stuAddress.Text;
-                    studentrecord.Birth_Entry_Number = tb_StuBEntry.Text;
-                    studentrecord.Previous_School = cb_Gender.Text;
-                    studentrecord.Date_of_Birth = stu_DOB.Value;
+                    studentrecord.First_Name = stuFName;
+                    studentrecord.Mid_Name = stuMname;
+                    studentrecord.Last_Name = stuLName;
+                    studentrecord.Gender = stuGender;
+                    studentrecord.Address = StuAddress;
+                    studentrecord.Birth_Entry_Number = BirthEntryNum;
+                    studentrecord.Previous_School = PrevSchool;
+                    studentrecord.Date_of_Birth = stuDOB;
+
 
                     var parentrecord = new Parent();
                     parentrecord.First_Name = par1fName;
@@ -126,9 +112,24 @@ namespace CourseProject1A
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
 
+                    if (Par2_IsChecked != false)
+                    {
+                        var parent2record = new Parent();
+                        parent2record.First_Name = tb_Par2Fname.Text;
+                        parent2record.Last_Name = tb_Par2Lname.Text;
+                        parent2record.Date_of_Birth = Par2_DOB.Value;
+                        parent2record.Address = tb_par2Address.Text;
+                        parent2record.Contact_Number = tb_Par2Phone.Text;
+                        parent2record.Email = tb_Par2Email.Text;
+                        parent2record.Relationship = tb_Par2Relationship.Text;
+
+                        // parent2record.Student_ID = 
+                    }
+
                     MessageBox.Show($"\tThank you {stuFName} {stuLName}.\n\r" +
                         $"Your Application was submitted successfully!\n\r" +
                         $"\n\t{TodaysDate}");
+                    this.Close();
                 }
                 else
                 {
@@ -202,19 +203,19 @@ namespace CourseProject1A
                                "\nRelationship: " + tb_ParRelationship.Text +
                                "\n\n";
 
-                            //Review Parent 2
-                            if (Par2_IsChecked != false)
-                            {
-                                rtb_Review.Text +=
-                                "PARENT 2 INFORMATION" +
-                                "\nFirst Name: " + tb_Par2Fname.Text +
-                                "\nLast Name:" + tb_Par2Lname.Text +
-                                "\nDate Of Birth: " + Par2_DOB.Value +
-                                "\nAddress: " + tb_par2Address.Text +
-                                "\nEmail: " + tb_Par2Email.Text +
-                                "\nPhone Number: " + tb_Par2Phone.Text +
-                                "\nRelationship: " + tb_Par2Relationship.Text;
-                            }
+            //Review Parent 2
+            if (Par2_IsChecked != false)
+            {
+                rtb_Review.Text +=
+                "PARENT 2 INFORMATION" +
+                "\nFirst Name: " + tb_Par2Fname.Text +
+                "\nLast Name:" + tb_Par2Lname.Text +
+                "\nDate Of Birth: " + Par2_DOB.Value +
+                "\nAddress: " + tb_par2Address.Text +
+                "\nEmail: " + tb_Par2Email.Text +
+                "\nPhone Number: " + tb_Par2Phone.Text +
+                "\nRelationship: " + tb_Par2Relationship.Text;
+            }
 
         }
 
@@ -231,55 +232,55 @@ namespace CourseProject1A
             cb_StuHouse.DataSource = house;
         }
 
-        private void Submitbutton_Click(object sender, EventArgs e)
-        {
-             try
-            {
-            var newstudent = new Student
-            {
-                First_Name = tb_stufname.Text,
-                Last_Name = tb_stulname.Text,
-                Mid_Name = tb_stuMname.Text,
-                Gender = cb_Gender.Text,
-                Address = tb_stuAddress.Text,
-                Date_of_Birth = stu_DOB.Value,
-                Previous_School = tb_stuPreSch.Text,
-                Birth_Entry_Number = tb_StuBEntry.Text
-            };
-            choice_Christian_AcademyEntities.Students.Add(newstudent);
-            ////choice_Christian_AcademyEntities.SaveChanges();
-            var newparent = new Parent
-            {
-                First_Name = tb_parLname.Text,
-                Last_Name = tb_parLname.Text,
-                Address = tb_parAddress.Text,
-                Contact_Number = tb_Parphone.Text,
-                Relationship = tb_ParRelationship.Text,
-                Email = tb_ParEmail.Text
-            };
-            choice_Christian_AcademyEntities.Parents.Add(newparent);
+        /* private void Submitbutton_Click(object sender, EventArgs e)
+         {
+              try
+             {
+             var newstudent = new Student
+             {
+                 First_Name = tb_stufname.Text,
+                 Last_Name = tb_stulname.Text,
+                 Mid_Name = tb_stuMname.Text,
+                 Gender = cb_Gender.Text,
+                 Address = tb_stuAddress.Text,
+                 Date_of_Birth = stu_DOB.Value,
+                 Previous_School = tb_stuPreSch.Text,
+                 Birth_Entry_Number = tb_StuBEntry.Text
+             };
+             choice_Christian_AcademyEntities.Students.Add(newstudent);
+             ////choice_Christian_AcademyEntities.SaveChanges();
+             var newparent = new Parent
+             {
+                 First_Name = tb_parLname.Text,
+                 Last_Name = tb_parLname.Text,
+                 Address = tb_parAddress.Text,
+                 Contact_Number = tb_Parphone.Text,
+                 Relationship = tb_ParRelationship.Text,
+                 Email = tb_ParEmail.Text
+             };
+             choice_Christian_AcademyEntities.Parents.Add(newparent);
 
-            ////choice_Christian_AcademyEntities.SaveChanges();
-            var secondparent = new Parent
-            {
-                First_Name = tb_Par2Fname.Text,
-                Last_Name = tb_Par2Lname.Text,
-                Address = tb_par2Address.Text,
-                Contact_Number = tb_Par2Phone.Text,
-                Relationship = tb_Par2Relationship.Text,
-                Email = tb_Par2Email.Text
-            }; 
-            choice_Christian_AcademyEntities.Parents.Add(secondparent);
+             ////choice_Christian_AcademyEntities.SaveChanges();
+             var secondparent = new Parent
+             {
+                 First_Name = tb_Par2Fname.Text,
+                 Last_Name = tb_Par2Lname.Text,
+                 Address = tb_par2Address.Text,
+                 Contact_Number = tb_Par2Phone.Text,
+                 Relationship = tb_Par2Relationship.Text,
+                 Email = tb_Par2Email.Text
+             }; 
+             choice_Christian_AcademyEntities.Parents.Add(secondparent);
 
-            choice_Christian_AcademyEntities.SaveChanges();
-            MessageBox.Show("Information Submitted");
-            this.Close();
-            }
-              catch (Exception ex)
-              {
-                  MessageBox.Show($"Error: {ex.Message}");
-              } 
-        }
+             choice_Christian_AcademyEntities.SaveChanges();
+             MessageBox.Show("Information Submitted");
+             this.Close();
+             }
+               catch (Exception ex)
+               {
+                   MessageBox.Show($"Error: {ex.Message}");
+               } 
+         }*/
 
         private void btn_StuUpload_Click(object sender, EventArgs e)
         {
@@ -288,143 +289,143 @@ namespace CourseProject1A
             ////image.Show();
         }
 
-          private void tb_stufname_Click(object sender, EventArgs e)
-          {
-              if(tb_stufname.Text == "First Name")
-              {
-                  tb_stufname.Text = "";
+        private void tb_stufname_Click(object sender, EventArgs e)
+        {
+            if (tb_stufname.Text == "First Name")
+            {
+                tb_stufname.Text = "";
 
 
-              }
-          }
+            }
+        }
 
 
-          private void tb_stufname_Leave_1(object sender, EventArgs e)
-          {
-              if (tb_stufname.Text == "")
-              {
-                  tb_stufname.Text = "First Name";
-                  tb_stufname.ForeColor = Color.Black;
+        private void tb_stufname_Leave_1(object sender, EventArgs e)
+        {
+            if (tb_stufname.Text == "")
+            {
+                tb_stufname.Text = "First Name";
+                tb_stufname.ForeColor = Color.Black;
 
-              }
-          }
+            }
+        }
 
-          private void tb_stuMname_Click(object sender, EventArgs e)
-          {
-              if (tb_stuMname.Text == "Middle Name")
-              {
-                  tb_stuMname.Text = "";
-
-
-              }
-          }
-
-          private void tb_stuMname_Leave(object sender, EventArgs e)
-          {
-              if (tb_stuMname.Text == "")
-              {
-                  tb_stuMname.Text = "Middle Name";
-                  tb_stuMname.ForeColor = Color.Black;
-
-              }
-          }
-
-          private void tb_stulname_Click(object sender, EventArgs e)
-          {
-              if (tb_stulname.Text == "Last Name")
-              {
-                  tb_stulname.Text = "";
+        private void tb_stuMname_Click(object sender, EventArgs e)
+        {
+            if (tb_stuMname.Text == "Middle Name")
+            {
+                tb_stuMname.Text = "";
 
 
-              }
-          }
+            }
+        }
 
-          private void tb_stulname_Leave(object sender, EventArgs e)
-          {
-              if (tb_stulname.Text == "")
-              {
-                  tb_stulname.Text = "Last Name";
+        private void tb_stuMname_Leave(object sender, EventArgs e)
+        {
+            if (tb_stuMname.Text == "")
+            {
+                tb_stuMname.Text = "Middle Name";
+                tb_stuMname.ForeColor = Color.Black;
 
-                  tb_stulname.ForeColor = Color.Black;
-              }
-          }
+            }
+        }
 
-          private void tb_parFname_Click(object sender, EventArgs e)
-          {
-              if (tb_parFname.Text == "First Name")
-              {
-                  tb_parFname.Text = "";
+        private void tb_stulname_Click(object sender, EventArgs e)
+        {
+            if (tb_stulname.Text == "Last Name")
+            {
+                tb_stulname.Text = "";
 
-              }
-          }
 
-          private void tb_parFname_Leave(object sender, EventArgs e)
-          {
-              if (tb_parFname.Text == "")
-              {
-                  tb_parFname.Text = "First Name";
-                  tb_parFname.ForeColor = Color.Black;
-              }
-          }
+            }
+        }
 
-          private void tb_parLname_Click(object sender, EventArgs e)
-          {
-              if (tb_parLname.Text == "Last Name")
-              {
-                  tb_parLname.Text = "";
+        private void tb_stulname_Leave(object sender, EventArgs e)
+        {
+            if (tb_stulname.Text == "")
+            {
+                tb_stulname.Text = "Last Name";
 
-              }
-          }
+                tb_stulname.ForeColor = Color.Black;
+            }
+        }
 
-          private void tb_parLname_Leave(object sender, EventArgs e)
-          {
-              if (tb_parLname.Text == "")
-              {
-                  tb_parLname.Text = "Last Name";
-                  tb_parLname.ForeColor = Color.Black;
-              }
-          }
+        private void tb_parFname_Click(object sender, EventArgs e)
+        {
+            if (tb_parFname.Text == "First Name")
+            {
+                tb_parFname.Text = "";
 
-          private void tb_Par2Fname_TextChanged(object sender, EventArgs e)
-          {
+            }
+        }
 
-          }
+        private void tb_parFname_Leave(object sender, EventArgs e)
+        {
+            if (tb_parFname.Text == "")
+            {
+                tb_parFname.Text = "First Name";
+                tb_parFname.ForeColor = Color.Black;
+            }
+        }
 
-          private void tb_Par2Fname_Click(object sender, EventArgs e)
-          {
-              if (tb_Par2Fname.Text == "First Name")
-              {
-                  tb_Par2Fname.Text = "";
+        private void tb_parLname_Click(object sender, EventArgs e)
+        {
+            if (tb_parLname.Text == "Last Name")
+            {
+                tb_parLname.Text = "";
 
-              }
-          }
+            }
+        }
 
-          private void tb_Par2Fname_Leave(object sender, EventArgs e)
-          {
-              if (tb_Par2Fname.Text == "")
-              {
-                  tb_Par2Fname.Text = "First Name";
-                  tb_Par2Fname.ForeColor = Color.Black;
-              }
-          }
+        private void tb_parLname_Leave(object sender, EventArgs e)
+        {
+            if (tb_parLname.Text == "")
+            {
+                tb_parLname.Text = "Last Name";
+                tb_parLname.ForeColor = Color.Black;
+            }
+        }
 
-          private void tb_Par2Lname_Click(object sender, EventArgs e)
-          {
-              if (tb_Par2Lname.Text == "Last Name")
-              {
-                  tb_Par2Lname.Text = "";
+        private void tb_Par2Fname_TextChanged(object sender, EventArgs e)
+        {
 
-              }
-          }
+        }
 
-          private void tb_Par2Lname_Leave(object sender, EventArgs e)
-          {
-              if (tb_Par2Lname.Text == "")
-              {
-                  tb_Par2Lname.Text = "Last Name";
-                  tb_Par2Lname.ForeColor = Color.Black;
-              }
-          }
+        private void tb_Par2Fname_Click(object sender, EventArgs e)
+        {
+            if (tb_Par2Fname.Text == "First Name")
+            {
+                tb_Par2Fname.Text = "";
+
+            }
+        }
+
+        private void tb_Par2Fname_Leave(object sender, EventArgs e)
+        {
+            if (tb_Par2Fname.Text == "")
+            {
+                tb_Par2Fname.Text = "First Name";
+                tb_Par2Fname.ForeColor = Color.Black;
+            }
+        }
+
+        private void tb_Par2Lname_Click(object sender, EventArgs e)
+        {
+            if (tb_Par2Lname.Text == "Last Name")
+            {
+                tb_Par2Lname.Text = "";
+
+            }
+        }
+
+        private void tb_Par2Lname_Leave(object sender, EventArgs e)
+        {
+            if (tb_Par2Lname.Text == "")
+            {
+                tb_Par2Lname.Text = "Last Name";
+                tb_Par2Lname.ForeColor = Color.Black;
+            }
+        }
 
         bool Par2_IsChecked = false;
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -453,7 +454,7 @@ namespace CourseProject1A
             }
         }
     }
-        
-        
-}    
+
+
+}
 

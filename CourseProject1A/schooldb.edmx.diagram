@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Emergency_contact" Width="1.5" PointX="1.5" PointY="13.375" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.House" Width="1.5" PointX="5.75" PointY="1.25" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Image" Width="1.5" PointX="3" PointY="10.5" />
-        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Parent" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Parent" Width="1.5" PointX="4.125" PointY="6.75" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Registration" Width="1.5" PointX="5.75" PointY="4.25" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Staff" Width="1.5" PointX="3.75" PointY="13.25" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Student" Width="1.5" PointX="0.75" PointY="4.375" />

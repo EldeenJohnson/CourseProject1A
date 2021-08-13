@@ -33,6 +33,11 @@ namespace CourseProject1A
         public string Birth_Entry_Number { get; set; }
         public string Grade { get; set; }
         public string Class { get; set; }
+        public string Height_ft { get; set; }
+        public string Height_in { get; set; }
+        public string Email { get; set; }
+        public string Phone_Num { get; set; }
+        public string AddInfo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Image> Images { get; set; }

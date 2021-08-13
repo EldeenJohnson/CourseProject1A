@@ -194,6 +194,7 @@ namespace CourseProject1A
             // 
             this.cb_HeightIn.FormattingEnabled = true;
             this.cb_HeightIn.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",

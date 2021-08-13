@@ -78,11 +78,16 @@
           <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Date_of_Birth" Type="datetime" Nullable="false" />
           <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Height_ft" Type="nchar" MaxLength="10" />
+          <Property Name="Height_in" Type="nchar" MaxLength="10" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="Previous_School" Type="nvarchar" MaxLength="80" Nullable="false" />
-          <Property Name="Birth_Entry_Number" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone_Num" Type="nchar" MaxLength="10" />
+          <Property Name="Previous_School" Type="nvarchar" MaxLength="80" />
+          <Property Name="Birth_Entry_Number" Type="nvarchar" MaxLength="6" />
           <Property Name="Grade" Type="nvarchar" MaxLength="1" />
           <Property Name="Class" Type="nvarchar" MaxLength="1" />
+          <Property Name="AddInfo" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="Subject_Table">
           <Key>
@@ -465,13 +470,18 @@
           <Property Name="Date_of_Birth" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Previous_School" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
-          <Property Name="Birth_Entry_Number" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Previous_School" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Birth_Entry_Number" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="Grade" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="Class" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Images" Relationship="Choice_Christian_AcademyModel.FK_Image_Student" FromRole="Student" ToRole="Image" />
           <NavigationProperty Name="Parents" Relationship="Choice_Christian_AcademyModel.FK_Parent_Student" FromRole="Student" ToRole="Parent" />
           <NavigationProperty Name="Test_Result" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student" FromRole="Student" ToRole="Test_Result" />
+          <Property Name="Height_ft" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Height_in" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_Num" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AddInfo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Subject_Table">
           <Key>
@@ -707,6 +717,11 @@
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Student">
               <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="AddInfo" ColumnName="AddInfo" />
+                <ScalarProperty Name="Phone_Num" ColumnName="Phone_Num" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Height_in" ColumnName="Height_in" />
+                <ScalarProperty Name="Height_ft" ColumnName="Height_ft" />
                 <ScalarProperty Name="Class" ColumnName="Class" />
                 <ScalarProperty Name="Grade" ColumnName="Grade" />
                 <ScalarProperty Name="Birth_Entry_Number" ColumnName="Birth_Entry_Number" />
