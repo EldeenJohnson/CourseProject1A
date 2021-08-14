@@ -102,6 +102,11 @@ namespace CourseProject1A
             this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cb_Grade = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cb_Class = new System.Windows.Forms.ComboBox();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -138,9 +143,14 @@ namespace CourseProject1A
             this.tab_StuInfo.Controls.Add(this.tb_stuAddress);
             this.tab_StuInfo.Controls.Add(this.cb_Gender);
             this.tab_StuInfo.Controls.Add(this.btn_StuCancel);
+            this.tab_StuInfo.Controls.Add(this.cb_Class);
+            this.tab_StuInfo.Controls.Add(this.cb_Grade);
             this.tab_StuInfo.Controls.Add(this.cb_StuHouse);
             this.tab_StuInfo.Controls.Add(this.label8);
             this.tab_StuInfo.Controls.Add(this.lblPhoto);
+            this.tab_StuInfo.Controls.Add(this.label15);
+            this.tab_StuInfo.Controls.Add(this.label16);
+            this.tab_StuInfo.Controls.Add(this.label13);
             this.tab_StuInfo.Controls.Add(this.lblHouse);
             this.tab_StuInfo.Controls.Add(this.lblEmail);
             this.tab_StuInfo.Controls.Add(this.lblPhone);
@@ -166,7 +176,7 @@ namespace CourseProject1A
             // 
             this.studentnext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.studentnext.ForeColor = System.Drawing.Color.White;
-            this.studentnext.Location = new System.Drawing.Point(617, 683);
+            this.studentnext.Location = new System.Drawing.Point(617, 730);
             this.studentnext.Name = "studentnext";
             this.studentnext.Size = new System.Drawing.Size(71, 21);
             this.studentnext.TabIndex = 48;
@@ -313,7 +323,7 @@ namespace CourseProject1A
             // btn_StuCancel
             // 
             this.btn_StuCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_StuCancel.Location = new System.Drawing.Point(517, 683);
+            this.btn_StuCancel.Location = new System.Drawing.Point(517, 730);
             this.btn_StuCancel.Name = "btn_StuCancel";
             this.btn_StuCancel.Size = new System.Drawing.Size(71, 21);
             this.btn_StuCancel.TabIndex = 19;
@@ -333,7 +343,7 @@ namespace CourseProject1A
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(86, 567);
+            this.label8.Location = new System.Drawing.Point(86, 614);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(186, 20);
             this.label8.TabIndex = 28;
@@ -343,7 +353,7 @@ namespace CourseProject1A
             // 
             this.lblPhoto.AutoSize = true;
             this.lblPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoto.Location = new System.Drawing.Point(153, 512);
+            this.lblPhoto.Location = new System.Drawing.Point(153, 559);
             this.lblPhoto.Name = "lblPhoto";
             this.lblPhoto.Size = new System.Drawing.Size(118, 20);
             this.lblPhoto.TabIndex = 27;
@@ -413,9 +423,9 @@ namespace CourseProject1A
             // 
             this.btn_StuUpload.BackColor = System.Drawing.Color.Green;
             this.btn_StuUpload.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_StuUpload.Location = new System.Drawing.Point(314, 513);
+            this.btn_StuUpload.Location = new System.Drawing.Point(311, 557);
             this.btn_StuUpload.Name = "btn_StuUpload";
-            this.btn_StuUpload.Size = new System.Drawing.Size(109, 21);
+            this.btn_StuUpload.Size = new System.Drawing.Size(138, 22);
             this.btn_StuUpload.TabIndex = 17;
             this.btn_StuUpload.Text = "Upload Picture";
             this.btn_StuUpload.UseVisualStyleBackColor = false;
@@ -423,7 +433,7 @@ namespace CourseProject1A
             // 
             // rtb_stuAddInfo
             // 
-            this.rtb_stuAddInfo.Location = new System.Drawing.Point(312, 569);
+            this.rtb_stuAddInfo.Location = new System.Drawing.Point(312, 616);
             this.rtb_stuAddInfo.Name = "rtb_stuAddInfo";
             this.rtb_stuAddInfo.Size = new System.Drawing.Size(377, 90);
             this.rtb_stuAddInfo.TabIndex = 18;
@@ -903,6 +913,52 @@ namespace CourseProject1A
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(203, 514);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 20);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Grade";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(203, 558);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 20);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "House";
+            // 
+            // cb_Grade
+            // 
+            this.cb_Grade.FormattingEnabled = true;
+            this.cb_Grade.Location = new System.Drawing.Point(312, 513);
+            this.cb_Grade.Name = "cb_Grade";
+            this.cb_Grade.Size = new System.Drawing.Size(137, 21);
+            this.cb_Grade.TabIndex = 16;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(482, 514);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 20);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "Class";
+            // 
+            // cb_Class
+            // 
+            this.cb_Class.FormattingEnabled = true;
+            this.cb_Class.Location = new System.Drawing.Point(552, 514);
+            this.cb_Class.Name = "cb_Class";
+            this.cb_Class.Size = new System.Drawing.Size(136, 21);
+            this.cb_Class.TabIndex = 16;
+            // 
             // RegistrationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1006,6 +1062,11 @@ namespace CourseProject1A
         private System.Windows.Forms.Label StudentID;
         private System.Windows.Forms.Button studentnext;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox cb_Class;
+        private System.Windows.Forms.ComboBox cb_Grade;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label13;
     }
 }
 

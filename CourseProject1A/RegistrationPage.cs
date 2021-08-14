@@ -97,11 +97,16 @@ namespace CourseProject1A
                     studentrecord.First_Name = stuFName;
                     studentrecord.Mid_Name = stuMname;
                     studentrecord.Last_Name = stuLName;
+                    studentrecord.Date_of_Birth = stuDOB;
                     studentrecord.Gender = stuGender;
+                    studentrecord.Height_ft = Height_ft;
+                    studentrecord.Height_in = Height_in;
                     studentrecord.Address = StuAddress;
+                    studentrecord.Email = stuEmail;
+                    studentrecord.Phone_Num = stuPhone;
                     studentrecord.Birth_Entry_Number = BirthEntryNum;
                     studentrecord.Previous_School = PrevSchool;
-                    studentrecord.Date_of_Birth = stuDOB;
+                    studentrecord.AddInfo = StuAddInfo;
 
 
                     var parentrecord = new Parent();
