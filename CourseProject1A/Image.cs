@@ -17,7 +17,5 @@ namespace CourseProject1A
         public int ID { get; set; }
         public Nullable<int> Student_ID { get; set; }
         public byte[] Image1 { get; set; }
-    
-        public virtual Student Student { get; set; }
     }
 }

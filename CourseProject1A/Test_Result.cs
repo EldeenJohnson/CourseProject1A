@@ -20,7 +20,6 @@ namespace CourseProject1A
         public int Teacher_ID { get; set; }
         public double Score { get; set; }
     
-        public virtual Student Student { get; set; }
         public virtual Subject_Table Subject_Table { get; set; }
         public virtual Teacher Teacher { get; set; }
     }

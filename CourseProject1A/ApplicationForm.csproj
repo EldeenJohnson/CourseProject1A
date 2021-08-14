@@ -176,6 +176,9 @@
     <Compile Include="Subject_Table.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>schooldb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Teacher.cs">
       <DependentUpon>schooldb.tt</DependentUpon>
     </Compile>

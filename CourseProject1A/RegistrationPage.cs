@@ -106,6 +106,9 @@ namespace CourseProject1A
                     studentrecord.Phone_Num = stuPhone;
                     studentrecord.Birth_Entry_Number = BirthEntryNum;
                     studentrecord.Previous_School = PrevSchool;
+                    studentrecord.House_ID = (int)cb_StuHouse.SelectedValue;
+                    studentrecord.Grade = cb_Grade.Text;
+                    studentrecord.Class = cb_Class.Text;
                     studentrecord.AddInfo = StuAddInfo;
 
 
@@ -116,6 +119,7 @@ namespace CourseProject1A
                     parentrecord.Contact_Number = parPhone;
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
+                    parentrecord.Student_ID = studentrecord.ID;
 
                     if (Par2_IsChecked != false)
                     {
@@ -127,6 +131,7 @@ namespace CourseProject1A
                         parent2record.Contact_Number = tb_Par2Phone.Text;
                         parent2record.Email = tb_Par2Email.Text;
                         parent2record.Relationship = tb_Par2Relationship.Text;
+                        parentrecord.Student_ID = studentrecord.ID;
 
                         // parent2record.Student_ID = 
                     }

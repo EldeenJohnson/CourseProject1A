@@ -29,13 +29,14 @@ namespace CourseProject1A
     
         public virtual DbSet<Emergency_contact> Emergency_contact { get; set; }
         public virtual DbSet<House> Houses { get; set; }
-        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Parent> Parents { get; set; }
         public virtual DbSet<Registration> Registrations { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Subject_Table> Subject_Table { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Test_Result> Test_Result { get; set; }
     
         [DbFunction("Choice_Christian_AcademyEntities", "All_Student")]

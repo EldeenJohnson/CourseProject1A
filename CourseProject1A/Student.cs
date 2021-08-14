@@ -15,11 +15,9 @@ namespace CourseProject1A
     public partial class Student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Student()
-        {
-            this.Images = new HashSet<Image>();
+        public Student()        {
+            
             this.Parents = new HashSet<Parent>();
-            this.Test_Result = new HashSet<Test_Result>();
         }
     
         public int ID { get; set; }
@@ -38,6 +36,7 @@ namespace CourseProject1A
         public string Email { get; set; }
         public string Phone_Num { get; set; }
         public string AddInfo { get; set; }
+        public Nullable<int> House_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Image> Images { get; set; }
