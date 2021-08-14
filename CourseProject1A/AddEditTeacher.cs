@@ -13,13 +13,13 @@ namespace CourseProject1A
     public partial class AddEditTeacher : Form
     {
         private bool isEditMode;
-        private readonly Choice_Christian_AcademyEntities choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities1 choice_Christian_AcademyEntities;
         public AddEditTeacher()
         {
             InitializeComponent();
             lbl_Title.Text = "Add New Teacher";
             isEditMode = false;
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities1();
         }
         public AddEditTeacher(Teacher editTeacherData)
         {
@@ -27,7 +27,7 @@ namespace CourseProject1A
             PopulateFields(editTeacherData);
             lbl_Title.Text = "Edit Teacher Detail";
             isEditMode = true;
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities1();
         }
 
         private void PopulateFields(Teacher TeacherData)

@@ -15,8 +15,8 @@ namespace CourseProject1A
     public partial class Student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Student()        {
-            
+        public Student()
+        {
             this.Parents = new HashSet<Parent>();
         }
     
@@ -26,23 +26,19 @@ namespace CourseProject1A
         public string Last_Name { get; set; }
         public System.DateTime Date_of_Birth { get; set; }
         public string Gender { get; set; }
-        public string Address { get; set; }
-        public string Previous_School { get; set; }
-        public string Birth_Entry_Number { get; set; }
-        public string Grade { get; set; }
-        public string Class { get; set; }
         public string Height_ft { get; set; }
         public string Height_in { get; set; }
+        public string Address { get; set; }
         public string Email { get; set; }
         public string Phone_Num { get; set; }
-        public string AddInfo { get; set; }
+        public string Previous_School { get; set; }
+        public string Birth_Entry_Number { get; set; }
         public Nullable<int> House_ID { get; set; }
+        public string Grade { get; set; }
+        public string Class { get; set; }
+        public string AddInfo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Image> Images { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Parent> Parents { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Test_Result> Test_Result { get; set; }
     }
 }

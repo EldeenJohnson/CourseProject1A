@@ -12,12 +12,12 @@ namespace CourseProject1A
 {
     public partial class AddEditStudent : Form
     {
-        private readonly Choice_Christian_AcademyEntities choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities1 choice_Christian_AcademyEntities;
         public AddEditStudent(Student editstudentData)
         {
             InitializeComponent();
             PopulateFields(editstudentData);
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities1();
         }
 
         private void PopulateFields(Student studentdata)

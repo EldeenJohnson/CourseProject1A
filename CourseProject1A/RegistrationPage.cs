@@ -7,11 +7,11 @@ namespace CourseProject1A
 {
     public partial class RegistrationPage : Form
     {
-        private readonly Choice_Christian_AcademyEntities choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities1 choice_Christian_AcademyEntities;
         public RegistrationPage()
         {
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities1();
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
@@ -92,24 +92,26 @@ namespace CourseProject1A
                 }
 
                 if (isValid)
-                {
-                    var studentrecord = new Student();
-                    studentrecord.First_Name = stuFName;
-                    studentrecord.Mid_Name = stuMname;
-                    studentrecord.Last_Name = stuLName;
-                    studentrecord.Date_of_Birth = stuDOB;
-                    studentrecord.Gender = stuGender;
-                    studentrecord.Height_ft = Height_ft;
-                    studentrecord.Height_in = Height_in;
-                    studentrecord.Address = StuAddress;
-                    studentrecord.Email = stuEmail;
-                    studentrecord.Phone_Num = stuPhone;
-                    studentrecord.Birth_Entry_Number = BirthEntryNum;
-                    studentrecord.Previous_School = PrevSchool;
-                    studentrecord.House_ID = (int)cb_StuHouse.SelectedValue;
-                    studentrecord.Grade = cb_Grade.Text;
-                    studentrecord.Class = cb_Class.Text;
-                    studentrecord.AddInfo = StuAddInfo;
+                {                    
+                        var studentrecord = new Student();
+                        studentrecord.First_Name = stuFName;
+                        studentrecord.Mid_Name = stuMname;
+                        studentrecord.Last_Name = stuLName;
+                        studentrecord.Date_of_Birth = stuDOB;
+                        studentrecord.Gender = stuGender;
+                        studentrecord.Height_ft = Height_ft;
+                        studentrecord.Height_in = Height_in;
+                        studentrecord.Address = StuAddress;
+                        studentrecord.Email = stuEmail;
+                        studentrecord.Phone_Num = stuPhone;
+                        studentrecord.Birth_Entry_Number = BirthEntryNum;
+                        studentrecord.Previous_School = PrevSchool;
+                        studentrecord.House_ID = (int)cb_StuHouse.SelectedValue;
+                        studentrecord.Grade = cb_Grade.Text;
+                        studentrecord.Class = cb_Class.Text;
+                        studentrecord.AddInfo = StuAddInfo;
+                    choice_Christian_AcademyEntities.Students.Add(studentrecord);
+                    choice_Christian_AcademyEntities.SaveChanges();
 
 
                     var parentrecord = new Parent();
@@ -120,6 +122,8 @@ namespace CourseProject1A
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
                     parentrecord.Student_ID = studentrecord.ID;
+                    choice_Christian_AcademyEntities.Parents.Add(parentrecord);
+                    choice_Christian_AcademyEntities.SaveChanges();
 
                     if (Par2_IsChecked != false)
                     {
@@ -133,8 +137,10 @@ namespace CourseProject1A
                         parent2record.Relationship = tb_Par2Relationship.Text;
                         parentrecord.Student_ID = studentrecord.ID;
 
-                        // parent2record.Student_ID = 
+                        choice_Christian_AcademyEntities.Parents.Add(parent2record);
+                        choice_Christian_AcademyEntities.SaveChanges();
                     }
+                    
 
                     MessageBox.Show($"\tThank you {stuFName} {stuLName}.\n\r" +
                         $"Your Application was submitted successfully!\n\r" +
@@ -152,6 +158,7 @@ namespace CourseProject1A
                 MessageBox.Show(ex.Message);
                 throw;
             }
+           
 
         }
 
@@ -465,6 +472,6 @@ namespace CourseProject1A
         }
     }
 
-
+   
 }
 

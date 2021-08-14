@@ -183,6 +183,6 @@
         private System.Windows.Forms.Button refreshbttn;
         private Choice_Christian_AcademyDataSet choice_Christian_AcademyDataSet;
         private System.Windows.Forms.BindingSource staffBindingSource;
-        private Choice_Christian_AcademyDataSetTableAdapters.StaffTableAdapter staffTableAdapter;
+      private Choice_Christian_AcademyDataSetTableAdapters.StaffTableAdapter staffTableAdapter;
     }
 }
