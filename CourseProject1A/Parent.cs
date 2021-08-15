@@ -24,6 +24,6 @@ namespace CourseProject1A
         public string Relationship { get; set; }
         public Nullable<System.DateTime> Date_of_Birth { get; set; }
     
-        public virtual Student Student { get; set; }
+        public virtual Student_detail Student_detail { get; set; }
     }
 }

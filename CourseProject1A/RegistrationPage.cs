@@ -7,11 +7,11 @@ namespace CourseProject1A
 {
     public partial class RegistrationPage : Form
     {
-        private readonly Choice_Christian_AcademyEntities1 choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public RegistrationPage()
         {
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities1();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace CourseProject1A
 
                 if (isValid)
                 {                    
-                        var studentrecord = new Student();
+                        var studentrecord = new Student_detail();
                         studentrecord.First_Name = stuFName;
                         studentrecord.Mid_Name = stuMname;
                         studentrecord.Last_Name = stuLName;
@@ -110,20 +110,20 @@ namespace CourseProject1A
                         studentrecord.Grade = cb_Grade.Text;
                         studentrecord.Class = cb_Class.Text;
                         studentrecord.AddInfo = StuAddInfo;
-                    choice_Christian_AcademyEntities.Students.Add(studentrecord);
-                    choice_Christian_AcademyEntities.SaveChanges();
-
+                    choice_Christian_AcademyEntities.Student_detail.Add(studentrecord);
+                   // choice_Christian_AcademyEntities.SaveChanges();
 
                     var parentrecord = new Parent();
                     parentrecord.First_Name = par1fName;
                     parentrecord.Last_Name = par1lName;
+                    parentrecord.Date_of_Birth = par1DOB;
                     parentrecord.Address = par1Address;
                     parentrecord.Contact_Number = parPhone;
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
-                    parentrecord.Student_ID = studentrecord.ID;
+                   parentrecord.Student_ID = studentrecord.Student_ID;
                     choice_Christian_AcademyEntities.Parents.Add(parentrecord);
-                    choice_Christian_AcademyEntities.SaveChanges();
+                  // choice_Christian_AcademyEntities.SaveChanges();
 
                     if (Par2_IsChecked != false)
                     {
@@ -135,12 +135,14 @@ namespace CourseProject1A
                         parent2record.Contact_Number = tb_Par2Phone.Text;
                         parent2record.Email = tb_Par2Email.Text;
                         parent2record.Relationship = tb_Par2Relationship.Text;
-                        parentrecord.Student_ID = studentrecord.ID;
+                       parent2record.Student_ID = studentrecord.Student_ID;
 
                         choice_Christian_AcademyEntities.Parents.Add(parent2record);
-                        choice_Christian_AcademyEntities.SaveChanges();
+                        
                     }
-                    
+                    choice_Christian_AcademyEntities.SaveChanges();
+
+
 
                     MessageBox.Show($"\tThank you {stuFName} {stuLName}.\n\r" +
                         $"Your Application was submitted successfully!\n\r" +
@@ -243,11 +245,14 @@ namespace CourseProject1A
 
         private void RegistrationPage_Load(object sender, EventArgs e)
         {
-            var house = choice_Christian_AcademyEntities.Houses.ToList();
+            var House = choice_Christian_AcademyEntities.Houses.ToList();
             cb_StuHouse.DisplayMember = "Colour";
             cb_StuHouse.ValueMember = "id";
-            cb_StuHouse.DataSource = house;
+            cb_StuHouse.DataSource = House;
+
         }
+
+
 
         /* private void Submitbutton_Click(object sender, EventArgs e)
          {

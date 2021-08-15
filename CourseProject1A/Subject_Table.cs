@@ -14,16 +14,7 @@ namespace CourseProject1A
     
     public partial class Subject_Table
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Subject_Table()
-        {
-            this.Test_Result = new HashSet<Test_Result>();
-        }
-    
         public int ID { get; set; }
         public string Subject_Name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Test_Result> Test_Result { get; set; }
     }
 }

@@ -14,12 +14,6 @@ namespace CourseProject1A
     
     public partial class Teacher
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Teacher()
-        {
-            this.Test_Result = new HashSet<Test_Result>();
-        }
-    
         public int ID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
@@ -28,7 +22,5 @@ namespace CourseProject1A
         public Nullable<int> Emergency_ID { get; set; }
     
         public virtual Emergency_contact Emergency_contact { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Test_Result> Test_Result { get; set; }
     }
 }
