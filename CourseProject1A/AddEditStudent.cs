@@ -26,9 +26,20 @@ namespace CourseProject1A
             tbFName.Text = studentdata.First_Name;
             tbMInitial.Text = studentdata.Mid_Name;
             tbLName.Text = studentdata.Last_Name;
-            tbGender.Text = studentdata.Gender;
-            tbDOM.Value = (DateTime)studentdata.Date_of_Birth;
+            cb_EditGen.Text = studentdata.Gender;
+            tb_EditDOB.Value = (DateTime)studentdata.Date_of_Birth;
             tbAddress.Text = studentdata.Address;
+            cb_Editheigthft.Text = studentdata.Height_ft;
+            cb_EditheightIn.Text = studentdata.Height_in;
+            tb_EdStuEmail.Text = studentdata.Email;
+            tb_EdStuPhone.Text = studentdata.Phone_Num;
+            tb_EditPrSch.Text = studentdata.Previous_School;
+            // cb_EdHouse.Text = ()studentdata.House_ID;
+            cb_EdGrade.Text = studentdata.Grade;
+            cb_EdClass.Text = studentdata.Class;
+            rtb_EdstuAddInfo.Text = studentdata.AddInfo;
+
+
         }
 
         private void SaveChanges_Click(object sender, EventArgs e)
@@ -39,8 +50,8 @@ namespace CourseProject1A
                     studentdata.First_Name = tbFName.Text;
                     studentdata.Mid_Name = tbMInitial.Text;
                     studentdata.Last_Name = tbLName.Text;
-                    studentdata.Gender = tbGender.Text;
-                    studentdata.Date_of_Birth = tbDOM.Value;
+                    studentdata.Gender = cb_EditGen.Text;
+                    studentdata.Date_of_Birth = tb_EditDOB.Value;
                     studentdata.Address = tbAddress.Text;
             }
             catch (Exception ex)

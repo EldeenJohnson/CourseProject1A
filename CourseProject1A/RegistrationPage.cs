@@ -91,7 +91,7 @@ namespace CourseProject1A
                     errorMessage += "Please enter missing data.\n\r";
                 }
 
-                if (isValid)
+                if (isValid) //Will Add data to the database
                 {                    
                         var studentrecord = new Student_detail();
                         studentrecord.First_Name = stuFName;
@@ -111,8 +111,7 @@ namespace CourseProject1A
                         studentrecord.Class = cb_Class.Text;
                         studentrecord.AddInfo = StuAddInfo;
                     choice_Christian_AcademyEntities.Student_detail.Add(studentrecord);
-                   // choice_Christian_AcademyEntities.SaveChanges();
-
+                   
                     var parentrecord = new Parent();
                     parentrecord.First_Name = par1fName;
                     parentrecord.Last_Name = par1lName;
@@ -123,8 +122,7 @@ namespace CourseProject1A
                     parentrecord.Relationship = parRelationship;
                    parentrecord.Student_ID = studentrecord.Student_ID;
                     choice_Christian_AcademyEntities.Parents.Add(parentrecord);
-                  // choice_Christian_AcademyEntities.SaveChanges();
-
+                  
                     if (Par2_IsChecked != false)
                     {
                         var parent2record = new Parent();
@@ -200,20 +198,21 @@ namespace CourseProject1A
                                "\n\nName: " + tb_stufname.Text + " " + tb_stuMname.Text + " " + tb_stulname.Text +
                                "\nDOB: " + stu_DOB.Value.ToShortDateString() +
                                "\nGender: " + cb_Gender.Text +
-                               "\nHeight: " + cb_HeightFt.Text + "ft," + cb_HeightIn.Text + "in" +
+                               "\nHeight: " + cb_HeightFt.Text + "ft, " + cb_HeightIn.Text + "in" +
                                "\nAddress: " + tb_stuAddress.Text +
                                "\nEmail: " + tb_StuEmail.Text +
                                "\nPhone Number: " + tb_StuPhone.Text +
                                "\nPrevious School: " + tb_stuPreSch.Text +
                                "\nBirth Entry Number: " + tb_StuBEntry.Text +
-                               "\nHouse: " + cb_StuHouse.Text +
+                               "\nHouse: " + cb_StuHouse.Text + 
+                               "\nHouse: " + cb_Grade.Text + "Class " + cb_Class +
                                //   "\nPicture: "+ tb_StuUpload.Text +
                                "\nAdditional Info: " + rtb_stuAddInfo.Text +
                                "\n\n" +
 
                                //Review Parent 1
                                "PARENT 1 INFORMATION" +
-                               "\nFirst Name: " + tb_parFname.Text +
+                               "\n\nFirst Name: " + tb_parFname.Text +
                                "\nLast Name: " + tb_parLname.Text +
                                "\nDate Of Birth: " + Par_DOB.Value +
                                "\nAddress: " + tb_parAddress.Text +
@@ -222,22 +221,20 @@ namespace CourseProject1A
                                "\nRelationship: " + tb_ParRelationship.Text +
                                "\n\n";
 
-            //Review Parent 2
-            if (Par2_IsChecked != false)
-            {
-                rtb_Review.Text +=
-                "PARENT 2 INFORMATION" +
-                "\nFirst Name: " + tb_Par2Fname.Text +
-                "\nLast Name:" + tb_Par2Lname.Text +
-                "\nDate Of Birth: " + Par2_DOB.Value +
-                "\nAddress: " + tb_par2Address.Text +
-                "\nEmail: " + tb_Par2Email.Text +
-                "\nPhone Number: " + tb_Par2Phone.Text +
-                "\nRelationship: " + tb_Par2Relationship.Text;
-            }
-
+                            //Review Parent 2
+                            if (Par2_IsChecked != false)
+                            {
+                                rtb_Review.Text +=
+                                "PARENT 2 INFORMATION" +
+                                "\n\nFirst Name: " + tb_Par2Fname.Text +
+                                "\nLast Name:" + tb_Par2Lname.Text +
+                                "\nDate Of Birth: " + Par2_DOB.Value +
+                                "\nAddress: " + tb_par2Address.Text +
+                                "\nEmail: " + tb_Par2Email.Text +
+                                "\nPhone Number: " + tb_Par2Phone.Text +
+                                "\nRelationship: " + tb_Par2Relationship.Text;
+                            }
         }
-
         private void btn_RevPre_Click(object sender, EventArgs e)//review tab previous button
         {
             tabRegistration.SelectTab(1);
@@ -249,61 +246,8 @@ namespace CourseProject1A
             cb_StuHouse.DisplayMember = "Colour";
             cb_StuHouse.ValueMember = "id";
             cb_StuHouse.DataSource = House;
-
         }
-
-
-
-        /* private void Submitbutton_Click(object sender, EventArgs e)
-         {
-              try
-             {
-             var newstudent = new Student
-             {
-                 First_Name = tb_stufname.Text,
-                 Last_Name = tb_stulname.Text,
-                 Mid_Name = tb_stuMname.Text,
-                 Gender = cb_Gender.Text,
-                 Address = tb_stuAddress.Text,
-                 Date_of_Birth = stu_DOB.Value,
-                 Previous_School = tb_stuPreSch.Text,
-                 Birth_Entry_Number = tb_StuBEntry.Text
-             };
-             choice_Christian_AcademyEntities.Students.Add(newstudent);
-             ////choice_Christian_AcademyEntities.SaveChanges();
-             var newparent = new Parent
-             {
-                 First_Name = tb_parLname.Text,
-                 Last_Name = tb_parLname.Text,
-                 Address = tb_parAddress.Text,
-                 Contact_Number = tb_Parphone.Text,
-                 Relationship = tb_ParRelationship.Text,
-                 Email = tb_ParEmail.Text
-             };
-             choice_Christian_AcademyEntities.Parents.Add(newparent);
-
-             ////choice_Christian_AcademyEntities.SaveChanges();
-             var secondparent = new Parent
-             {
-                 First_Name = tb_Par2Fname.Text,
-                 Last_Name = tb_Par2Lname.Text,
-                 Address = tb_par2Address.Text,
-                 Contact_Number = tb_Par2Phone.Text,
-                 Relationship = tb_Par2Relationship.Text,
-                 Email = tb_Par2Email.Text
-             }; 
-             choice_Christian_AcademyEntities.Parents.Add(secondparent);
-
-             choice_Christian_AcademyEntities.SaveChanges();
-             MessageBox.Show("Information Submitted");
-             this.Close();
-             }
-               catch (Exception ex)
-               {
-                   MessageBox.Show($"Error: {ex.Message}");
-               } 
-         }*/
-
+                
         private void btn_StuUpload_Click(object sender, EventArgs e)
         {
             ////var image = new Image();

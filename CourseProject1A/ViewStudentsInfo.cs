@@ -83,6 +83,7 @@ namespace CourseProject1A
                    Last_Name = q.Last_Name,
                    Address = q.Address,
                    Date_of_Birth = q.Date_of_Birth,
+                   gender = q.Gender,
                    q.Student_ID
                }).ToList();
             gvstudentdata.DataSource = studentdata;
@@ -91,7 +92,8 @@ namespace CourseProject1A
             gvstudentdata.Columns[2].HeaderText = "Last Name";
             gvstudentdata.Columns[3].HeaderText = "Address";
             gvstudentdata.Columns[4].HeaderText = "Date of Birth";
-            gvstudentdata.Columns[5].Visible = false;
+            gvstudentdata.Columns[5].HeaderText = "Gender";
+            gvstudentdata.Columns[6].Visible = false;
         }
     }
 }

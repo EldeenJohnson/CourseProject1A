@@ -118,10 +118,10 @@ namespace CourseProject1A
             this.tabRegistration.Controls.Add(this.tab_StuInfo);
             this.tabRegistration.Controls.Add(this.tab_ParInfo);
             this.tabRegistration.Controls.Add(this.tab_Review);
-            this.tabRegistration.Location = new System.Drawing.Point(6, 53);
+            this.tabRegistration.Location = new System.Drawing.Point(12, 56);
             this.tabRegistration.Name = "tabRegistration";
             this.tabRegistration.SelectedIndex = 0;
-            this.tabRegistration.Size = new System.Drawing.Size(782, 882);
+            this.tabRegistration.Size = new System.Drawing.Size(786, 752);
             this.tabRegistration.TabIndex = 0;
             // 
             // tab_StuInfo
@@ -168,7 +168,7 @@ namespace CourseProject1A
             this.tab_StuInfo.Location = new System.Drawing.Point(4, 22);
             this.tab_StuInfo.Name = "tab_StuInfo";
             this.tab_StuInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_StuInfo.Size = new System.Drawing.Size(774, 856);
+            this.tab_StuInfo.Size = new System.Drawing.Size(778, 726);
             this.tab_StuInfo.TabIndex = 0;
             this.tab_StuInfo.Text = "Student Information";
             // 
@@ -176,10 +176,10 @@ namespace CourseProject1A
             // 
             this.studentnext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.studentnext.ForeColor = System.Drawing.Color.White;
-            this.studentnext.Location = new System.Drawing.Point(617, 730);
+            this.studentnext.Location = new System.Drawing.Point(574, 692);
             this.studentnext.Name = "studentnext";
             this.studentnext.Size = new System.Drawing.Size(71, 21);
-            this.studentnext.TabIndex = 48;
+            this.studentnext.TabIndex = 19;
             this.studentnext.Text = "Next";
             this.studentnext.UseVisualStyleBackColor = false;
             this.studentnext.Click += new System.EventHandler(this.studentnext_Click_1);
@@ -195,7 +195,7 @@ namespace CourseProject1A
             // 
             // stu_DOB
             // 
-            this.stu_DOB.Location = new System.Drawing.Point(312, 94);
+            this.stu_DOB.Location = new System.Drawing.Point(269, 74);
             this.stu_DOB.Name = "stu_DOB";
             this.stu_DOB.Size = new System.Drawing.Size(200, 20);
             this.stu_DOB.TabIndex = 4;
@@ -216,7 +216,7 @@ namespace CourseProject1A
             "9",
             "10",
             "11"});
-            this.cb_HeightIn.Location = new System.Drawing.Point(404, 183);
+            this.cb_HeightIn.Location = new System.Drawing.Point(361, 163);
             this.cb_HeightIn.Name = "cb_HeightIn";
             this.cb_HeightIn.Size = new System.Drawing.Size(78, 21);
             this.cb_HeightIn.TabIndex = 7;
@@ -232,7 +232,7 @@ namespace CourseProject1A
             "4",
             "5",
             "6"});
-            this.cb_HeightFt.Location = new System.Drawing.Point(312, 183);
+            this.cb_HeightFt.Location = new System.Drawing.Point(269, 163);
             this.cb_HeightFt.Name = "cb_HeightFt";
             this.cb_HeightFt.Size = new System.Drawing.Size(78, 21);
             this.cb_HeightFt.TabIndex = 6;
@@ -241,26 +241,26 @@ namespace CourseProject1A
             // lbl_Height
             // 
             this.lbl_Height.AutoSize = true;
-            this.lbl_Height.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Height.Location = new System.Drawing.Point(210, 184);
+            this.lbl_Height.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Height.Location = new System.Drawing.Point(167, 164);
             this.lbl_Height.Name = "lbl_Height";
-            this.lbl_Height.Size = new System.Drawing.Size(62, 20);
+            this.lbl_Height.Size = new System.Drawing.Size(53, 16);
             this.lbl_Height.TabIndex = 45;
             this.lbl_Height.Text = "Height";
             // 
             // lbl_bEntry
             // 
             this.lbl_bEntry.AutoSize = true;
-            this.lbl_bEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_bEntry.Location = new System.Drawing.Point(163, 411);
+            this.lbl_bEntry.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_bEntry.Location = new System.Drawing.Point(130, 391);
             this.lbl_bEntry.Name = "lbl_bEntry";
-            this.lbl_bEntry.Size = new System.Drawing.Size(109, 20);
+            this.lbl_bEntry.Size = new System.Drawing.Size(90, 16);
             this.lbl_bEntry.TabIndex = 40;
             this.lbl_bEntry.Text = "Birth Entry #";
             // 
             // tb_StuBEntry
             // 
-            this.tb_StuBEntry.Location = new System.Drawing.Point(311, 411);
+            this.tb_StuBEntry.Location = new System.Drawing.Point(268, 392);
             this.tb_StuBEntry.Name = "tb_StuBEntry";
             this.tb_StuBEntry.Size = new System.Drawing.Size(377, 20);
             this.tb_StuBEntry.TabIndex = 12;
@@ -268,23 +268,23 @@ namespace CourseProject1A
             // lbl_PreSchool
             // 
             this.lbl_PreSchool.AutoSize = true;
-            this.lbl_PreSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_PreSchool.Location = new System.Drawing.Point(135, 367);
+            this.lbl_PreSchool.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PreSchool.Location = new System.Drawing.Point(99, 347);
             this.lbl_PreSchool.Name = "lbl_PreSchool";
-            this.lbl_PreSchool.Size = new System.Drawing.Size(137, 20);
+            this.lbl_PreSchool.Size = new System.Drawing.Size(121, 16);
             this.lbl_PreSchool.TabIndex = 38;
             this.lbl_PreSchool.Text = "Previous School";
             // 
             // tb_stuPreSch
             // 
-            this.tb_stuPreSch.Location = new System.Drawing.Point(311, 367);
+            this.tb_stuPreSch.Location = new System.Drawing.Point(268, 346);
             this.tb_stuPreSch.Name = "tb_stuPreSch";
             this.tb_stuPreSch.Size = new System.Drawing.Size(377, 20);
             this.tb_stuPreSch.TabIndex = 11;
             // 
             // tb_stuMname
             // 
-            this.tb_stuMname.Location = new System.Drawing.Point(441, 48);
+            this.tb_stuMname.Location = new System.Drawing.Point(398, 28);
             this.tb_stuMname.Name = "tb_stuMname";
             this.tb_stuMname.Size = new System.Drawing.Size(114, 20);
             this.tb_stuMname.TabIndex = 2;
@@ -295,16 +295,16 @@ namespace CourseProject1A
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(197, 228);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(154, 208);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
+            this.label5.Size = new System.Drawing.Size(66, 16);
             this.label5.TabIndex = 35;
             this.label5.Text = "Address";
             // 
             // tb_stuAddress
             // 
-            this.tb_stuAddress.Location = new System.Drawing.Point(312, 228);
+            this.tb_stuAddress.Location = new System.Drawing.Point(269, 208);
             this.tb_stuAddress.Name = "tb_stuAddress";
             this.tb_stuAddress.Size = new System.Drawing.Size(377, 20);
             this.tb_stuAddress.TabIndex = 8;
@@ -315,7 +315,7 @@ namespace CourseProject1A
             this.cb_Gender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cb_Gender.Location = new System.Drawing.Point(312, 138);
+            this.cb_Gender.Location = new System.Drawing.Point(269, 118);
             this.cb_Gender.Name = "cb_Gender";
             this.cb_Gender.Size = new System.Drawing.Size(170, 21);
             this.cb_Gender.TabIndex = 5;
@@ -323,10 +323,10 @@ namespace CourseProject1A
             // btn_StuCancel
             // 
             this.btn_StuCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_StuCancel.Location = new System.Drawing.Point(517, 730);
+            this.btn_StuCancel.Location = new System.Drawing.Point(474, 692);
             this.btn_StuCancel.Name = "btn_StuCancel";
             this.btn_StuCancel.Size = new System.Drawing.Size(71, 21);
-            this.btn_StuCancel.TabIndex = 19;
+            this.btn_StuCancel.TabIndex = 18;
             this.btn_StuCancel.Text = "Cancel";
             this.btn_StuCancel.UseVisualStyleBackColor = false;
             this.btn_StuCancel.Click += new System.EventHandler(this.btn_StuCancel_Click);
@@ -339,10 +339,10 @@ namespace CourseProject1A
             "B",
             "C",
             "D"});
-            this.cb_Class.Location = new System.Drawing.Point(552, 514);
+            this.cb_Class.Location = new System.Drawing.Point(509, 489);
             this.cb_Class.Name = "cb_Class";
             this.cb_Class.Size = new System.Drawing.Size(136, 21);
-            this.cb_Class.TabIndex = 16;
+            this.cb_Class.TabIndex = 15;
             // 
             // cb_Grade
             // 
@@ -357,46 +357,46 @@ namespace CourseProject1A
             "4",
             "5",
             "6"});
-            this.cb_Grade.Location = new System.Drawing.Point(312, 513);
+            this.cb_Grade.Location = new System.Drawing.Point(269, 488);
             this.cb_Grade.Name = "cb_Grade";
             this.cb_Grade.Size = new System.Drawing.Size(137, 21);
-            this.cb_Grade.TabIndex = 16;
+            this.cb_Grade.TabIndex = 14;
             // 
             // cb_StuHouse
             // 
             this.cb_StuHouse.FormattingEnabled = true;
-            this.cb_StuHouse.Location = new System.Drawing.Point(312, 462);
+            this.cb_StuHouse.Location = new System.Drawing.Point(269, 438);
             this.cb_StuHouse.Name = "cb_StuHouse";
             this.cb_StuHouse.Size = new System.Drawing.Size(170, 21);
-            this.cb_StuHouse.TabIndex = 16;
+            this.cb_StuHouse.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(86, 614);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(62, 576);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(186, 20);
+            this.label8.Size = new System.Drawing.Size(158, 16);
             this.label8.TabIndex = 28;
             this.label8.Text = "Additional Information";
             // 
             // lblPhoto
             // 
             this.lblPhoto.AutoSize = true;
-            this.lblPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoto.Location = new System.Drawing.Point(153, 559);
+            this.lblPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoto.Location = new System.Drawing.Point(117, 534);
             this.lblPhoto.Name = "lblPhoto";
-            this.lblPhoto.Size = new System.Drawing.Size(118, 20);
+            this.lblPhoto.Size = new System.Drawing.Size(103, 16);
             this.lblPhoto.TabIndex = 27;
             this.lblPhoto.Text = "Upload Photo";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(203, 558);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(167, 533);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 20);
+            this.label15.Size = new System.Drawing.Size(53, 16);
             this.label15.TabIndex = 26;
             this.label15.Text = "House";
             // 
@@ -404,7 +404,7 @@ namespace CourseProject1A
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(482, 514);
+            this.label16.Location = new System.Drawing.Point(439, 489);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 20);
             this.label16.TabIndex = 26;
@@ -413,70 +413,70 @@ namespace CourseProject1A
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(203, 514);
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(169, 489);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 20);
+            this.label13.Size = new System.Drawing.Size(51, 16);
             this.label13.TabIndex = 26;
             this.label13.Text = "Grade";
             // 
             // lblHouse
             // 
             this.lblHouse.AutoSize = true;
-            this.lblHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHouse.Location = new System.Drawing.Point(203, 463);
+            this.lblHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHouse.Location = new System.Drawing.Point(167, 443);
             this.lblHouse.Name = "lblHouse";
-            this.lblHouse.Size = new System.Drawing.Size(61, 20);
+            this.lblHouse.Size = new System.Drawing.Size(53, 16);
             this.lblHouse.TabIndex = 26;
             this.lblHouse.Text = "House";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(219, 273);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(173, 253);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(53, 20);
+            this.lblEmail.Size = new System.Drawing.Size(47, 16);
             this.lblEmail.TabIndex = 24;
             this.lblEmail.Text = "Email";
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(211, 321);
+            this.lblPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(168, 301);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(60, 20);
+            this.lblPhone.Size = new System.Drawing.Size(52, 16);
             this.lblPhone.TabIndex = 23;
             this.lblPhone.Text = "Phone";
             // 
             // lbl_StuGender
             // 
             this.lbl_StuGender.AutoSize = true;
-            this.lbl_StuGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_StuGender.Location = new System.Drawing.Point(203, 136);
+            this.lbl_StuGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_StuGender.Location = new System.Drawing.Point(161, 116);
             this.lbl_StuGender.Name = "lbl_StuGender";
-            this.lbl_StuGender.Size = new System.Drawing.Size(69, 20);
+            this.lbl_StuGender.Size = new System.Drawing.Size(59, 16);
             this.lbl_StuGender.TabIndex = 22;
             this.lbl_StuGender.Text = "Gender";
             // 
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDOB.Location = new System.Drawing.Point(225, 94);
+            this.lblDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDOB.Location = new System.Drawing.Point(180, 74);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(47, 20);
+            this.lblDOB.Size = new System.Drawing.Size(40, 16);
             this.lblDOB.TabIndex = 29;
             this.lblDOB.Text = "DOB";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(147, 46);
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(115, 26);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(124, 20);
+            this.lblName.Size = new System.Drawing.Size(105, 16);
             this.lblName.TabIndex = 21;
             this.lblName.Text = "Student Name";
             // 
@@ -484,32 +484,32 @@ namespace CourseProject1A
             // 
             this.btn_StuUpload.BackColor = System.Drawing.Color.Green;
             this.btn_StuUpload.ForeColor = System.Drawing.Color.AliceBlue;
-            this.btn_StuUpload.Location = new System.Drawing.Point(311, 557);
+            this.btn_StuUpload.Location = new System.Drawing.Point(268, 532);
             this.btn_StuUpload.Name = "btn_StuUpload";
             this.btn_StuUpload.Size = new System.Drawing.Size(138, 22);
-            this.btn_StuUpload.TabIndex = 17;
+            this.btn_StuUpload.TabIndex = 16;
             this.btn_StuUpload.Text = "Upload Picture";
             this.btn_StuUpload.UseVisualStyleBackColor = false;
             this.btn_StuUpload.Click += new System.EventHandler(this.btn_StuUpload_Click);
             // 
             // rtb_stuAddInfo
             // 
-            this.rtb_stuAddInfo.Location = new System.Drawing.Point(312, 616);
+            this.rtb_stuAddInfo.Location = new System.Drawing.Point(269, 578);
             this.rtb_stuAddInfo.Name = "rtb_stuAddInfo";
             this.rtb_stuAddInfo.Size = new System.Drawing.Size(377, 90);
-            this.rtb_stuAddInfo.TabIndex = 18;
+            this.rtb_stuAddInfo.TabIndex = 17;
             this.rtb_stuAddInfo.Text = "";
             // 
             // tb_StuEmail
             // 
-            this.tb_StuEmail.Location = new System.Drawing.Point(312, 275);
+            this.tb_StuEmail.Location = new System.Drawing.Point(269, 254);
             this.tb_StuEmail.Name = "tb_StuEmail";
             this.tb_StuEmail.Size = new System.Drawing.Size(377, 20);
             this.tb_StuEmail.TabIndex = 9;
             // 
             // tb_StuPhone
             // 
-            this.tb_StuPhone.Location = new System.Drawing.Point(311, 321);
+            this.tb_StuPhone.Location = new System.Drawing.Point(268, 300);
             this.tb_StuPhone.Name = "tb_StuPhone";
             this.tb_StuPhone.Size = new System.Drawing.Size(170, 20);
             this.tb_StuPhone.TabIndex = 10;
@@ -517,7 +517,7 @@ namespace CourseProject1A
             // tb_stufname
             // 
             this.tb_stufname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_stufname.Location = new System.Drawing.Point(312, 48);
+            this.tb_stufname.Location = new System.Drawing.Point(269, 28);
             this.tb_stufname.Name = "tb_stufname";
             this.tb_stufname.Size = new System.Drawing.Size(113, 20);
             this.tb_stufname.TabIndex = 1;
@@ -527,7 +527,7 @@ namespace CourseProject1A
             // 
             // tb_stulname
             // 
-            this.tb_stulname.Location = new System.Drawing.Point(575, 48);
+            this.tb_stulname.Location = new System.Drawing.Point(532, 28);
             this.tb_stulname.Name = "tb_stulname";
             this.tb_stulname.Size = new System.Drawing.Size(114, 20);
             this.tb_stulname.TabIndex = 3;
@@ -575,7 +575,7 @@ namespace CourseProject1A
             this.tab_ParInfo.Location = new System.Drawing.Point(4, 22);
             this.tab_ParInfo.Name = "tab_ParInfo";
             this.tab_ParInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_ParInfo.Size = new System.Drawing.Size(774, 856);
+            this.tab_ParInfo.Size = new System.Drawing.Size(778, 726);
             this.tab_ParInfo.TabIndex = 1;
             this.tab_ParInfo.Text = "Parent Information";
             // 
@@ -585,7 +585,7 @@ namespace CourseProject1A
             this.checkBox1.Location = new System.Drawing.Point(182, 340);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(45, 17);
-            this.checkBox1.TabIndex = 59;
+            this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Add";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -596,32 +596,32 @@ namespace CourseProject1A
             this.tb_Par2Relationship.Location = new System.Drawing.Point(267, 597);
             this.tb_Par2Relationship.Name = "tb_Par2Relationship";
             this.tb_Par2Relationship.Size = new System.Drawing.Size(377, 20);
-            this.tb_Par2Relationship.TabIndex = 57;
+            this.tb_Par2Relationship.TabIndex = 15;
             // 
             // tb_ParRelationship
             // 
             this.tb_ParRelationship.Location = new System.Drawing.Point(267, 286);
             this.tb_ParRelationship.Name = "tb_ParRelationship";
             this.tb_ParRelationship.Size = new System.Drawing.Size(377, 20);
-            this.tb_ParRelationship.TabIndex = 56;
+            this.tb_ParRelationship.TabIndex = 7;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(118, 595);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(125, 595);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 20);
+            this.label12.Size = new System.Drawing.Size(95, 16);
             this.label12.TabIndex = 55;
             this.label12.Text = "Relationship";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(118, 284);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(125, 284);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(109, 20);
+            this.label14.Size = new System.Drawing.Size(95, 16);
             this.label14.TabIndex = 54;
             this.label14.Text = "Relationship";
             // 
@@ -632,7 +632,7 @@ namespace CourseProject1A
             this.btn_ParPrev.Location = new System.Drawing.Point(267, 636);
             this.btn_ParPrev.Name = "btn_ParPrev";
             this.btn_ParPrev.Size = new System.Drawing.Size(71, 21);
-            this.btn_ParPrev.TabIndex = 12;
+            this.btn_ParPrev.TabIndex = 16;
             this.btn_ParPrev.Text = "Previous";
             this.btn_ParPrev.UseVisualStyleBackColor = false;
             this.btn_ParPrev.Click += new System.EventHandler(this.btn_ParPrev_Click);
@@ -643,7 +643,7 @@ namespace CourseProject1A
             this.btn_ParCancel.Location = new System.Drawing.Point(573, 636);
             this.btn_ParCancel.Name = "btn_ParCancel";
             this.btn_ParCancel.Size = new System.Drawing.Size(71, 21);
-            this.btn_ParCancel.TabIndex = 14;
+            this.btn_ParCancel.TabIndex = 18;
             this.btn_ParCancel.Text = "Cancel";
             this.btn_ParCancel.UseVisualStyleBackColor = false;
             this.btn_ParCancel.Click += new System.EventHandler(this.btn_ParCancel_Click);
@@ -655,7 +655,7 @@ namespace CourseProject1A
             this.btn_ParNext.Location = new System.Drawing.Point(423, 636);
             this.btn_ParNext.Name = "btn_ParNext";
             this.btn_ParNext.Size = new System.Drawing.Size(71, 21);
-            this.btn_ParNext.TabIndex = 13;
+            this.btn_ParNext.TabIndex = 17;
             this.btn_ParNext.Text = "Next";
             this.btn_ParNext.UseVisualStyleBackColor = false;
             this.btn_ParNext.Click += new System.EventHandler(this.btn_ParNext_Click);
@@ -685,50 +685,50 @@ namespace CourseProject1A
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(174, 554);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(173, 554);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 50;
             this.label6.Text = "Email";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(167, 509);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(168, 509);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 20);
+            this.label7.Size = new System.Drawing.Size(52, 16);
             this.label7.TabIndex = 49;
             this.label7.Text = "Phone";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(152, 464);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(154, 464);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 20);
+            this.label9.Size = new System.Drawing.Size(66, 16);
             this.label9.TabIndex = 48;
             this.label9.Text = "Address";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(180, 416);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 20);
+            this.label10.Size = new System.Drawing.Size(40, 16);
             this.label10.TabIndex = 51;
             this.label10.Text = "DOB";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(172, 370);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(171, 370);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 20);
+            this.label11.Size = new System.Drawing.Size(49, 16);
             this.label11.TabIndex = 47;
             this.label11.Text = "Name";
             // 
@@ -738,7 +738,7 @@ namespace CourseProject1A
             this.Par2_DOB.Location = new System.Drawing.Point(267, 415);
             this.Par2_DOB.Name = "Par2_DOB";
             this.Par2_DOB.Size = new System.Drawing.Size(178, 20);
-            this.Par2_DOB.TabIndex = 8;
+            this.Par2_DOB.TabIndex = 11;
             // 
             // tb_Par2Email
             // 
@@ -746,7 +746,7 @@ namespace CourseProject1A
             this.tb_Par2Email.Location = new System.Drawing.Point(267, 556);
             this.tb_Par2Email.Name = "tb_Par2Email";
             this.tb_Par2Email.Size = new System.Drawing.Size(377, 20);
-            this.tb_Par2Email.TabIndex = 11;
+            this.tb_Par2Email.TabIndex = 14;
             // 
             // tb_Par2Phone
             // 
@@ -754,7 +754,7 @@ namespace CourseProject1A
             this.tb_Par2Phone.Location = new System.Drawing.Point(267, 509);
             this.tb_Par2Phone.Name = "tb_Par2Phone";
             this.tb_Par2Phone.Size = new System.Drawing.Size(377, 20);
-            this.tb_Par2Phone.TabIndex = 10;
+            this.tb_Par2Phone.TabIndex = 13;
             // 
             // tb_par2Address
             // 
@@ -762,7 +762,7 @@ namespace CourseProject1A
             this.tb_par2Address.Location = new System.Drawing.Point(267, 464);
             this.tb_par2Address.Name = "tb_par2Address";
             this.tb_par2Address.Size = new System.Drawing.Size(377, 20);
-            this.tb_par2Address.TabIndex = 9;
+            this.tb_par2Address.TabIndex = 12;
             // 
             // tb_Par2Fname
             // 
@@ -771,7 +771,7 @@ namespace CourseProject1A
             this.tb_Par2Fname.Location = new System.Drawing.Point(267, 370);
             this.tb_Par2Fname.Name = "tb_Par2Fname";
             this.tb_Par2Fname.Size = new System.Drawing.Size(178, 20);
-            this.tb_Par2Fname.TabIndex = 7;
+            this.tb_Par2Fname.TabIndex = 9;
             this.tb_Par2Fname.Text = "First Name";
             this.tb_Par2Fname.Click += new System.EventHandler(this.tb_Par2Fname_Click);
             this.tb_Par2Fname.TextChanged += new System.EventHandler(this.tb_Par2Fname_TextChanged);
@@ -783,7 +783,7 @@ namespace CourseProject1A
             this.tb_Par2Lname.Location = new System.Drawing.Point(474, 370);
             this.tb_Par2Lname.Name = "tb_Par2Lname";
             this.tb_Par2Lname.Size = new System.Drawing.Size(170, 20);
-            this.tb_Par2Lname.TabIndex = 8;
+            this.tb_Par2Lname.TabIndex = 10;
             this.tb_Par2Lname.Text = "Last Name";
             this.tb_Par2Lname.Click += new System.EventHandler(this.tb_Par2Lname_Click);
             this.tb_Par2Lname.Leave += new System.EventHandler(this.tb_Par2Lname_Leave);
@@ -791,50 +791,50 @@ namespace CourseProject1A
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(174, 239);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(173, 239);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.Size = new System.Drawing.Size(47, 16);
             this.label1.TabIndex = 39;
             this.label1.Text = "Email";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(167, 194);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(168, 194);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 20);
+            this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 38;
             this.label2.Text = "Phone";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(152, 149);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(154, 149);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.Size = new System.Drawing.Size(66, 16);
             this.label3.TabIndex = 37;
             this.label3.Text = "Address";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(180, 101);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 20);
+            this.label4.Size = new System.Drawing.Size(40, 16);
             this.label4.TabIndex = 40;
             this.label4.Text = "DOB";
             // 
             // lbl
             // 
             this.lbl.AutoSize = true;
-            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(172, 55);
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.Location = new System.Drawing.Point(171, 55);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(55, 20);
+            this.lbl.Size = new System.Drawing.Size(49, 16);
             this.lbl.TabIndex = 36;
             this.lbl.Text = "Name";
             // 
@@ -898,7 +898,7 @@ namespace CourseProject1A
             this.tab_Review.Controls.Add(this.btn_Submit);
             this.tab_Review.Location = new System.Drawing.Point(4, 22);
             this.tab_Review.Name = "tab_Review";
-            this.tab_Review.Size = new System.Drawing.Size(774, 856);
+            this.tab_Review.Size = new System.Drawing.Size(778, 726);
             this.tab_Review.TabIndex = 2;
             this.tab_Review.Text = "Review";
             // 
@@ -944,7 +944,7 @@ namespace CourseProject1A
             this.btn_RevCancel.Location = new System.Drawing.Point(159, 737);
             this.btn_RevCancel.Name = "btn_RevCancel";
             this.btn_RevCancel.Size = new System.Drawing.Size(71, 27);
-            this.btn_RevCancel.TabIndex = 3;
+            this.btn_RevCancel.TabIndex = 2;
             this.btn_RevCancel.Text = "Cancel";
             this.btn_RevCancel.UseVisualStyleBackColor = false;
             this.btn_RevCancel.Click += new System.EventHandler(this.btn_RevCancel_Click);
@@ -957,7 +957,7 @@ namespace CourseProject1A
             this.btn_Submit.Location = new System.Drawing.Point(589, 667);
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(93, 50);
-            this.btn_Submit.TabIndex = 2;
+            this.btn_Submit.TabIndex = 3;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = false;
             this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
@@ -983,7 +983,7 @@ namespace CourseProject1A
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 749);
+            this.ClientSize = new System.Drawing.Size(810, 820);
             this.Controls.Add(this.tabRegistration);
             this.Controls.Add(this.lbl_RegForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
