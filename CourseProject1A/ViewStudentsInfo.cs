@@ -30,9 +30,11 @@ namespace CourseProject1A
             var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
             //Query database
             var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID ==id);
+            var parent = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.Student_ID == id);
+            var parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID == parent.ID+1 && q.Student_ID == id);
 
             //var addEditStudent = new RegistrationPage();
-            var addEditStudent = new AddEditStudent(student);
+            var addEditStudent = new AddEditStudent(student,parent,parent2);
             addEditStudent.MdiParent = this.MdiParent;
             addEditStudent.Show();
         }
