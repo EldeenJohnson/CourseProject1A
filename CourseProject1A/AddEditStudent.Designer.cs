@@ -94,10 +94,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.picBox_Edit = new System.Windows.Forms.PictureBox();
-            this.lbl_Parfk = new System.Windows.Forms.Label();
-            this.dgv_Par = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Edit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Par)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveChanges
@@ -748,24 +745,6 @@
             this.picBox_Edit.TabIndex = 85;
             this.picBox_Edit.TabStop = false;
             // 
-            // lbl_Parfk
-            // 
-            this.lbl_Parfk.AutoSize = true;
-            this.lbl_Parfk.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Parfk.Location = new System.Drawing.Point(13, 10);
-            this.lbl_Parfk.Name = "lbl_Parfk";
-            this.lbl_Parfk.Size = new System.Drawing.Size(41, 13);
-            this.lbl_Parfk.TabIndex = 86;
-            this.lbl_Parfk.Text = "label29";
-            // 
-            // dgv_Par
-            // 
-            this.dgv_Par.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Par.Location = new System.Drawing.Point(328, 69);
-            this.dgv_Par.Name = "dgv_Par";
-            this.dgv_Par.Size = new System.Drawing.Size(317, 60);
-            this.dgv_Par.TabIndex = 87;
-            // 
             // AddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -773,8 +752,6 @@
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(907, 584);
-            this.Controls.Add(this.dgv_Par);
-            this.Controls.Add(this.lbl_Parfk);
             this.Controls.Add(this.picBox_Edit);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.rtb_EdstuAddInfo);
@@ -845,7 +822,6 @@
             this.Name = "AddEditStudent";
             this.Text = "Edit Students";
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Edit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Par)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -917,7 +893,5 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox picBox_Edit;
-        private System.Windows.Forms.Label lbl_Parfk;
-        private System.Windows.Forms.DataGridView dgv_Par;
     }
 }
