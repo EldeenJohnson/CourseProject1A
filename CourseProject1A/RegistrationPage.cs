@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CourseProject1A
 {
@@ -269,6 +270,15 @@ namespace CourseProject1A
             ////var image = new Image();
             ////image.MdiParent = this.MdiParent;
             ////image.Show();
+
+            OpenFileDialog opnfd = new OpenFileDialog();
+            opnfd.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif;*.bmp;)| *.png;*.jpg;*.jpeg;*.gif;*.bmp;";
+            if (opnfd.ShowDialog() == DialogResult.OK)
+            {
+                lbImgFile.Text = opnfd.FileName;         
+            }
+
+            File.Copy(lbImgFile.Text, Path.Combine(@"C:\Users\andre\source\repos\CourseProject1A\CourseProject1A\Resources\", Path.GetFileName(lbImgFile.Text)), true);
         }
 
         private void tb_stufname_Click(object sender, EventArgs e)
@@ -407,6 +417,11 @@ namespace CourseProject1A
                 tb_Par2Lname.Text = "Last Name";
                 tb_Par2Lname.ForeColor = Color.Black;
             }
+        }
+
+        private void lbImgFile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }    

@@ -32,6 +32,7 @@ namespace CourseProject1A
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationPage));
             this.tabRegistration = new System.Windows.Forms.TabControl();
             this.tab_StuInfo = new System.Windows.Forms.TabPage();
+            this.lbImgFile = new System.Windows.Forms.Label();
             this.studentnext = new System.Windows.Forms.Button();
             this.StudentID = new System.Windows.Forms.Label();
             this.stu_DOB = new System.Windows.Forms.DateTimePicker();
@@ -123,6 +124,7 @@ namespace CourseProject1A
             // 
             this.tab_StuInfo.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tab_StuInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tab_StuInfo.Controls.Add(this.lbImgFile);
             this.tab_StuInfo.Controls.Add(this.studentnext);
             this.tab_StuInfo.Controls.Add(this.StudentID);
             this.tab_StuInfo.Controls.Add(this.stu_DOB);
@@ -161,6 +163,17 @@ namespace CourseProject1A
             this.tab_StuInfo.Size = new System.Drawing.Size(774, 856);
             this.tab_StuInfo.TabIndex = 0;
             this.tab_StuInfo.Text = "Student Information";
+            // 
+            // lbImgFile
+            // 
+            this.lbImgFile.AutoSize = true;
+            this.lbImgFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbImgFile.Location = new System.Drawing.Point(438, 517);
+            this.lbImgFile.Name = "lbImgFile";
+            this.lbImgFile.Size = new System.Drawing.Size(47, 15);
+            this.lbImgFile.TabIndex = 49;
+            this.lbImgFile.Text = "Img file";
+            this.lbImgFile.Click += new System.EventHandler(this.lbImgFile_Click);
             // 
             // studentnext
             // 
@@ -1000,6 +1013,7 @@ namespace CourseProject1A
         private System.Windows.Forms.Button Submitbutton;
         private System.Windows.Forms.Label StudentID;
         private System.Windows.Forms.Button studentnext;
+        private System.Windows.Forms.Label lbImgFile;
     }
 }
 
