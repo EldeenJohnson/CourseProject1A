@@ -23,7 +23,7 @@ namespace CourseProject1A
         
 
         private void PopulateFields(Student_detail studentdata, Parent ParentData, Parent Parent2)
-        {   //Retreive Student Data
+        {
             lblId.Text = studentdata.Student_ID.ToString();
             tbFName.Text = studentdata.First_Name;
             tbMInitial.Text = studentdata.Mid_Name;
@@ -42,7 +42,7 @@ namespace CourseProject1A
             rtb_EdstuAddInfo.Text = studentdata.AddInfo;
 
             
-             //Retrive parent 1 Data                
+                             
            if (ParentData.Student_ID==studentdata.Student_ID)
             {
                 tb_EdparFname.Text = ParentData.First_Name;
@@ -53,7 +53,6 @@ namespace CourseProject1A
                 tb_EdParEmail.Text = ParentData.Email;
                 tb_EdParRelationship.Text = ParentData.Relationship;
 
-                //Retrive parent 2 Data  if it exists
                 if (ParentData.Student_ID == studentdata.Student_ID && Parent2 != null)
                 {
                     tb_edPar2Fname.Text = Parent2.First_Name;
