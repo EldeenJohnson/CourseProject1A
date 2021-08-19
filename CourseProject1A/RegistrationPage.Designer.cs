@@ -107,6 +107,7 @@ namespace CourseProject1A
             this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
+            this.lbImgFile = new System.Windows.Forms.Label();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -128,6 +129,7 @@ namespace CourseProject1A
             // 
             this.tab_StuInfo.BackColor = System.Drawing.Color.LightSkyBlue;
             this.tab_StuInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tab_StuInfo.Controls.Add(this.lbImgFile);
             this.tab_StuInfo.Controls.Add(this.studentnext);
             this.tab_StuInfo.Controls.Add(this.StudentID);
             this.tab_StuInfo.Controls.Add(this.stu_DOB);
@@ -974,6 +976,15 @@ namespace CourseProject1A
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
+            // lbImgFile
+            // 
+            this.lbImgFile.AutoSize = true;
+            this.lbImgFile.Location = new System.Drawing.Point(428, 536);
+            this.lbImgFile.Name = "lbImgFile";
+            this.lbImgFile.Size = new System.Drawing.Size(49, 13);
+            this.lbImgFile.TabIndex = 48;
+            this.lbImgFile.Text = "Img Path";
+            // 
             // RegistrationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -983,7 +994,7 @@ namespace CourseProject1A
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(810, 820);
+            this.ClientSize = new System.Drawing.Size(810, 749);
             this.Controls.Add(this.tabRegistration);
             this.Controls.Add(this.lbl_RegForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1082,6 +1093,7 @@ namespace CourseProject1A
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lbImgFile;
     }
 }
 
