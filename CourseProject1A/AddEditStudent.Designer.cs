@@ -94,6 +94,8 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.picBox_Edit = new System.Windows.Forms.PictureBox();
+            this.lblpar1 = new System.Windows.Forms.Label();
+            this.lblPar2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Edit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -745,6 +747,25 @@
             this.picBox_Edit.TabIndex = 85;
             this.picBox_Edit.TabStop = false;
             // 
+            // lblpar1
+            // 
+            this.lblpar1.AutoSize = true;
+            this.lblpar1.BackColor = System.Drawing.Color.Transparent;
+            this.lblpar1.ForeColor = System.Drawing.Color.Transparent;
+            this.lblpar1.Location = new System.Drawing.Point(28, 45);
+            this.lblpar1.Name = "lblpar1";
+            this.lblpar1.Size = new System.Drawing.Size(0, 13);
+            this.lblpar1.TabIndex = 86;
+            // 
+            // lblPar2
+            // 
+            this.lblPar2.AutoSize = true;
+            this.lblPar2.BackColor = System.Drawing.Color.Black;
+            this.lblPar2.Location = new System.Drawing.Point(28, 58);
+            this.lblPar2.Name = "lblPar2";
+            this.lblPar2.Size = new System.Drawing.Size(0, 13);
+            this.lblPar2.TabIndex = 86;
+            // 
             // AddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,6 +773,8 @@
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(907, 584);
+            this.Controls.Add(this.lblPar2);
+            this.Controls.Add(this.lblpar1);
             this.Controls.Add(this.picBox_Edit);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.rtb_EdstuAddInfo);
@@ -893,5 +916,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox picBox_Edit;
+        private System.Windows.Forms.Label lblpar1;
+        private System.Windows.Forms.Label lblPar2;
     }
 }
