@@ -11,10 +11,12 @@ namespace CourseProject1A
 {
     using System;
     
-    public partial class All_Teacher_Result
+    public partial class sp_helpdiagrams_Result
     {
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
-        public string Qualification { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

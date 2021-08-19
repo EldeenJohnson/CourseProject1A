@@ -11,11 +11,9 @@ namespace CourseProject1A
 {
     using System;
     
-    public partial class All_Student_Result
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
-        public Nullable<System.DateTime> Date_of_Birth { get; set; }
-        public string Gender { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

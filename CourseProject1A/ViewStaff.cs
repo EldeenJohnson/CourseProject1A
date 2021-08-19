@@ -13,11 +13,11 @@ namespace CourseProject1A
 {
     public partial class ViewStaff : Form
     {
-        private readonly Choice_Christian_AcademyEntities choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public ViewStaff()
         {
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
         }
 
         private void ViewStaff_Load(object sender, EventArgs e)

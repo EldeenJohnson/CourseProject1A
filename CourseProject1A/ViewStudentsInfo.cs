@@ -12,11 +12,11 @@ namespace CourseProject1A
 {
     public partial class ViewStudentsInfo : Form
     {
-        private readonly Choice_Christian_AcademyEntities choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public ViewStudentsInfo()
         {
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
         }
 
         private void ViewStudentsInfo_Load_1(object sender, EventArgs e)
@@ -27,12 +27,14 @@ namespace CourseProject1A
         private void Editbotton_Click(object sender, EventArgs e)
         {
             //Get ID for selected row
-            var id = (int)gvstudentdata.SelectedRows[0].Cells["ID"].Value;
+            var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
             //Query database
-            var student = choice_Christian_AcademyEntities.Students.FirstOrDefault(q => q.ID ==id);
+            var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID ==id);
+            var parent = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.Student_ID == id);
+            var parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID > parent.ID && q.Student_ID == id);
 
             //var addEditStudent = new RegistrationPage();
-            var addEditStudent = new AddEditStudent(student);
+            var addEditStudent = new AddEditStudent(student,parent,parent2);
             addEditStudent.MdiParent = this.MdiParent;
             addEditStudent.Show();
         }
@@ -41,11 +43,11 @@ namespace CourseProject1A
         {
             try { 
             //Get ID for selected row
-            var id = (int)gvstudentdata.SelectedRows[0].Cells["ID"].Value;
+            var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
             //Query database
-            var student = choice_Christian_AcademyEntities.Students.FirstOrDefault(q => q.ID == id);
+            var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
             //Delete data and save
-            choice_Christian_AcademyEntities.Students.Remove(student);
+            choice_Christian_AcademyEntities.Student_detail.Remove(student);
             choice_Christian_AcademyEntities.SaveChanges();
             MessageBox.Show("Information Deleted");
             gvstudentdata.Refresh();
@@ -76,14 +78,15 @@ namespace CourseProject1A
 
         public void PopulateGrid()
         {
-            var studentdata = choice_Christian_AcademyEntities.Students
+            var studentdata = choice_Christian_AcademyEntities.Student_detail
                .Select(q => new {
                    First_Name = q.First_Name,
                    Middle_Name = q.Mid_Name,
                    Last_Name = q.Last_Name,
                    Address = q.Address,
                    Date_of_Birth = q.Date_of_Birth,
-                   q.ID
+                   gender = q.Gender,
+                   q.Student_ID
                }).ToList();
             gvstudentdata.DataSource = studentdata;
             gvstudentdata.Columns[0].HeaderText = "First Name";
@@ -91,7 +94,8 @@ namespace CourseProject1A
             gvstudentdata.Columns[2].HeaderText = "Last Name";
             gvstudentdata.Columns[3].HeaderText = "Address";
             gvstudentdata.Columns[4].HeaderText = "Date of Birth";
-            gvstudentdata.Columns[5].Visible = false;
+            gvstudentdata.Columns[5].HeaderText = "Gender";
+            gvstudentdata.Columns[6].Visible = false;
         }
     }
 }

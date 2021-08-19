@@ -88,25 +88,10 @@
     <Compile Include="AddEditTeacher.Designer.cs">
       <DependentUpon>AddEditTeacher.cs</DependentUpon>
     </Compile>
-    <Compile Include="All_Student_Result.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="All_Teacher_Result.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="birth_range_Result.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Choice_Christian_AcademyDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Choice_Christian_AcademyDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Choice_Christian_AcademyDataSet.cs" />
+    <Compile Include="CourseProject1A\Choice_Christian_AcademyDataSetTableAdapters.cs" />
     <Compile Include="Emergency_contact.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Employment_Range_Result.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
       <SubType>Form</SubType>
@@ -115,10 +100,10 @@
       <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="House.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Image.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -132,8 +117,23 @@
     <Compile Include="HomeWindow.Designer.cs">
       <DependentUpon>HomeWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Parent.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PrivacyPolicy.cs">
       <SubType>Form</SubType>
@@ -142,7 +142,7 @@
       <DependentUpon>PrivacyPolicy.cs</DependentUpon>
     </Compile>
     <Compile Include="Registration.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="RegistrationPage.cs">
       <SubType>Form</SubType>
@@ -152,35 +152,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="schooldb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>schooldb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="schooldb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>schooldb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="schooldb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>schooldb.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Staff.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Student.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+    <Compile Include="StaffTableAdapter.cs" />
+    <Compile Include="Student_detail.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Subject_Table.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Teacher.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Test_Result.cs">
-      <DependentUpon>schooldb.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewStaff.cs">
       <SubType>Form</SubType>
@@ -243,16 +232,12 @@
     <EmbeddedResource Include="ViewTeachers.resx">
       <DependentUpon>ViewTeachers.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Choice_Christian_AcademyDataSet.xsc">
-      <DependentUpon>Choice_Christian_AcademyDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="Choice_Christian_AcademyDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Choice_Christian_AcademyDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Choice_Christian_AcademyDataSet.xss">
-      <DependentUpon>Choice_Christian_AcademyDataSet.xsd</DependentUpon>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -264,13 +249,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="schooldb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>schooldb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="schooldb.edmx.diagram">
-      <DependentUpon>schooldb.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -283,16 +261,6 @@
     <None Include="Resources\Choice logo2.png" />
     <None Include="Resources\Choice logo3.png" />
     <None Include="Resources\deletered.ico" />
-    <Content Include="schooldb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>schooldb.Context.cs</LastGenOutput>
-      <DependentUpon>schooldb.edmx</DependentUpon>
-    </Content>
-    <Content Include="schooldb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>schooldb.edmx</DependentUpon>
-      <LastGenOutput>schooldb.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -308,6 +276,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,13 +15,9 @@ namespace CourseProject1A
     public partial class Test_Result
     {
         public int ID { get; set; }
-        public int Student_ID { get; set; }
-        public int Subject_ID { get; set; }
-        public int Teacher_ID { get; set; }
-        public double Score { get; set; }
-    
-        public virtual Student Student { get; set; }
-        public virtual Subject_Table Subject_Table { get; set; }
-        public virtual Teacher Teacher { get; set; }
+        public Nullable<int> Student_ID { get; set; }
+        public Nullable<int> Subject_ID { get; set; }
+        public Nullable<int> Teacher_ID { get; set; }
+        public Nullable<double> Score { get; set; }
     }
 }

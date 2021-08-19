@@ -12,33 +12,18 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class Student
+    public partial class GENDER
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Student()
-        {
-            this.Images = new HashSet<Image>();
-            this.Parents = new HashSet<Parent>();
-            this.Test_Result = new HashSet<Test_Result>();
-        }
-    
         public int ID { get; set; }
         public string First_Name { get; set; }
         public string Mid_Name { get; set; }
         public string Last_Name { get; set; }
         public System.DateTime Date_of_Birth { get; set; }
-        public string Gender { get; set; }
+        public string Gender1 { get; set; }
         public string Address { get; set; }
         public string Previous_School { get; set; }
         public string Birth_Entry_Number { get; set; }
         public string Grade { get; set; }
         public string Class { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Image> Images { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Parent> Parents { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Test_Result> Test_Result { get; set; }
     }
 }
