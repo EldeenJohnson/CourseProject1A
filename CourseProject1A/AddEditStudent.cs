@@ -127,13 +127,13 @@ namespace CourseProject1A
                     {
                     var pid2 = int.Parse(lblPar2.Text);
                     var Parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID == pid2 );
-                    Parent2.First_Name = tb_EdparFname.Text;
-                    Parent2.Last_Name = tb_EdparLname.Text;
-                    Parent2.Date_of_Birth = (DateTime)Par_EdDOB.Value;
-                    Parent2.Address = tb_EdparAddress.Text;
-                    Parent2.Contact_Number = tb_EdParphone.Text;
-                    Parent2.Email = tb_EdParEmail.Text;
-                    Parent2.Relationship = tb_EdParRelationship.Text;
+                    Parent2.First_Name = tb_edPar2Fname.Text;
+                    Parent2.Last_Name = tb_EdPar2Lname.Text;
+                    Parent2.Date_of_Birth = (DateTime)dp_EdPar2DOB.Value;
+                    Parent2.Address = tb_EdPar2Add.Text;
+                    Parent2.Contact_Number = tb_EdPar2Phone.Text;
+                    Parent2.Email = tb_edPar2Email.Text;
+                    Parent2.Relationship = tb_EditPar2Rel.Text;
 
 
                     //Save Changes
