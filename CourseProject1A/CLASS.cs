@@ -12,13 +12,21 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class CLASS
+    public partial class Class
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Class()
+        {
+            this.Student_detail = new HashSet<Student_detail>();
+            this.Teachers = new HashSet<Teacher>();
+        }
+    
         public int ID { get; set; }
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
-        public string Qualification { get; set; }
-        public string Grade { get; set; }
-        public Nullable<int> Emergency_ID { get; set; }
+        public string Class1 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Student_detail> Student_detail { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Teacher> Teachers { get; set; }
     }
 }

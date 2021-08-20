@@ -38,8 +38,8 @@ namespace CourseProject1A
             tb_EdStuPhone.Text = studentdata.Phone_Num;
             tb_EditPrSch.Text = studentdata.Previous_School;
             // cb_EdHouse.Text = ()studentdata.House_ID;
-            cb_EdGrade.Text = studentdata.Grade;
-            cb_EdClass.Text = studentdata.Class;
+          //  cb_EdGrade.Text = studentdata.Grade;
+           // cb_EdClass.Text = studentdata.Class;
             rtb_EdstuAddInfo.Text = studentdata.AddInfo;
 
             
