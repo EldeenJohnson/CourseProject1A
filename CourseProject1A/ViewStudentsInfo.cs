@@ -26,17 +26,24 @@ namespace CourseProject1A
 
         private void Editbotton_Click(object sender, EventArgs e)
         {
-            //Get ID for selected row
-            var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
-            //Query database
-            var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID ==id);
-            var parent = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.Student_ID == id);
-            var parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID == parent.ID+1 && q.Student_ID == id);
+            try
+            {
+                //Get ID for selected row
+                var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
+                //Query database
+                var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
+                var parent = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.Student_ID == id);
+                var parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID == parent.ID + 1 && q.Student_ID == id);
 
-            //var addEditStudent = new RegistrationPage();
-            var addEditStudent = new AddEditStudent(student,parent,parent2);
-            addEditStudent.MdiParent = this.MdiParent;
-            addEditStudent.Show();
+                //var addEditStudent = new RegistrationPage();
+                var addEditStudent = new AddEditStudent(student, parent, parent2);
+                addEditStudent.MdiParent = this.MdiParent;
+                addEditStudent.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}"+"\n\nPlease Click the first cell for desired row.") ;
+            }
         }
 
         private void Deletebutton_Click(object sender, EventArgs e)
@@ -44,8 +51,10 @@ namespace CourseProject1A
             try { 
             //Get ID for selected row
             var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
+
             //Query database
             var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
+
             //Delete data and save
             choice_Christian_AcademyEntities.Student_detail.Remove(student);
             choice_Christian_AcademyEntities.SaveChanges();
@@ -54,7 +63,7 @@ namespace CourseProject1A
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}"+"\n\nPlease Click the first cell for desired row." );
             }
         }
 

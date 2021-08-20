@@ -4,12 +4,12 @@
     <EntitySetMapping Name="Emergency_contact">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Emergency_contact">
         <MappingFragment StoreEntitySet="Emergency_contact">
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Contact_Number" ColumnName="Contact_Number" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -59,6 +59,10 @@
     <EntitySetMapping Name="Staffs">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Staff">
         <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
@@ -92,11 +96,17 @@
     <EntitySetMapping Name="Teachers">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Teacher">
         <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+          <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
+          <ScalarProperty Name="Faculty_ID" ColumnName="Faculty_ID" />
+          <ScalarProperty Name="Prev_Employer" ColumnName="Prev_Employer" />
+          <ScalarProperty Name="DateOf_Emp" ColumnName="DateOf_Emp" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
           <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
           <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -115,12 +125,13 @@
     <EntitySetMapping Name="Student_detail">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Student_detail">
         <MappingFragment StoreEntitySet="Student_detail">
+          <ScalarProperty Name="Image_ID" ColumnName="Image_ID" />
+          <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+          <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
           <ScalarProperty Name="Test_Result_ID" ColumnName="Test_Result_ID" />
           <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
           <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
           <ScalarProperty Name="AddInfo" ColumnName="AddInfo" />
-          <ScalarProperty Name="Class" ColumnName="Class" />
-          <ScalarProperty Name="Grade" ColumnName="Grade" />
           <ScalarProperty Name="House_ID" ColumnName="House_ID" />
           <ScalarProperty Name="Birth_Entry_Number" ColumnName="Birth_Entry_Number" />
           <ScalarProperty Name="Previous_School" ColumnName="Previous_School" />
@@ -135,6 +146,48 @@
           <ScalarProperty Name="Mid_Name" ColumnName="Mid_Name" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
           <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Classes">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="Class1" ColumnName="Class" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Creds">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
+        <MappingFragment StoreEntitySet="Creds">
+          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
+          <ScalarProperty Name="Pword" ColumnName="Pword" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faculties">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Faculty">
+        <MappingFragment StoreEntitySet="Faculty">
+          <ScalarProperty Name="Faculty_Name" ColumnName="Faculty_Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grades">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Grade">
+        <MappingFragment StoreEntitySet="Grade">
+          <ScalarProperty Name="Grade1" ColumnName="Grade" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
