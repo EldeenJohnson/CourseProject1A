@@ -37,7 +37,9 @@
           <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="60" Nullable="false" />
-          <Property Name="Phone" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Teacher_ID" Type="int" />
+          <Property Name="Staff_ID" Type="int" />
         </EntityType>
         <EntityType Name="Faculty">
           <Key>
@@ -106,7 +108,6 @@
           <Property Name="Qualification" Type="nvarchar" MaxLength="60" Nullable="false" />
           <Property Name="Job_Title" Type="nvarchar" MaxLength="60" Nullable="false" />
           <Property Name="Date_of_Employment" Type="datetime" Nullable="false" />
-          <Property Name="Emergency_ID" Type="int" />
           <Property Name="Dept_ID" Type="int" />
         </EntityType>
         <EntityType Name="Student_detail">
@@ -161,13 +162,14 @@
           <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DOB" Type="datetime" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Qualification" Type="nvarchar" MaxLength="60" Nullable="false" />
           <Property Name="DateOf_Emp" Type="datetime" />
           <Property Name="Prev_Employer" Type="nvarchar" MaxLength="50" />
           <Property Name="Faculty_ID" Type="int" />
           <Property Name="Grade_ID" Type="int" />
           <Property Name="Class_ID" Type="int" />
-          <Property Name="Emergency_ID" Type="int" />
         </EntityType>
         <EntityType Name="Test_Result">
           <Key>
@@ -179,6 +181,30 @@
           <Property Name="Teacher_ID" Type="int" />
           <Property Name="Score" Type="float" />
         </EntityType>
+        <Association Name="FK_Emergency_contact_Staff">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Emergency_contact">
+              <PropertyRef Name="Staff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emergency_contact_Teacher">
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Emergency_contact">
+              <PropertyRef Name="Teacher_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Registration_Student_detail">
           <End Role="Student_detail" Type="Self.Student_detail" Multiplicity="0..1" />
           <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
@@ -200,18 +226,6 @@
             </Principal>
             <Dependent Role="Staff">
               <PropertyRef Name="Dept_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Staff_Emergency_contact">
-          <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="0..1" />
-          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Emergency_contact">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Staff">
-              <PropertyRef Name="Emergency_ID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -299,18 +313,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Teacher_Emergency">
-          <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="0..1" />
-          <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Emergency_contact">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Teacher">
-              <PropertyRef Name="Emergency_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Teacher_Faculty">
           <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
           <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
@@ -388,16 +390,20 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Test_Result" EntityType="Self.Test_Result" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Emergency_contact_Staff" Association="Self.FK_Emergency_contact_Staff">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emergency_contact_Teacher" Association="Self.FK_Emergency_contact_Teacher">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+          </AssociationSet>
           <AssociationSet Name="FK_Registration_Student_detail" Association="Self.FK_Registration_Student_detail">
             <End Role="Student_detail" EntitySet="Student_detail" />
             <End Role="Registration" EntitySet="Registration" />
           </AssociationSet>
           <AssociationSet Name="FK_Staff_Dept" Association="Self.FK_Staff_Dept">
             <End Role="Department" EntitySet="Department" />
-            <End Role="Staff" EntitySet="Staff" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Staff_Emergency_contact" Association="Self.FK_Staff_Emergency_contact">
-            <End Role="Emergency_contact" EntitySet="Emergency_contact" />
             <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
           <AssociationSet Name="FK_Student_detail_Class" Association="Self.FK_Student_detail_Class">
@@ -426,10 +432,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_Teacher_Class" Association="Self.FK_Teacher_Class">
             <End Role="Class" EntitySet="Class" />
-            <End Role="Teacher" EntitySet="Teacher" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Teacher_Emergency" Association="Self.FK_Teacher_Emergency">
-            <End Role="Emergency_contact" EntitySet="Emergency_contact" />
             <End Role="Teacher" EntitySet="Teacher" />
           </AssociationSet>
           <AssociationSet Name="FK_Teacher_Faculty" Association="Self.FK_Teacher_Faculty">
@@ -461,50 +463,23 @@
           <EntitySet Name="Classes" EntityType="Choice_Christian_AcademyModel.Class" />
           <EntitySet Name="Creds" EntityType="Choice_Christian_AcademyModel.Cred" />
           <EntitySet Name="Departments" EntityType="Choice_Christian_AcademyModel.Department" />
-          <EntitySet Name="Emergency_contact" EntityType="Choice_Christian_AcademyModel.Emergency_contact" />
           <EntitySet Name="Faculties" EntityType="Choice_Christian_AcademyModel.Faculty" />
           <EntitySet Name="Grades" EntityType="Choice_Christian_AcademyModel.Grade" />
           <EntitySet Name="Houses" EntityType="Choice_Christian_AcademyModel.House" />
           <EntitySet Name="Images" EntityType="Choice_Christian_AcademyModel.Image" />
           <EntitySet Name="Parents" EntityType="Choice_Christian_AcademyModel.Parent" />
           <EntitySet Name="Registrations" EntityType="Choice_Christian_AcademyModel.Registration" />
-          <EntitySet Name="Staffs" EntityType="Choice_Christian_AcademyModel.Staff" />
           <EntitySet Name="Student_detail" EntityType="Choice_Christian_AcademyModel.Student_detail" />
           <EntitySet Name="Subject_Table" EntityType="Choice_Christian_AcademyModel.Subject_Table" />
           <EntitySet Name="sysdiagrams" EntityType="Choice_Christian_AcademyModel.sysdiagram" />
-          <EntitySet Name="Teachers" EntityType="Choice_Christian_AcademyModel.Teacher" />
           <EntitySet Name="Test_Result" EntityType="Choice_Christian_AcademyModel.Test_Result" />
           <AssociationSet Name="FK_Student_detail_Class" Association="Choice_Christian_AcademyModel.FK_Student_detail_Class">
             <End Role="Class" EntitySet="Classes" />
             <End Role="Student_detail" EntitySet="Student_detail" />
           </AssociationSet>
-          <AssociationSet Name="FK_Teacher_Class" Association="Choice_Christian_AcademyModel.FK_Teacher_Class">
-            <End Role="Class" EntitySet="Classes" />
-            <End Role="Teacher" EntitySet="Teachers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Staff_Dept" Association="Choice_Christian_AcademyModel.FK_Staff_Dept">
-            <End Role="Department" EntitySet="Departments" />
-            <End Role="Staff" EntitySet="Staffs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Staff_Emergency_contact" Association="Choice_Christian_AcademyModel.FK_Staff_Emergency_contact">
-            <End Role="Emergency_contact" EntitySet="Emergency_contact" />
-            <End Role="Staff" EntitySet="Staffs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Teacher_Emergency" Association="Choice_Christian_AcademyModel.FK_Teacher_Emergency">
-            <End Role="Emergency_contact" EntitySet="Emergency_contact" />
-            <End Role="Teacher" EntitySet="Teachers" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Teacher_Faculty" Association="Choice_Christian_AcademyModel.FK_Teacher_Faculty">
-            <End Role="Faculty" EntitySet="Faculties" />
-            <End Role="Teacher" EntitySet="Teachers" />
-          </AssociationSet>
           <AssociationSet Name="FK_Student_detail_Grade" Association="Choice_Christian_AcademyModel.FK_Student_detail_Grade">
             <End Role="Grade" EntitySet="Grades" />
             <End Role="Student_detail" EntitySet="Student_detail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Teacher_Grade" Association="Choice_Christian_AcademyModel.FK_Teacher_Grade">
-            <End Role="Grade" EntitySet="Grades" />
-            <End Role="Teacher" EntitySet="Teachers" />
           </AssociationSet>
           <AssociationSet Name="FK_Student_detail_House" Association="Choice_Christian_AcademyModel.FK_Student_detail_House">
             <End Role="House" EntitySet="Houses" />
@@ -534,11 +509,38 @@
             <End Role="Subject_Table" EntitySet="Subject_Table" />
             <End Role="Test_Result" EntitySet="Test_Result" />
           </AssociationSet>
+          <EntitySet Name="Emergency_contact" EntityType="Choice_Christian_AcademyModel.Emergency_contact" />
+          <EntitySet Name="Staffs" EntityType="Choice_Christian_AcademyModel.Staff" />
+          <EntitySet Name="Teachers" EntityType="Choice_Christian_AcademyModel.Teacher" />
+          <AssociationSet Name="FK_Teacher_Class" Association="Choice_Christian_AcademyModel.FK_Teacher_Class">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Teacher" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Dept" Association="Choice_Christian_AcademyModel.FK_Staff_Dept">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emergency_contact_Staff" Association="Choice_Christian_AcademyModel.FK_Emergency_contact_Staff">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emergency_contact_Teacher" Association="Choice_Christian_AcademyModel.FK_Emergency_contact_Teacher">
+            <End Role="Teacher" EntitySet="Teachers" />
+            <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teacher_Faculty" Association="Choice_Christian_AcademyModel.FK_Teacher_Faculty">
+            <End Role="Faculty" EntitySet="Faculties" />
+            <End Role="Teacher" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teacher_Grade" Association="Choice_Christian_AcademyModel.FK_Teacher_Grade">
+            <End Role="Grade" EntitySet="Grades" />
+            <End Role="Teacher" EntitySet="Teachers" />
+          </AssociationSet>
           <AssociationSet Name="FK_Test_Result_Teacher" Association="Choice_Christian_AcademyModel.FK_Test_Result_Teacher">
             <End Role="Teacher" EntitySet="Teachers" />
             <End Role="Test_Result" EntitySet="Test_Result" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="Class">
           <Key>
             <PropertyRef Name="ID" />
@@ -564,19 +566,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Dept_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Staffs" Relationship="Choice_Christian_AcademyModel.FK_Staff_Dept" FromRole="Department" ToRole="Staff" />
-        </EntityType>
-        <EntityType Name="Emergency_contact">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Staffs" Relationship="Choice_Christian_AcademyModel.FK_Staff_Emergency_contact" FromRole="Emergency_contact" ToRole="Staff" />
-          <NavigationProperty Name="Teachers" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Emergency" FromRole="Emergency_contact" ToRole="Teacher" />
         </EntityType>
         <EntityType Name="Faculty">
           <Key>
@@ -638,25 +627,6 @@
           <Property Name="Student_ID" Type="Int32" />
           <NavigationProperty Name="Student_detail" Relationship="Choice_Christian_AcademyModel.FK_Registration_Student_detail" FromRole="Registration" ToRole="Student_detail" />
         </EntityType>
-        <EntityType Name="Staff">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DOB" Type="DateTime" Precision="3" />
-          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Qualification" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="Job_Title" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="Date_of_Employment" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Emergency_ID" Type="Int32" />
-          <Property Name="Dept_ID" Type="Int32" />
-          <NavigationProperty Name="Department" Relationship="Choice_Christian_AcademyModel.FK_Staff_Dept" FromRole="Staff" ToRole="Department" />
-          <NavigationProperty Name="Emergency_contact" Relationship="Choice_Christian_AcademyModel.FK_Staff_Emergency_contact" FromRole="Staff" ToRole="Emergency_contact" />
-        </EntityType>
         <EntityType Name="Student_detail">
           <Key>
             <PropertyRef Name="Student_ID" />
@@ -709,28 +679,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Teacher">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DOB" Type="DateTime" Precision="3" />
-          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Qualification" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="DateOf_Emp" Type="DateTime" Precision="3" />
-          <Property Name="Prev_Employer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Faculty_ID" Type="Int32" />
-          <Property Name="Grade_ID" Type="Int32" />
-          <Property Name="Class_ID" Type="Int32" />
-          <Property Name="Emergency_ID" Type="Int32" />
-          <NavigationProperty Name="Class" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Class" FromRole="Teacher" ToRole="Class" />
-          <NavigationProperty Name="Emergency_contact" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Emergency" FromRole="Teacher" ToRole="Emergency_contact" />
-          <NavigationProperty Name="Faculty" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Faculty" FromRole="Teacher" ToRole="Faculty" />
-          <NavigationProperty Name="Grade" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Grade" FromRole="Teacher" ToRole="Grade" />
-          <NavigationProperty Name="Test_Result" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Teacher" ToRole="Test_Result" />
-        </EntityType>
         <EntityType Name="Test_Result">
           <Key>
             <PropertyRef Name="ID" />
@@ -757,66 +705,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Teacher_Class">
-          <End Type="Choice_Christian_AcademyModel.Class" Role="Class" Multiplicity="0..1" />
-          <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Class">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Teacher">
-              <PropertyRef Name="Class_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Staff_Dept">
-          <End Type="Choice_Christian_AcademyModel.Department" Role="Department" Multiplicity="0..1" />
-          <End Type="Choice_Christian_AcademyModel.Staff" Role="Staff" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Department">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Staff">
-              <PropertyRef Name="Dept_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Staff_Emergency_contact">
-          <End Type="Choice_Christian_AcademyModel.Emergency_contact" Role="Emergency_contact" Multiplicity="0..1" />
-          <End Type="Choice_Christian_AcademyModel.Staff" Role="Staff" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Emergency_contact">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Staff">
-              <PropertyRef Name="Emergency_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Teacher_Emergency">
-          <End Type="Choice_Christian_AcademyModel.Emergency_contact" Role="Emergency_contact" Multiplicity="0..1" />
-          <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Emergency_contact">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Teacher">
-              <PropertyRef Name="Emergency_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Teacher_Faculty">
-          <End Type="Choice_Christian_AcademyModel.Faculty" Role="Faculty" Multiplicity="0..1" />
-          <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Faculty">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Teacher">
-              <PropertyRef Name="Faculty_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Student_detail_Grade">
           <End Type="Choice_Christian_AcademyModel.Grade" Role="Grade" Multiplicity="0..1" />
           <End Type="Choice_Christian_AcademyModel.Student_detail" Role="Student_detail" Multiplicity="*" />
@@ -825,18 +713,6 @@
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="Student_detail">
-              <PropertyRef Name="Grade_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Teacher_Grade">
-          <End Type="Choice_Christian_AcademyModel.Grade" Role="Grade" Multiplicity="0..1" />
-          <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Grade">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Teacher">
               <PropertyRef Name="Grade_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -925,6 +801,134 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Emergency_contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Teacher_ID" Type="Int32" />
+          <Property Name="Staff_ID" Type="Int32" />
+          <NavigationProperty Name="Staff" Relationship="Choice_Christian_AcademyModel.FK_Emergency_contact_Staff" FromRole="Emergency_contact" ToRole="Staff" />
+          <NavigationProperty Name="Teacher" Relationship="Choice_Christian_AcademyModel.FK_Emergency_contact_Teacher" FromRole="Emergency_contact" ToRole="Teacher" />
+          </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Qualification" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Job_Title" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Date_of_Employment" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Dept_ID" Type="Int32" />
+          <NavigationProperty Name="Department" Relationship="Choice_Christian_AcademyModel.FK_Staff_Dept" FromRole="Staff" ToRole="Department" />
+          <NavigationProperty Name="Emergency_contact" Relationship="Choice_Christian_AcademyModel.FK_Emergency_contact_Staff" FromRole="Staff" ToRole="Emergency_contact" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Qualification" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="DateOf_Emp" Type="DateTime" Precision="3" />
+          <Property Name="Prev_Employer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Faculty_ID" Type="Int32" />
+          <Property Name="Grade_ID" Type="Int32" />
+          <Property Name="Class_ID" Type="Int32" />
+          <NavigationProperty Name="Class" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Class" FromRole="Teacher" ToRole="Class" />
+          <NavigationProperty Name="Emergency_contact" Relationship="Choice_Christian_AcademyModel.FK_Emergency_contact_Teacher" FromRole="Teacher" ToRole="Emergency_contact" />
+          <NavigationProperty Name="Faculty" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Faculty" FromRole="Teacher" ToRole="Faculty" />
+          <NavigationProperty Name="Grade" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Grade" FromRole="Teacher" ToRole="Grade" />
+          <NavigationProperty Name="Test_Result" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Teacher" ToRole="Test_Result" />
+        </EntityType>
+        <Association Name="FK_Teacher_Class">
+          <End Type="Choice_Christian_AcademyModel.Class" Role="Class" Multiplicity="0..1" />
+          <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Teacher">
+              <PropertyRef Name="Class_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Dept">
+          <End Type="Choice_Christian_AcademyModel.Department" Role="Department" Multiplicity="0..1" />
+          <End Type="Choice_Christian_AcademyModel.Staff" Role="Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Dept_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emergency_contact_Staff">
+          <End Type="Choice_Christian_AcademyModel.Staff" Role="Staff" Multiplicity="0..1" />
+          <End Type="Choice_Christian_AcademyModel.Emergency_contact" Role="Emergency_contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Emergency_contact">
+              <PropertyRef Name="Staff_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emergency_contact_Teacher">
+          <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="0..1" />
+          <End Type="Choice_Christian_AcademyModel.Emergency_contact" Role="Emergency_contact" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Emergency_contact">
+              <PropertyRef Name="Teacher_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teacher_Faculty">
+          <End Type="Choice_Christian_AcademyModel.Faculty" Role="Faculty" Multiplicity="0..1" />
+          <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculty">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Teacher">
+              <PropertyRef Name="Faculty_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teacher_Grade">
+          <End Type="Choice_Christian_AcademyModel.Grade" Role="Grade" Multiplicity="0..1" />
+          <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Grade">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Teacher">
+              <PropertyRef Name="Grade_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Test_Result_Teacher">
           <End Type="Choice_Christian_AcademyModel.Teacher" Role="Teacher" Multiplicity="0..1" />
           <End Type="Choice_Christian_AcademyModel.Test_Result" Role="Test_Result" Multiplicity="*" />
@@ -965,18 +969,6 @@
             <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Department">
               <MappingFragment StoreEntitySet="Department">
                 <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Emergency_contact">
-            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Emergency_contact">
-              <MappingFragment StoreEntitySet="Emergency_contact">
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1040,24 +1032,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Staffs">
-            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Staff">
-              <MappingFragment StoreEntitySet="Staff">
-                <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
-                <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
-                <ScalarProperty Name="Date_of_Employment" ColumnName="Date_of_Employment" />
-                <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
-                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="DOB" ColumnName="DOB" />
-                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
-                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Student_detail">
             <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Student_detail">
               <MappingFragment StoreEntitySet="Student_detail">
@@ -1104,16 +1078,40 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Teachers">
-            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Teacher">
-              <MappingFragment StoreEntitySet="Teacher">
-                <ScalarProperty Name="Emergency_ID" ColumnName="Emergency_ID" />
-                <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
-                <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
-                <ScalarProperty Name="Faculty_ID" ColumnName="Faculty_ID" />
-                <ScalarProperty Name="Prev_Employer" ColumnName="Prev_Employer" />
-                <ScalarProperty Name="DateOf_Emp" ColumnName="DateOf_Emp" />
+          <EntitySetMapping Name="Test_Result">
+            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Test_Result">
+              <MappingFragment StoreEntitySet="Test_Result">
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+                <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
+                <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emergency_contact">
+            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Emergency_contact">
+              <MappingFragment StoreEntitySet="Emergency_contact">
+                <ScalarProperty Name="Staff_ID" ColumnName="Staff_ID" />
+                <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+                <ScalarProperty Name="Date_of_Employment" ColumnName="Date_of_Employment" />
+                <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
                 <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
@@ -1122,13 +1120,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Test_Result">
-            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Test_Result">
-              <MappingFragment StoreEntitySet="Test_Result">
-                <ScalarProperty Name="Score" ColumnName="Score" />
-                <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
-                <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
-                <ScalarProperty Name="Student_ID" ColumnName="Student_ID" />
+          <EntitySetMapping Name="Teachers">
+            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Teacher">
+              <MappingFragment StoreEntitySet="Teacher">
+                <ScalarProperty Name="Class_ID" ColumnName="Class_ID" />
+                <ScalarProperty Name="Grade_ID" ColumnName="Grade_ID" />
+                <ScalarProperty Name="Faculty_ID" ColumnName="Faculty_ID" />
+                <ScalarProperty Name="Prev_Employer" ColumnName="Prev_Employer" />
+                <ScalarProperty Name="DateOf_Emp" ColumnName="DateOf_Emp" />
+                <ScalarProperty Name="Qualification" ColumnName="Qualification" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

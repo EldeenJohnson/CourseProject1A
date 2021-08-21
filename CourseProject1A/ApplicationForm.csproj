@@ -89,7 +89,7 @@
       <DependentUpon>AddEditTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Choice_Christian_AcademyDataSet.cs" />
-    <Compile Include="CLASS.cs">
+    <Compile Include="Class.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CourseProject1A\Choice_Christian_AcademyDataSetTableAdapters.cs" />
@@ -105,7 +105,7 @@
     <Compile Include="Faculty.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="GRADE.cs">
+    <Compile Include="Grade.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">

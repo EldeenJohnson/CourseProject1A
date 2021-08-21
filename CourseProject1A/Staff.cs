@@ -14,6 +14,12 @@ namespace CourseProject1A
     
     public partial class Staff
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Staff()
+        {
+            this.Emergency_contact = new HashSet<Emergency_contact>();
+        }
+    
         public int ID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
@@ -24,10 +30,10 @@ namespace CourseProject1A
         public string Qualification { get; set; }
         public string Job_Title { get; set; }
         public System.DateTime Date_of_Employment { get; set; }
-        public Nullable<int> Emergency_ID { get; set; }
         public Nullable<int> Dept_ID { get; set; }
     
         public virtual Department Department { get; set; }
-        public virtual Emergency_contact Emergency_contact { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Emergency_contact> Emergency_contact { get; set; }
     }
 }

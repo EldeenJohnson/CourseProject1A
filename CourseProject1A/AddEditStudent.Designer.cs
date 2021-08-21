@@ -154,7 +154,7 @@
             this.tbFName.Location = new System.Drawing.Point(91, 87);
             this.tbFName.Name = "tbFName";
             this.tbFName.Size = new System.Drawing.Size(202, 20);
-            this.tbFName.TabIndex = 11;
+            this.tbFName.TabIndex = 1;
             // 
             // label1
             // 
@@ -227,7 +227,7 @@
             this.tbMInitial.Location = new System.Drawing.Point(91, 126);
             this.tbMInitial.Name = "tbMInitial";
             this.tbMInitial.Size = new System.Drawing.Size(202, 20);
-            this.tbMInitial.TabIndex = 12;
+            this.tbMInitial.TabIndex = 2;
             // 
             // tbLName
             // 
@@ -401,11 +401,6 @@
             // cb_EdClass
             // 
             this.cb_EdClass.FormattingEnabled = true;
-            this.cb_EdClass.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D"});
             this.cb_EdClass.Location = new System.Drawing.Point(226, 517);
             this.cb_EdClass.Name = "cb_EdClass";
             this.cb_EdClass.Size = new System.Drawing.Size(67, 21);
@@ -414,16 +409,6 @@
             // cb_EdGrade
             // 
             this.cb_EdGrade.FormattingEnabled = true;
-            this.cb_EdGrade.Items.AddRange(new object[] {
-            "K3",
-            "K4",
-            "K5",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
             this.cb_EdGrade.Location = new System.Drawing.Point(91, 517);
             this.cb_EdGrade.Name = "cb_EdGrade";
             this.cb_EdGrade.Size = new System.Drawing.Size(63, 21);
@@ -844,6 +829,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEditStudent";
             this.Text = "Edit Students";
+            this.Load += new System.EventHandler(this.AddEditStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Edit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

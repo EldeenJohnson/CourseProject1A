@@ -54,10 +54,19 @@ namespace CourseProject1A
 
             //Query database
             var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
+            var parent = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.Student_ID == id);
+            var parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID == parent.ID + 1 && q.Student_ID == id);
 
-            //Delete data and save
-            choice_Christian_AcademyEntities.Student_detail.Remove(student);
-            choice_Christian_AcademyEntities.SaveChanges();
+                //Delete data and save
+                choice_Christian_AcademyEntities.Student_detail.Remove(student);
+                choice_Christian_AcademyEntities.Parents.Remove(parent);
+
+                if (parent2 != null )
+                {
+                    choice_Christian_AcademyEntities.Parents.Remove(parent2);
+                }
+
+                choice_Christian_AcademyEntities.SaveChanges();
             MessageBox.Show("Information Deleted");
             gvstudentdata.Refresh();
             }

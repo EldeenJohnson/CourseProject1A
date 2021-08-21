@@ -14,23 +14,16 @@ namespace CourseProject1A
     
     public partial class Emergency_contact
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Emergency_contact()
-        {
-            this.Staffs = new HashSet<Staff>();
-            this.Teachers = new HashSet<Teacher>();
-        }
-    
         public int ID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
-        public int Phone { get; set; }
+        public string Phone { get; set; }
+        public Nullable<int> Teacher_ID { get; set; }
+        public Nullable<int> Staff_ID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Staff> Staffs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Teacher> Teachers { get; set; }
+        public virtual Staff Staff { get; set; }
+        public virtual Teacher Teacher { get; set; }
     }
 }

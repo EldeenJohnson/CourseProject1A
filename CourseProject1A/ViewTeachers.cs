@@ -30,8 +30,9 @@ namespace CourseProject1A
             var id = (int)gvteacherdata.SelectedRows[0].Cells["ID"].Value;
             //Query database
             var teacher = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
+            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Teacher_ID == teacher.ID);
 
-            var addEditTeacher = new AddEditTeacher(teacher);
+            var addEditTeacher = new AddEditTeacher(teacher, eContact);           
             addEditTeacher.MdiParent = this.MdiParent;
             addEditTeacher.Show();
         }
@@ -51,11 +52,13 @@ namespace CourseProject1A
                 var id = (int)gvteacherdata.SelectedRows[0].Cells["ID"].Value;
                 //Query database
                 var teacher = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
+                var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Teacher_ID == teacher.ID);
 
                 choice_Christian_AcademyEntities.Teachers.Remove(teacher);
+                choice_Christian_AcademyEntities.Emergency_contact.Remove(eContact);
                 choice_Christian_AcademyEntities.SaveChanges();
                 MessageBox.Show("Information Deleted");
-                gvteacherdata.Refresh();
+                PopulateGrid();
             }
             catch(Exception ex)
             {
@@ -80,16 +83,24 @@ namespace CourseProject1A
               .Select(q => new {
                   First_Name = q.First_Name,
                   Last_Name = q.Last_Name,
-                  Grade = q.Grade,
+                  DOB = q.DOB,
+                  Address = q.Address,
+                  Grade = q.Grade_ID,
+                  Class = q.Class_ID,
                   Qualification = q.Qualification,
+                  Date_Employed = q.DateOf_Emp,
                   q.ID
               }).ToList();
             gvteacherdata.DataSource = teacherdata;
             gvteacherdata.Columns[0].HeaderText = "First Name";
             gvteacherdata.Columns[1].HeaderText = "Last Name";
-            gvteacherdata.Columns[2].HeaderText = "Grade";
-            gvteacherdata.Columns[3].HeaderText = "Qualification";
-            gvteacherdata.Columns[4].Visible = false;
+            gvteacherdata.Columns[2].HeaderText = "DOB";
+            gvteacherdata.Columns[3].HeaderText = "Address";
+            gvteacherdata.Columns[4].HeaderText = "Grade";
+            gvteacherdata.Columns[5].HeaderText = "Class";
+            gvteacherdata.Columns[6].HeaderText = "Qualification";
+            gvteacherdata.Columns[7].HeaderText = "Date Employed";
+            gvteacherdata.Columns[8].Visible = false;
         }
     }
 }

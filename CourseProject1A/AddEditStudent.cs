@@ -37,9 +37,9 @@ namespace CourseProject1A
             tb_EdStuEmail.Text = studentdata.Email;
             tb_EdStuPhone.Text = studentdata.Phone_Num;
             tb_EditPrSch.Text = studentdata.Previous_School;
-            // cb_EdHouse.Text = ()studentdata.House_ID;
-          //  cb_EdGrade.Text = studentdata.Grade;
-           // cb_EdClass.Text = studentdata.Class;
+            cb_EdHouse.SelectedValue = studentdata.House_ID;
+            cb_EdGrade.SelectedValue = studentdata.Grade_ID;
+            cb_EdClass.SelectedValue = studentdata.Class_ID;
             rtb_EdstuAddInfo.Text = studentdata.AddInfo;
 
             
@@ -100,9 +100,9 @@ namespace CourseProject1A
                 studentdata.Email = tb_EdStuEmail.Text;
                 studentdata.Phone_Num = tb_EdStuPhone.Text;
                 studentdata.Previous_School = tb_EditPrSch.Text;
-                // ()studentdata.House_ID = cb_EdHouse.Text =;
-                studentdata.Grade = cb_EdGrade.Text;
-                studentdata.Class = cb_EdClass.Text;
+                studentdata.House_ID = (int)cb_EdHouse.SelectedValue;
+                studentdata.Grade_ID = (int)cb_EdGrade.SelectedValue;
+                studentdata.Class_ID = (int)cb_EdClass.SelectedValue;
                 studentdata.AddInfo = rtb_EdstuAddInfo.Text;
 
                 var pid1 = int.Parse(lblpar1.Text);
@@ -156,6 +156,24 @@ namespace CourseProject1A
         private void Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddEditStudent_Load(object sender, EventArgs e)
+        {
+            var House = choice_Christian_AcademyEntities.Houses.ToList();
+            cb_EdHouse.DisplayMember = "Colour";
+            cb_EdHouse.ValueMember = "id";
+            cb_EdHouse.DataSource = House;
+
+            var Grade = choice_Christian_AcademyEntities.Grades.ToList();
+            cb_EdGrade.DisplayMember = "Grade";
+            cb_EdGrade.ValueMember = "id";
+            cb_EdGrade.DataSource = Grade;
+
+            var Class = choice_Christian_AcademyEntities.Classes.ToList();
+            cb_EdClass.DisplayMember = "Grade";
+            cb_EdClass.ValueMember = "id";
+            cb_EdClass.DataSource = Class;
         }
     }
 
