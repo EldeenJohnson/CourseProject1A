@@ -22,7 +22,8 @@ namespace CourseProject1A
 
         private void ViewStaff_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'choice_Christian_AcademyDataSet.Staff' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'choice_Christian_AcademyDataSet.Staff' table.
+            // You can move, or remove it, as needed.
             this.staffTableAdapter.Fill(this.choice_Christian_AcademyDataSet.Staff);
             PopulateGrid();
         }
@@ -38,10 +39,12 @@ namespace CourseProject1A
         {
             //Get ID for selected row
             var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
+
             //Query database
             var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
+            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.ID == Staff.Dept_ID);
 
-            var addEditStaff = new AddEditStaff(Staff);
+            var addEditStaff = new AddEditStaff(Staff, eContact);
             addEditStaff.MdiParent = this.MdiParent;
             addEditStaff.Show();
         }
@@ -49,16 +52,21 @@ namespace CourseProject1A
         private void Deletebutton_Click(object sender, EventArgs e)
         {
             try { 
+
             //Get ID for selected row
             var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
+
             //Query database
             var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
+            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.ID == Staff.Dept_ID);
 
             //Delete data and save
             choice_Christian_AcademyEntities.Staffs.Remove(Staff);
-            choice_Christian_AcademyEntities.SaveChanges();
+                choice_Christian_AcademyEntities.Emergency_contact.Remove(eContact);
+                    choice_Christian_AcademyEntities.SaveChanges();
             MessageBox.Show("Information Deleted");
-            gvstaffdata.Refresh();
+
+                PopulateGrid();
             }
             catch (Exception ex)
             {
