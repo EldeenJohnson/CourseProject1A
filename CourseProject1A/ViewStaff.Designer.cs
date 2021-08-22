@@ -41,7 +41,7 @@
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.staffTableAdapter = new CourseProject1A.Choice_Christian_AcademyDataSetTableAdapters.StaffTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gvstaffdata)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.choice_Christian_AcademyDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.choice_Christian_AcademyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,7 +165,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ViewStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvstaffdata)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.choice_Christian_AcademyDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.choice_Christian_AcademyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

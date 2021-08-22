@@ -24,7 +24,7 @@ namespace CourseProject1A
         {
             // TODO: This line of code loads data into the 'choice_Christian_AcademyDataSet.Staff' table.
             // You can move, or remove it, as needed.
-            this.staffTableAdapter.Fill(this.choice_Christian_AcademyDataSet.Staff);
+          //  this.staffTableAdapter.Fill(this.choice_Christian_AcademyDataSet.Staff);
             PopulateGrid();
         }
 
@@ -42,7 +42,7 @@ namespace CourseProject1A
 
             //Query database
             var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
-            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.ID == Staff.Dept_ID);
+            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
 
             var addEditStaff = new AddEditStaff(Staff, eContact);
             addEditStaff.MdiParent = this.MdiParent;
@@ -58,7 +58,7 @@ namespace CourseProject1A
 
             //Query database
             var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
-            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.ID == Staff.Dept_ID);
+            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
 
             //Delete data and save
             choice_Christian_AcademyEntities.Staffs.Remove(Staff);

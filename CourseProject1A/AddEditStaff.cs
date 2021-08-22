@@ -45,17 +45,13 @@ namespace CourseProject1A
             tb_sDOE.Value = (DateTime)StaffData.Date_of_Employment;
             tbJob_Title.Text = StaffData.Job_Title;
             cb_sDept.SelectedValue = StaffData.Department;
-
-            if (eContactData.Staff_ID == StaffData.ID)
-            {
+          
                 lbl_eCon.Text = eContactData.ID.ToString();
                 tb_sECFName.Text = eContactData.First_Name;
                 tb_sECLName.Text = eContactData.Last_Name;
                 tb_sECAddress.Text = eContactData.Address;
                 tb_sECEmail.Text = eContactData.Email;
                 tb_sECPhone.Text = eContactData.Phone;
-            }
-
         }
 
         private void SaveChanges_Click(object sender, EventArgs e)
@@ -138,7 +134,7 @@ namespace CourseProject1A
             this.Close();
         }
 
-        private void AddEditTeacher_Load(object sender, EventArgs e)
+        private void AddEditStaff_Load(object sender, EventArgs e)
         {
             var Department = choice_Christian_AcademyEntities.Departments.ToList();
             cb_sDept.DisplayMember = "Dept_Name";

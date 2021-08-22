@@ -83,9 +83,9 @@
             // 
             this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Cancel.ForeColor = System.Drawing.Color.White;
-            this.Cancel.Location = new System.Drawing.Point(541, 428);
+            this.Cancel.Location = new System.Drawing.Point(541, 446);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(109, 48);
+            this.Cancel.Size = new System.Drawing.Size(109, 30);
             this.Cancel.TabIndex = 16;
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = false;
@@ -95,9 +95,9 @@
             // 
             this.SaveChanges.BackColor = System.Drawing.Color.Green;
             this.SaveChanges.ForeColor = System.Drawing.Color.White;
-            this.SaveChanges.Location = new System.Drawing.Point(679, 428);
+            this.SaveChanges.Location = new System.Drawing.Point(679, 446);
             this.SaveChanges.Name = "SaveChanges";
-            this.SaveChanges.Size = new System.Drawing.Size(109, 48);
+            this.SaveChanges.Size = new System.Drawing.Size(109, 30);
             this.SaveChanges.TabIndex = 17;
             this.SaveChanges.Text = "Save Changes";
             this.SaveChanges.UseVisualStyleBackColor = false;
@@ -398,11 +398,12 @@
             // lbl_eCon
             // 
             this.lbl_eCon.AutoSize = true;
-            this.lbl_eCon.Location = new System.Drawing.Point(14, 32);
+            this.lbl_eCon.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_eCon.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lbl_eCon.Location = new System.Drawing.Point(15, 33);
             this.lbl_eCon.Name = "lbl_eCon";
-            this.lbl_eCon.Size = new System.Drawing.Size(41, 13);
+            this.lbl_eCon.Size = new System.Drawing.Size(0, 13);
             this.lbl_eCon.TabIndex = 36;
-            this.lbl_eCon.Text = "label10";
             // 
             // AddEditStaff
             // 
@@ -451,6 +452,7 @@
             this.Name = "AddEditStaff";
             this.Text = "Staff";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.AddEditStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
