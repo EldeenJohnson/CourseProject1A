@@ -17,6 +17,6 @@ namespace CourseProject1A
         public int ID { get; set; }
         public string User { get; set; }
         public string Pword { get; set; }
-        public string Full_Name { get; set; }
+        public string Full_name { get; set; }
     }
 }

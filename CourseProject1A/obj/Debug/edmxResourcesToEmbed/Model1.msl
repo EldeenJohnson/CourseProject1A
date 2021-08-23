@@ -9,16 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Creds">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
-        <MappingFragment StoreEntitySet="Creds">
-          <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
-          <ScalarProperty Name="Pword" ColumnName="Pword" />
-          <ScalarProperty Name="User" ColumnName="User" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Departments">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Department">
         <MappingFragment StoreEntitySet="Department">
@@ -189,6 +179,15 @@
           <ScalarProperty Name="DOB" ColumnName="DOB" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Creds">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
+        <MappingFragment StoreEntitySet="Creds">
+          <ScalarProperty Name="Pword" ColumnName="Pword" />
+          <ScalarProperty Name="User" ColumnName="User" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

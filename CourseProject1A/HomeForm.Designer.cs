@@ -40,6 +40,7 @@ namespace CourseProject1A
             this.lbl_Time = new System.Windows.Forms.Label();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,9 +135,9 @@ namespace CourseProject1A
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.label2.Location = new System.Drawing.Point(644, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 26);
+            this.label2.Size = new System.Drawing.Size(91, 26);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Welcome Admin";
+            this.label2.Text = "Welcome";
             // 
             // lbl_Time
             // 
@@ -167,6 +168,18 @@ namespace CourseProject1A
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // name
+            // 
+            this.name.AutoSize = true;
+            this.name.BackColor = System.Drawing.Color.Transparent;
+            this.name.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.name.Location = new System.Drawing.Point(728, 33);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(71, 26);
+            this.name.TabIndex = 16;
+            this.name.Text = " Admin";
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +187,7 @@ namespace CourseProject1A
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 521);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.lbl_Date);
             this.Controls.Add(this.lbl_Time);
             this.Controls.Add(this.label2);
@@ -205,5 +219,6 @@ namespace CourseProject1A
         private System.Windows.Forms.Label lbl_Time;
         private System.Windows.Forms.Label lbl_Date;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label name;
     }
 }

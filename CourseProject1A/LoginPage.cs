@@ -4,37 +4,46 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace CourseProject1A
 {
     public partial class LoginPage : Form
     {
-
+        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public LoginPage()
         {
             InitializeComponent();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
 
         }
         HomeWindow newHome = new HomeWindow();
         private void btn_login_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=mysms-db.database.windows.net;Initial Catalog=Choice_Christian_Academy;Persist Security Info=True;User ID=Kratos;Password=@maz1nggrac3");
-            SqlDataAdapter sda = new SqlDataAdapter("Select Count (*) From Creds Where User='" + tb_username.Text + "' and Pword='" + tb_Password.Text + "'", connection);
-            // SqlDataAdapter sda = new SqlDataAdapter(query, connection);
-            DataTable data = new DataTable();
-            sda.Fill(data);
-            if (data.Rows[0][0].ToString() == "1")
+            try
             {
-                newHome.Show();
-                this.Hide();
+                var username = tb_username.Text.Trim();
+                var password = tb_Password.Text;
+
+                var user = choice_Christian_AcademyEntities.Creds.FirstOrDefault(q => q.User == username && q.Pword == password);
+
+                if (user == null)
+                {
+                    MessageBox.Show("Incorrect Username or Password");
+                }
+                else
+                {
+                    newHome.Show();
+                    this.Hide();
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Incorrect Username or Password");
+
+                MessageBox.Show("Something went wrong. Please try again");
             }
         }
 
