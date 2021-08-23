@@ -451,7 +451,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEditStaff";
             this.Text = "Staff";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AddEditStaff_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -45,49 +45,73 @@ namespace CourseProject1A
             tb_sDOE.Value = (DateTime)StaffData.Date_of_Employment;
             tbJob_Title.Text = StaffData.Job_Title;
             cb_sDept.SelectedValue = StaffData.Department;
-          
+
+            if (eContactData!= null)
+            {
                 lbl_eCon.Text = eContactData.ID.ToString();
                 tb_sECFName.Text = eContactData.First_Name;
                 tb_sECLName.Text = eContactData.Last_Name;
                 tb_sECAddress.Text = eContactData.Address;
                 tb_sECEmail.Text = eContactData.Email;
                 tb_sECPhone.Text = eContactData.Phone;
+            }
         }
 
         private void SaveChanges_Click(object sender, EventArgs e)
         {
             if (isEditMode)
             {
-                try { 
+               try { 
                         var id = int.Parse(lblID.Text);
                         var StaffData = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
+                                var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
                             StaffData.First_Name = tb_sFName.Text;
                             StaffData.Last_Name = tb_sLName.Text;
                             StaffData.DOB = dp_sDOB.Value;
                             StaffData.Address = tb_sAddress.Text;
                             StaffData.Phone = tb_sPhone.Text;
-                            StaffData.Email = tb_sPhone.Text;                          
+                            StaffData.Email = tb_sEmail.Text;                          
                             StaffData.Qualification = tb_sQualification.Text;
                             StaffData.Date_of_Employment = tb_sDOE.Value;
                             StaffData.Job_Title = tbJob_Title.Text;
                             StaffData.Dept_ID = (int)cb_sDept.SelectedValue;
 
-                         var ecID = int.Parse(lbl_eCon.Text);
-                         var eContactData = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.ID == ecID);
-                            eContactData.First_Name = tb_sECFName.Text;
-                            eContactData.Last_Name = tb_sECLName.Text;
-                            eContactData.Email = tb_sECEmail.Text;
-                            eContactData.Phone = tb_sECPhone.Text;
-                    }     
+                    if (eContact == null && StaffData !=null)
+                    {
+                        var newContactData = new Emergency_contact
+                        {
+                            First_Name = tb_sECFName.Text,
+                            Last_Name = tb_sECLName.Text,
+                            Address = tb_sECAddress.Text,
+                            Email = tb_sECEmail.Text,
+                            Phone = tb_sECPhone.Text,
+                            Staff_ID = int.Parse(lblID.Text)
+                        };
+                        choice_Christian_AcademyEntities.Emergency_contact.Add(newContactData);
+                    }
+                    else if (lbl_eCon.Text != null)
+                    {
+
+                        var ecID = int.Parse(lbl_eCon.Text);
+                        var eContactData = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.ID == ecID);
+                        eContactData.First_Name = tb_sECFName.Text;
+                        eContactData.Last_Name = tb_sECLName.Text;
+                        eContactData.Address = tb_sECAddress.Text;
+                        eContactData.Email = tb_sECEmail.Text;
+                        eContactData.Phone = tb_sECPhone.Text;
+                    }                               
+
+                    //Save Changes
+                    choice_Christian_AcademyEntities.SaveChanges();
+                    MessageBox.Show("Information Edited");
+                    this.Close();
+                }     
 
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                 }
-                //Save Changes
-                choice_Christian_AcademyEntities.SaveChanges();
-                            MessageBox.Show("Information Edited");
-                            this.Close();
+               
             }
             else
             {

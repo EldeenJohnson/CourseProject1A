@@ -44,10 +44,11 @@ namespace CourseProject1A
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.SteelBlue;
-            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Bold);
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TS_Edit,
             this.helpToolStripMenuItem,
@@ -55,7 +56,9 @@ namespace CourseProject1A
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(51, 561);
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuStrip1.Size = new System.Drawing.Size(52, 561);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -66,31 +69,39 @@ namespace CourseProject1A
             this.editApplicationToolStripMenuItem,
             this.manageStaffToolStripMenuItem,
             this.manageTeachersToolStripMenuItem});
-            this.TS_Edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.TS_Edit.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.TS_Edit.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.TS_Edit.ForeColor = System.Drawing.Color.GhostWhite;
+            this.TS_Edit.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.TS_Edit.Name = "TS_Edit";
             this.TS_Edit.ShowShortcutKeys = false;
-            this.TS_Edit.Size = new System.Drawing.Size(44, 20);
+            this.TS_Edit.Size = new System.Drawing.Size(49, 23);
             this.TS_Edit.Text = "Edit";
             // 
             // editApplicationToolStripMenuItem
             // 
+            this.editApplicationToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.editApplicationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.editApplicationToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.editApplicationToolStripMenuItem.Name = "editApplicationToolStripMenuItem";
-            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editApplicationToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.editApplicationToolStripMenuItem.Text = "Manage Student";
             this.editApplicationToolStripMenuItem.Click += new System.EventHandler(this.editApplicationToolStripMenuItem_Click);
             // 
             // manageStaffToolStripMenuItem
             // 
+            this.manageStaffToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.manageStaffToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.manageStaffToolStripMenuItem.Name = "manageStaffToolStripMenuItem";
-            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageStaffToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.manageStaffToolStripMenuItem.Text = "Manage Staff";
             this.manageStaffToolStripMenuItem.Click += new System.EventHandler(this.manageStaffToolStripMenuItem_Click_1);
             // 
             // manageTeachersToolStripMenuItem
             // 
+            this.manageTeachersToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.manageTeachersToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.manageTeachersToolStripMenuItem.Name = "manageTeachersToolStripMenuItem";
-            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.manageTeachersToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.manageTeachersToolStripMenuItem.Text = "Manage Teachers";
             this.manageTeachersToolStripMenuItem.Click += new System.EventHandler(this.manageTeachersToolStripMenuItem_Click);
             // 
@@ -99,31 +110,39 @@ namespace CourseProject1A
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.privacyPolicyToolStripMenuItem,
             this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.helpToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.GhostWhite;
+            this.helpToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(49, 23);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // privacyPolicyToolStripMenuItem
             // 
+            this.privacyPolicyToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.privacyPolicyToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.privacyPolicyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.privacyPolicyToolStripMenuItem.Name = "privacyPolicyToolStripMenuItem";
-            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.privacyPolicyToolStripMenuItem.Text = "Privacy Policy";
             this.privacyPolicyToolStripMenuItem.Click += new System.EventHandler(this.privacyPolicyToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.aboutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.aboutToolStripMenuItem.Text = "About";
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.exitToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.exitToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.GhostWhite;
+            this.exitToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 23);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 

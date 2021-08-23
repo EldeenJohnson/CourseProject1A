@@ -96,16 +96,17 @@
             this.picBox_Edit = new System.Windows.Forms.PictureBox();
             this.lblpar1 = new System.Windows.Forms.Label();
             this.lblPar2 = new System.Windows.Forms.Label();
+            this.chk_Enable = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Edit)).BeginInit();
             this.SuspendLayout();
             // 
             // SaveChanges
             // 
             this.SaveChanges.BackColor = System.Drawing.Color.Green;
-            this.SaveChanges.Location = new System.Drawing.Point(810, 520);
+            this.SaveChanges.Location = new System.Drawing.Point(792, 531);
             this.SaveChanges.Name = "SaveChanges";
-            this.SaveChanges.Size = new System.Drawing.Size(70, 37);
-            this.SaveChanges.TabIndex = 0;
+            this.SaveChanges.Size = new System.Drawing.Size(91, 26);
+            this.SaveChanges.TabIndex = 31;
             this.SaveChanges.Text = "Save Changes";
             this.SaveChanges.UseVisualStyleBackColor = false;
             this.SaveChanges.Click += new System.EventHandler(this.SaveChanges_Click);
@@ -113,10 +114,10 @@
             // Cancel
             // 
             this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Cancel.Location = new System.Drawing.Point(710, 520);
+            this.Cancel.Location = new System.Drawing.Point(713, 531);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(63, 37);
-            this.Cancel.TabIndex = 1;
+            this.Cancel.Size = new System.Drawing.Size(63, 26);
+            this.Cancel.TabIndex = 30;
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
@@ -147,7 +148,7 @@
             this.tb_EditDOB.Location = new System.Drawing.Point(91, 204);
             this.tb_EditDOB.Name = "tb_EditDOB";
             this.tb_EditDOB.Size = new System.Drawing.Size(202, 20);
-            this.tb_EditDOB.TabIndex = 17;
+            this.tb_EditDOB.TabIndex = 4;
             // 
             // tbFName
             // 
@@ -234,14 +235,14 @@
             this.tbLName.Location = new System.Drawing.Point(91, 165);
             this.tbLName.Name = "tbLName";
             this.tbLName.Size = new System.Drawing.Size(202, 20);
-            this.tbLName.TabIndex = 13;
+            this.tbLName.TabIndex = 3;
             // 
             // tbAddress
             // 
             this.tbAddress.Location = new System.Drawing.Point(91, 243);
             this.tbAddress.Name = "tbAddress";
             this.tbAddress.Size = new System.Drawing.Size(202, 20);
-            this.tbAddress.TabIndex = 14;
+            this.tbAddress.TabIndex = 5;
             // 
             // cb_EditGen
             // 
@@ -252,7 +253,7 @@
             this.cb_EditGen.Location = new System.Drawing.Point(91, 282);
             this.cb_EditGen.Name = "cb_EditGen";
             this.cb_EditGen.Size = new System.Drawing.Size(202, 21);
-            this.cb_EditGen.TabIndex = 18;
+            this.cb_EditGen.TabIndex = 6;
             // 
             // cb_Editheigthft
             // 
@@ -268,7 +269,7 @@
             this.cb_Editheigthft.Location = new System.Drawing.Point(91, 321);
             this.cb_Editheigthft.Name = "cb_Editheigthft";
             this.cb_Editheigthft.Size = new System.Drawing.Size(80, 21);
-            this.cb_Editheigthft.TabIndex = 18;
+            this.cb_Editheigthft.TabIndex = 7;
             // 
             // cb_EditheightIn
             // 
@@ -290,7 +291,7 @@
             this.cb_EditheightIn.Location = new System.Drawing.Point(213, 321);
             this.cb_EditheightIn.Name = "cb_EditheightIn";
             this.cb_EditheightIn.Size = new System.Drawing.Size(80, 21);
-            this.cb_EditheightIn.TabIndex = 18;
+            this.cb_EditheightIn.TabIndex = 8;
             // 
             // lbl_Editheight
             // 
@@ -308,21 +309,21 @@
             this.tb_EditPrSch.Location = new System.Drawing.Point(91, 438);
             this.tb_EditPrSch.Name = "tb_EditPrSch";
             this.tb_EditPrSch.Size = new System.Drawing.Size(202, 20);
-            this.tb_EditPrSch.TabIndex = 21;
+            this.tb_EditPrSch.TabIndex = 11;
             // 
             // tb_EdStuPhone
             // 
             this.tb_EdStuPhone.Location = new System.Drawing.Point(91, 399);
             this.tb_EdStuPhone.Name = "tb_EdStuPhone";
             this.tb_EdStuPhone.Size = new System.Drawing.Size(202, 20);
-            this.tb_EdStuPhone.TabIndex = 20;
+            this.tb_EdStuPhone.TabIndex = 10;
             // 
             // tb_EdStuEmail
             // 
             this.tb_EdStuEmail.Location = new System.Drawing.Point(91, 360);
             this.tb_EdStuEmail.Name = "tb_EdStuEmail";
             this.tb_EdStuEmail.Size = new System.Drawing.Size(202, 20);
-            this.tb_EdStuEmail.TabIndex = 19;
+            this.tb_EdStuEmail.TabIndex = 9;
             // 
             // label2
             // 
@@ -396,7 +397,7 @@
             this.cb_EdHouse.Location = new System.Drawing.Point(91, 478);
             this.cb_EdHouse.Name = "cb_EdHouse";
             this.cb_EdHouse.Size = new System.Drawing.Size(202, 21);
-            this.cb_EdHouse.TabIndex = 24;
+            this.cb_EdHouse.TabIndex = 12;
             // 
             // cb_EdClass
             // 
@@ -404,7 +405,7 @@
             this.cb_EdClass.Location = new System.Drawing.Point(226, 517);
             this.cb_EdClass.Name = "cb_EdClass";
             this.cb_EdClass.Size = new System.Drawing.Size(67, 21);
-            this.cb_EdClass.TabIndex = 26;
+            this.cb_EdClass.TabIndex = 14;
             // 
             // cb_EdGrade
             // 
@@ -412,14 +413,14 @@
             this.cb_EdGrade.Location = new System.Drawing.Point(91, 517);
             this.cb_EdGrade.Name = "cb_EdGrade";
             this.cb_EdGrade.Size = new System.Drawing.Size(63, 21);
-            this.cb_EdGrade.TabIndex = 25;
+            this.cb_EdGrade.TabIndex = 13;
             // 
             // tb_EdParRelationship
             // 
             this.tb_EdParRelationship.Location = new System.Drawing.Point(423, 426);
             this.tb_EdParRelationship.Name = "tb_EdParRelationship";
             this.tb_EdParRelationship.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdParRelationship.TabIndex = 61;
+            this.tb_EdParRelationship.TabIndex = 22;
             // 
             // label14
             // 
@@ -504,28 +505,28 @@
             this.Par_EdDOB.Location = new System.Drawing.Point(423, 258);
             this.Par_EdDOB.Name = "Par_EdDOB";
             this.Par_EdDOB.Size = new System.Drawing.Size(170, 20);
-            this.Par_EdDOB.TabIndex = 57;
+            this.Par_EdDOB.TabIndex = 18;
             // 
             // tb_EdParEmail
             // 
             this.tb_EdParEmail.Location = new System.Drawing.Point(423, 384);
             this.tb_EdParEmail.Name = "tb_EdParEmail";
             this.tb_EdParEmail.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdParEmail.TabIndex = 60;
+            this.tb_EdParEmail.TabIndex = 21;
             // 
             // tb_EdParphone
             // 
             this.tb_EdParphone.Location = new System.Drawing.Point(423, 342);
             this.tb_EdParphone.Name = "tb_EdParphone";
             this.tb_EdParphone.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdParphone.TabIndex = 59;
+            this.tb_EdParphone.TabIndex = 20;
             // 
             // tb_EdparAddress
             // 
             this.tb_EdparAddress.Location = new System.Drawing.Point(423, 300);
             this.tb_EdparAddress.Name = "tb_EdparAddress";
             this.tb_EdparAddress.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdparAddress.TabIndex = 58;
+            this.tb_EdparAddress.TabIndex = 19;
             // 
             // tb_EdparFname
             // 
@@ -533,14 +534,14 @@
             this.tb_EdparFname.Location = new System.Drawing.Point(423, 174);
             this.tb_EdparFname.Name = "tb_EdparFname";
             this.tb_EdparFname.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdparFname.TabIndex = 55;
+            this.tb_EdparFname.TabIndex = 16;
             // 
             // tb_EdparLname
             // 
             this.tb_EdparLname.Location = new System.Drawing.Point(423, 216);
             this.tb_EdparLname.Name = "tb_EdparLname";
             this.tb_EdparLname.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdparLname.TabIndex = 56;
+            this.tb_EdparLname.TabIndex = 17;
             // 
             // label18
             // 
@@ -559,7 +560,7 @@
             this.tb_EditPar2Rel.Location = new System.Drawing.Point(713, 426);
             this.tb_EditPar2Rel.Name = "tb_EditPar2Rel";
             this.tb_EditPar2Rel.Size = new System.Drawing.Size(170, 20);
-            this.tb_EditPar2Rel.TabIndex = 75;
+            this.tb_EditPar2Rel.TabIndex = 29;
             // 
             // label19
             // 
@@ -644,28 +645,28 @@
             this.dp_EdPar2DOB.Location = new System.Drawing.Point(713, 258);
             this.dp_EdPar2DOB.Name = "dp_EdPar2DOB";
             this.dp_EdPar2DOB.Size = new System.Drawing.Size(170, 20);
-            this.dp_EdPar2DOB.TabIndex = 71;
+            this.dp_EdPar2DOB.TabIndex = 25;
             // 
             // tb_edPar2Email
             // 
             this.tb_edPar2Email.Location = new System.Drawing.Point(713, 384);
             this.tb_edPar2Email.Name = "tb_edPar2Email";
             this.tb_edPar2Email.Size = new System.Drawing.Size(170, 20);
-            this.tb_edPar2Email.TabIndex = 74;
+            this.tb_edPar2Email.TabIndex = 28;
             // 
             // tb_EdPar2Phone
             // 
             this.tb_EdPar2Phone.Location = new System.Drawing.Point(713, 342);
             this.tb_EdPar2Phone.Name = "tb_EdPar2Phone";
             this.tb_EdPar2Phone.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdPar2Phone.TabIndex = 73;
+            this.tb_EdPar2Phone.TabIndex = 27;
             // 
             // tb_EdPar2Add
             // 
             this.tb_EdPar2Add.Location = new System.Drawing.Point(713, 300);
             this.tb_EdPar2Add.Name = "tb_EdPar2Add";
             this.tb_EdPar2Add.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdPar2Add.TabIndex = 72;
+            this.tb_EdPar2Add.TabIndex = 26;
             // 
             // tb_edPar2Fname
             // 
@@ -673,14 +674,14 @@
             this.tb_edPar2Fname.Location = new System.Drawing.Point(713, 174);
             this.tb_edPar2Fname.Name = "tb_edPar2Fname";
             this.tb_edPar2Fname.Size = new System.Drawing.Size(170, 20);
-            this.tb_edPar2Fname.TabIndex = 69;
+            this.tb_edPar2Fname.TabIndex = 23;
             // 
             // tb_EdPar2Lname
             // 
             this.tb_EdPar2Lname.Location = new System.Drawing.Point(713, 216);
             this.tb_EdPar2Lname.Name = "tb_EdPar2Lname";
             this.tb_EdPar2Lname.Size = new System.Drawing.Size(170, 20);
-            this.tb_EdPar2Lname.TabIndex = 70;
+            this.tb_EdPar2Lname.TabIndex = 24;
             // 
             // label26
             // 
@@ -698,7 +699,7 @@
             this.rtb_EdstuAddInfo.Location = new System.Drawing.Point(423, 467);
             this.rtb_EdstuAddInfo.Name = "rtb_EdstuAddInfo";
             this.rtb_EdstuAddInfo.Size = new System.Drawing.Size(223, 90);
-            this.rtb_EdstuAddInfo.TabIndex = 83;
+            this.rtb_EdstuAddInfo.TabIndex = 15;
             this.rtb_EdstuAddInfo.Text = "";
             // 
             // label27
@@ -741,15 +742,32 @@
             this.lblpar1.Name = "lblpar1";
             this.lblpar1.Size = new System.Drawing.Size(0, 13);
             this.lblpar1.TabIndex = 86;
+            this.lblpar1.Visible = false;
             // 
             // lblPar2
             // 
             this.lblPar2.AutoSize = true;
             this.lblPar2.BackColor = System.Drawing.Color.Black;
+            this.lblPar2.ForeColor = System.Drawing.Color.White;
             this.lblPar2.Location = new System.Drawing.Point(28, 58);
             this.lblPar2.Name = "lblPar2";
             this.lblPar2.Size = new System.Drawing.Size(0, 13);
             this.lblPar2.TabIndex = 86;
+            this.lblPar2.Visible = false;
+            // 
+            // chk_Enable
+            // 
+            this.chk_Enable.AutoSize = true;
+            this.chk_Enable.BackColor = System.Drawing.Color.Transparent;
+            this.chk_Enable.FlatAppearance.CheckedBackColor = System.Drawing.Color.Green;
+            this.chk_Enable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
+            this.chk_Enable.ForeColor = System.Drawing.Color.Transparent;
+            this.chk_Enable.Location = new System.Drawing.Point(692, 149);
+            this.chk_Enable.Name = "chk_Enable";
+            this.chk_Enable.Size = new System.Drawing.Size(15, 14);
+            this.chk_Enable.TabIndex = 87;
+            this.chk_Enable.UseVisualStyleBackColor = false;
+            this.chk_Enable.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // AddEditStudent
             // 
@@ -758,6 +776,7 @@
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(907, 584);
+            this.Controls.Add(this.chk_Enable);
             this.Controls.Add(this.lblPar2);
             this.Controls.Add(this.lblpar1);
             this.Controls.Add(this.picBox_Edit);
@@ -904,5 +923,6 @@
         private System.Windows.Forms.PictureBox picBox_Edit;
         private System.Windows.Forms.Label lblpar1;
         private System.Windows.Forms.Label lblPar2;
+        private System.Windows.Forms.CheckBox chk_Enable;
     }
 }

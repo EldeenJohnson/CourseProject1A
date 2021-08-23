@@ -38,15 +38,22 @@ namespace CourseProject1A
         private void Editbotton_Click(object sender, EventArgs e)
         {
             //Get ID for selected row
-            var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
+            try
+            {
+                var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
 
-            //Query database
-            var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
-            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
+                //Query database
+                var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
+                var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
 
-            var addEditStaff = new AddEditStaff(Staff, eContact);
-            addEditStaff.MdiParent = this.MdiParent;
-            addEditStaff.Show();
+                var addEditStaff = new AddEditStaff(Staff, eContact);
+                addEditStaff.MdiParent = this.MdiParent;
+                addEditStaff.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}"+"\n\nPlease Select the first cell of the rowe");
+            }
         }
 
         private void Deletebutton_Click(object sender, EventArgs e)
@@ -58,11 +65,15 @@ namespace CourseProject1A
 
             //Query database
             var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
-            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
+                var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
+                    
 
             //Delete data and save
             choice_Christian_AcademyEntities.Staffs.Remove(Staff);
+            if (eContact != null)
+            {
                 choice_Christian_AcademyEntities.Emergency_contact.Remove(eContact);
+            }
                     choice_Christian_AcademyEntities.SaveChanges();
             MessageBox.Show("Information Deleted");
 

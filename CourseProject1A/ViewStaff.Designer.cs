@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            CourseProject1A.Choice_Christian_AcademyDataSet choice_Christian_AcademyDataSet1 = new CourseProject1A.Choice_Christian_AcademyDataSet();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewStaff));
             this.gvstaffdata = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,11 +38,8 @@
             this.Deletebutton = new System.Windows.Forms.Button();
             this.Editbotton = new System.Windows.Forms.Button();
             this.refreshbttn = new System.Windows.Forms.Button();
-            this.choice_Christian_AcademyDataSet = new CourseProject1A.Choice_Christian_AcademyDataSet();
             this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.staffTableAdapter = new CourseProject1A.Choice_Christian_AcademyDataSetTableAdapters.StaffTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gvstaffdata)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.choice_Christian_AcademyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,19 +128,10 @@
             this.refreshbttn.UseVisualStyleBackColor = false;
             this.refreshbttn.Click += new System.EventHandler(this.refreshbttn_Click);
             // 
-            // choice_Christian_AcademyDataSet
-            // 
-            this.choice_Christian_AcademyDataSet.DataSetName = "Choice_Christian_AcademyDataSet";
-            this.choice_Christian_AcademyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // staffBindingSource
             // 
             this.staffBindingSource.DataMember = "Staff";
-            this.staffBindingSource.DataSource = this.choice_Christian_AcademyDataSet;
-            // 
-            // staffTableAdapter
-            // 
-            this.staffTableAdapter.ClearBeforeFill = true;
+            this.staffBindingSource.DataSource = choice_Christian_AcademyDataSet1;
             // 
             // ViewStaff
             // 
@@ -162,10 +151,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewStaff";
             this.Text = "Staff Managment";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ViewStaff_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvstaffdata)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.choice_Christian_AcademyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

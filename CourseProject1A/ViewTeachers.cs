@@ -27,14 +27,21 @@ namespace CourseProject1A
         private void Editbotton_Click(object sender, EventArgs e)
         {
             //Get ID for selected row
-            var id = (int)gvteacherdata.SelectedRows[0].Cells["ID"].Value;
-            //Query database
-            var teacher = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
-            var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Teacher_ID == teacher.ID);
+            try
+            {
+                var id = (int)gvteacherdata.SelectedRows[0].Cells["ID"].Value;
+                //Query database
+                var teacher = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
+                var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Teacher_ID == teacher.ID);
 
-            var addEditTeacher = new AddEditTeacher(teacher, eContact);           
-            addEditTeacher.MdiParent = this.MdiParent;
-            addEditTeacher.Show();
+                var addEditTeacher = new AddEditTeacher(teacher, eContact);
+                addEditTeacher.MdiParent = this.MdiParent;
+                addEditTeacher.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}" + "\n\nPlease Click the first cell for desired row.");
+            }
         }
 
         private void Addbutton_Click(object sender, EventArgs e)
@@ -53,10 +60,18 @@ namespace CourseProject1A
                 //Query database
                 var teacher = choice_Christian_AcademyEntities.Teachers.FirstOrDefault(q => q.ID == id);
                 var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Teacher_ID == teacher.ID);
+                var tResults = choice_Christian_AcademyEntities.Test_Result.FirstOrDefault(q => q.Teacher_ID == id);
 
                 choice_Christian_AcademyEntities.Teachers.Remove(teacher);
-                choice_Christian_AcademyEntities.Emergency_contact.Remove(eContact);
-                choice_Christian_AcademyEntities.SaveChanges();
+                if (eContact != null)
+                {
+                    choice_Christian_AcademyEntities.Emergency_contact.Remove(eContact);
+                }
+                if (tResults != null)
+                {
+                    choice_Christian_AcademyEntities.Test_Result.Remove(tResults);
+                }
+            choice_Christian_AcademyEntities.SaveChanges();
                 MessageBox.Show("Information Deleted");
                 PopulateGrid();
             }
@@ -85,8 +100,6 @@ namespace CourseProject1A
                   Last_Name = q.Last_Name,
                   DOB = q.DOB,
                   Address = q.Address,
-                  Grade = q.Grade_ID,
-                  Class = q.Class_ID,
                   Qualification = q.Qualification,
                   Date_Employed = q.DateOf_Emp,
                   q.ID
@@ -96,11 +109,9 @@ namespace CourseProject1A
             gvteacherdata.Columns[1].HeaderText = "Last Name";
             gvteacherdata.Columns[2].HeaderText = "DOB";
             gvteacherdata.Columns[3].HeaderText = "Address";
-            gvteacherdata.Columns[4].HeaderText = "Grade";
-            gvteacherdata.Columns[5].HeaderText = "Class";
-            gvteacherdata.Columns[6].HeaderText = "Qualification";
-            gvteacherdata.Columns[7].HeaderText = "Date Employed";
-            gvteacherdata.Columns[8].Visible = false;
+            gvteacherdata.Columns[4].HeaderText = "Qualification";
+            gvteacherdata.Columns[5].HeaderText = "Date Employed";
+            gvteacherdata.Columns[6].Visible = false;
         }
     }
 }

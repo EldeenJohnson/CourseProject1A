@@ -441,9 +441,9 @@
             this.lbl_ecID.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ecID.Location = new System.Drawing.Point(15, 8);
             this.lbl_ecID.Name = "lbl_ecID";
-            this.lbl_ecID.Size = new System.Drawing.Size(19, 13);
+            this.lbl_ecID.Size = new System.Drawing.Size(0, 13);
             this.lbl_ecID.TabIndex = 24;
-            this.lbl_ecID.Text = "ec";
+            this.lbl_ecID.Visible = false;
             // 
             // AddEditTeacher
             // 
