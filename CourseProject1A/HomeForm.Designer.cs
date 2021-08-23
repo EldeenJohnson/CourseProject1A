@@ -40,6 +40,7 @@ namespace CourseProject1A
             this.lbl_Time = new System.Windows.Forms.Label();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,51 +58,59 @@ namespace CourseProject1A
             // 
             // btn_Teach
             // 
-            this.btn_Teach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Teach.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Teach.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Teach.BackgroundImage")));
+            this.btn_Teach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Teach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Fuchsia;
             this.btn_Teach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_Teach.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Teach.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Teach.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_Teach.ForeColor = System.Drawing.Color.Yellow;
             this.btn_Teach.Location = new System.Drawing.Point(591, 261);
             this.btn_Teach.Name = "btn_Teach";
-            this.btn_Teach.Size = new System.Drawing.Size(184, 123);
+            this.btn_Teach.Size = new System.Drawing.Size(180, 120);
             this.btn_Teach.TabIndex = 9;
             this.btn_Teach.Text = "Teacher Management";
+            this.btn_Teach.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btn_Teach.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Teach.UseVisualStyleBackColor = false;
             this.btn_Teach.Click += new System.EventHandler(this.btn_Teach_Click);
             // 
             // btn_Staff
             // 
-            this.btn_Staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_Staff.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Staff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Staff.BackgroundImage")));
             this.btn_Staff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
             this.btn_Staff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Staff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Staff.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Staff.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Staff.ForeColor = System.Drawing.Color.Crimson;
             this.btn_Staff.Location = new System.Drawing.Point(341, 261);
             this.btn_Staff.Name = "btn_Staff";
-            this.btn_Staff.Size = new System.Drawing.Size(184, 123);
+            this.btn_Staff.Size = new System.Drawing.Size(180, 120);
             this.btn_Staff.TabIndex = 10;
-            this.btn_Staff.Text = "Aux\r\nStaff \r\nOn-Boarding";
+            this.btn_Staff.Text = "Staff Management";
+            this.btn_Staff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Staff.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Staff.UseVisualStyleBackColor = false;
             this.btn_Staff.Click += new System.EventHandler(this.btn_Staff_Click);
             // 
             // btn_stuApp
             // 
-            this.btn_stuApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_stuApp.BackColor = System.Drawing.Color.Transparent;
+            this.btn_stuApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_stuApp.BackgroundImage")));
+            this.btn_stuApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_stuApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.btn_stuApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_stuApp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_stuApp.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_stuApp.ForeColor = System.Drawing.Color.Teal;
+            this.btn_stuApp.ForeColor = System.Drawing.Color.Aqua;
             this.btn_stuApp.Location = new System.Drawing.Point(91, 261);
             this.btn_stuApp.Name = "btn_stuApp";
-            this.btn_stuApp.Size = new System.Drawing.Size(184, 123);
+            this.btn_stuApp.Size = new System.Drawing.Size(180, 120);
             this.btn_stuApp.TabIndex = 11;
             this.btn_stuApp.Text = "Student \r\nApplication";
+            this.btn_stuApp.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_stuApp.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_stuApp.UseVisualStyleBackColor = false;
             this.btn_stuApp.Click += new System.EventHandler(this.btn_stuApp_Click);
@@ -126,9 +135,9 @@ namespace CourseProject1A
             this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.label2.Location = new System.Drawing.Point(644, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 26);
+            this.label2.Size = new System.Drawing.Size(91, 26);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Welcome Admin";
+            this.label2.Text = "Welcome";
             // 
             // lbl_Time
             // 
@@ -159,6 +168,18 @@ namespace CourseProject1A
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // name
+            // 
+            this.name.AutoSize = true;
+            this.name.BackColor = System.Drawing.Color.Transparent;
+            this.name.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.name.Location = new System.Drawing.Point(728, 33);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(71, 26);
+            this.name.TabIndex = 16;
+            this.name.Text = " Admin";
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +187,7 @@ namespace CourseProject1A
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 521);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.lbl_Date);
             this.Controls.Add(this.lbl_Time);
             this.Controls.Add(this.label2);
@@ -197,5 +219,6 @@ namespace CourseProject1A
         private System.Windows.Forms.Label lbl_Time;
         private System.Windows.Forms.Label lbl_Date;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label name;
     }
 }

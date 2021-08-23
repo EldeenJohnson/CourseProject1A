@@ -22,8 +22,9 @@ namespace CourseProject1A
 
         private void ViewStaff_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'choice_Christian_AcademyDataSet.Staff' table. You can move, or remove it, as needed.
-            this.staffTableAdapter.Fill(this.choice_Christian_AcademyDataSet.Staff);
+            // TODO: This line of code loads data into the 'choice_Christian_AcademyDataSet.Staff' table.
+            // You can move, or remove it, as needed.
+          //  this.staffTableAdapter.Fill(this.choice_Christian_AcademyDataSet.Staff);
             PopulateGrid();
         }
 
@@ -37,28 +38,46 @@ namespace CourseProject1A
         private void Editbotton_Click(object sender, EventArgs e)
         {
             //Get ID for selected row
-            var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
-            //Query database
-            var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
+            try
+            {
+                var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
 
-            var addEditStaff = new AddEditStaff(Staff);
-            addEditStaff.MdiParent = this.MdiParent;
-            addEditStaff.Show();
+                //Query database
+                var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
+                var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
+
+                var addEditStaff = new AddEditStaff(Staff, eContact);
+                addEditStaff.MdiParent = this.MdiParent;
+                addEditStaff.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}"+"\n\nPlease Select the first cell of the rowe");
+            }
         }
 
         private void Deletebutton_Click(object sender, EventArgs e)
         {
             try { 
+
             //Get ID for selected row
             var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
+
             //Query database
             var Staff = choice_Christian_AcademyEntities.Staffs.FirstOrDefault(q => q.ID == id);
+                var eContact = choice_Christian_AcademyEntities.Emergency_contact.FirstOrDefault(q => q.Staff_ID == id);
+                    
 
             //Delete data and save
             choice_Christian_AcademyEntities.Staffs.Remove(Staff);
-            choice_Christian_AcademyEntities.SaveChanges();
+            if (eContact != null)
+            {
+                choice_Christian_AcademyEntities.Emergency_contact.Remove(eContact);
+            }
+                    choice_Christian_AcademyEntities.SaveChanges();
             MessageBox.Show("Information Deleted");
-            gvstaffdata.Refresh();
+
+                PopulateGrid();
             }
             catch (Exception ex)
             {

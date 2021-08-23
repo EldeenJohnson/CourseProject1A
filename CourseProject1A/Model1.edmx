@@ -19,7 +19,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Pword" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Full_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Full_name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -461,7 +461,6 @@
       <Schema Namespace="Choice_Christian_AcademyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Choice_Christian_AcademyEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Classes" EntityType="Choice_Christian_AcademyModel.Class" />
-          <EntitySet Name="Creds" EntityType="Choice_Christian_AcademyModel.Cred" />
           <EntitySet Name="Departments" EntityType="Choice_Christian_AcademyModel.Department" />
           <EntitySet Name="Faculties" EntityType="Choice_Christian_AcademyModel.Faculty" />
           <EntitySet Name="Grades" EntityType="Choice_Christian_AcademyModel.Grade" />
@@ -540,6 +539,7 @@
             <End Role="Teacher" EntitySet="Teachers" />
             <End Role="Test_Result" EntitySet="Test_Result" />
           </AssociationSet>
+          <EntitySet Name="Creds" EntityType="Choice_Christian_AcademyModel.Cred" />
           </EntityContainer>
         <EntityType Name="Class">
           <Key>
@@ -549,15 +549,6 @@
           <Property Name="Class1" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Student_detail" Relationship="Choice_Christian_AcademyModel.FK_Student_detail_Class" FromRole="Class" ToRole="Student_detail" />
           <NavigationProperty Name="Teachers" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Class" FromRole="Class" ToRole="Teacher" />
-        </EntityType>
-        <EntityType Name="Cred">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="User" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Pword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Full_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -941,6 +932,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Cred">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Pword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -951,16 +951,6 @@
             <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Class">
               <MappingFragment StoreEntitySet="Class">
                 <ScalarProperty Name="Class1" ColumnName="Class" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Creds">
-            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
-              <MappingFragment StoreEntitySet="Creds">
-                <ScalarProperty Name="Full_Name" ColumnName="Full_Name" />
-                <ScalarProperty Name="Pword" ColumnName="Pword" />
-                <ScalarProperty Name="User" ColumnName="User" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1135,6 +1125,16 @@
                 <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Creds">
+            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
+              <MappingFragment StoreEntitySet="Creds">
+                <ScalarProperty Name="Full_name" ColumnName="Full_name" />
+                <ScalarProperty Name="Pword" ColumnName="Pword" />
+                <ScalarProperty Name="User" ColumnName="User" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

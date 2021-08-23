@@ -87,15 +87,18 @@ namespace CourseProject1A
                     ecData.Address = tb_ECAddress.Text;
                     ecData.Email = tb_ECEmail.Text;
                     ecData.Phone = tb_ECPhone.Text;
+
+                    //Save Changes
+                    choice_Christian_AcademyEntities.SaveChanges();
+                    MessageBox.Show("Information Edited");
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error: {ex.Message}");
                 }
-                //Save Changes
-                choice_Christian_AcademyEntities.SaveChanges();
-                MessageBox.Show("Information Edited");
-                this.Close();
+                
+                
                 
             }
             else

@@ -14,7 +14,6 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="User" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Pword" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Full_Name" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Department">
     <Key>
