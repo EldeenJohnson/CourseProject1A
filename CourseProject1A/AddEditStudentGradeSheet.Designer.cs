@@ -119,7 +119,7 @@ namespace CourseProject1A.Resources
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(283, 186);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 20);
             this.textBox2.TabIndex = 7;
@@ -160,7 +160,7 @@ namespace CourseProject1A.Resources
             this.tableLayoutPanel1.Controls.Add(this.label21, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label22, 1, 8);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(265, 301);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.1875F));
@@ -180,7 +180,7 @@ namespace CourseProject1A.Resources
             // 
             this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox10.Location = new System.Drawing.Point(299, 217);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(40, 20);
             this.textBox10.TabIndex = 40;
@@ -189,7 +189,7 @@ namespace CourseProject1A.Resources
             // 
             this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox9.Location = new System.Drawing.Point(299, 186);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(40, 20);
             this.textBox9.TabIndex = 39;
@@ -198,7 +198,7 @@ namespace CourseProject1A.Resources
             // 
             this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox8.Location = new System.Drawing.Point(299, 161);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(40, 20);
             this.textBox8.TabIndex = 38;
@@ -207,7 +207,7 @@ namespace CourseProject1A.Resources
             // 
             this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox3.Location = new System.Drawing.Point(299, 28);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(40, 20);
             this.textBox3.TabIndex = 37;
@@ -216,7 +216,7 @@ namespace CourseProject1A.Resources
             // 
             this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox7.Location = new System.Drawing.Point(299, 136);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(40, 20);
             this.textBox7.TabIndex = 36;
@@ -225,7 +225,7 @@ namespace CourseProject1A.Resources
             // 
             this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox6.Location = new System.Drawing.Point(299, 110);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(40, 20);
             this.textBox6.TabIndex = 35;
@@ -234,7 +234,7 @@ namespace CourseProject1A.Resources
             // 
             this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox5.Location = new System.Drawing.Point(299, 83);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(40, 20);
             this.textBox5.TabIndex = 34;
@@ -243,7 +243,7 @@ namespace CourseProject1A.Resources
             // 
             this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox4.Location = new System.Drawing.Point(299, 56);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(40, 20);
             this.textBox4.TabIndex = 33;
@@ -486,7 +486,7 @@ namespace CourseProject1A.Resources
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(282, 136);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 20);
             this.textBox1.TabIndex = 11;
@@ -496,7 +496,7 @@ namespace CourseProject1A.Resources
             this.Submit.BackColor = System.Drawing.Color.Green;
             this.Submit.ForeColor = System.Drawing.SystemColors.Window;
             this.Submit.Location = new System.Drawing.Point(296, 656);
-            this.Submit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Submit.Margin = new System.Windows.Forms.Padding(2);
             this.Submit.Name = "Submit";
             this.Submit.Size = new System.Drawing.Size(56, 37);
             this.Submit.TabIndex = 12;
@@ -507,7 +507,7 @@ namespace CourseProject1A.Resources
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(544, 654);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 39);
             this.button1.TabIndex = 13;
@@ -519,14 +519,14 @@ namespace CourseProject1A.Resources
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button2.ForeColor = System.Drawing.SystemColors.Window;
             this.button2.Location = new System.Drawing.Point(426, 654);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 39);
             this.button2.TabIndex = 14;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // Student_Grade
+            // Student_Grade_Sheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -541,8 +541,8 @@ namespace CourseProject1A.Resources
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Student_Grade";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "Student_Grade_Sheet";
             this.Text = "Student Grade Sheet";
             this.Load += new System.EventHandler(this.Student_Grade_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
