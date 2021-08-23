@@ -15,6 +15,7 @@ namespace CourseProject1A
         public OptionsForm()
         {
             InitializeComponent();
+            lbl_Welcome.Text = "Welcome" + " User";
         }
 
         private void btn_stuApp_Click(object sender, EventArgs e)
@@ -43,7 +44,7 @@ namespace CourseProject1A
             timer1.Start();
             lbl_Time.Text = DateTime.Now.ToLongTimeString();
             lbl_Date.Text = DateTime.Now.ToLongDateString();
-
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)

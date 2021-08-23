@@ -66,6 +66,14 @@ namespace CourseProject1A
             PrivacyPolicy.Show();
 
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var LoginPage = new LoginPage();
+            LoginPage.Show();
+            this.Close();
+
+        }
     }
     
 }
