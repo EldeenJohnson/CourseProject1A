@@ -1,7 +1,7 @@
 ﻿
 namespace CourseProject1A
 {
-    partial class ViewStudentGradeSheet
+    partial class ViewStudentGradesheet
     {
         /// <summary>
         /// Required designer variable.

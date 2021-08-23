@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CourseProject1A
 {
-    public partial class ViewStudentGradeSheet : Form
+    public partial class ViewStudentGradesheet : Form
     {
-        public ViewStudentGradeSheet()
+        public ViewStudentGradesheet()
         {
             InitializeComponent();
         }

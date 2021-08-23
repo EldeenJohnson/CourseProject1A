@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace CourseProject1A.Resources
 {
-    public partial class Student_Grade : Form
+    public partial class Student_Grade_Sheet : Form
     {
         public Student_Grade_Sheet()
         {
