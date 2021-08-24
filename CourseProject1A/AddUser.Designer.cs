@@ -59,7 +59,7 @@ namespace CourseProject1A
             this.lbl_Title.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Title.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Title.ForeColor = System.Drawing.Color.White;
-            this.lbl_Title.Location = new System.Drawing.Point(288, 23);
+            this.lbl_Title.Location = new System.Drawing.Point(307, 22);
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(173, 45);
             this.lbl_Title.TabIndex = 30;
@@ -122,6 +122,7 @@ namespace CourseProject1A
             // 
             this.tb_Password2.Location = new System.Drawing.Point(296, 286);
             this.tb_Password2.Name = "tb_Password2";
+            this.tb_Password2.PasswordChar = '*';
             this.tb_Password2.Size = new System.Drawing.Size(199, 20);
             this.tb_Password2.TabIndex = 29;
             // 
@@ -140,6 +141,7 @@ namespace CourseProject1A
             // 
             this.tb_Password.Location = new System.Drawing.Point(296, 247);
             this.tb_Password.Name = "tb_Password";
+            this.tb_Password.PasswordChar = '*';
             this.tb_Password.Size = new System.Drawing.Size(199, 20);
             this.tb_Password.TabIndex = 28;
             // 
@@ -156,7 +158,7 @@ namespace CourseProject1A
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 488);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.Cancel);

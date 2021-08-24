@@ -12,11 +12,14 @@ namespace CourseProject1A
 {
     public partial class OptionsForm : Form
     {
+        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public OptionsForm()
         {
             InitializeComponent();
-            lbl_Welcome.Text = "Welcome" + " User";
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            lbl_Welcome.Text = "Welcome" + "User";
         }
+
 
         private void btn_stuApp_Click(object sender, EventArgs e)
         {

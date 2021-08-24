@@ -36,7 +36,7 @@ namespace CourseProject1A
                     MessageBox.Show("Incorrect Username or Password");
                 }
                 else
-                {   
+                {    
                     newHome.Show();                    
                     this.Hide();
                 }
