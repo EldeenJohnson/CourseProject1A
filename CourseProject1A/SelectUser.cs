@@ -27,7 +27,7 @@ namespace CourseProject1A
 
         private void submit_bt_Click(object sender, EventArgs e)
         {
-            // var id = (int)gvstaffdata.SelectedRows[0].Cells["ID"].Value;
+             var id = (int).SelectedRows[0].Cells["ID"].Value;
 
             //Query database
                  var Cred  = choice_Christian_AcademyEntities.Creds.FirstOrDefault(q => q.ID == id);
