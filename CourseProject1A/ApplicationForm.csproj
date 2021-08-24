@@ -97,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     <Compile Include="ViewTeachers.Designer.cs">
       <DependentUpon>ViewTeachers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditStaff.resx">
       <DependentUpon>AddEditStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,6 +357,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Britney.jpeg" />
+    <None Include="Resources\Eldeen.jpeg" />
+    <None Include="Resources\Andrea.jpg" />
+    <None Include="Resources\Danielpic1.jpeg" />
+    <None Include="Resources\Mickael1.jpeg" />
+    <None Include="Resources\Choice Contact im.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
