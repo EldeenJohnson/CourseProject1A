@@ -43,6 +43,7 @@ namespace CourseProject1A
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,6 +204,18 @@ namespace CourseProject1A
             this.button3.Text = "Staff Register";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(669, 7);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(91, 23);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Add New User";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +223,7 @@ namespace CourseProject1A
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 521);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -247,5 +261,6 @@ namespace CourseProject1A
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
     }
 }

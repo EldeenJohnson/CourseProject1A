@@ -52,5 +52,12 @@ namespace CourseProject1A
             lbl_Time.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var AddUser = new AddUser();
+            AddUser.MdiParent = this.MdiParent;
+            AddUser.Show();
+        }
     }
 }

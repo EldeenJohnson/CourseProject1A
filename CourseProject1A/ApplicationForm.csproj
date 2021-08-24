@@ -121,6 +121,12 @@
     <Compile Include="AddEditTeacher.Designer.cs">
       <DependentUpon>AddEditTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Choice_Christian_AcademyDataSet.cs" />
     <Compile Include="Class.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditTeacher.resx">
       <DependentUpon>AddEditTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
