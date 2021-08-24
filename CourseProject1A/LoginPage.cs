@@ -18,7 +18,7 @@ namespace CourseProject1A
         {
             InitializeComponent();
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
-
+            
         }
         HomeWindow newHome = new HomeWindow();
         private void btn_login_Click(object sender, EventArgs e)
@@ -30,16 +30,18 @@ namespace CourseProject1A
 
                 var user = choice_Christian_AcademyEntities.Creds.FirstOrDefault(q => q.User == username && q.Pword == password);
 
+                
                 if (user == null)
                 {
                     MessageBox.Show("Incorrect Username or Password");
                 }
                 else
-                {
-                    newHome.Show();
+                {   
+                    newHome.Show();                    
                     this.Hide();
                 }
-            }
+
+            }         
             catch (Exception)
             {
 
