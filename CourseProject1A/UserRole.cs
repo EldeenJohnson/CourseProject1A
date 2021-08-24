@@ -12,14 +12,13 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class Cred
+    public partial class UserRole
     {
         public int ID { get; set; }
-        public string User { get; set; }
-        public string Pword { get; set; }
-        public string Full_name { get; set; }
-        public Nullable<bool> isActive { get; set; }
+        public Nullable<int> UserID { get; set; }
+        public Nullable<int> RoleID { get; set; }
     
-        public virtual UserRole UserRole { get; set; }
+        public virtual Cred Cred { get; set; }
+        public virtual Role Role { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace CourseProject1A
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
             
         }
-        HomeWindow newHome = new HomeWindow();
+        
         private void btn_login_Click(object sender, EventArgs e)
         {
             try
@@ -36,7 +36,10 @@ namespace CourseProject1A
                     MessageBox.Show("Incorrect Username or Password");
                 }
                 else
-                {    
+                {
+                    var role = choice_Christian_AcademyEntities.UserRoles.FirstOrDefault();
+                    var roleshortname = role.Role.Shortname;
+                    var newHome = new HomeWindow(roleshortname);
                     newHome.Show();                    
                     this.Hide();
                 }

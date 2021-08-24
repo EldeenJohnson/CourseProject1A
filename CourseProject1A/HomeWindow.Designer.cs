@@ -38,7 +38,7 @@ namespace CourseProject1A
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.privacyPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Password_bt = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +55,7 @@ namespace CourseProject1A
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TS_Edit,
             this.helpToolStripMenuItem,
-            this.profileToolStripMenuItem,
+            this.Password_bt,
             this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
@@ -63,7 +63,7 @@ namespace CourseProject1A
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(123, 561);
+            this.menuStrip1.Size = new System.Drawing.Size(80, 561);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -141,15 +141,15 @@ namespace CourseProject1A
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.aboutToolStripMenuItem.Text = "About";
             // 
-            // profileToolStripMenuItem
+            // Password_bt
             // 
-            this.profileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Password_bt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changePasswordToolStripMenuItem});
-            this.profileToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profileToolStripMenuItem.ForeColor = System.Drawing.Color.GhostWhite;
-            this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(77, 23);
-            this.profileToolStripMenuItem.Text = "Password";
+            this.Password_bt.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_bt.ForeColor = System.Drawing.Color.GhostWhite;
+            this.Password_bt.Name = "Password_bt";
+            this.Password_bt.Size = new System.Drawing.Size(77, 23);
+            this.Password_bt.Text = "Password";
             // 
             // changePasswordToolStripMenuItem
             // 
@@ -213,7 +213,7 @@ namespace CourseProject1A
         private System.Windows.Forms.ToolStripMenuItem manageStaffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageTeachersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem profileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Password_bt;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
     }
 }

@@ -12,9 +12,18 @@ namespace CourseProject1A
 {
     public partial class HomeWindow : Form
     {
+      //  private Login _login;
+        public string _Rolename;
         public HomeWindow()
         {
             InitializeComponent();
+        }
+        public HomeWindow(string roleshortname)
+        {
+            InitializeComponent();
+        //    _login = login;
+            _Rolename = roleshortname;
+
         }
 
         private void OptionsForm_Load(object sender, EventArgs e)
@@ -22,6 +31,11 @@ namespace CourseProject1A
             OptionsForm newMDIChild = new OptionsForm();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
+
+            if ( _Rolename != "admin")
+            {
+                Password_bt.Enabled = false;
+            }
         }
 
         

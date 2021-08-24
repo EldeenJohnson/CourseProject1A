@@ -12,14 +12,19 @@ namespace CourseProject1A
     using System;
     using System.Collections.Generic;
     
-    public partial class Cred
+    public partial class Role
     {
-        public int ID { get; set; }
-        public string User { get; set; }
-        public string Pword { get; set; }
-        public string Full_name { get; set; }
-        public Nullable<bool> isActive { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            this.UserRoles = new HashSet<UserRole>();
+        }
     
-        public virtual UserRole UserRole { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Shortname { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }
