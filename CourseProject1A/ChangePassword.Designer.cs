@@ -113,6 +113,7 @@ namespace CourseProject1A
             // 
             this.tb_Password.Location = new System.Drawing.Point(284, 200);
             this.tb_Password.Name = "tb_Password";
+            this.tb_Password.PasswordChar = '*';
             this.tb_Password.Size = new System.Drawing.Size(199, 20);
             this.tb_Password.TabIndex = 31;
             // 
@@ -131,6 +132,7 @@ namespace CourseProject1A
             // 
             this.tb_Password2.Location = new System.Drawing.Point(284, 252);
             this.tb_Password2.Name = "tb_Password2";
+            this.tb_Password2.PasswordChar = '*';
             this.tb_Password2.Size = new System.Drawing.Size(199, 20);
             this.tb_Password2.TabIndex = 33;
             // 
@@ -165,6 +167,7 @@ namespace CourseProject1A
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(0, 13);
             this.lblID.TabIndex = 38;
+            this.lblID.Visible = false;
             // 
             // ChangePassword
             // 

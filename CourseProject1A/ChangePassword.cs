@@ -37,21 +37,29 @@ namespace CourseProject1A
         {
             if (isEditMode)
             {
-                try
+                if (tb_Password.Text.Trim() == tb_Password2.Text.Trim())
                 {
-                    var id = int.Parse(lblID.Text);
-                    var ChangePassword = choice_Christian_AcademyEntities.Creds.FirstOrDefault(q => q.ID == id);
-                    ChangePassword.Pword = tb_Password.Text;
+                    try
+                    {
 
-                    //Save Changes
-                    choice_Christian_AcademyEntities.SaveChanges();
-                    MessageBox.Show("Information Edited");
-                    this.Close();
+                        var id = int.Parse(lblID.Text);
+                        var ChangePassword = choice_Christian_AcademyEntities.Creds.FirstOrDefault(q => q.ID == id);
+                        ChangePassword.Pword = tb_Password.Text.Trim();
+
+                        //Save Changes
+                        choice_Christian_AcademyEntities.SaveChanges();
+                        MessageBox.Show("Information Edited");
+                        this.Close();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
                 }
-
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error: {ex.Message}");
+                    MessageBox.Show("Password does not match, please try again");
                 }
             }
         }

@@ -36,7 +36,7 @@ namespace CourseProject1A
                 try
                 {
                     var NewUser = new Cred();
-                    NewUser.User = FullName;
+                    NewUser.User = UserName;
                     NewUser.Pword = Password;
                     NewUser.Full_name = FullName;
                     choice_Christian_AcademyEntities.Creds.Add(NewUser);

@@ -106,7 +106,7 @@ namespace CourseProject1A
             this.gvUserData.Location = new System.Drawing.Point(95, 129);
             this.gvUserData.Name = "gvUserData";
             this.gvUserData.Size = new System.Drawing.Size(353, 154);
-            this.gvUserData.TabIndex = 38;
+            this.gvUserData.TabIndex = 1;
             // 
             // SelectUser
             // 
