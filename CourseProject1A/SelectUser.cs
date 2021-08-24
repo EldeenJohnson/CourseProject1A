@@ -27,14 +27,38 @@ namespace CourseProject1A
 
         private void submit_bt_Click(object sender, EventArgs e)
         {
-             var id = (int).SelectedRows[0].Cells["ID"].Value;
+
+            //Get ID for selected row
+            var id = (int)gvUserData.SelectedRows[0].Cells["ID"].Value;
 
             //Query database
-                 var Cred  = choice_Christian_AcademyEntities.Creds.FirstOrDefault(q => q.ID == id);
+            var Cred  = choice_Christian_AcademyEntities.Creds.FirstOrDefault(q => q.ID == id);
 
             var ChangePassword = new ChangePassword(Cred);
             ChangePassword.MdiParent = this.MdiParent;
             ChangePassword.Show();
         }
+
+        private void SelectUser_Load(object sender, EventArgs e)
+        {
+            PopulateGrid();
+        }
+
+        private void PopulateGrid()
+        {
+            var ChangePassword = choice_Christian_AcademyEntities.Creds
+               .Select(q => new {
+                  ID  = q.ID,
+                  Full_Name = q.Full_name,
+                  Username = q.User,
+                  Password = q.Pword
+               }).ToList();
+            gvUserData.DataSource = ChangePassword;
+            gvUserData.Columns[0].Visible = false;
+            gvUserData.Columns[1].HeaderText = "Full Name";
+            gvUserData.Columns[2].HeaderText = "Username";
+            gvUserData.Columns[3].HeaderText = "********";
+        }
     }
-}
+ }
+

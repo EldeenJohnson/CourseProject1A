@@ -74,6 +74,13 @@ namespace CourseProject1A
             this.Close();
 
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var SelectUser = new SelectUser();
+            SelectUser.MdiParent = this;
+            SelectUser.Show();
+        }
     }
     
 }
