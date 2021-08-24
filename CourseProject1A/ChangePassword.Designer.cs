@@ -166,7 +166,7 @@ namespace CourseProject1A
             this.lblID.Size = new System.Drawing.Size(0, 13);
             this.lblID.TabIndex = 38;
             // 
-            // ChangePassowrd
+            // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,7 +185,7 @@ namespace CourseProject1A
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_UserName);
-            this.Name = "ChangePassowrd";
+            this.Name = "ChangePassword";
             this.Text = "ChangePassowrd";
             this.ResumeLayout(false);
             this.PerformLayout();

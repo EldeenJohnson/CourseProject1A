@@ -19,7 +19,10 @@ namespace CourseProject1A
             InitializeComponent();
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
         }
-
+        private void SelectUser_Load(object sender, EventArgs e)
+        {
+            PopulateGrid();
+        }
         private void Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -27,9 +30,10 @@ namespace CourseProject1A
 
         private void submit_bt_Click(object sender, EventArgs e)
         {
-
-            //Get ID for selected row
-            var id = (int)gvUserData.SelectedRows[0].Cells["ID"].Value;
+            try
+            {
+                //Get ID for selected row
+                var id = (int)gvUserData.SelectedRows[0].Cells["ID"].Value;
 
             //Query database
             var Cred  = choice_Christian_AcademyEntities.Creds.FirstOrDefault(q => q.ID == id);
@@ -37,27 +41,26 @@ namespace CourseProject1A
             var ChangePassword = new ChangePassword(Cred);
             ChangePassword.MdiParent = this.MdiParent;
             ChangePassword.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}" + "\n\nPlease Select the first cell of the rowe");
+            }
         }
-
-        private void SelectUser_Load(object sender, EventArgs e)
-        {
-            PopulateGrid();
-        }
-
         private void PopulateGrid()
         {
             var ChangePassword = choice_Christian_AcademyEntities.Creds
                .Select(q => new {
                   ID  = q.ID,
-                  Full_Name = q.Full_name,
-                  Username = q.User,
-                  Password = q.Pword
+                  User = q.User,
+                  Pword = q.Pword,
+                //  Name = q.Full_name
                }).ToList();
             gvUserData.DataSource = ChangePassword;
             gvUserData.Columns[0].Visible = false;
-            gvUserData.Columns[1].HeaderText = "Full Name";
-            gvUserData.Columns[2].HeaderText = "Username";
-            gvUserData.Columns[3].HeaderText = "********";
+            gvUserData.Columns[1].HeaderText = "Username";
+            gvUserData.Columns[2].HeaderText = "Password";
+          //  gvUserData.Columns[3].HeaderText = "Full Name";
         }
     }
  }

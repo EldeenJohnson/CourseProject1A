@@ -16,15 +16,16 @@ namespace CourseProject1A
         private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public ChangePassword(Cred ChangePassowrd)
         {
-            PopulateFields(ChangePassowrd);
             InitializeComponent();
+            PopulateFields(ChangePassowrd);
+            isEditMode = true;
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
         }
 
-        private void PopulateFields(Cred changePassowrd)
+        private void PopulateFields(Cred UserData)
         {
-            lblID.Text = changePassowrd.ID.ToString();
-            tb_UserName.Text = changePassowrd.User;
+            lblID.Text = UserData.ID.ToString();
+            tb_UserName.Text = UserData.User;
         }
 
         private void Cancel_Click(object sender, EventArgs e)

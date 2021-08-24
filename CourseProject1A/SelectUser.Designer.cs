@@ -79,7 +79,7 @@ namespace CourseProject1A
             // 
             this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Cancel.ForeColor = System.Drawing.Color.White;
-            this.Cancel.Location = new System.Drawing.Point(278, 320);
+            this.Cancel.Location = new System.Drawing.Point(302, 320);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(109, 38);
             this.Cancel.TabIndex = 25;
@@ -99,8 +99,11 @@ namespace CourseProject1A
             // 
             // gvUserData
             // 
+            this.gvUserData.BackgroundColor = System.Drawing.Color.Khaki;
+            this.gvUserData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gvUserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvUserData.Location = new System.Drawing.Point(85, 129);
+            this.gvUserData.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.gvUserData.Location = new System.Drawing.Point(95, 129);
             this.gvUserData.Name = "gvUserData";
             this.gvUserData.Size = new System.Drawing.Size(353, 154);
             this.gvUserData.TabIndex = 38;
