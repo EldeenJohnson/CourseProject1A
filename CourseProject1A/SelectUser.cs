@@ -54,13 +54,13 @@ namespace CourseProject1A
                   ID  = q.ID,
                   User = q.User,
                   Pword = q.Pword,
-                //  Name = q.Full_name
+                 Name = q.Full_name
                }).ToList();
             gvUserData.DataSource = ChangePassword;
             gvUserData.Columns[0].Visible = false;
             gvUserData.Columns[1].HeaderText = "Username";
             gvUserData.Columns[2].HeaderText = "Password";
-          //  gvUserData.Columns[3].HeaderText = "Full Name";
+            gvUserData.Columns[3].HeaderText = "Full Name";
         }
     }
  }

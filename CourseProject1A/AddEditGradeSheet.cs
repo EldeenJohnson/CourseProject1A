@@ -140,7 +140,7 @@ namespace CourseProject1A
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-           // tableLayoutPanel1.Enabled = false;
+            // tableLayoutPanel1.Enabled = false;
 
             var id = (int)dgv_Stu.SelectedRows[0].Cells["ID"].Value;
             var Student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
@@ -154,18 +154,17 @@ namespace CourseProject1A
             int[] subID = { 1, 2, 3, 4, 5, 7, 9, 11, 12 };
             String[] Comm = { rtb_Com1.Text, rtb_Com2.Text, rtb_Com3.Text, rtb_Com4.Text, rtb_Com5.Text, rtb_Com6.Text,
                              rtb_Com7.Text,rtb_Com8.Text,rtb_Com9.Text};
-           /* int[] Semester = { (int)cb_1.SelectedValue, (int)cb_2.SelectedValue, (int)cb_3.SelectedValue, 
-                                (int)cb_4.SelectedValue, (int)cb_5.SelectedValue, (int)cb_6.SelectedValue, 
-                                (int)cb_7.SelectedValue, (int)cb_8.SelectedValue, (int)cb_9.SelectedValue, };*/
+            String[] Semester = {cb_1.Text, cb_2.Text, cb_3.Text,cb_4.Text, cb_5.Text, cb_6.Text, cb_7.Text,
+                                        cb_8.Text, cb_9.Text};
 
             
-            for (int i = 0; i < subID.Length; i++)
+                for (int i = 0; i < subID.Length; i++)
             {
                     dp_grade.Value = (DateTime)TestScore.EntryDate;
                     sub[i] = Convert.ToString(TestScore.Score);
-                    /*  Semester[i] = (int)TestScore.Semester;*/
-                    Comm[i] = TestScore.Comment;             
-                            
+                    Semester[i] = TestScore.Semester;
+                    Comm[i] = TestScore.Comment;
+                    
             }
 
         }
