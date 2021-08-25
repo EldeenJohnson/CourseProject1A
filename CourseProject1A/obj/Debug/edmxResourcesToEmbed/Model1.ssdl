@@ -90,6 +90,14 @@
     <Property Name="Date_of_Enrollment" Type="datetime" Nullable="false" />
     <Property Name="Student_ID" Type="int" />
   </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Shortname" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Staff">
     <Key>
       <PropertyRef Name="ID" />
@@ -179,6 +187,14 @@
     <Property Name="Semester" Type="int" />
     <Property Name="Comment" Type="nvarchar" MaxLength="300" />
     <Property Name="EntryDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="RoleID" Type="int" />
   </EntityType>
   <Association Name="FK_Emergency_contact_Staff">
     <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
@@ -372,6 +388,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserRoles_Creds">
+    <End Role="Creds" Type="Self.Creds" Multiplicity="1" />
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Creds">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Choice_Christian_AcademyModelStoreContainer">
     <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Creds" EntityType="Self.Creds" Schema="dbo" store:Type="Tables" />
@@ -383,12 +423,14 @@
     <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Parent" EntityType="Self.Parent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Student_detail" EntityType="Self.Student_detail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Subject_Table" EntityType="Self.Subject_Table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Test_Result" EntityType="Self.Test_Result" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Emergency_contact_Staff" Association="Self.FK_Emergency_contact_Staff">
       <End Role="Staff" EntitySet="Staff" />
       <End Role="Emergency_contact" EntitySet="Emergency_contact" />
@@ -452,6 +494,14 @@
     <AssociationSet Name="FK_Test_Result_Teacher" Association="Self.FK_Test_Result_Teacher">
       <End Role="Teacher" EntitySet="Teacher" />
       <End Role="Test_Result" EntitySet="Test_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Creds" Association="Self.FK_UserRoles_Creds">
+      <End Role="Creds" EntitySet="Creds" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

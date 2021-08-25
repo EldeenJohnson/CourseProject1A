@@ -106,7 +106,6 @@ C:\Users\andre\Source\Repos\CourseProject1A\CourseProject1A\obj\Debug\Applicatio
 C:\Users\andre\Source\Repos\CourseProject1A\CourseProject1A\obj\Debug\ApplicationForm.csproj.CopyComplete
 C:\Users\andre\Source\Repos\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.exe
 C:\Users\andre\Source\Repos\CourseProject1A\CourseProject1A\obj\Debug\CourseProject1A.pdb
-C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\ApplicationForm.csproj.AssemblyReference.cache
 C:\Users\ONENESS APOSTOLIC\source\repos\CourseProject1A\.vs\CourseProject1A\bin\Debug\CourseProject1A.exe.config
 C:\Users\ONENESS APOSTOLIC\source\repos\CourseProject1A\.vs\CourseProject1A\bin\Debug\CourseProject1A.exe
 C:\Users\ONENESS APOSTOLIC\source\repos\CourseProject1A\.vs\CourseProject1A\bin\Debug\CourseProject1A.pdb
@@ -163,3 +162,10 @@ C:\Users\ONENESS APOSTOLIC\source\repos\new\CourseProject1A\obj\Debug\CourseProj
 C:\Users\ONENESS APOSTOLIC\source\repos\new\CourseProject1A\obj\Debug\CourseProject1A.pdb
 C:\Users\ONENESS APOSTOLIC\source\repos\new\CourseProject1A\obj\Debug\CourseProject1A.ChangePassword.resources
 C:\Users\ONENESS APOSTOLIC\source\repos\new\CourseProject1A\obj\Debug\CourseProject1A.SelectUser.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.AboutUs.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.AddUser.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.ChangePassword.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.AddEditGradeSheet.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.SelectUser.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.ViewStudentGradesheet.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\ApplicationForm.csproj.AssemblyReference.cache

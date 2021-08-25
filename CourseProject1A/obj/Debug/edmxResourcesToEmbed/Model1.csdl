@@ -81,6 +81,16 @@
       <End Role="Test_Result" EntitySet="Test_Result" />
     </AssociationSet>
     <EntitySet Name="Creds" EntityType="Choice_Christian_AcademyModel.Cred" />
+    <EntitySet Name="Roles" EntityType="Choice_Christian_AcademyModel.Role" />
+    <EntitySet Name="UserRoles" EntityType="Choice_Christian_AcademyModel.UserRole" />
+    <AssociationSet Name="FK_UserRoles_Creds" Association="Choice_Christian_AcademyModel.FK_UserRoles_Creds">
+      <End Role="Cred" EntitySet="Creds" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Roles" Association="Choice_Christian_AcademyModel.FK_UserRoles_Roles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Class">
     <Key>
@@ -485,5 +495,49 @@
     <Property Name="Pword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="Full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="UserRole" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds" FromRole="Cred" ToRole="UserRole" />
   </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Shortname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserRoles" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Roles" FromRole="Role" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="RoleID" Type="Int32" />
+    <NavigationProperty Name="Cred" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds" FromRole="UserRole" ToRole="Cred" />
+    <NavigationProperty Name="Role" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Roles" FromRole="UserRole" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK_UserRoles_Creds">
+    <End Type="Choice_Christian_AcademyModel.Cred" Role="Cred" Multiplicity="1" />
+    <End Type="Choice_Christian_AcademyModel.UserRole" Role="UserRole" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Cred">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Roles">
+    <End Type="Choice_Christian_AcademyModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="Choice_Christian_AcademyModel.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
