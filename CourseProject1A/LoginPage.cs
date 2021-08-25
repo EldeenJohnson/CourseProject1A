@@ -13,11 +13,11 @@ namespace CourseProject1A
 {
     public partial class LoginPage : Form
     {
-        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities3 choice_Christian_AcademyEntities;
         public LoginPage()
         {
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
             
         }
         
@@ -40,8 +40,7 @@ namespace CourseProject1A
 
                     var role = user.UserRoles.FirstOrDefault();
                     var roleshortname = role.Role.Shortname;
-                    var name = user.Full_name.FirstOrDefault();
-;                    var newHome = new HomeWindow(this,roleshortname, name);
+;                   var newHome = new HomeWindow(this,roleshortname);
                     newHome.Show();                    
                     Hide();
 

@@ -13,10 +13,10 @@ namespace CourseProject1A
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Choice_Christian_AcademyEntities2 : DbContext
+    public partial class Choice_Christian_AcademyEntities3 : DbContext
     {
-        public Choice_Christian_AcademyEntities2()
-            : base("name=Choice_Christian_AcademyEntities2")
+        public Choice_Christian_AcademyEntities3()
+            : base("name=Choice_Christian_AcademyEntities3")
         {
         }
     

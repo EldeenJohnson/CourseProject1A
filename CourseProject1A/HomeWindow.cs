@@ -14,18 +14,16 @@ namespace CourseProject1A
     {
         private LoginPage _login;
         public string _Rolename;
-        public char _name;
+        
         public HomeWindow()
         {
             InitializeComponent();
         }
-        public HomeWindow(LoginPage login, string roleshortname, char name)
+        public HomeWindow(LoginPage login, string roleshortname)
         {
             InitializeComponent();
             _login = login;
             _Rolename = roleshortname;
-            _name = name; 
-
         }
 
         private void OptionsForm_Load(object sender, EventArgs e)
@@ -37,7 +35,7 @@ namespace CourseProject1A
             if ( _Rolename != "admin")
             {
                 Password_bt.Enabled = false;
-                lbl_Welcome.Text = _name.ToString();
+                
             }
         }
 
