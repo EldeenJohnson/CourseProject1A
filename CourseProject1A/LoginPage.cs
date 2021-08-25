@@ -37,6 +37,7 @@ namespace CourseProject1A
                 }
                 else
                 {
+
                     var role = choice_Christian_AcademyEntities.UserRoles.FirstOrDefault();
                     var roleshortname = role.Role.Shortname;
                     var newHome = new HomeWindow(roleshortname);
