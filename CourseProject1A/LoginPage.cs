@@ -23,8 +23,8 @@ namespace CourseProject1A
         
         private void btn_login_Click(object sender, EventArgs e)
         {
-          //  try
-           // {
+            try
+            {
                 var username = tb_username.Text.Trim();
                 var password = tb_Password.Text;
 
@@ -37,19 +37,20 @@ namespace CourseProject1A
                 }
                 else
                 {
-                    var role = choice_Christian_AcademyEntities.UserRole.FirstOrDefault();
+
+                    var role = choice_Christian_AcademyEntities.UserRoles.FirstOrDefault();
                     var roleshortname = role.Role.Shortname;
                     var newHome = new HomeWindow(roleshortname);
                     newHome.Show();                    
                     this.Hide();
                 }
 
-         /*  }         
+            }         
             catch (Exception)
             {
 
                 MessageBox.Show("Something went wrong. Please try again");
-            }*/
+            }
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
