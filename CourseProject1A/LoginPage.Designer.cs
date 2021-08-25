@@ -105,6 +105,7 @@ namespace CourseProject1A
             this.label4.Size = new System.Drawing.Size(107, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "Forgot password?";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btn_login
             // 

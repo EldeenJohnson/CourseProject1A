@@ -25,6 +25,7 @@ namespace CourseProject1A
         {
             try
             {
+                //Stores Username and Password
                 var username = tb_username.Text.Trim();
                 var password = tb_Password.Text;
 
@@ -57,6 +58,11 @@ namespace CourseProject1A
         private void LoginPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please contact your administrator");
         }
     }
 }
