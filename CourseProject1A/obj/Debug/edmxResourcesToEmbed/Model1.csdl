@@ -18,7 +18,6 @@
     <EntitySet Name="sysdiagrams" EntityType="Choice_Christian_AcademyModel.sysdiagram" />
     <EntitySet Name="Teachers" EntityType="Choice_Christian_AcademyModel.Teacher" />
     <EntitySet Name="Test_Result" EntityType="Choice_Christian_AcademyModel.Test_Result" />
-    <EntitySet Name="UserRoles" EntityType="Choice_Christian_AcademyModel.UserRole" />
     <AssociationSet Name="FK_Student_detail_Class" Association="Choice_Christian_AcademyModel.FK_Student_detail_Class">
       <End Role="Class" EntitySet="Classes" />
       <End Role="Student_detail" EntitySet="Student_detail" />
@@ -70,10 +69,6 @@
     <AssociationSet Name="FK_Registration_Student_detail" Association="Choice_Christian_AcademyModel.FK_Registration_Student_detail">
       <End Role="Student_detail" EntitySet="Student_detail" />
       <End Role="Registration" EntitySet="Registrations" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserRoles_Roles1" Association="Choice_Christian_AcademyModel.FK_UserRoles_Roles1">
-      <End Role="Role" EntitySet="Roles" />
-      <End Role="UserRole" EntitySet="UserRoles" />
     </AssociationSet>
     <AssociationSet Name="FK_Student_detail_Test_Result" Association="Choice_Christian_AcademyModel.FK_Student_detail_Test_Result">
       <End Role="Test_Result" EntitySet="Test_Result" />
@@ -306,23 +301,13 @@
     <Property Name="Subject_ID" Type="Int32" />
     <Property Name="Teacher_ID" Type="Int32" />
     <Property Name="Score" Type="Double" />
-    <Property Name="Semester" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Semester" Type="Int32" />
     <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="EntryDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Student_detail" Relationship="Choice_Christian_AcademyModel.FK_Student_detail_Test_Result" FromRole="Test_Result" ToRole="Student_detail" />
     <NavigationProperty Name="Student_detail1" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student_detail" FromRole="Test_Result" ToRole="Student_detail" />
     <NavigationProperty Name="Subject_Table" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" FromRole="Test_Result" ToRole="Subject_Table" />
     <NavigationProperty Name="Teacher" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Test_Result" ToRole="Teacher" />
-  </EntityType>
-  <EntityType Name="UserRole">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserID" Type="Int32" />
-    <Property Name="RoleID" Type="Int32" />
-    <NavigationProperty Name="Cred" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds1" FromRole="UserRole" ToRole="Cred" />
-    <NavigationProperty Name="Role" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Roles1" FromRole="UserRole" ToRole="Role" />
   </EntityType>
   <Association Name="FK_Student_detail_Class">
     <End Type="Choice_Christian_AcademyModel.Class" Role="Class" Multiplicity="0..1" />
@@ -477,18 +462,6 @@
       </Principal>
       <Dependent Role="Registration">
         <PropertyRef Name="Student_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserRoles_Roles1">
-    <End Type="Choice_Christian_AcademyModel.Role" Role="Role" Multiplicity="0..1" />
-    <End Type="Choice_Christian_AcademyModel.UserRole" Role="UserRole" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Role">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="UserRole">
-        <PropertyRef Name="RoleID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

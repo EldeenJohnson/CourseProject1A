@@ -666,7 +666,6 @@ namespace CourseProject1A
             // 
             this.cb_1.FormattingEnabled = true;
             this.cb_1.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
@@ -679,7 +678,6 @@ namespace CourseProject1A
             // 
             this.cb_2.FormattingEnabled = true;
             this.cb_2.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
@@ -692,7 +690,6 @@ namespace CourseProject1A
             // 
             this.cb_3.FormattingEnabled = true;
             this.cb_3.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
@@ -705,7 +702,6 @@ namespace CourseProject1A
             // 
             this.cb_4.FormattingEnabled = true;
             this.cb_4.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
@@ -718,7 +714,6 @@ namespace CourseProject1A
             // 
             this.cb_5.FormattingEnabled = true;
             this.cb_5.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
@@ -731,7 +726,6 @@ namespace CourseProject1A
             // 
             this.cb_6.FormattingEnabled = true;
             this.cb_6.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
@@ -744,7 +738,6 @@ namespace CourseProject1A
             // 
             this.cb_7.FormattingEnabled = true;
             this.cb_7.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
@@ -757,7 +750,6 @@ namespace CourseProject1A
             // 
             this.cb_8.FormattingEnabled = true;
             this.cb_8.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
@@ -770,7 +762,6 @@ namespace CourseProject1A
             // 
             this.cb_9.FormattingEnabled = true;
             this.cb_9.Items.AddRange(new object[] {
-            "",
             "1",
             "2",
             "3"});
