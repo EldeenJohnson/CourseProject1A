@@ -25,9 +25,9 @@ namespace CourseProject1A
         public Nullable<int> Subject_ID { get; set; }
         public Nullable<int> Teacher_ID { get; set; }
         public Nullable<double> Score { get; set; }
-        public Nullable<int> Semester { get; set; }
         public string Comment { get; set; }
         public Nullable<System.DateTime> EntryDate { get; set; }
+        public Nullable<int> Semester { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student_detail> Student_detail { get; set; }

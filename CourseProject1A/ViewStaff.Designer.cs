@@ -48,6 +48,7 @@
             this.gvstaffdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvstaffdata.Location = new System.Drawing.Point(62, 80);
             this.gvstaffdata.Name = "gvstaffdata";
+            this.gvstaffdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvstaffdata.Size = new System.Drawing.Size(690, 221);
             this.gvstaffdata.TabIndex = 1;
             // 
