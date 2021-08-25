@@ -40,10 +40,10 @@ namespace CourseProject1A
             this.lbl_Time = new System.Windows.Forms.Label();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.SubmitGrade = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.tb_ViewResults = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,17 +171,16 @@ namespace CourseProject1A
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // SubmitGrade
+            // button1
             // 
-            this.SubmitGrade.BackColor = System.Drawing.Color.DodgerBlue;
-            this.SubmitGrade.ForeColor = System.Drawing.Color.GhostWhite;
-            this.SubmitGrade.Location = new System.Drawing.Point(89, 425);
-            this.SubmitGrade.Name = "SubmitGrade";
-            this.SubmitGrade.Size = new System.Drawing.Size(182, 40);
-            this.SubmitGrade.TabIndex = 16;
-            this.SubmitGrade.Text = "Submit Test Results";
-            this.SubmitGrade.UseVisualStyleBackColor = false;
-            this.SubmitGrade.Click += new System.EventHandler(this.SubmitGrade_Click);
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.button1.Location = new System.Drawing.Point(89, 425);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(182, 40);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Submit Grades";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -205,17 +204,17 @@ namespace CourseProject1A
             this.button3.Text = "Staff Register";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // tb_ViewResults
+            // button5
             // 
-            this.tb_ViewResults.BackColor = System.Drawing.Color.SteelBlue;
-            this.tb_ViewResults.ForeColor = System.Drawing.Color.White;
-            this.tb_ViewResults.Location = new System.Drawing.Point(89, 471);
-            this.tb_ViewResults.Name = "tb_ViewResults";
-            this.tb_ViewResults.Size = new System.Drawing.Size(182, 40);
-            this.tb_ViewResults.TabIndex = 17;
-            this.tb_ViewResults.Text = "View/Edit Results";
-            this.tb_ViewResults.UseVisualStyleBackColor = false;
-            this.tb_ViewResults.Click += new System.EventHandler(this.tb_ViewResults_Click);
+            this.button5.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(669, 7);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(91, 23);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Add New User";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // OptionsForm
             // 
@@ -223,11 +222,11 @@ namespace CourseProject1A
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(864, 548);
-            this.Controls.Add(this.tb_ViewResults);
+            this.ClientSize = new System.Drawing.Size(864, 521);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.SubmitGrade);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_Date);
             this.Controls.Add(this.lbl_Time);
             this.Controls.Add(this.lbl_Welcome);
@@ -259,9 +258,9 @@ namespace CourseProject1A
         private System.Windows.Forms.Label lbl_Time;
         private System.Windows.Forms.Label lbl_Date;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button SubmitGrade;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button tb_ViewResults;
+        private System.Windows.Forms.Button button5;
     }
 }

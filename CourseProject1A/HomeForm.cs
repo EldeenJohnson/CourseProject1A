@@ -12,11 +12,14 @@ namespace CourseProject1A
 {
     public partial class OptionsForm : Form
     {
+        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public OptionsForm()
         {
             InitializeComponent();
-            lbl_Welcome.Text = "Welcome" + " User";
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            lbl_Welcome.Text = "Welcome" + "User";
         }
+
 
         private void btn_stuApp_Click(object sender, EventArgs e)
         {
@@ -53,19 +56,11 @@ namespace CourseProject1A
             timer1.Start();
         }
 
-        private void SubmitGrade_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            var AddGrades = new AddEditGradeSheet();
-            AddGrades.MdiParent = this.MdiParent;
-            AddGrades.Show();
-
-        }
-
-        private void tb_ViewResults_Click(object sender, EventArgs e)
-        {
-            var AddGrades = new AddEditGradeSheet();
-            AddGrades.MdiParent = this.MdiParent;
-            AddGrades.Show();
+            var AddUser = new AddUser();
+            AddUser.MdiParent = this.MdiParent;
+            AddUser.Show();
         }
     }
 }
