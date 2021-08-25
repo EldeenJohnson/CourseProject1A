@@ -12,14 +12,29 @@ namespace CourseProject1A
 {
     public partial class ViewStudentGradesheet : Form
     {
-        public ViewStudentGradesheet()
+        private readonly Choice_Christian_AcademyEntities3 choice_Christian_AcademyEntities;
+        public ViewStudentGradesheet(Test_Result TestScore, Student_detail Student)
         {
             InitializeComponent();
+            PopulateGrid(TestScore, Student);
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void PopulateGrid(Test_Result TestScore, Student_detail Student)
         {
-
-        }
+            var Stu= choice_Christian_AcademyEntities.Test_Result
+                .Where(q => q.Student_ID == 1)
+                          .Select(q => new
+                          {
+                              ID = q.Student_ID,
+                              Semester = q.Semester,
+                              Score = q.Score,
+                          }).ToList();
+            dgv_Stu.DataSource = Stu;
+            dgv_Stu.Columns[0].Visible = false;
+            dgv_Stu.Columns[1].HeaderText = "Semester";
+            dgv_Stu.Columns[2].HeaderText = "Score";
+        }   
+      
     }
 }

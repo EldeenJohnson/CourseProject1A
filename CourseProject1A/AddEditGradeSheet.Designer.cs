@@ -98,6 +98,7 @@ namespace CourseProject1A
             this.dp_grade = new System.Windows.Forms.DateTimePicker();
             this.lbl_Teacher = new System.Windows.Forms.Label();
             this.btn_edit = new System.Windows.Forms.Button();
+            this.lbl_Student = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Stu)).BeginInit();
             this.SuspendLayout();
@@ -815,7 +816,7 @@ namespace CourseProject1A
             this.btn_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_Refresh.Font = new System.Drawing.Font("Comic Sans MS", 8.25F);
             this.btn_Refresh.ForeColor = System.Drawing.SystemColors.Window;
-            this.btn_Refresh.Location = new System.Drawing.Point(281, 153);
+            this.btn_Refresh.Location = new System.Drawing.Point(281, 438);
             this.btn_Refresh.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(68, 27);
@@ -898,13 +899,25 @@ namespace CourseProject1A
             // 
             this.btn_edit.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_edit.ForeColor = System.Drawing.Color.White;
-            this.btn_edit.Location = new System.Drawing.Point(281, 124);
+            this.btn_edit.Location = new System.Drawing.Point(272, 153);
             this.btn_edit.Name = "btn_edit";
-            this.btn_edit.Size = new System.Drawing.Size(68, 27);
+            this.btn_edit.Size = new System.Drawing.Size(77, 27);
             this.btn_edit.TabIndex = 33;
-            this.btn_edit.Text = "Edit";
+            this.btn_edit.Text = "View Grades";
             this.btn_edit.UseVisualStyleBackColor = false;
             this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
+            // 
+            // lbl_Student
+            // 
+            this.lbl_Student.AutoSize = true;
+            this.lbl_Student.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Student.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Student.ForeColor = System.Drawing.Color.White;
+            this.lbl_Student.Location = new System.Drawing.Point(39, 463);
+            this.lbl_Student.Name = "lbl_Student";
+            this.lbl_Student.Size = new System.Drawing.Size(52, 15);
+            this.lbl_Student.TabIndex = 32;
+            this.lbl_Student.Text = "Student:";
             // 
             // AddEditGradeSheet
             // 
@@ -914,6 +927,7 @@ namespace CourseProject1A
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(924, 521);
             this.Controls.Add(this.btn_edit);
+            this.Controls.Add(this.lbl_Student);
             this.Controls.Add(this.lbl_Teacher);
             this.Controls.Add(this.dp_grade);
             this.Controls.Add(this.cb_ClassS);
@@ -1011,5 +1025,6 @@ namespace CourseProject1A
         private System.Windows.Forms.ComboBox cb_7;
         private System.Windows.Forms.ComboBox cb_8;
         private System.Windows.Forms.ComboBox cb_9;
+        private System.Windows.Forms.Label lbl_Student;
     }
 }
