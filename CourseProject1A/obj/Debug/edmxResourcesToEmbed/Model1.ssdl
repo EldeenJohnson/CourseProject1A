@@ -184,7 +184,7 @@
     <Property Name="Subject_ID" Type="int" />
     <Property Name="Teacher_ID" Type="int" />
     <Property Name="Score" Type="float" />
-    <Property Name="Semester" Type="int" />
+    <Property Name="Semester" Type="nvarchar" MaxLength="5" />
     <Property Name="Comment" Type="nvarchar" MaxLength="300" />
     <Property Name="EntryDate" Type="datetime" />
   </EntityType>

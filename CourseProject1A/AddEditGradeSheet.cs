@@ -81,15 +81,18 @@ namespace CourseProject1A
 
         private void Submit_Click(object sender, EventArgs e)
         {
-            try
-            {
+           /* try
+            {*/
                 var id = (int)dgv_Stu.SelectedRows[0].Cells["ID"].Value;            
                 
                 string[] sub ={tb_Math.Text,tb_English.Text,tb_Sci.Text,tb_Soci.Text,tb_Music.Text,tb_English.Text,
                            tb_Art.Text,tb_Read.Text,tb_Phonics.Text};
                 int[] subID = { 1, 2, 3, 4, 5, 7, 9, 11, 12 };
+
                 String[] Comm = { rtb_Com1.Text, rtb_Com2.Text, rtb_Com3.Text, rtb_Com4.Text, rtb_Com5.Text, rtb_Com6.Text,
                                 rtb_Com7.Text,rtb_Com8.Text,rtb_Com9.Text};
+                String[] Semester = {cb_1.Text, cb_2.Text, cb_3.Text,cb_4.Text, cb_5.Text, cb_6.Text, cb_7.Text,
+                                        cb_8.Text, cb_9.Text};
 
 
                 for (int i = 0; i < subID.Length; i++)
@@ -100,23 +103,24 @@ namespace CourseProject1A
                         Score = Convert.ToDouble(sub[i]),
                         Subject_ID = subID[i],
                         Comment = Comm[i],
+                        Semester = Semester[i],
                         Student_ID = id
                     };
-                    choice_Christian_AcademyEntities.Test_Result.Add(newGrades);
-                    
+                    choice_Christian_AcademyEntities.Test_Result.Add(newGrades);                   
                 }
 
                 choice_Christian_AcademyEntities.SaveChanges();
                 MessageBox.Show("Submited");
                 this.Close();
+
                 var AddEditGradeSheet = new AddEditGradeSheet();
                 AddEditGradeSheet.MdiParent = this.MdiParent;
                 AddEditGradeSheet.Show();
-            }
+          /*  }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
-            }
+            }*/
 
         }
 

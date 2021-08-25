@@ -189,7 +189,7 @@
           <Property Name="Subject_ID" Type="int" />
           <Property Name="Teacher_ID" Type="int" />
           <Property Name="Score" Type="float" />
-          <Property Name="Semester" Type="int" />
+          <Property Name="Semester" Type="nvarchar" MaxLength="5" />
           <Property Name="Comment" Type="nvarchar" MaxLength="300" />
           <Property Name="EntryDate" Type="datetime" />
         </EntityType>
@@ -535,7 +535,6 @@
           <EntitySet Name="Subject_Table" EntityType="Choice_Christian_AcademyModel.Subject_Table" />
           <EntitySet Name="sysdiagrams" EntityType="Choice_Christian_AcademyModel.sysdiagram" />
           <EntitySet Name="Teachers" EntityType="Choice_Christian_AcademyModel.Teacher" />
-          <EntitySet Name="Test_Result" EntityType="Choice_Christian_AcademyModel.Test_Result" />
           <AssociationSet Name="FK_Student_detail_Class" Association="Choice_Christian_AcademyModel.FK_Student_detail_Class">
             <End Role="Class" EntitySet="Classes" />
             <End Role="Student_detail" EntitySet="Student_detail" />
@@ -588,6 +587,7 @@
             <End Role="Student_detail" EntitySet="Student_detail" />
             <End Role="Registration" EntitySet="Registrations" />
           </AssociationSet>
+          <EntitySet Name="Test_Result" EntityType="Choice_Christian_AcademyModel.Test_Result" />
           <AssociationSet Name="FK_Student_detail_Test_Result" Association="Choice_Christian_AcademyModel.FK_Student_detail_Test_Result">
             <End Role="Test_Result" EntitySet="Test_Result" />
             <End Role="Student_detail" EntitySet="Student_detail" />
@@ -790,7 +790,7 @@
           <NavigationProperty Name="Registrations" Relationship="Choice_Christian_AcademyModel.FK_Registration_Student_detail" FromRole="Student_detail" ToRole="Registration" />
           <NavigationProperty Name="Test_Result" Relationship="Choice_Christian_AcademyModel.FK_Student_detail_Test_Result" FromRole="Student_detail" ToRole="Test_Result" />
           <NavigationProperty Name="Test_Result1" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student_detail" FromRole="Student_detail" ToRole="Test_Result" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="Subject_Table">
           <Key>
             <PropertyRef Name="ID" />
@@ -831,23 +831,6 @@
           <NavigationProperty Name="Faculty" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Faculty" FromRole="Teacher" ToRole="Faculty" />
           <NavigationProperty Name="Grade" Relationship="Choice_Christian_AcademyModel.FK_Teacher_Grade" FromRole="Teacher" ToRole="Grade" />
           <NavigationProperty Name="Test_Result" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Teacher" ToRole="Test_Result" />
-        </EntityType>
-        <EntityType Name="Test_Result">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Student_ID" Type="Int32" />
-          <Property Name="Subject_ID" Type="Int32" />
-          <Property Name="Teacher_ID" Type="Int32" />
-          <Property Name="Score" Type="Double" />
-          <Property Name="Semester" Type="Int32" />
-          <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="EntryDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Student_detail" Relationship="Choice_Christian_AcademyModel.FK_Student_detail_Test_Result" FromRole="Test_Result" ToRole="Student_detail" />
-          <NavigationProperty Name="Student_detail1" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student_detail" FromRole="Test_Result" ToRole="Student_detail" />
-          <NavigationProperty Name="Subject_Table" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" FromRole="Test_Result" ToRole="Subject_Table" />
-          <NavigationProperty Name="Teacher" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Test_Result" ToRole="Teacher" />
         </EntityType>
         <Association Name="FK_Student_detail_Class">
           <End Type="Choice_Christian_AcademyModel.Class" Role="Class" Multiplicity="0..1" />
@@ -1005,6 +988,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Test_Result">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Student_ID" Type="Int32" />
+          <Property Name="Subject_ID" Type="Int32" />
+          <Property Name="Teacher_ID" Type="Int32" />
+          <Property Name="Score" Type="Double" />
+          <Property Name="Semester" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Student_detail" Relationship="Choice_Christian_AcademyModel.FK_Student_detail_Test_Result" FromRole="Test_Result" ToRole="Student_detail" />
+          <NavigationProperty Name="Student_detail1" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student_detail" FromRole="Test_Result" ToRole="Student_detail" />
+          <NavigationProperty Name="Subject_Table" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" FromRole="Test_Result" ToRole="Subject_Table" />
+          <NavigationProperty Name="Teacher" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Test_Result" ToRole="Teacher" />
+        </EntityType>
         <Association Name="FK_Student_detail_Test_Result">
           <End Type="Choice_Christian_AcademyModel.Test_Result" Role="Test_Result" Multiplicity="0..1" />
           <End Type="Choice_Christian_AcademyModel.Student_detail" Role="Student_detail" Multiplicity="*" />
