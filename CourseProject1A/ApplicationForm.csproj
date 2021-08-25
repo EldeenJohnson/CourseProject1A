@@ -380,6 +380,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Britney.jpeg" />
+    <None Include="Resources\Eldeen.jpeg" />
+    <None Include="Resources\Andrea.jpg" />
+    <None Include="Resources\Danielpic1.jpeg" />
+    <None Include="Resources\Mickael1.jpeg" />
+    <None Include="Resources\Choice Contact im.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -390,12 +398,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\Britney.jpeg" />
-    <None Include="Resources\Eldeen.jpeg" />
-    <None Include="Resources\Andrea.jpg" />
-    <None Include="Resources\Danielpic1.jpeg" />
-    <None Include="Resources\Mickael1.jpeg" />
-    <None Include="Resources\Choice Contact im.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

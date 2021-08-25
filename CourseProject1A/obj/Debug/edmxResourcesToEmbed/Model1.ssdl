@@ -388,19 +388,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserRoles_Creds">
-    <End Role="Creds" Type="Self.Creds" Multiplicity="1" />
-    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="0..1" />
+  <Association Name="FK_UserRoles_Creds1">
+    <End Role="Creds" Type="Self.Creds" Multiplicity="0..1" />
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Creds">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="UserRoles">
-        <PropertyRef Name="ID" />
+        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserRoles_Roles">
+  <Association Name="FK_UserRoles_Roles1">
     <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
     <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
     <ReferentialConstraint>
@@ -495,11 +495,11 @@
       <End Role="Teacher" EntitySet="Teacher" />
       <End Role="Test_Result" EntitySet="Test_Result" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserRoles_Creds" Association="Self.FK_UserRoles_Creds">
+    <AssociationSet Name="FK_UserRoles_Creds1" Association="Self.FK_UserRoles_Creds1">
       <End Role="Creds" EntitySet="Creds" />
       <End Role="UserRoles" EntitySet="UserRoles" />
     </AssociationSet>
-    <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+    <AssociationSet Name="FK_UserRoles_Roles1" Association="Self.FK_UserRoles_Roles1">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="UserRoles" EntitySet="UserRoles" />
     </AssociationSet>

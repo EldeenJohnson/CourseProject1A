@@ -29,6 +29,7 @@ namespace CourseProject1A
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_Title = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.submit_bt = new System.Windows.Forms.Button();
@@ -56,7 +57,7 @@ namespace CourseProject1A
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(144, 87);
+            this.label2.Location = new System.Drawing.Point(152, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(239, 16);
             this.label2.TabIndex = 23;
@@ -99,13 +100,13 @@ namespace CourseProject1A
             // 
             // gvUserData
             // 
-            this.gvUserData.BackgroundColor = System.Drawing.Color.Khaki;
-            this.gvUserData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Adobe Devanagari", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.gvUserData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gvUserData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvUserData.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.gvUserData.Location = new System.Drawing.Point(95, 129);
+            this.gvUserData.Location = new System.Drawing.Point(146, 133);
             this.gvUserData.Name = "gvUserData";
-            this.gvUserData.Size = new System.Drawing.Size(353, 154);
+            this.gvUserData.Size = new System.Drawing.Size(254, 154);
             this.gvUserData.TabIndex = 1;
             // 
             // SelectUser

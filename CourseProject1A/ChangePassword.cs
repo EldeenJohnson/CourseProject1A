@@ -13,13 +13,13 @@ namespace CourseProject1A
     public partial class ChangePassword : Form
     {
         private bool isEditMode;
-        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities3 choice_Christian_AcademyEntities;
         public ChangePassword(Cred ChangePassowrd)
         {
             InitializeComponent();
             PopulateFields(ChangePassowrd);
             isEditMode = true;
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
         }
 
         private void PopulateFields(Cred UserData)

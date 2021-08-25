@@ -13,7 +13,7 @@ namespace CourseProject1A
     public partial class AddEditStaff : Form
     {
         private bool isEditMode;
-        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities3 choice_Christian_AcademyEntities;
 
 
         public AddEditStaff()
@@ -21,7 +21,7 @@ namespace CourseProject1A
             InitializeComponent();
             lbl_Title.Text = "Add New Staff";
             isEditMode = false;
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
         }
         public AddEditStaff(Staff editstaffData, Emergency_contact editContact)
         {
@@ -29,7 +29,7 @@ namespace CourseProject1A
             PopulateFields(editstaffData, editContact);
             lbl_Title.Text = "Edit Staff Detail";
             isEditMode = true;
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
         }
 
         private void PopulateFields(Staff StaffData, Emergency_contact eContactData)

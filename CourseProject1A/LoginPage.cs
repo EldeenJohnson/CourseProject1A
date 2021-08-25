@@ -13,11 +13,11 @@ namespace CourseProject1A
 {
     public partial class LoginPage : Form
     {
-        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities3 choice_Christian_AcademyEntities;
         public LoginPage()
         {
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
             
         }
         
@@ -25,6 +25,7 @@ namespace CourseProject1A
         {
             try
             {
+                //Stores Username and Password
                 var username = tb_username.Text.Trim();
                 var password = tb_Password.Text;
 
@@ -38,11 +39,12 @@ namespace CourseProject1A
                 else
                 {
 
-                    var role = choice_Christian_AcademyEntities.UserRoles.FirstOrDefault();
+                    var role = user.UserRoles.FirstOrDefault();
                     var roleshortname = role.Role.Shortname;
-                    var newHome = new HomeWindow(roleshortname);
+;                   var newHome = new HomeWindow(this,roleshortname);
                     newHome.Show();                    
-                    this.Hide();
+                    Hide();
+
                 }
 
             }         
@@ -56,6 +58,11 @@ namespace CourseProject1A
         private void LoginPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please contact your administrator");
         }
     }
 }

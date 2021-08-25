@@ -14,12 +14,19 @@ namespace CourseProject1A
     
     public partial class Cred
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Cred()
+        {
+            this.UserRoles = new HashSet<UserRole>();
+        }
+    
         public int ID { get; set; }
         public string User { get; set; }
         public string Pword { get; set; }
         public string Full_name { get; set; }
         public Nullable<bool> isActive { get; set; }
     
-        public virtual UserRole UserRole { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

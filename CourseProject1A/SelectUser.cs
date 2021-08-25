@@ -12,12 +12,12 @@ namespace CourseProject1A
 {
     public partial class SelectUser : Form
     {
-        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities3 choice_Christian_AcademyEntities;
         public SelectUser()
         {
 
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
         }
         private void SelectUser_Load(object sender, EventArgs e)
         {
