@@ -73,6 +73,16 @@ namespace CourseProject1A.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bri {
+            get {
+                object obj = ResourceManager.GetObject("Bri", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Britney {
             get {
                 object obj = ResourceManager.GetObject("Britney", resourceCulture);
@@ -133,6 +143,16 @@ namespace CourseProject1A.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dan {
+            get {
+                object obj = ResourceManager.GetObject("Dan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Danielpic {
             get {
                 object obj = ResourceManager.GetObject("Danielpic", resourceCulture);
@@ -153,6 +173,16 @@ namespace CourseProject1A.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap drea {
+            get {
+                object obj = ResourceManager.GetObject("drea", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Eldeen {
             get {
                 object obj = ResourceManager.GetObject("Eldeen", resourceCulture);
@@ -163,9 +193,29 @@ namespace CourseProject1A.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Eldeen___Mikelle_Bday_37__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Eldeen & Mikelle Bday-37 (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mickael {
             get {
                 object obj = ResourceManager.GetObject("Mickael", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mike {
+            get {
+                object obj = ResourceManager.GetObject("mike", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

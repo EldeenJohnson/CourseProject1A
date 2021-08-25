@@ -197,6 +197,7 @@ namespace CourseProject1A
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.Enabled = false;
             this.button3.ForeColor = System.Drawing.Color.GhostWhite;
             this.button3.Location = new System.Drawing.Point(341, 400);
             this.button3.Name = "button3";
@@ -204,10 +205,12 @@ namespace CourseProject1A
             this.button3.TabIndex = 16;
             this.button3.Text = "Staff Register";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.Enabled = false;
             this.button1.ForeColor = System.Drawing.Color.GhostWhite;
             this.button1.Location = new System.Drawing.Point(591, 400);
             this.button1.Name = "button1";
@@ -215,6 +218,7 @@ namespace CourseProject1A
             this.button1.TabIndex = 16;
             this.button1.Text = "Teacher\'s Register";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             // 
             // OptionsForm
             // 

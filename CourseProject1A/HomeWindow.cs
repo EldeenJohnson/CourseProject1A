@@ -115,6 +115,14 @@ namespace CourseProject1A
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var AboutUs = new AboutUs();
+            AboutUs.MdiParent = this;
+            AboutUs.Show();
+
+        }
     }
     
 }

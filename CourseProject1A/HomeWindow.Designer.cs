@@ -57,8 +57,8 @@ namespace CourseProject1A
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mainMenuToolStripMenuItem,
             this.TS_Edit,
-            this.helpToolStripMenuItem,
             this.Password_bt,
+            this.helpToolStripMenuItem,
             this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
@@ -66,7 +66,7 @@ namespace CourseProject1A
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(123, 561);
+            this.menuStrip1.Size = new System.Drawing.Size(117, 561);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -141,7 +141,7 @@ namespace CourseProject1A
             this.privacyPolicyToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.privacyPolicyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.privacyPolicyToolStripMenuItem.Name = "privacyPolicyToolStripMenuItem";
-            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.privacyPolicyToolStripMenuItem.Text = "Privacy Policy";
             this.privacyPolicyToolStripMenuItem.Click += new System.EventHandler(this.privacyPolicyToolStripMenuItem_Click);
             // 
@@ -151,8 +151,9 @@ namespace CourseProject1A
             this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.aboutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Password_bt
             // 

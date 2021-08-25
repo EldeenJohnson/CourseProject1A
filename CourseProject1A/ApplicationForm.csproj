@@ -398,6 +398,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\drea.jpeg" />
+    <None Include="Resources\Dan.jpeg" />
+    <None Include="Resources\Bri.jpeg" />
+    <None Include="Resources\mike.jpeg" />
+    <None Include="Resources\Eldeen &amp; Mikelle Bday-37 %282%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

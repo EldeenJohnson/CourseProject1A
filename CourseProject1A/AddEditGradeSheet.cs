@@ -141,31 +141,40 @@ namespace CourseProject1A
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            var id = (int)dgv_Stu.SelectedRows[0].Cells["ID"].Value;
-            var Student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
-            var TestScore = choice_Christian_AcademyEntities.Test_Result.FirstOrDefault(q => q.Student_ID == id);
+            try
+            {
+                var id = (int)dgv_Stu.SelectedRows[0].Cells["ID"].Value;
+                var Student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
+                var TestScore = choice_Christian_AcademyEntities.Test_Result.FirstOrDefault(q => q.Student_ID == id);
 
-            if (Student != null && TestScore != null)
-            {lbl_Student.Text += " " + (string)Student.First_Name + " " + Student.Last_Name;
-                var Stu = choice_Christian_AcademyEntities.Test_Result
-                    .Where(q => q.Student_ID == id)
-                              .Select(q => new
-                              {
-                                  ID = q.Student_ID,
-                                  Semester = q.Semester,
-                                  Score = q.Score,
-                                  Comment = q.Comment
-                              }).ToList();
-                dgv_Stu.DataSource = Stu;
-                dgv_Stu.Columns[0].Visible = false;
-                dgv_Stu.Columns[1].HeaderText = "Semester";
-                dgv_Stu.Columns[2].HeaderText = "Score";
-                dgv_Stu.Columns[3].HeaderText = "Comments";
-                tableLayoutPanel1.Enabled = false;
-                btn_Submit.Enabled = false;
-                dp_grade.Enabled = false;
+                if (Student != null && TestScore != null)
+                {
+                    lbl_Student.Text += " " + (string)Student.First_Name + " " + Student.Last_Name;
+                    var Stu = choice_Christian_AcademyEntities.Test_Result
+                        .Where(q => q.Student_ID == id)
+                                  .Select(q => new
+                                  {
+                                      ID = q.Student_ID,
+                                      Semester = q.Semester,
+                                      Score = q.Score,
+                                      Comment = q.Comment
+                                  }).ToList();
+                    dgv_Stu.DataSource = Stu;
+                    dgv_Stu.Columns[0].Visible = false;
+                    dgv_Stu.Columns[1].HeaderText = "Semester";
+                    dgv_Stu.Columns[2].HeaderText = "Score";
+                    dgv_Stu.Columns[3].HeaderText = "Comments";
+                    tableLayoutPanel1.Enabled = false;
+                    btn_Submit.Enabled = false;
+                    dp_grade.Enabled = false;
+                }
             }
-            
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}" + "\n\nNo Records Found");
+            }
+
         }
     }
 }
