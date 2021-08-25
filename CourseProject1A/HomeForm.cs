@@ -62,5 +62,12 @@ namespace CourseProject1A
             AddUser.MdiParent = this.MdiParent;
             AddUser.Show();
         }
+
+        private void btn_SubmitScore_Click(object sender, EventArgs e)
+        {
+            var AddEditGradeSheet = new AddEditGradeSheet();
+            AddEditGradeSheet.MdiParent = this.MdiParent;
+            AddEditGradeSheet.Show();
+        }
     }
 }

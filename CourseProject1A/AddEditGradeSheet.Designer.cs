@@ -30,6 +30,7 @@ namespace CourseProject1A
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditGradeSheet));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.lb_Fname = new System.Windows.Forms.Label();
@@ -130,9 +131,8 @@ namespace CourseProject1A
             this.lb_Fname.Location = new System.Drawing.Point(406, 137);
             this.lb_Fname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_Fname.Name = "lb_Fname";
-            this.lb_Fname.Size = new System.Drawing.Size(55, 13);
+            this.lb_Fname.Size = new System.Drawing.Size(0, 13);
             this.lb_Fname.TabIndex = 1;
-            this.lb_Fname.Text = "First name";
             // 
             // lbl_Lname
             // 
@@ -143,9 +143,8 @@ namespace CourseProject1A
             this.lbl_Lname.Location = new System.Drawing.Point(465, 138);
             this.lbl_Lname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Lname.Name = "lbl_Lname";
-            this.lbl_Lname.Size = new System.Drawing.Size(61, 13);
+            this.lbl_Lname.Size = new System.Drawing.Size(0, 13);
             this.lbl_Lname.TabIndex = 2;
-            this.lbl_Lname.Text = "Last Name ";
             // 
             // tableLayoutPanel1
             // 
@@ -939,6 +938,7 @@ namespace CourseProject1A
             this.Controls.Add(this.lbl_Lname);
             this.Controls.Add(this.lb_Fname);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AddEditGradeSheet";
             this.Text = "Student Grade Sheet";

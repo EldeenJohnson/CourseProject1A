@@ -12,12 +12,11 @@ namespace CourseProject1A
 {
     public partial class AddEditGradeSheet : Form
     {
-        private bool isEditMode;
+        //private bool isEditMode;
         private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public AddEditGradeSheet()
         {
             InitializeComponent();
-            isEditMode = false;
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
         }
 
@@ -123,10 +122,11 @@ namespace CourseProject1A
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            this.Close();
+            
             var AddEditGradeSheet = new AddEditGradeSheet();
             AddEditGradeSheet.MdiParent = this.MdiParent;
             AddEditGradeSheet.Show();
+            this.Close();
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
@@ -160,8 +160,7 @@ namespace CourseProject1A
                     dp_grade.Value = (DateTime)TestScore.EntryDate;
                     sub[i] = Convert.ToString(TestScore.Score);
                     /*  Semester[i] = (int)TestScore.Semester;*/
-                    Comm[i] = TestScore.Comment;
-                
+                    Comm[i] = TestScore.Comment;             
                             
             }
 
