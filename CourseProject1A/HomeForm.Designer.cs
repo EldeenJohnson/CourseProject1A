@@ -43,6 +43,7 @@ namespace CourseProject1A
             this.btn_SubmitScore = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,11 +175,11 @@ namespace CourseProject1A
             // 
             this.btn_SubmitScore.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_SubmitScore.ForeColor = System.Drawing.Color.GhostWhite;
-            this.btn_SubmitScore.Location = new System.Drawing.Point(89, 425);
+            this.btn_SubmitScore.Location = new System.Drawing.Point(91, 400);
             this.btn_SubmitScore.Name = "btn_SubmitScore";
             this.btn_SubmitScore.Size = new System.Drawing.Size(182, 40);
             this.btn_SubmitScore.TabIndex = 16;
-            this.btn_SubmitScore.Text = "Submit Grades";
+            this.btn_SubmitScore.Text = "Submit / View Grades";
             this.btn_SubmitScore.UseVisualStyleBackColor = false;
             this.btn_SubmitScore.Click += new System.EventHandler(this.btn_SubmitScore_Click);
             // 
@@ -186,9 +187,9 @@ namespace CourseProject1A
             // 
             this.button2.BackColor = System.Drawing.Color.DodgerBlue;
             this.button2.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button2.Location = new System.Drawing.Point(341, 425);
+            this.button2.Location = new System.Drawing.Point(91, 446);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(180, 40);
+            this.button2.Size = new System.Drawing.Size(182, 40);
             this.button2.TabIndex = 16;
             this.button2.Text = "Student Register";
             this.button2.UseVisualStyleBackColor = false;
@@ -197,12 +198,23 @@ namespace CourseProject1A
             // 
             this.button3.BackColor = System.Drawing.Color.DodgerBlue;
             this.button3.ForeColor = System.Drawing.Color.GhostWhite;
-            this.button3.Location = new System.Drawing.Point(591, 425);
+            this.button3.Location = new System.Drawing.Point(341, 400);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(180, 40);
             this.button3.TabIndex = 16;
             this.button3.Text = "Staff Register";
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.button1.Location = new System.Drawing.Point(591, 400);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 40);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Teacher\'s Register";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // OptionsForm
             // 
@@ -211,6 +223,7 @@ namespace CourseProject1A
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 521);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_SubmitScore);
@@ -248,5 +261,6 @@ namespace CourseProject1A
         private System.Windows.Forms.Button btn_SubmitScore;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
     }
 }

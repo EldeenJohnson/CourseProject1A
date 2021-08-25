@@ -17,7 +17,7 @@ namespace CourseProject1A
         {
             InitializeComponent();
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
-            lbl_Welcome.Text = "Welcome" + "User";
+            lbl_Welcome.Text = "Welcome" + " User";
         }
 
 
