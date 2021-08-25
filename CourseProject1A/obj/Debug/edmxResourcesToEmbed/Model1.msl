@@ -125,6 +125,9 @@
     <EntitySetMapping Name="Test_Result">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Test_Result">
         <MappingFragment StoreEntitySet="Test_Result">
+          <ScalarProperty Name="Semester" ColumnName="Semester" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="Score" ColumnName="Score" />
           <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
           <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
@@ -186,6 +189,8 @@
     <EntitySetMapping Name="Creds">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
         <MappingFragment StoreEntitySet="Creds">
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Full_name" ColumnName="Full_name" />
           <ScalarProperty Name="Pword" ColumnName="Pword" />
           <ScalarProperty Name="User" ColumnName="User" />
           <ScalarProperty Name="ID" ColumnName="ID" />

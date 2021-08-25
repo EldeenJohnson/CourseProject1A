@@ -52,5 +52,20 @@ namespace CourseProject1A
             lbl_Time.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
+
+        private void SubmitGrade_Click(object sender, EventArgs e)
+        {
+            var AddGrades = new AddEditGradeSheet();
+            AddGrades.MdiParent = this.MdiParent;
+            AddGrades.Show();
+
+        }
+
+        private void tb_ViewResults_Click(object sender, EventArgs e)
+        {
+            var AddGrades = new AddEditGradeSheet();
+            AddGrades.MdiParent = this.MdiParent;
+            AddGrades.Show();
+        }
     }
 }

@@ -20,6 +20,7 @@
           <Property Name="User" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Pword" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Full_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="isActive" Type="bit" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -180,6 +181,9 @@
           <Property Name="Subject_ID" Type="int" />
           <Property Name="Teacher_ID" Type="int" />
           <Property Name="Score" Type="float" />
+          <Property Name="Semester" Type="int" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="300" />
+          <Property Name="EntryDate" Type="datetime" />
         </EntityType>
         <Association Name="FK_Emergency_contact_Staff">
           <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
@@ -683,6 +687,9 @@
           <NavigationProperty Name="Student_detail1" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student_detail" FromRole="Test_Result" ToRole="Student_detail" />
           <NavigationProperty Name="Subject_Table" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" FromRole="Test_Result" ToRole="Subject_Table" />
           <NavigationProperty Name="Teacher" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Test_Result" ToRole="Teacher" />
+          <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="EntryDate" Type="DateTime" Precision="3" />
+          <Property Name="Semester" Type="Int32" />
         </EntityType>
         <Association Name="FK_Student_detail_Class">
           <End Type="Choice_Christian_AcademyModel.Class" Role="Class" Multiplicity="0..1" />
@@ -940,6 +947,7 @@
           <Property Name="User" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Pword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1071,6 +1079,9 @@
           <EntitySetMapping Name="Test_Result">
             <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Test_Result">
               <MappingFragment StoreEntitySet="Test_Result">
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="Score" ColumnName="Score" />
                 <ScalarProperty Name="Teacher_ID" ColumnName="Teacher_ID" />
                 <ScalarProperty Name="Subject_ID" ColumnName="Subject_ID" />
@@ -1132,6 +1143,7 @@
           <EntitySetMapping Name="Creds">
             <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
               <MappingFragment StoreEntitySet="Creds">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
                 <ScalarProperty Name="Full_name" ColumnName="Full_name" />
                 <ScalarProperty Name="Pword" ColumnName="Pword" />
                 <ScalarProperty Name="User" ColumnName="User" />

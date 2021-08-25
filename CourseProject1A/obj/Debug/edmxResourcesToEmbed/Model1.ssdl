@@ -14,6 +14,8 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="User" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Pword" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Full_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="isActive" Type="bit" />
   </EntityType>
   <EntityType Name="Department">
     <Key>
@@ -174,6 +176,9 @@
     <Property Name="Subject_ID" Type="int" />
     <Property Name="Teacher_ID" Type="int" />
     <Property Name="Score" Type="float" />
+    <Property Name="Semester" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="300" />
+    <Property Name="EntryDate" Type="datetime" />
   </EntityType>
   <Association Name="FK_Emergency_contact_Staff">
     <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />

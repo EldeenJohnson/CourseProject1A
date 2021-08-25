@@ -45,6 +45,7 @@
             this.gvstudentdata.Location = new System.Drawing.Point(28, 65);
             this.gvstudentdata.Name = "gvstudentdata";
             this.gvstudentdata.RowHeadersWidth = 51;
+            this.gvstudentdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvstudentdata.Size = new System.Drawing.Size(748, 291);
             this.gvstudentdata.TabIndex = 0;
             // 
@@ -56,7 +57,7 @@
             this.label1.ForeColor = System.Drawing.Color.AliceBlue;
             this.label1.Location = new System.Drawing.Point(279, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 55);
+            this.label1.Size = new System.Drawing.Size(249, 45);
             this.label1.TabIndex = 1;
             this.label1.Text = "Student Detail";
             // 

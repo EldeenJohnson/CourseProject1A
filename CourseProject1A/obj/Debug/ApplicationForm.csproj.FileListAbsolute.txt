@@ -132,3 +132,5 @@ C:\Users\ONENESS APOSTOLIC\source\repos\CourseProject1A\.vs\CourseProject1A\obj\
 C:\Users\ONENESS APOSTOLIC\source\repos\CourseProject1A\.vs\CourseProject1A\obj\Debug\ApplicationForm.csproj.CopyComplete
 C:\Users\ONENESS APOSTOLIC\source\repos\CourseProject1A\.vs\CourseProject1A\obj\Debug\CourseProject1A.exe
 C:\Users\ONENESS APOSTOLIC\source\repos\CourseProject1A\.vs\CourseProject1A\obj\Debug\CourseProject1A.pdb
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.ViewStudentGradesheet.resources
+C:\Users\EJ600343\source\repos\ApplicationForm\CourseProject1A\obj\Debug\CourseProject1A.AddEditGradeSheet.resources

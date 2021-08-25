@@ -18,5 +18,6 @@ namespace CourseProject1A
         public string User { get; set; }
         public string Pword { get; set; }
         public string Full_name { get; set; }
+        public Nullable<bool> isActive { get; set; }
     }
 }
