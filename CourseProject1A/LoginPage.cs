@@ -38,11 +38,13 @@ namespace CourseProject1A
                 else
                 {
 
-                    var role = choice_Christian_AcademyEntities.UserRoles.FirstOrDefault();
+                    var role = user.UserRoles.FirstOrDefault();
                     var roleshortname = role.Role.Shortname;
-                    var newHome = new HomeWindow(roleshortname);
+                    var name = user.Full_name.FirstOrDefault();
+;                    var newHome = new HomeWindow(this,roleshortname, name);
                     newHome.Show();                    
-                    this.Hide();
+                    Hide();
+
                 }
 
             }         

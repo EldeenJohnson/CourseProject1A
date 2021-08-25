@@ -25,7 +25,7 @@ namespace CourseProject1A
         public Nullable<int> Subject_ID { get; set; }
         public Nullable<int> Teacher_ID { get; set; }
         public Nullable<double> Score { get; set; }
-        public Nullable<int> Semester { get; set; }
+        public string Semester { get; set; }
         public string Comment { get; set; }
         public Nullable<System.DateTime> EntryDate { get; set; }
     

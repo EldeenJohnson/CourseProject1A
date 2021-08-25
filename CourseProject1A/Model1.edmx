@@ -189,7 +189,7 @@
           <Property Name="Subject_ID" Type="int" />
           <Property Name="Teacher_ID" Type="int" />
           <Property Name="Score" Type="float" />
-          <Property Name="Semester" Type="int" />
+          <Property Name="Semester" Type="nvarchar" MaxLength="5" />
           <Property Name="Comment" Type="nvarchar" MaxLength="300" />
           <Property Name="EntryDate" Type="datetime" />
         </EntityType>
@@ -393,19 +393,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserRoles_Creds">
-          <End Role="Creds" Type="Self.Creds" Multiplicity="1" />
-          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="0..1" />
+        <Association Name="FK_UserRoles_Creds1">
+          <End Role="Creds" Type="Self.Creds" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Creds">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="UserRoles">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserRoles_Roles">
+        <Association Name="FK_UserRoles_Roles1">
           <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
           <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
           <ReferentialConstraint>
@@ -500,11 +500,11 @@
             <End Role="Teacher" EntitySet="Teacher" />
             <End Role="Test_Result" EntitySet="Test_Result" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserRoles_Creds" Association="Self.FK_UserRoles_Creds">
+          <AssociationSet Name="FK_UserRoles_Creds1" Association="Self.FK_UserRoles_Creds1">
             <End Role="Creds" EntitySet="Creds" />
             <End Role="UserRoles" EntitySet="UserRoles" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+          <AssociationSet Name="FK_UserRoles_Roles1" Association="Self.FK_UserRoles_Roles1">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="UserRoles" EntitySet="UserRoles" />
           </AssociationSet>
@@ -514,12 +514,6 @@
     <edmx:ConceptualModels>
       <Schema Namespace="Choice_Christian_AcademyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Choice_Christian_AcademyEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Roles" EntityType="Choice_Christian_AcademyModel.Role" />
-          <EntitySet Name="UserRoles" EntityType="Choice_Christian_AcademyModel.UserRole" />
-          <AssociationSet Name="FK_UserRoles_Roles" Association="Choice_Christian_AcademyModel.FK_UserRoles_Roles">
-            <End Role="Role" EntitySet="Roles" />
-            <End Role="UserRole" EntitySet="UserRoles" />
-          </AssociationSet>
           <EntitySet Name="Classes" EntityType="Choice_Christian_AcademyModel.Class" />
           <EntitySet Name="Creds" EntityType="Choice_Christian_AcademyModel.Cred" />
           <EntitySet Name="Departments" EntityType="Choice_Christian_AcademyModel.Department" />
@@ -530,12 +524,14 @@
           <EntitySet Name="Images" EntityType="Choice_Christian_AcademyModel.Image" />
           <EntitySet Name="Parents" EntityType="Choice_Christian_AcademyModel.Parent" />
           <EntitySet Name="Registrations" EntityType="Choice_Christian_AcademyModel.Registration" />
+          <EntitySet Name="Roles" EntityType="Choice_Christian_AcademyModel.Role" />
           <EntitySet Name="Staffs" EntityType="Choice_Christian_AcademyModel.Staff" />
           <EntitySet Name="Student_detail" EntityType="Choice_Christian_AcademyModel.Student_detail" />
           <EntitySet Name="Subject_Table" EntityType="Choice_Christian_AcademyModel.Subject_Table" />
           <EntitySet Name="sysdiagrams" EntityType="Choice_Christian_AcademyModel.sysdiagram" />
           <EntitySet Name="Teachers" EntityType="Choice_Christian_AcademyModel.Teacher" />
           <EntitySet Name="Test_Result" EntityType="Choice_Christian_AcademyModel.Test_Result" />
+          <EntitySet Name="UserRoles" EntityType="Choice_Christian_AcademyModel.UserRole" />
           <AssociationSet Name="FK_Student_detail_Class" Association="Choice_Christian_AcademyModel.FK_Student_detail_Class">
             <End Role="Class" EntitySet="Classes" />
             <End Role="Student_detail" EntitySet="Student_detail" />
@@ -544,7 +540,7 @@
             <End Role="Class" EntitySet="Classes" />
             <End Role="Teacher" EntitySet="Teachers" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserRoles_Creds" Association="Choice_Christian_AcademyModel.FK_UserRoles_Creds">
+          <AssociationSet Name="FK_UserRoles_Creds1" Association="Choice_Christian_AcademyModel.FK_UserRoles_Creds1">
             <End Role="Cred" EntitySet="Creds" />
             <End Role="UserRole" EntitySet="UserRoles" />
           </AssociationSet>
@@ -588,6 +584,10 @@
             <End Role="Student_detail" EntitySet="Student_detail" />
             <End Role="Registration" EntitySet="Registrations" />
           </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Roles1" Association="Choice_Christian_AcademyModel.FK_UserRoles_Roles1">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
           <AssociationSet Name="FK_Student_detail_Test_Result" Association="Choice_Christian_AcademyModel.FK_Student_detail_Test_Result">
             <End Role="Test_Result" EntitySet="Test_Result" />
             <End Role="Student_detail" EntitySet="Student_detail" />
@@ -604,38 +604,7 @@
             <End Role="Teacher" EntitySet="Teachers" />
             <End Role="Test_Result" EntitySet="Test_Result" />
           </AssociationSet>
-          </EntityContainer>
-        <EntityType Name="Role">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Shortname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="UserRoles" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Roles" FromRole="Role" ToRole="UserRole" />
-        </EntityType>
-        <EntityType Name="UserRole">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserID" Type="Int32" />
-          <Property Name="RoleID" Type="Int32" />
-          <NavigationProperty Name="Role" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Roles" FromRole="UserRole" ToRole="Role" />
-          <NavigationProperty Name="Cred" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds" FromRole="UserRole" ToRole="Cred" />
-        </EntityType>
-        <Association Name="FK_UserRoles_Roles">
-          <End Type="Choice_Christian_AcademyModel.Role" Role="Role" Multiplicity="0..1" />
-          <End Type="Choice_Christian_AcademyModel.UserRole" Role="UserRole" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="UserRole">
-              <PropertyRef Name="RoleID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        </EntityContainer>
         <EntityType Name="Class">
           <Key>
             <PropertyRef Name="ID" />
@@ -654,7 +623,7 @@
           <Property Name="Pword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="isActive" Type="Boolean" />
-          <NavigationProperty Name="UserRole" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds" FromRole="Cred" ToRole="UserRole" />
+          <NavigationProperty Name="UserRoles" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds1" FromRole="Cred" ToRole="UserRole" />
         </EntityType>
         <EntityType Name="Department">
           <Key>
@@ -738,6 +707,15 @@
           <Property Name="Date_of_Enrollment" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Student_ID" Type="Int32" />
           <NavigationProperty Name="Student_detail" Relationship="Choice_Christian_AcademyModel.FK_Registration_Student_detail" FromRole="Registration" ToRole="Student_detail" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shortname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="UserRoles" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Roles1" FromRole="Role" ToRole="UserRole" />
         </EntityType>
         <EntityType Name="Staff">
           <Key>
@@ -841,13 +819,23 @@
           <Property Name="Subject_ID" Type="Int32" />
           <Property Name="Teacher_ID" Type="Int32" />
           <Property Name="Score" Type="Double" />
-          <Property Name="Semester" Type="Int32" />
+          <Property Name="Semester" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
           <Property Name="Comment" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="EntryDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Student_detail" Relationship="Choice_Christian_AcademyModel.FK_Student_detail_Test_Result" FromRole="Test_Result" ToRole="Student_detail" />
           <NavigationProperty Name="Student_detail1" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Student_detail" FromRole="Test_Result" ToRole="Student_detail" />
           <NavigationProperty Name="Subject_Table" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" FromRole="Test_Result" ToRole="Subject_Table" />
           <NavigationProperty Name="Teacher" Relationship="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" FromRole="Test_Result" ToRole="Teacher" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="RoleID" Type="Int32" />
+          <NavigationProperty Name="Cred" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds1" FromRole="UserRole" ToRole="Cred" />
+          <NavigationProperty Name="Role" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Roles1" FromRole="UserRole" ToRole="Role" />
         </EntityType>
         <Association Name="FK_Student_detail_Class">
           <End Type="Choice_Christian_AcademyModel.Class" Role="Class" Multiplicity="0..1" />
@@ -873,15 +861,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserRoles_Creds">
-          <End Type="Choice_Christian_AcademyModel.Cred" Role="Cred" Multiplicity="1" />
-          <End Type="Choice_Christian_AcademyModel.UserRole" Role="UserRole" Multiplicity="0..1" />
+        <Association Name="FK_UserRoles_Creds1">
+          <End Type="Choice_Christian_AcademyModel.Cred" Role="Cred" Multiplicity="0..1" />
+          <End Type="Choice_Christian_AcademyModel.UserRole" Role="UserRole" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cred">
               <PropertyRef Name="ID" />
             </Principal>
             <Dependent Role="UserRole">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1005,6 +993,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserRoles_Roles1">
+          <End Type="Choice_Christian_AcademyModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="Choice_Christian_AcademyModel.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Student_detail_Test_Result">
           <End Type="Choice_Christian_AcademyModel.Test_Result" Role="Test_Result" Multiplicity="0..1" />
           <End Type="Choice_Christian_AcademyModel.Student_detail" Role="Student_detail" Multiplicity="*" />
@@ -1059,24 +1059,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Choice_Christian_AcademyModelStoreContainer" CdmEntityContainer="Choice_Christian_AcademyEntities2">
-          <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Role">
-              <MappingFragment StoreEntitySet="Roles">
-                <ScalarProperty Name="Shortname" ColumnName="Shortname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UserRoles">
-            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.UserRole">
-              <MappingFragment StoreEntitySet="UserRoles">
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Classes">
             <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Class">
               <MappingFragment StoreEntitySet="Class">
@@ -1177,6 +1159,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Shortname" ColumnName="Shortname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Staffs">
             <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Staff">
               <MappingFragment StoreEntitySet="Staff">
@@ -1273,7 +1264,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          </EntityContainerMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
