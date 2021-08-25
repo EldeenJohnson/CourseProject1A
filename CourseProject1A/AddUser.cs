@@ -39,8 +39,21 @@ namespace CourseProject1A
                     NewUser.User = UserName;
                     NewUser.Pword = Password;
                     NewUser.Full_name = FullName;
+                    NewUser.Role_ID = (int)cb_Roles.SelectedValue;
                     choice_Christian_AcademyEntities.Creds.Add(NewUser);
+                    //choice_Christian_AcademyEntities.SaveChanges();
+
+                    var newRole = new UserRole();
+                    newRole.UserID = NewUser.ID;
+                    newRole.RoleID = NewUser.Role_ID;
+                    choice_Christian_AcademyEntities.UserRoles.Add(newRole);
                     choice_Christian_AcademyEntities.SaveChanges();
+
+                    
+
+
+
+
                     MessageBox.Show($"New User ({FullName}) added successfully!\n\r" +
                         $"\n\t{TodaysDate}");
                     this.Close();
@@ -52,9 +65,18 @@ namespace CourseProject1A
             }
         }
 
+        
         private void Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddUser_Load(object sender, EventArgs e)
+        {
+            var Roles = choice_Christian_AcademyEntities.Roles.ToList();
+            cb_Roles.DisplayMember = "Name";
+            cb_Roles.ValueMember = "id";
+            cb_Roles.DataSource = Roles;
         }
     }
 }

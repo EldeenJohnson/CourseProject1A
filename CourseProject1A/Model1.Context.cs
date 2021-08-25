@@ -26,7 +26,6 @@ namespace CourseProject1A
         }
     
         public virtual DbSet<Class> Classes { get; set; }
-        public virtual DbSet<Cred> Creds { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Emergency_contact> Emergency_contact { get; set; }
         public virtual DbSet<Faculty> Faculties { get; set; }
@@ -43,5 +42,6 @@ namespace CourseProject1A
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Test_Result> Test_Result { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<Cred> Creds { get; set; }
     }
 }

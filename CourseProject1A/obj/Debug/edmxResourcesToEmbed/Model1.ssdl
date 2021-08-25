@@ -16,6 +16,7 @@
     <Property Name="Pword" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Full_name" Type="nvarchar" MaxLength="50" />
     <Property Name="isActive" Type="bit" />
+    <Property Name="Role_ID" Type="int" />
   </EntityType>
   <EntityType Name="Department">
     <Key>

@@ -9,17 +9,6 @@
     <NavigationProperty Name="Student_detail" Relationship="Self.FK_Student_detail_Class" FromRole="Class" ToRole="Student_detail" />
     <NavigationProperty Name="Teachers" Relationship="Self.FK_Teacher_Class" FromRole="Class" ToRole="Teacher" />
   </EntityType>
-  <EntityType Name="Cred">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="User" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Pword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="isActive" Type="Boolean" />
-    <NavigationProperty Name="UserRoles" Relationship="Self.FK_UserRoles_Creds1" FromRole="Creds" ToRole="UserRoles" />
-  </EntityType>
   <EntityType Name="Department">
     <Key>
       <PropertyRef Name="ID" />
@@ -229,8 +218,8 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserID" Type="Int32" />
     <Property Name="RoleID" Type="Int32" />
-    <NavigationProperty Name="Cred" Relationship="Self.FK_UserRoles_Creds1" FromRole="UserRoles" ToRole="Creds" />
     <NavigationProperty Name="Role" Relationship="Self.FK_UserRoles_Roles1" FromRole="UserRoles" ToRole="Roles" />
+    <NavigationProperty Name="Cred" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds1" FromRole="UserRole" ToRole="Cred" />
   </EntityType>
   <Association Name="FK_Student_detail_Class">
     <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
@@ -253,18 +242,6 @@
       </Principal>
       <Dependent Role="Teacher">
         <PropertyRef Name="Class_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserRoles_Creds1">
-    <End Role="Creds" Type="Self.Cred" Multiplicity="0..1" />
-    <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Creds">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="UserRoles">
-        <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -450,7 +427,6 @@
   </Association>
   <EntityContainer Name="Choice_Christian_AcademyEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Classes" EntityType="Self.Class" />
-    <EntitySet Name="Creds" EntityType="Self.Cred" />
     <EntitySet Name="Departments" EntityType="Self.Department" />
     <EntitySet Name="Emergency_contact" EntityType="Self.Emergency_contact" />
     <EntitySet Name="Faculties" EntityType="Self.Faculty" />
@@ -474,10 +450,6 @@
     <AssociationSet Name="FK_Teacher_Class" Association="Self.FK_Teacher_Class">
       <End Role="Class" EntitySet="Classes" />
       <End Role="Teacher" EntitySet="Teachers" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserRoles_Creds1" Association="Self.FK_UserRoles_Creds1">
-      <End Role="Creds" EntitySet="Creds" />
-      <End Role="UserRoles" EntitySet="UserRoles" />
     </AssociationSet>
     <AssociationSet Name="FK_Staff_Dept" Association="Self.FK_Staff_Dept">
       <End Role="Department" EntitySet="Departments" />
@@ -539,5 +511,34 @@
       <End Role="Teacher" EntitySet="Teachers" />
       <End Role="Test_Result" EntitySet="Test_Result" />
     </AssociationSet>
+    <EntitySet Name="Creds" EntityType="Choice_Christian_AcademyModel.Cred" />
+    <AssociationSet Name="FK_UserRoles_Creds1" Association="Choice_Christian_AcademyModel.FK_UserRoles_Creds1">
+      <End Role="Cred" EntitySet="Creds" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Cred">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Pword" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Full_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="UserRoles" Relationship="Choice_Christian_AcademyModel.FK_UserRoles_Creds1" FromRole="Cred" ToRole="UserRole" />
+    <Property Name="Role_ID" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_UserRoles_Creds1">
+    <End Type="Choice_Christian_AcademyModel.Cred" Role="Cred" Multiplicity="0..1" />
+    <End Type="Choice_Christian_AcademyModel.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cred">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

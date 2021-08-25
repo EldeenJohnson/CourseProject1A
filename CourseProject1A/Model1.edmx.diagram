@@ -6,7 +6,6 @@
     <edmx:Diagrams>
       <Diagram DiagramId="272ddab3fb594b059ff0c43646e97f95" Name="Diagram1" ZoomLevel="75">
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Class" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Cred" Width="1.5" PointX="7.75" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Department" Width="1.5" PointX="6.75" PointY="17.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Emergency_contact" Width="1.5" PointX="11.25" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Faculty" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
@@ -25,7 +24,6 @@
         <EntityTypeShape EntityType="Choice_Christian_AcademyModel.UserRole" Width="1.5" PointX="10" PointY="3.625" IsExpanded="true" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Student_detail_Class" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Teacher_Class" ManuallyRouted="false" />
-        <AssociationConnector Association="Choice_Christian_AcademyModel.FK_UserRoles_Creds1" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Staff_Dept" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Emergency_contact_Staff" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Emergency_contact_Teacher" ManuallyRouted="false" />
@@ -41,6 +39,8 @@
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Test_Result_Student_detail" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Test_Result_Subject_Table" ManuallyRouted="false" />
         <AssociationConnector Association="Choice_Christian_AcademyModel.FK_Test_Result_Teacher" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Choice_Christian_AcademyModel.Cred" Width="1.5" PointX="7.75" PointY="3.5" />
+        <AssociationConnector Association="Choice_Christian_AcademyModel.FK_UserRoles_Creds1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

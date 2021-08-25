@@ -9,17 +9,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Creds">
-      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
-        <MappingFragment StoreEntitySet="Creds">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="User" ColumnName="User" />
-          <ScalarProperty Name="Pword" ColumnName="Pword" />
-          <ScalarProperty Name="Full_name" ColumnName="Full_name" />
-          <ScalarProperty Name="isActive" ColumnName="isActive" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Departments">
       <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Department">
         <MappingFragment StoreEntitySet="Department">
@@ -212,6 +201,18 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Creds">
+      <EntityTypeMapping TypeName="Choice_Christian_AcademyModel.Cred">
+        <MappingFragment StoreEntitySet="Creds">
+          <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Full_name" ColumnName="Full_name" />
+          <ScalarProperty Name="Pword" ColumnName="Pword" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

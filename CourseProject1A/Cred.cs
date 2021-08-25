@@ -25,6 +25,7 @@ namespace CourseProject1A
         public string Pword { get; set; }
         public string Full_name { get; set; }
         public Nullable<bool> isActive { get; set; }
+        public Nullable<int> Role_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRole> UserRoles { get; set; }

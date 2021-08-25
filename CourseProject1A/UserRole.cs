@@ -18,7 +18,7 @@ namespace CourseProject1A
         public Nullable<int> UserID { get; set; }
         public Nullable<int> RoleID { get; set; }
     
-        public virtual Cred Cred { get; set; }
         public virtual Role Role { get; set; }
+        public virtual Cred Cred { get; set; }
     }
 }

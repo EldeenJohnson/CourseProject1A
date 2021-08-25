@@ -40,6 +40,8 @@ namespace CourseProject1A
             this.label1 = new System.Windows.Forms.Label();
             this.tb_Password = new System.Windows.Forms.TextBox();
             this.tb_FullName = new System.Windows.Forms.TextBox();
+            this.cb_Roles = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -47,7 +49,7 @@ namespace CourseProject1A
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(180, 289);
+            this.label4.Location = new System.Drawing.Point(175, 289);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 33;
@@ -82,7 +84,7 @@ namespace CourseProject1A
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(225, 250);
+            this.label5.Location = new System.Drawing.Point(220, 250);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 27;
@@ -112,7 +114,7 @@ namespace CourseProject1A
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(223, 210);
+            this.label3.Location = new System.Drawing.Point(218, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 26;
@@ -131,7 +133,7 @@ namespace CourseProject1A
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(224, 121);
+            this.label1.Location = new System.Drawing.Point(219, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 23;
@@ -152,6 +154,25 @@ namespace CourseProject1A
             this.tb_FullName.Size = new System.Drawing.Size(199, 20);
             this.tb_FullName.TabIndex = 24;
             // 
+            // cb_Roles
+            // 
+            this.cb_Roles.FormattingEnabled = true;
+            this.cb_Roles.Location = new System.Drawing.Point(296, 163);
+            this.cb_Roles.Name = "cb_Roles";
+            this.cb_Roles.Size = new System.Drawing.Size(121, 21);
+            this.cb_Roles.TabIndex = 34;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(244, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Role";
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,6 +180,8 @@ namespace CourseProject1A
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 488);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cb_Roles);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.Cancel);
@@ -173,6 +196,7 @@ namespace CourseProject1A
             this.MinimizeBox = false;
             this.Name = "AddUser";
             this.Text = "AddUser";
+            this.Load += new System.EventHandler(this.AddUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +215,7 @@ namespace CourseProject1A
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.TextBox tb_FullName;
+        private System.Windows.Forms.ComboBox cb_Roles;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -36,12 +36,12 @@ namespace CourseProject1A
             this.editApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageStaffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageTeachersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.privacyPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Password_bt = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.privacyPolicyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -66,7 +66,7 @@ namespace CourseProject1A
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(117, 561);
+            this.menuStrip1.Size = new System.Drawing.Size(123, 561);
             this.menuStrip1.Stretch = false;
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
@@ -123,38 +123,6 @@ namespace CourseProject1A
             this.manageTeachersToolStripMenuItem.Text = "Manage Teachers";
             this.manageTeachersToolStripMenuItem.Click += new System.EventHandler(this.manageTeachersToolStripMenuItem_Click);
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.privacyPolicyToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.GhostWhite;
-            this.helpToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(49, 23);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // privacyPolicyToolStripMenuItem
-            // 
-            this.privacyPolicyToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.privacyPolicyToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.privacyPolicyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.privacyPolicyToolStripMenuItem.Name = "privacyPolicyToolStripMenuItem";
-            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.privacyPolicyToolStripMenuItem.Text = "Privacy Policy";
-            this.privacyPolicyToolStripMenuItem.Click += new System.EventHandler(this.privacyPolicyToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.aboutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
             // Password_bt
             // 
             this.Password_bt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -179,6 +147,38 @@ namespace CourseProject1A
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(184, 24);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.privacyPolicyToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.GhostWhite;
+            this.helpToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(49, 23);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // privacyPolicyToolStripMenuItem
+            // 
+            this.privacyPolicyToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.privacyPolicyToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.privacyPolicyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.privacyPolicyToolStripMenuItem.Name = "privacyPolicyToolStripMenuItem";
+            this.privacyPolicyToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.privacyPolicyToolStripMenuItem.Text = "Privacy Policy";
+            this.privacyPolicyToolStripMenuItem.Click += new System.EventHandler(this.privacyPolicyToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.aboutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 

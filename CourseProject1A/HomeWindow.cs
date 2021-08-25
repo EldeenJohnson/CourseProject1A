@@ -82,13 +82,7 @@ namespace CourseProject1A
 
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var LoginPage = new LoginPage();
-            LoginPage.Show();
-            this.Close();
-
-        }
+      
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -99,7 +93,7 @@ namespace CourseProject1A
 
         private void HomeWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _login.Close();
+           // _login.Close();
         }
 
         private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,6 +116,14 @@ namespace CourseProject1A
             AboutUs.MdiParent = this;
             AboutUs.Show();
 
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            var LoginPage = new LoginPage();
+            LoginPage.Show();
+
+           this.Close();
         }
     }
     

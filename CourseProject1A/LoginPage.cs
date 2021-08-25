@@ -17,6 +17,7 @@ namespace CourseProject1A
         public LoginPage()
         {
             InitializeComponent();
+
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
             
         }
