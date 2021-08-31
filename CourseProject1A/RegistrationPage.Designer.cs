@@ -32,6 +32,7 @@ namespace CourseProject1A
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationPage));
             this.tabRegistration = new System.Windows.Forms.TabControl();
             this.tab_StuInfo = new System.Windows.Forms.TabPage();
+            this.lbImgFile = new System.Windows.Forms.Label();
             this.studentnext = new System.Windows.Forms.Button();
             this.StudentID = new System.Windows.Forms.Label();
             this.stu_DOB = new System.Windows.Forms.DateTimePicker();
@@ -107,7 +108,6 @@ namespace CourseProject1A
             this.btn_RevCancel = new System.Windows.Forms.Button();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.lbl_RegForm = new System.Windows.Forms.Label();
-            this.lbImgFile = new System.Windows.Forms.Label();
             this.tabRegistration.SuspendLayout();
             this.tab_StuInfo.SuspendLayout();
             this.tab_ParInfo.SuspendLayout();
@@ -122,12 +122,12 @@ namespace CourseProject1A
             this.tabRegistration.Location = new System.Drawing.Point(12, 56);
             this.tabRegistration.Name = "tabRegistration";
             this.tabRegistration.SelectedIndex = 0;
-            this.tabRegistration.Size = new System.Drawing.Size(786, 752);
+            this.tabRegistration.Size = new System.Drawing.Size(786, 800);
             this.tabRegistration.TabIndex = 0;
             // 
             // tab_StuInfo
             // 
-            this.tab_StuInfo.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.tab_StuInfo.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tab_StuInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tab_StuInfo.Controls.Add(this.lbImgFile);
             this.tab_StuInfo.Controls.Add(this.studentnext);
@@ -173,6 +173,15 @@ namespace CourseProject1A
             this.tab_StuInfo.Size = new System.Drawing.Size(778, 726);
             this.tab_StuInfo.TabIndex = 0;
             this.tab_StuInfo.Text = "Student Information";
+            // 
+            // lbImgFile
+            // 
+            this.lbImgFile.AutoSize = true;
+            this.lbImgFile.Location = new System.Drawing.Point(428, 536);
+            this.lbImgFile.Name = "lbImgFile";
+            this.lbImgFile.Size = new System.Drawing.Size(49, 13);
+            this.lbImgFile.TabIndex = 48;
+            this.lbImgFile.Text = "Img Path";
             // 
             // studentnext
             // 
@@ -336,11 +345,6 @@ namespace CourseProject1A
             // cb_Class
             // 
             this.cb_Class.FormattingEnabled = true;
-            this.cb_Class.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C",
-            "D"});
             this.cb_Class.Location = new System.Drawing.Point(509, 489);
             this.cb_Class.Name = "cb_Class";
             this.cb_Class.Size = new System.Drawing.Size(136, 21);
@@ -349,16 +353,6 @@ namespace CourseProject1A
             // cb_Grade
             // 
             this.cb_Grade.FormattingEnabled = true;
-            this.cb_Grade.Items.AddRange(new object[] {
-            "K3",
-            "K4",
-            "K5",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
             this.cb_Grade.Location = new System.Drawing.Point(269, 488);
             this.cb_Grade.Name = "cb_Grade";
             this.cb_Grade.Size = new System.Drawing.Size(137, 21);
@@ -539,7 +533,7 @@ namespace CourseProject1A
             // 
             // tab_ParInfo
             // 
-            this.tab_ParInfo.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.tab_ParInfo.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tab_ParInfo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tab_ParInfo.Controls.Add(this.checkBox1);
             this.tab_ParInfo.Controls.Add(this.tb_Par2Relationship);
@@ -577,7 +571,7 @@ namespace CourseProject1A
             this.tab_ParInfo.Location = new System.Drawing.Point(4, 22);
             this.tab_ParInfo.Name = "tab_ParInfo";
             this.tab_ParInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_ParInfo.Size = new System.Drawing.Size(778, 726);
+            this.tab_ParInfo.Size = new System.Drawing.Size(778, 774);
             this.tab_ParInfo.TabIndex = 1;
             this.tab_ParInfo.Text = "Parent Information";
             // 
@@ -891,7 +885,7 @@ namespace CourseProject1A
             // 
             // tab_Review
             // 
-            this.tab_Review.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.tab_Review.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.tab_Review.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tab_Review.Controls.Add(this.rtb_Review);
             this.tab_Review.Controls.Add(this.lbl_RevMessage);
@@ -900,7 +894,7 @@ namespace CourseProject1A
             this.tab_Review.Controls.Add(this.btn_Submit);
             this.tab_Review.Location = new System.Drawing.Point(4, 22);
             this.tab_Review.Name = "tab_Review";
-            this.tab_Review.Size = new System.Drawing.Size(778, 726);
+            this.tab_Review.Size = new System.Drawing.Size(778, 774);
             this.tab_Review.TabIndex = 2;
             this.tab_Review.Text = "Review";
             // 
@@ -953,7 +947,7 @@ namespace CourseProject1A
             // 
             // btn_Submit
             // 
-            this.btn_Submit.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_Submit.BackColor = System.Drawing.Color.Green;
             this.btn_Submit.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Submit.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_Submit.Location = new System.Drawing.Point(589, 667);
@@ -976,15 +970,6 @@ namespace CourseProject1A
             this.lbl_RegForm.TabIndex = 9;
             this.lbl_RegForm.Text = "Student Registration Form";
             // 
-            // lbImgFile
-            // 
-            this.lbImgFile.AutoSize = true;
-            this.lbImgFile.Location = new System.Drawing.Point(428, 536);
-            this.lbImgFile.Name = "lbImgFile";
-            this.lbImgFile.Size = new System.Drawing.Size(49, 13);
-            this.lbImgFile.TabIndex = 48;
-            this.lbImgFile.Text = "Img Path";
-            // 
             // RegistrationPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -994,7 +979,7 @@ namespace CourseProject1A
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(810, 749);
+            this.ClientSize = new System.Drawing.Size(812, 869);
             this.Controls.Add(this.tabRegistration);
             this.Controls.Add(this.lbl_RegForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

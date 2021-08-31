@@ -116,6 +116,7 @@
             this.gvteacherdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvteacherdata.Location = new System.Drawing.Point(75, 67);
             this.gvteacherdata.Name = "gvteacherdata";
+            this.gvteacherdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvteacherdata.Size = new System.Drawing.Size(644, 225);
             this.gvteacherdata.TabIndex = 7;
             // 

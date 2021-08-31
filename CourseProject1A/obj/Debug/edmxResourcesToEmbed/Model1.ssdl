@@ -1,5 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Choice_Christian_AcademyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Class">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Class" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Creds">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Pword" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Full_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="Role_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Dept_Name" Type="nvarchar" MaxLength="30" />
+  </EntityType>
   <EntityType Name="Emergency_contact">
     <Key>
       <PropertyRef Name="ID" />
@@ -9,7 +34,23 @@
     <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="Email" Type="nvarchar" MaxLength="60" Nullable="false" />
-    <Property Name="Contact_Number" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Teacher_ID" Type="int" />
+    <Property Name="Staff_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Faculty">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Faculty_Name" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Grade" Type="nvarchar" MaxLength="5" Nullable="false" />
   </EntityType>
   <EntityType Name="House">
     <Key>
@@ -45,10 +86,18 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Student_ID" Type="int" />
     <Property Name="Tuition" Type="int" Nullable="false" />
     <Property Name="Amount_Paid" Type="int" Nullable="false" />
     <Property Name="Date_of_Enrollment" Type="datetime" Nullable="false" />
+    <Property Name="Student_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Shortname" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Staff">
     <Key>
@@ -57,11 +106,14 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="First_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="datetime" />
     <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
-    <Property Name="Job_Title" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Phone" Type="nchar" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="Qualification" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Job_Title" Type="nvarchar" MaxLength="60" Nullable="false" />
     <Property Name="Date_of_Employment" Type="datetime" Nullable="false" />
-    <Property Name="Emergency_ID" Type="int" />
+    <Property Name="Dept_ID" Type="int" />
   </EntityType>
   <EntityType Name="Student_detail">
     <Key>
@@ -80,13 +132,14 @@
     <Property Name="Phone_Num" Type="nvarchar" MaxLength="50" />
     <Property Name="Previous_School" Type="nvarchar" MaxLength="80" />
     <Property Name="Birth_Entry_Number" Type="nvarchar" MaxLength="10" />
-    <Property Name="House_ID" Type="int" />
-    <Property Name="Grade" Type="nvarchar" MaxLength="1" />
-    <Property Name="Class" Type="nvarchar" MaxLength="1" />
     <Property Name="AddInfo" Type="nvarchar" MaxLength="200" />
-    <Property Name="Teacher_ID" Type="nchar" MaxLength="10" />
-    <Property Name="Parent_ID" Type="nchar" MaxLength="10" />
-    <Property Name="Test_Result_ID" Type="nchar" MaxLength="10" />
+    <Property Name="House_ID" Type="int" />
+    <Property Name="Grade_ID" Type="int" />
+    <Property Name="Class_ID" Type="int" />
+    <Property Name="Teacher_ID" Type="int" />
+    <Property Name="Parent_ID" Type="int" />
+    <Property Name="Test_Result_ID" Type="int" />
+    <Property Name="Image_ID" Type="int" />
   </EntityType>
   <EntityType Name="Subject_Table">
     <Key>
@@ -112,9 +165,16 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="First_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nchar" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="Qualification" Type="nvarchar" MaxLength="60" Nullable="false" />
-    <Property Name="Grade" Type="nvarchar" MaxLength="6" />
-    <Property Name="Emergency_ID" Type="int" />
+    <Property Name="DateOf_Emp" Type="datetime" />
+    <Property Name="Prev_Employer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Faculty_ID" Type="int" />
+    <Property Name="Grade_ID" Type="int" />
+    <Property Name="Class_ID" Type="int" />
   </EntityType>
   <EntityType Name="Test_Result">
     <Key>
@@ -125,16 +185,111 @@
     <Property Name="Subject_ID" Type="int" />
     <Property Name="Teacher_ID" Type="int" />
     <Property Name="Score" Type="float" />
+    <Property Name="Semester" Type="nvarchar" MaxLength="5" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="300" />
+    <Property Name="EntryDate" Type="datetime" />
   </EntityType>
-  <Association Name="FK_Staff_Emergency_contact">
-    <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="0..1" />
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="RoleID" Type="int" />
+  </EntityType>
+  <Association Name="FK_Emergency_contact_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+    <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Emergency_contact">
+        <PropertyRef Name="Staff_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Emergency_contact_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Emergency_contact">
+        <PropertyRef Name="Teacher_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Registration_Student_detail">
+    <End Role="Student_detail" Type="Self.Student_detail" Multiplicity="0..1" />
+    <End Role="Registration" Type="Self.Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student_detail">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="Registration">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Dept">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
     <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Emergency_contact">
+      <Principal Role="Department">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Staff">
-        <PropertyRef Name="Emergency_ID" />
+        <PropertyRef Name="Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_detail_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
+    <End Role="Student_detail" Type="Self.Student_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Class">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student_detail">
+        <PropertyRef Name="Class_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_detail_Grade">
+    <End Role="Grade" Type="Self.Grade" Multiplicity="0..1" />
+    <End Role="Student_detail" Type="Self.Student_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grade">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student_detail">
+        <PropertyRef Name="Grade_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_detail_House">
+    <End Role="House" Type="Self.House" Multiplicity="0..1" />
+    <End Role="Student_detail" Type="Self.Student_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="House">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student_detail">
+        <PropertyRef Name="House_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Student_detail_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Student_detail" Type="Self.Student_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student_detail">
+        <PropertyRef Name="Image_ID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -150,41 +305,204 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Teacher_Emergency_contact">
-    <End Role="Emergency_contact" Type="Self.Emergency_contact" Multiplicity="0..1" />
+  <Association Name="FK_Student_detail_Test_Result">
+    <End Role="Test_Result" Type="Self.Test_Result" Multiplicity="0..1" />
+    <End Role="Student_detail" Type="Self.Student_detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Test_Result">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Student_detail">
+        <PropertyRef Name="Test_Result_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_Class">
+    <End Role="Class" Type="Self.Class" Multiplicity="0..1" />
     <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Emergency_contact">
+      <Principal Role="Class">
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="Teacher">
-        <PropertyRef Name="Emergency_ID" />
+        <PropertyRef Name="Class_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_Faculty">
+    <End Role="Faculty" Type="Self.Faculty" Multiplicity="0..1" />
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="Faculty_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teacher_Grade">
+    <End Role="Grade" Type="Self.Grade" Multiplicity="0..1" />
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grade">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Teacher">
+        <PropertyRef Name="Grade_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Result_Student_detail">
+    <End Role="Student_detail" Type="Self.Student_detail" Multiplicity="0..1" />
+    <End Role="Test_Result" Type="Self.Test_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student_detail">
+        <PropertyRef Name="Student_ID" />
+      </Principal>
+      <Dependent Role="Test_Result">
+        <PropertyRef Name="Student_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Result_Subject_Table">
+    <End Role="Subject_Table" Type="Self.Subject_Table" Multiplicity="0..1" />
+    <End Role="Test_Result" Type="Self.Test_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subject_Table">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Test_Result">
+        <PropertyRef Name="Subject_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Test_Result_Teacher">
+    <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="Test_Result" Type="Self.Test_Result" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teacher">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Test_Result">
+        <PropertyRef Name="Teacher_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Creds1">
+    <End Role="Creds" Type="Self.Creds" Multiplicity="0..1" />
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Creds">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Roles1">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="RoleID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="Choice_Christian_AcademyModelStoreContainer">
+    <EntitySet Name="Class" EntityType="Self.Class" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Creds" EntityType="Self.Creds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Emergency_contact" EntityType="Self.Emergency_contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Faculty" EntityType="Self.Faculty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grade" EntityType="Self.Grade" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Parent" EntityType="Self.Parent" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Student_detail" EntityType="Self.Student_detail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Subject_Table" EntityType="Self.Subject_Table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Teacher" EntityType="Self.Teacher" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Test_Result" EntityType="Self.Test_Result" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_Staff_Emergency_contact" Association="Self.FK_Staff_Emergency_contact">
-      <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Emergency_contact_Staff" Association="Self.FK_Emergency_contact_Staff">
       <End Role="Staff" EntitySet="Staff" />
+      <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Emergency_contact_Teacher" Association="Self.FK_Emergency_contact_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Registration_Student_detail" Association="Self.FK_Registration_Student_detail">
+      <End Role="Student_detail" EntitySet="Student_detail" />
+      <End Role="Registration" EntitySet="Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Dept" Association="Self.FK_Staff_Dept">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_detail_Class" Association="Self.FK_Student_detail_Class">
+      <End Role="Class" EntitySet="Class" />
+      <End Role="Student_detail" EntitySet="Student_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_detail_Grade" Association="Self.FK_Student_detail_Grade">
+      <End Role="Grade" EntitySet="Grade" />
+      <End Role="Student_detail" EntitySet="Student_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_detail_House" Association="Self.FK_Student_detail_House">
+      <End Role="House" EntitySet="House" />
+      <End Role="Student_detail" EntitySet="Student_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Student_detail_Image" Association="Self.FK_Student_detail_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="Student_detail" EntitySet="Student_detail" />
     </AssociationSet>
     <AssociationSet Name="FK_Student_detail_Parent" Association="Self.FK_Student_detail_Parent">
       <End Role="Student_detail" EntitySet="Student_detail" />
       <End Role="Parent" EntitySet="Parent" />
     </AssociationSet>
-    <AssociationSet Name="FK_Teacher_Emergency_contact" Association="Self.FK_Teacher_Emergency_contact">
-      <End Role="Emergency_contact" EntitySet="Emergency_contact" />
+    <AssociationSet Name="FK_Student_detail_Test_Result" Association="Self.FK_Student_detail_Test_Result">
+      <End Role="Test_Result" EntitySet="Test_Result" />
+      <End Role="Student_detail" EntitySet="Student_detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Class" Association="Self.FK_Teacher_Class">
+      <End Role="Class" EntitySet="Class" />
       <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Faculty" Association="Self.FK_Teacher_Faculty">
+      <End Role="Faculty" EntitySet="Faculty" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teacher_Grade" Association="Self.FK_Teacher_Grade">
+      <End Role="Grade" EntitySet="Grade" />
+      <End Role="Teacher" EntitySet="Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Result_Student_detail" Association="Self.FK_Test_Result_Student_detail">
+      <End Role="Student_detail" EntitySet="Student_detail" />
+      <End Role="Test_Result" EntitySet="Test_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Result_Subject_Table" Association="Self.FK_Test_Result_Subject_Table">
+      <End Role="Subject_Table" EntitySet="Subject_Table" />
+      <End Role="Test_Result" EntitySet="Test_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Test_Result_Teacher" Association="Self.FK_Test_Result_Teacher">
+      <End Role="Teacher" EntitySet="Teacher" />
+      <End Role="Test_Result" EntitySet="Test_Result" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Creds1" Association="Self.FK_UserRoles_Creds1">
+      <End Role="Creds" EntitySet="Creds" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Roles1" Association="Self.FK_UserRoles_Roles1">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UserRoles" EntitySet="UserRoles" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -13,10 +13,10 @@ namespace CourseProject1A
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Choice_Christian_AcademyEntities2 : DbContext
+    public partial class Choice_Christian_AcademyEntities3 : DbContext
     {
-        public Choice_Christian_AcademyEntities2()
-            : base("name=Choice_Christian_AcademyEntities2")
+        public Choice_Christian_AcademyEntities3()
+            : base("name=Choice_Christian_AcademyEntities3")
         {
         }
     
@@ -25,16 +25,23 @@ namespace CourseProject1A
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Class> Classes { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Emergency_contact> Emergency_contact { get; set; }
+        public virtual DbSet<Faculty> Faculties { get; set; }
+        public virtual DbSet<Grade> Grades { get; set; }
         public virtual DbSet<House> Houses { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Parent> Parents { get; set; }
         public virtual DbSet<Registration> Registrations { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<Student_detail> Student_detail { get; set; }
         public virtual DbSet<Subject_Table> Subject_Table { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Test_Result> Test_Result { get; set; }
-        public virtual DbSet<Student_detail> Student_detail { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<Cred> Creds { get; set; }
     }
 }

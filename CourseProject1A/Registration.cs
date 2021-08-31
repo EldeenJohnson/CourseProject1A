@@ -15,9 +15,11 @@ namespace CourseProject1A
     public partial class Registration
     {
         public int ID { get; set; }
-        public Nullable<int> Student_ID { get; set; }
         public int Tuition { get; set; }
         public int Amount_Paid { get; set; }
         public System.DateTime Date_of_Enrollment { get; set; }
+        public Nullable<int> Student_ID { get; set; }
+    
+        public virtual Student_detail Student_detail { get; set; }
     }
 }

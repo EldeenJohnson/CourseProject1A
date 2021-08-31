@@ -12,9 +12,18 @@ namespace CourseProject1A
 {
     public partial class HomeWindow : Form
     {
+        private LoginPage _login;
+        public string _Rolename;
+        
         public HomeWindow()
         {
             InitializeComponent();
+        }
+        public HomeWindow(LoginPage login, string roleshortname)
+        {
+            InitializeComponent();
+            _login = login;
+            _Rolename = roleshortname;
         }
 
         private void OptionsForm_Load(object sender, EventArgs e)
@@ -22,6 +31,12 @@ namespace CourseProject1A
             OptionsForm newMDIChild = new OptionsForm();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
+
+            if ( _Rolename != "admin")
+            {
+                Password_bt.Enabled = false;
+                
+            }
         }
 
         
@@ -65,6 +80,50 @@ namespace CourseProject1A
             PrivacyPolicy.MdiParent = this;
             PrivacyPolicy.Show();
 
+        }
+
+      
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var SelectUser = new SelectUser();
+            SelectUser.MdiParent = this;
+            SelectUser.Show();
+        }
+
+        private void HomeWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           // _login.Close();
+        }
+
+        private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var AddUser = new AddUser();
+            AddUser.MdiParent = this;
+            AddUser.Show();
+        }
+
+        private void mainMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OptionsForm newMDIChild = new OptionsForm();
+            newMDIChild.MdiParent = this;
+            newMDIChild.Show();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var AboutUs = new AboutUs();
+            AboutUs.MdiParent = this;
+            AboutUs.Show();
+
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {            
+            var LoginPage = new LoginPage();
+            LoginPage.Show();
+
+           this.Close();
         }
     }
     

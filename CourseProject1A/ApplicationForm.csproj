@@ -55,10 +55,37 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,6 +97,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEditStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,9 +121,36 @@
     <Compile Include="AddEditTeacher.Designer.cs">
       <DependentUpon>AddEditTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Choice_Christian_AcademyDataSet.cs" />
+    <Compile Include="Class.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="CourseProject1A\Choice_Christian_AcademyDataSetTableAdapters.cs" />
+    <Compile Include="Cred.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Emergency_contact.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Faculty.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Grade.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="HomeForm.cs">
@@ -153,6 +213,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AddEditGradeSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEditGradeSheet.Designer.cs">
+      <DependentUpon>AddEditGradeSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SelectUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectUser.Designer.cs">
+      <DependentUpon>SelectUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Staff.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -172,11 +247,20 @@
     <Compile Include="Test_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewStaff.Designer.cs">
       <DependentUpon>ViewStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewStudentGradeSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewStudentGradeSheet.Designer.cs">
+      <DependentUpon>ViewStudentGradeSheet.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewStudentsInfo.cs">
       <SubType>Form</SubType>
@@ -190,6 +274,9 @@
     <Compile Include="ViewTeachers.Designer.cs">
       <DependentUpon>ViewTeachers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditStaff.resx">
       <DependentUpon>AddEditStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +285,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddEditTeacher.resx">
       <DependentUpon>AddEditTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeForm.resx">
       <DependentUpon>HomeForm.cs</DependentUpon>
@@ -224,8 +317,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="AddEditGradeSheet.resx">
+      <DependentUpon>AddEditGradeSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectUser.resx">
+      <DependentUpon>SelectUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewStaff.resx">
       <DependentUpon>ViewStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewStudentGradeSheet.resx">
+      <DependentUpon>ViewStudentGradeSheet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewStudentsInfo.resx">
       <DependentUpon>ViewStudentsInfo.cs</DependentUpon>
@@ -279,6 +381,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Britney.jpeg" />
+    <None Include="Resources\Eldeen.jpeg" />
+    <None Include="Resources\Andrea.jpg" />
+    <None Include="Resources\Danielpic1.jpeg" />
+    <None Include="Resources\Mickael1.jpeg" />
+    <None Include="Resources\Choice Contact im.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -289,6 +399,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\drea.jpeg" />
+    <None Include="Resources\Dan.jpeg" />
+    <None Include="Resources\Bri.jpeg" />
+    <None Include="Resources\mike.jpeg" />
+    <None Include="Resources\Eldeen &amp; Mikelle Bday-37 %282%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,11 +12,11 @@ namespace CourseProject1A
 {
     public partial class ViewStudentsInfo : Form
     {
-        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities3 choice_Christian_AcademyEntities;
         public ViewStudentsInfo()
         {
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
         }
 
         private void ViewStudentsInfo_Load_1(object sender, EventArgs e)
@@ -26,17 +26,24 @@ namespace CourseProject1A
 
         private void Editbotton_Click(object sender, EventArgs e)
         {
-            //Get ID for selected row
-            var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
-            //Query database
-            var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID ==id);
-            var parent = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.Student_ID == id);
-            var parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID == parent.ID+1 && q.Student_ID == id);
+            try
+            {
+                //Get ID for selected row
+                var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
+                //Query database
+                var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
+                var parent = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.Student_ID == id);
+                var parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID > parent.ID && q.Student_ID == id);
 
-            //var addEditStudent = new RegistrationPage();
-            var addEditStudent = new AddEditStudent(student,parent,parent2);
-            addEditStudent.MdiParent = this.MdiParent;
-            addEditStudent.Show();
+                //var addEditStudent = new RegistrationPage();
+                var addEditStudent = new AddEditStudent(student, parent, parent2);
+                addEditStudent.MdiParent = this.MdiParent;
+                addEditStudent.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}"+"\n\nPlease Click the first cell for desired row.") ;
+            }
         }
 
         private void Deletebutton_Click(object sender, EventArgs e)
@@ -44,17 +51,38 @@ namespace CourseProject1A
             try { 
             //Get ID for selected row
             var id = (int)gvstudentdata.SelectedRows[0].Cells["Student_ID"].Value;
+
             //Query database
             var student = choice_Christian_AcademyEntities.Student_detail.FirstOrDefault(q => q.Student_ID == id);
+                var parent = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.Student_ID == id);
+                    var parent2 = choice_Christian_AcademyEntities.Parents.FirstOrDefault(q => q.ID == parent.ID + 1 && q.Student_ID == id);
+                        var tResults = choice_Christian_AcademyEntities.Test_Result.FirstOrDefault(q => q.Student_ID == id);
+            var tReg = choice_Christian_AcademyEntities.Registrations.FirstOrDefault(q => q.Student_ID == id);
             //Delete data and save
             choice_Christian_AcademyEntities.Student_detail.Remove(student);
+                choice_Christian_AcademyEntities.Parents.Remove(parent);
+
+                if (parent2 != null )
+                {
+                    choice_Christian_AcademyEntities.Parents.Remove(parent2);
+                }
+                if(tResults != null)
+                {
+                choice_Christian_AcademyEntities.Test_Result.Remove(tResults);
+                }
+                if (tReg != null)
+                {
+                    choice_Christian_AcademyEntities.Registrations.Remove(tReg);
+                }
+
             choice_Christian_AcademyEntities.SaveChanges();
             MessageBox.Show("Information Deleted");
-            gvstudentdata.Refresh();
+            PopulateGrid();
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}"+"\n\nPlease Click the first cell for desired row." );
             }
         }
 

@@ -44,6 +44,8 @@
             this.gvstudentdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvstudentdata.Location = new System.Drawing.Point(28, 65);
             this.gvstudentdata.Name = "gvstudentdata";
+            this.gvstudentdata.RowHeadersWidth = 51;
+            this.gvstudentdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvstudentdata.Size = new System.Drawing.Size(748, 291);
             this.gvstudentdata.TabIndex = 0;
             // 
@@ -118,7 +120,7 @@
             this.Refreshbutton.ForeColor = System.Drawing.Color.White;
             this.Refreshbutton.Location = new System.Drawing.Point(359, 362);
             this.Refreshbutton.Name = "Refreshbutton";
-            this.Refreshbutton.Size = new System.Drawing.Size(59, 24);
+            this.Refreshbutton.Size = new System.Drawing.Size(73, 24);
             this.Refreshbutton.TabIndex = 6;
             this.Refreshbutton.Text = "Refresh";
             this.Refreshbutton.UseVisualStyleBackColor = false;

@@ -14,13 +14,33 @@ namespace CourseProject1A
     
     public partial class Teacher
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Teacher()
+        {
+            this.Emergency_contact = new HashSet<Emergency_contact>();
+            this.Test_Result = new HashSet<Test_Result>();
+        }
+    
         public int ID { get; set; }
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
+        public Nullable<System.DateTime> DOB { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
         public string Qualification { get; set; }
-        public string Grade { get; set; }
-        public Nullable<int> Emergency_ID { get; set; }
+        public Nullable<System.DateTime> DateOf_Emp { get; set; }
+        public string Prev_Employer { get; set; }
+        public Nullable<int> Faculty_ID { get; set; }
+        public Nullable<int> Grade_ID { get; set; }
+        public Nullable<int> Class_ID { get; set; }
     
-        public virtual Emergency_contact Emergency_contact { get; set; }
+        public virtual Class Class { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Emergency_contact> Emergency_contact { get; set; }
+        public virtual Faculty Faculty { get; set; }
+        public virtual Grade Grade { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Test_Result> Test_Result { get; set; }
     }
 }

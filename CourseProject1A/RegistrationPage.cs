@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
-using System.Data.SqlClient;
 
 namespace CourseProject1A
 {
-    public partial class RegistrationPage : Form 
+    public partial class RegistrationPage : Form
     {
-       
-        private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
+        private readonly Choice_Christian_AcademyEntities3 choice_Christian_AcademyEntities;
         public RegistrationPage()
         {
             InitializeComponent();
-            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
-
-          
+            choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities3();
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
@@ -114,8 +108,9 @@ namespace CourseProject1A
                         studentrecord.Birth_Entry_Number = BirthEntryNum;
                         studentrecord.Previous_School = PrevSchool;
                         studentrecord.House_ID = (int)cb_StuHouse.SelectedValue;
-                        studentrecord.Grade = cb_Grade.Text;
-                        studentrecord.Class = cb_Class.Text;
+                        studentrecord.Grade_ID = (int)cb_Grade.SelectedValue;
+                        studentrecord.Class_ID = (int)cb_Class.SelectedValue;
+                       // studentrecord.Image_ID = 
                         studentrecord.AddInfo = StuAddInfo;
                     choice_Christian_AcademyEntities.Student_detail.Add(studentrecord);
                    
@@ -127,7 +122,7 @@ namespace CourseProject1A
                     parentrecord.Contact_Number = parPhone;
                     parentrecord.Email = par1Email;
                     parentrecord.Relationship = parRelationship;
-                   parentrecord.Student_ID = studentrecord.Student_ID;
+                    parentrecord.Student_ID = studentrecord.Student_ID;
                     choice_Christian_AcademyEntities.Parents.Add(parentrecord);
                   
                     if (Par2_IsChecked != false)
@@ -140,7 +135,7 @@ namespace CourseProject1A
                         parent2record.Contact_Number = tb_Par2Phone.Text;
                         parent2record.Email = tb_Par2Email.Text;
                         parent2record.Relationship = tb_Par2Relationship.Text;
-                       parent2record.Student_ID = studentrecord.Student_ID;
+                        parent2record.Student_ID = studentrecord.Student_ID;
 
                         choice_Christian_AcademyEntities.Parents.Add(parent2record);
                         
@@ -213,7 +208,7 @@ namespace CourseProject1A
                                "\nBirth Entry Number: " + tb_StuBEntry.Text +
                                "\nHouse: " + cb_StuHouse.Text + 
                                "\nHouse: " + cb_Grade.Text + "Class " + cb_Class +
-                               //   "\nPicture: "+ tb_StuUpload.Text +
+                               "\nPicture: "+ lbImgFile.Text +
                                "\nAdditional Info: " + rtb_stuAddInfo.Text +
                                "\n\n" +
 
@@ -253,73 +248,29 @@ namespace CourseProject1A
             cb_StuHouse.DisplayMember = "Colour";
             cb_StuHouse.ValueMember = "id";
             cb_StuHouse.DataSource = House;
-        }
-       /* private PictureBox _thePic;
-        public PictureBox pic
-        {
-            set { 
-                this._thePic = value;
-            }
-            get { 
-                return this._thePic; 
-            }
-        } */
 
-       // string connectionString = "Data Source=mysms-db.database.windows.net;Initial Catalog=Choice_Christian_Academy;Persist Security Info=True;User ID=Kratos;Password=***********;TrustServerCertificate=True";
-                
+            var Grade = choice_Christian_AcademyEntities.Grades.ToList();
+            cb_Grade.DisplayMember = "Grade1";
+            cb_Grade.ValueMember = "id";
+            cb_Grade.DataSource = Grade;
+
+            var Class = choice_Christian_AcademyEntities.Classes.ToList();
+            cb_Class.DisplayMember = "Class1";
+            cb_Class.ValueMember = "id";
+            cb_Class.DataSource = Class;
+        }
+
         private void btn_StuUpload_Click(object sender, EventArgs e)
         {
-            ////var image = new Image();
-            ////image.MdiParent = this.MdiParent;
-            ////image.Show();
-            
-
-          /*  string displayimg, filePath;
-            string folderpath = @"C:\Users\andre\source\repos\CourseProject1A\CourseProject1A\Resources\";
-          
-            AddEditStudent frmAddStudent = new AddEditStudent();
-
-            OpenFileDialog op = new OpenFileDialog();
-            op.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif;*.bmp; *.pdf;)| *.png;*.jpg;*.jpeg;*.gif;*.bmp; *.pdf|all files|*.*";
-            filePath = op.FileName;
-            SqlConnection con = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand();
-
-            var image = new ImageConverter().ConvertTo(pic.Image, typeof(Byte[]));
-            command.Parameters.AddWithValue("@image", image);
-           command.Parameters.AddWithValue("@image", folderpath + Path.GetFileName(op.FileName));
-            command = new SqlCommand("Insert INTO Image (image) Values(@image)", con);
-            File.Copy(filePath, Path.Combine(folderpath, Path.GetFileName(filePath)), true);
-            con.Open();
-            command.ExecuteNonQuery();
-            MessageBox.Show("Image Saved");
-            con.Close();
-
-
-            if (op.ShowDialog() == DialogResult.OK)
+            OpenFileDialog opnfd = new OpenFileDialog();
+            opnfd.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif;*.bmp;)| *.png;*.jpg;*.jpeg;*.gif;*.bmp;";
+            if (opnfd.ShowDialog() == DialogResult.OK)
             {
-                displayimg = op.SafeFileName;
-                lbImgFile.Text = op.Title;
-                pic = frmAddStudent.pic;
-                pic.Image = new Bitmap(op.FileName);
-
-                
+                lbImgFile.Text = opnfd.FileName;
+                //var Img = new Image();
             }
 
-            */
-                
-                
-            
-
-            /*    if (op.ShowDialog() == DialogResult.OK)
-            {
-                lbImgFile.Text = op.FileName;
-               
-
-
-            }
-
-           File.Copy(lbImgFile.Text, Path.Combine(@"C:\Users\andre\source\repos\CourseProject1A\CourseProject1A\Resources\", Path.GetFileName(lbImgFile.Text)), true); */
+            File.Copy(lbImgFile.Text, Path.Combine(@"C:\Users\andre\source\repos\CourseProject1A\CourseProject1A\Resources\", Path.GetFileName(lbImgFile.Text)), true);
         }
 
         private void tb_stufname_Click(object sender, EventArgs e)

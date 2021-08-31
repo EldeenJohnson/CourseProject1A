@@ -36,10 +36,14 @@ namespace CourseProject1A
             this.btn_Staff = new System.Windows.Forms.Button();
             this.btn_stuApp = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_Welcome = new System.Windows.Forms.Label();
             this.lbl_Time = new System.Windows.Forms.Label();
             this.lbl_Date = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_SubmitScore = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,51 +61,59 @@ namespace CourseProject1A
             // 
             // btn_Teach
             // 
-            this.btn_Teach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Teach.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Teach.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Teach.BackgroundImage")));
+            this.btn_Teach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Teach.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Fuchsia;
             this.btn_Teach.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_Teach.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Teach.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Teach.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btn_Teach.ForeColor = System.Drawing.Color.Yellow;
             this.btn_Teach.Location = new System.Drawing.Point(591, 261);
             this.btn_Teach.Name = "btn_Teach";
-            this.btn_Teach.Size = new System.Drawing.Size(184, 123);
+            this.btn_Teach.Size = new System.Drawing.Size(180, 120);
             this.btn_Teach.TabIndex = 9;
             this.btn_Teach.Text = "Teacher Management";
+            this.btn_Teach.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btn_Teach.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Teach.UseVisualStyleBackColor = false;
             this.btn_Teach.Click += new System.EventHandler(this.btn_Teach_Click);
             // 
             // btn_Staff
             // 
-            this.btn_Staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_Staff.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Staff.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Staff.BackgroundImage")));
             this.btn_Staff.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
             this.btn_Staff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_Staff.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Staff.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Staff.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Staff.ForeColor = System.Drawing.Color.Crimson;
             this.btn_Staff.Location = new System.Drawing.Point(341, 261);
             this.btn_Staff.Name = "btn_Staff";
-            this.btn_Staff.Size = new System.Drawing.Size(184, 123);
+            this.btn_Staff.Size = new System.Drawing.Size(180, 120);
             this.btn_Staff.TabIndex = 10;
-            this.btn_Staff.Text = "Aux\r\nStaff \r\nOn-Boarding";
+            this.btn_Staff.Text = "Staff Management";
+            this.btn_Staff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Staff.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_Staff.UseVisualStyleBackColor = false;
             this.btn_Staff.Click += new System.EventHandler(this.btn_Staff_Click);
             // 
             // btn_stuApp
             // 
-            this.btn_stuApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_stuApp.BackColor = System.Drawing.Color.Transparent;
+            this.btn_stuApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_stuApp.BackgroundImage")));
+            this.btn_stuApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_stuApp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Cyan;
             this.btn_stuApp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_stuApp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_stuApp.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_stuApp.ForeColor = System.Drawing.Color.Teal;
+            this.btn_stuApp.ForeColor = System.Drawing.Color.Aqua;
             this.btn_stuApp.Location = new System.Drawing.Point(91, 261);
             this.btn_stuApp.Name = "btn_stuApp";
-            this.btn_stuApp.Size = new System.Drawing.Size(184, 123);
+            this.btn_stuApp.Size = new System.Drawing.Size(180, 120);
             this.btn_stuApp.TabIndex = 11;
             this.btn_stuApp.Text = "Student \r\nApplication";
+            this.btn_stuApp.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_stuApp.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btn_stuApp.UseVisualStyleBackColor = false;
             this.btn_stuApp.Click += new System.EventHandler(this.btn_stuApp_Click);
@@ -118,17 +130,17 @@ namespace CourseProject1A
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
-            // label2
+            // lbl_Welcome
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.label2.Location = new System.Drawing.Point(644, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 26);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Welcome Admin";
+            this.lbl_Welcome.AutoSize = true;
+            this.lbl_Welcome.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Welcome.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Welcome.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.lbl_Welcome.Location = new System.Drawing.Point(644, 33);
+            this.lbl_Welcome.Name = "lbl_Welcome";
+            this.lbl_Welcome.Size = new System.Drawing.Size(139, 26);
+            this.lbl_Welcome.TabIndex = 14;
+            this.lbl_Welcome.Text = "Welcome User";
             // 
             // lbl_Time
             // 
@@ -159,6 +171,55 @@ namespace CourseProject1A
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btn_SubmitScore
+            // 
+            this.btn_SubmitScore.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_SubmitScore.ForeColor = System.Drawing.Color.GhostWhite;
+            this.btn_SubmitScore.Location = new System.Drawing.Point(91, 400);
+            this.btn_SubmitScore.Name = "btn_SubmitScore";
+            this.btn_SubmitScore.Size = new System.Drawing.Size(182, 40);
+            this.btn_SubmitScore.TabIndex = 16;
+            this.btn_SubmitScore.Text = "Submit / View Grades";
+            this.btn_SubmitScore.UseVisualStyleBackColor = false;
+            this.btn_SubmitScore.Click += new System.EventHandler(this.btn_SubmitScore_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button2.ForeColor = System.Drawing.Color.GhostWhite;
+            this.button2.Location = new System.Drawing.Point(91, 446);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(182, 40);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Student Register";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button3.Enabled = false;
+            this.button3.ForeColor = System.Drawing.Color.GhostWhite;
+            this.button3.Location = new System.Drawing.Point(341, 400);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(180, 40);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Staff Register";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.Enabled = false;
+            this.button1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.button1.Location = new System.Drawing.Point(591, 400);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 40);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Teacher\'s Register";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,9 +227,13 @@ namespace CourseProject1A
             this.BackgroundImage = global::CourseProject1A.Properties.Resources.small_bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(864, 521);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_SubmitScore);
             this.Controls.Add(this.lbl_Date);
             this.Controls.Add(this.lbl_Time);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_Welcome);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Teach);
@@ -193,9 +258,13 @@ namespace CourseProject1A
         private System.Windows.Forms.Button btn_Staff;
         private System.Windows.Forms.Button btn_stuApp;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_Welcome;
         private System.Windows.Forms.Label lbl_Time;
         private System.Windows.Forms.Label lbl_Date;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_SubmitScore;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
     }
 }

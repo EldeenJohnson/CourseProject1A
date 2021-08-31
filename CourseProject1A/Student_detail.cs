@@ -18,6 +18,8 @@ namespace CourseProject1A
         public Student_detail()
         {
             this.Parents = new HashSet<Parent>();
+            this.Registrations = new HashSet<Registration>();
+            this.Test_Result1 = new HashSet<Test_Result>();
         }
     
         public int Student_ID { get; set; }
@@ -33,15 +35,25 @@ namespace CourseProject1A
         public string Phone_Num { get; set; }
         public string Previous_School { get; set; }
         public string Birth_Entry_Number { get; set; }
-        public Nullable<int> House_ID { get; set; }
-        public string Grade { get; set; }
-        public string Class { get; set; }
         public string AddInfo { get; set; }
-        public string Teacher_ID { get; set; }
-        public string Parent_ID { get; set; }
-        public string Test_Result_ID { get; set; }
+        public Nullable<int> House_ID { get; set; }
+        public Nullable<int> Grade_ID { get; set; }
+        public Nullable<int> Class_ID { get; set; }
+        public Nullable<int> Teacher_ID { get; set; }
+        public Nullable<int> Parent_ID { get; set; }
+        public Nullable<int> Test_Result_ID { get; set; }
+        public Nullable<int> Image_ID { get; set; }
     
+        public virtual Class Class { get; set; }
+        public virtual Grade Grade { get; set; }
+        public virtual House House { get; set; }
+        public virtual Image Image { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Parent> Parents { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Registration> Registrations { get; set; }
+        public virtual Test_Result Test_Result { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Test_Result> Test_Result1 { get; set; }
     }
 }
