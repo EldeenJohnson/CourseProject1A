@@ -224,6 +224,11 @@ namespace CourseProject1A
             tb_edPar2Email.Enabled = true;
             tb_EditPar2Rel.Enabled = true;
         }
+
+        private void picBox_Edit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
