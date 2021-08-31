@@ -20,7 +20,10 @@ namespace CourseProject1A
             ///PopulateFields(EditInfo);
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();            
         }
-        
+
+        public AddEditStudent()
+        {
+        }
 
         private void PopulateFields(Student_detail studentdata, Parent ParentData, Parent Parent2)
         {   //Retreive Student Data
@@ -157,6 +160,24 @@ namespace CourseProject1A
         {
             this.Close();
         }
+
+        private void AddEditStudent_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void picBox_Edit_Click(object sender, EventArgs e)
+        {
+
+        }
+          /*  public PictureBox pic
+        {
+            get
+            {
+                return this.picBox_Edit ;
+            }
+        } */
+    }
     }
 
-}
+

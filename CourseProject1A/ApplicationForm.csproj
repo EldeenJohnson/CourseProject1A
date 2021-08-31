@@ -135,6 +135,7 @@
     <Compile Include="Parent.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="picBox_Edit.cs" />
     <Compile Include="PrivacyPolicy.cs">
       <SubType>Form</SubType>
     </Compile>

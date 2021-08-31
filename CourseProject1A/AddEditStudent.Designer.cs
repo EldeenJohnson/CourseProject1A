@@ -746,6 +746,7 @@
             this.picBox_Edit.Size = new System.Drawing.Size(131, 110);
             this.picBox_Edit.TabIndex = 85;
             this.picBox_Edit.TabStop = false;
+            this.picBox_Edit.Click += new System.EventHandler(this.picBox_Edit_Click);
             // 
             // lblpar1
             // 
@@ -844,6 +845,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddEditStudent";
             this.Text = "Edit Students";
+            this.Load += new System.EventHandler(this.AddEditStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox_Edit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

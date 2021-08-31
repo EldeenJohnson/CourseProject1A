@@ -1,18 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace CourseProject1A
 {
-    public partial class RegistrationPage : Form
+    public partial class RegistrationPage : Form 
     {
+       
         private readonly Choice_Christian_AcademyEntities2 choice_Christian_AcademyEntities;
         public RegistrationPage()
         {
             InitializeComponent();
             choice_Christian_AcademyEntities = new Choice_Christian_AcademyEntities2();
+
+          
         }
 
         private void btn_Submit_Click(object sender, EventArgs e)
@@ -248,21 +254,72 @@ namespace CourseProject1A
             cb_StuHouse.ValueMember = "id";
             cb_StuHouse.DataSource = House;
         }
+       /* private PictureBox _thePic;
+        public PictureBox pic
+        {
+            set { 
+                this._thePic = value;
+            }
+            get { 
+                return this._thePic; 
+            }
+        } */
+
+       // string connectionString = "Data Source=mysms-db.database.windows.net;Initial Catalog=Choice_Christian_Academy;Persist Security Info=True;User ID=Kratos;Password=***********;TrustServerCertificate=True";
                 
         private void btn_StuUpload_Click(object sender, EventArgs e)
         {
             ////var image = new Image();
             ////image.MdiParent = this.MdiParent;
             ////image.Show();
+            
 
-            OpenFileDialog opnfd = new OpenFileDialog();
-            opnfd.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif;*.bmp;)| *.png;*.jpg;*.jpeg;*.gif;*.bmp;";
-            if (opnfd.ShowDialog() == DialogResult.OK)
+          /*  string displayimg, filePath;
+            string folderpath = @"C:\Users\andre\source\repos\CourseProject1A\CourseProject1A\Resources\";
+          
+            AddEditStudent frmAddStudent = new AddEditStudent();
+
+            OpenFileDialog op = new OpenFileDialog();
+            op.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif;*.bmp; *.pdf;)| *.png;*.jpg;*.jpeg;*.gif;*.bmp; *.pdf|all files|*.*";
+            filePath = op.FileName;
+            SqlConnection con = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand();
+
+            var image = new ImageConverter().ConvertTo(pic.Image, typeof(Byte[]));
+            command.Parameters.AddWithValue("@image", image);
+           command.Parameters.AddWithValue("@image", folderpath + Path.GetFileName(op.FileName));
+            command = new SqlCommand("Insert INTO Image (image) Values(@image)", con);
+            File.Copy(filePath, Path.Combine(folderpath, Path.GetFileName(filePath)), true);
+            con.Open();
+            command.ExecuteNonQuery();
+            MessageBox.Show("Image Saved");
+            con.Close();
+
+
+            if (op.ShowDialog() == DialogResult.OK)
             {
-                lbImgFile.Text = opnfd.FileName;         
+                displayimg = op.SafeFileName;
+                lbImgFile.Text = op.Title;
+                pic = frmAddStudent.pic;
+                pic.Image = new Bitmap(op.FileName);
+
+                
             }
 
-            File.Copy(lbImgFile.Text, Path.Combine(@"C:\Users\andre\source\repos\CourseProject1A\CourseProject1A\Resources\", Path.GetFileName(lbImgFile.Text)), true);
+            */
+                
+                
+            
+
+            /*    if (op.ShowDialog() == DialogResult.OK)
+            {
+                lbImgFile.Text = op.FileName;
+               
+
+
+            }
+
+           File.Copy(lbImgFile.Text, Path.Combine(@"C:\Users\andre\source\repos\CourseProject1A\CourseProject1A\Resources\", Path.GetFileName(lbImgFile.Text)), true); */
         }
 
         private void tb_stufname_Click(object sender, EventArgs e)
